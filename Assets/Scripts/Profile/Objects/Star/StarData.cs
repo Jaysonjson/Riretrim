@@ -13,6 +13,7 @@ public class StarData
     public float speed;
     public byte[] color;
     public int asteroid_count;
+    public int shipwreck_count;
     public int planet_count;
     public bool secondSun;
     public float sunScale;
@@ -32,5 +33,6 @@ public class StarData
         sunScale = star.sunScale;
         visited = star.visited;
         visitTime = star.visitTime;
+        shipwreck_count = star.shipwreck_count;
     }
 }

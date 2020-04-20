@@ -27,6 +27,7 @@ public class SpaceMap : MonoBehaviour
     public static int moonAmount = 0;
     public AsteroidSpawner asteroidSpawner;
     public PlanetSpawner planetSpawner;
+    public ShipWreckSpawner ShipWreckSpawner;
     public TextMeshProUGUI currencyAmount;
     public TextMeshProUGUI currencyName;
     public GameObject UI;
@@ -71,6 +72,7 @@ public class SpaceMap : MonoBehaviour
         star.LoadUsingName(Profile.current_solarsystem);
         asteroidSpawner.amount = star.asteroid_count;
         planetSpawner.amount = star.planet_count;
+        ShipWreckSpawner.amount = star.shipwreck_count;
         currencyAmount.text = Profile.currency + "";
         currencyName.text = Profile.currency_name;
         asteroidCountText.text = star.asteroid_count + "";
@@ -83,6 +85,11 @@ public class SpaceMap : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
         Planets.LoadPlanets();
         ShipWrecks.LoadShipWrecks();
+        for (int i = 0; i < References.shipwrecks.Count; i++)
+        {
+            GameObject shipWreck = Instantiate(GameObject.Find(ShipWrecks.GetShipWreck(i).type), ShipWrecks.GetShipWreck(i).main.transform, false);
+            Debug.Log("Instantiated ShipWreck: " + shipWreck.name);
+        }
         moonCountText.text = moonAmount + "";
         //yield return new WaitForSeconds(0.2f);
         //Moons.LoadMoons();

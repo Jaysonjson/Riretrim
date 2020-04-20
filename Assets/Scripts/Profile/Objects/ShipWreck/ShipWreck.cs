@@ -15,13 +15,13 @@ public class ShipWreck
     }
     
     public bool Exists()
-    {
+    { 
         if(Map.shipwrecks.Count < index + 1)
         {
             return false;
         }
         name = Map.shipwrecks[index];
-        return Directory.Exists(Profile.map_path + "/shipwreck/" + Map.shipwrecks[index] + "/");
+        return Directory.Exists(Profile.map_path + "/shipwrecks/" + Map.shipwrecks[index] + "/");
     }
     public void Generate()
     {

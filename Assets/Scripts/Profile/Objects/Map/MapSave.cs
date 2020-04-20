@@ -8,11 +8,11 @@ public class MapSave
     public static void save()
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        if (!Directory.Exists(Profile.map_path + "/planets/"))
+        if (!Directory.Exists(Profile.map_path))
         {
-            Directory.CreateDirectory(Profile.map_path + "/planets/");
+            Directory.CreateDirectory(Profile.map_path);
         }
-        string path = Profile.map_path + "/planets/planets.map";
+        string path = Profile.map_path + "/mapdata.map";
         FileStream stream = new FileStream(path, FileMode.Create);
 
         MapData data = new MapData();
@@ -22,7 +22,7 @@ public class MapSave
 
     public static MapData load()
     {
-        string path = Profile.map_path + "/planets/planets.map";
+        string path = Profile.map_path + "/mapdata.map";
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();

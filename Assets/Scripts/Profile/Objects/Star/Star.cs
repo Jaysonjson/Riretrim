@@ -12,6 +12,7 @@ public class Star
     public string sname;
     public int asteroid_count;
     public int planet_count;
+    public int shipwreck_count;
     public int id;
     public int index;
     public GameObject text;
@@ -59,6 +60,7 @@ public class Star
             solarSystem = sname;
             asteroid_count = random.Next(100,750);
             planet_count = random.Next(5);
+            shipwreck_count = random.Next(1, 15);
             sunScale = (float)(random.Next(15,35) + random.NextDouble());
             if(random.Next(1) == 1)
             {
@@ -129,6 +131,7 @@ public class Star
         color = data.color;
         asteroid_count = data.asteroid_count;
         planet_count = data.planet_count;
+        shipwreck_count = data.shipwreck_count;
         secondSun = data.secondSun;
         sunScale = data.sunScale;
         visited = data.visited;
