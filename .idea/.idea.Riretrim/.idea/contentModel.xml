@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$PROJECT_DIR$/../Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
-    <e p="$PROJECT_DIR$/../Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_Riretrim.567712506.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$/../Library/Caches/JetBrains/Rider2020.1/extResources" t="IncludeRecursive" />
+    <e p="$PROJECT_DIR$/../Library/Caches/JetBrains/Rider2020.1/resharper-host/local/Transient/ReSharperHost/v201/SolutionCaches/_Riretrim.567712506.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
@@ -28,7 +28,6 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="Blur.cs" t="Include" />
           <e p="Bullet" t="Include">
             <e p="BulletSpaceMap.cs" t="Include" />
             <e p="PlayerBullet.cs" t="Include" />
@@ -63,7 +62,6 @@
             <e p="StarSpeed18Button.cs" t="Include" />
             <e p="TitlescreenButton.cs" t="Include" />
           </e>
-          <e p="LinearBlur.cs" t="Include" />
           <e p="Material" t="Include">
             <e p="Material.cs" t="Include" />
             <e p="MaterialPickUp.cs" t="Include" />
@@ -76,7 +74,7 @@
             <e p="SelfRotation.cs" t="Include" />
             <e p="SingleMovement.cs" t="Include" />
           </e>
-          <e p="profile" t="Include">
+          <e p="Profile" t="Include">
             <e p="MaterialData.cs" t="Include" />
             <e p="Objects" t="Include">
               <e p="Asteroid" t="Include">
@@ -119,6 +117,13 @@
                 <e p="PlanetDataBackup.cs" t="Include" />
                 <e p="PlanetSaveBackup.cs" t="Include" />
                 <e p="PlanetsBackup.cs" t="Include" />
+              </e>
+              <e p="ShipWreck" t="Include">
+                <e p="ShipWreck.cs" t="Include" />
+                <e p="ShipWreckData.cs" t="Include" />
+                <e p="ShipWrecks.cs" t="Include" />
+                <e p="ShipWreckSave.cs" t="Include" />
+                <e p="ShipWreckSpawner.cs" t="Include" />
               </e>
               <e p="SpaceStation" t="Include">
                 <e p="SpaceStation.cs" t="Include" />
@@ -198,7 +203,7 @@
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Riretrim.sln" t="IncludeFlat" />
-      <e p="Temp/bin" t="ExcludeRecursive" />
+      <e p="Temp/Bin" t="ExcludeRecursive" />
     </e>
   </component>
 </project>

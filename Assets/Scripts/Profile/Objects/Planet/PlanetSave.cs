@@ -13,7 +13,7 @@ public class PlanetSave
         {
             Directory.CreateDirectory(Profile.map_path + "/planets/" + Planets.GetPlanet(index).getName() + "/");
         }
-        string path = Profile.map_path + "/planets/" + Planets.GetPlanet(index).getName() + "/data" + ".pla";
+        string path = Profile.map_path + "/planets/" + Planets.GetPlanet(index).getName() + "/data" + ".planet";
         FileStream stream = new FileStream(path, FileMode.Create);
 
         PlanetData data = new PlanetData(index);
@@ -23,7 +23,7 @@ public class PlanetSave
 
     public static PlanetData load(int index)
     {
-        string path = Profile.map_path + "/planets/" + Planets.GetPlanet(index).getName() + "/data" + ".pla";
+        string path = Profile.map_path + "/planets/" + Planets.GetPlanet(index).getName() + "/data" + ".planet";
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();
@@ -42,7 +42,7 @@ public class PlanetSave
     }
     public static PlanetData LoadUsingName(string name)
     {
-        string path = Profile.map_path + "/planets/" + name + "/data" + ".pla";
+        string path = Profile.map_path + "/planets/" + name + "/data" + ".planet";
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();

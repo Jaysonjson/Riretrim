@@ -78,7 +78,7 @@ public class Planet
         System.Random random = new System.Random();
         if (Exists()) {
             load(index);
-            Debug.Log("Loaded " + pname);
+            Debug.Log("Loaded Planet: " + pname);
         }
         if (!Exists())
         {
@@ -220,7 +220,7 @@ public class Planet
             }
             speed = (float)(random.NextDouble());
             Map.planets.Add(pname);
-            Debug.Log("Generated " + pname);
+            Debug.Log("Generated Planet: " + pname);
         }
         for (int i = 0; i < text.Length; i++)
         {

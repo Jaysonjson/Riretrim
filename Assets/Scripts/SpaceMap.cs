@@ -82,6 +82,7 @@ public class SpaceMap : MonoBehaviour
     {
         yield return new WaitForSeconds(0.8f);
         Planets.LoadPlanets();
+        ShipWrecks.LoadShipWrecks();
         moonCountText.text = moonAmount + "";
         //yield return new WaitForSeconds(0.2f);
         //Moons.LoadMoons();
