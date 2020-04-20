@@ -48,7 +48,7 @@ public class SpaceStation
         if (!Exists())
         {
             name = References.randomNames[random.Next(References.randomNames.Length)] + "-" + random.Next(9999);
-            scale = (planetObject.planetMain.transform.localScale.x / (float)(random.Next(3,6) + random.NextDouble())) / 7.5f;
+            scale = (planetObject.planetMain.transform.localScale.x / (float)(random.Next(3,6) + random.NextDouble())) / 5.5f;
             Debug.Log("Generated Space Station: " + name + "; from Planet: " + planetObject.pname);
             planetObject.spaceStations.Add(name);
             planetObject.save(planetObject.index);

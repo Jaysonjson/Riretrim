@@ -82,6 +82,7 @@ public class Planet
         }
         if (!Exists())
         {
+            if(planetMain == null) {return;}
             planetMain.GetComponent<Orbit>().speed = random.Next(120, 500);
             pname = names[random.Next(names.Length)] + "-" + random.Next(9999);
             id = random.Next(99999999);
