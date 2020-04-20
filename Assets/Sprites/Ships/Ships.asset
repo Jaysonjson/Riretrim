@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf7c34a0dc4e6348bea04faa70406ee, type: 3}
+  m_Name: Ships
+  m_EditorClassIdentifier: 
+  m_Labels:
+  - m_Name: Players
+    m_Hash: -369919430
+    m_CategoryList:
+    - m_Name: DefaultStatic
+      m_Hash: 1460461172
+      m_Sprite: {fileID: -2311659948842064771, guid: a3947292a085345c1897051d29e1f726,
+        type: 3}
+    - m_Name: Veine
+      m_Hash: -64362218
+      m_Sprite: {fileID: 21300000, guid: e655e92858dec47b4969ba6573aec2bb, type: 3}
+  - m_Name: Enemies
+    m_Hash: -1212189790
+    m_CategoryList:
+    - m_Name: Zenin
+      m_Hash: -469410339
+      m_Sprite: {fileID: 21300000, guid: e9c8246734ff94123826d1523a9377a8, type: 3}
+    - m_Name: Cent
+      m_Hash: 1257230856
+      m_Sprite: {fileID: 21300000, guid: 0379e6ad682ab40f6b5a96377696eddc, type: 3}

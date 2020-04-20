@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Registry.unity
+    guid: 768a9183c70d74d868dc34e34be40b2f
+  - enabled: 1
+    path: Assets/Scenes/Titlescreen/Titlescreen.unity
+    guid: 380d55d97361e47fbb0a69de137d32a9
+  - enabled: 1
+    path: Assets/Scenes/Gamescreen/Gamescreen.unity
+    guid: 5940ee62f0e0c4d7490d5948dd45592f
+  - enabled: 1
+    path: Assets/Scenes/SpaceMap/SpaceMap.unity
+    guid: ec4e15acf627941eeb8ca96ebbae63f5
+  - enabled: 1
+    path: Assets/Scenes/AdditionalSoftware/AdditionalSoftware.unity
+    guid: d7829b69bcd4849abaf783850f319370
+  - enabled: 1
+    path: Assets/Scenes/Keybinds/Keybindsscreen.unity
+    guid: 140b4f0f12cb1483cb8e44593ba09008
+  - enabled: 1
+    path: Assets/Scenes/Galaxyscreen/Galaxyscreen.unity
+    guid: 53a44f9d54761489480b81d9dd54c57c
+  - enabled: 1
+    path: Assets/Scenes/Options/Options.unity
+    guid: 11597e4a54f384fbb91416289746737c
+  - enabled: 1
+    path: Assets/Scenes/Credits/Creditsscreen.unity
+    guid: 8fb86b17adb004d719d91642aacb33d6
+  - enabled: 1
+    path: Assets/Scenes/SaveCheckscreen/SaveCheckscreen.unity
+    guid: 46a7af673a8764d0f96d106f110e814c
+  - enabled: 1
+    path: Assets/Scenes/PlanetMap/PlanetMap.unity
+    guid: 49688dda38d3f4ba4997c335028ba9fc
+  - enabled: 1
+    path: Assets/Scenes/PlanetMap/BuyDrillScreen.unity
+    guid: db89fddd9667f485d8247ebb5ef2537c
+  m_configObjects: {}
