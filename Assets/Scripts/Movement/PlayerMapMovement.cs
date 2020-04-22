@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class PlayerMapMovement : MonoBehaviour
 {
-    public float speed = 5F;
+    public float speed = 2.25F;
     public Rigidbody2D rb;
     public GameObject sunObject;
     public ParticleSystem particleSystem;
     public TextMeshProUGUI coordinatesText;
     public TextMeshProUGUI sunDistanceText;
     public RectTransform miniMap;
+    private bool isMoving = false;
     Vector2 movement;
     void Update()
     {
@@ -98,6 +99,26 @@ public class PlayerMapMovement : MonoBehaviour
         {
             sunDistanceText.text = "Sun Distance: " + Vector2.Distance(rb.position, sunObject.transform.position);
         }
+        
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+        {
+            isMoving = false;
+        }
+        
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        {
+            isMoving = true;
+        }
+        
+        if (!isMoving)
+        {
+            GetComponent<Orbit>().speed = 0.15f;
+            GetComponent<SelfRotation>().speed = 0.75f;
+        } else if (isMoving)
+        {
+            GetComponent<Orbit>().speed = 0f;
+            GetComponent<SelfRotation>().speed = 0f;
+        }
     }
 
     private void Start()
@@ -107,6 +128,7 @@ public class PlayerMapMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        //rb.AddRelativeForce(-rb.velocity);
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
     }
 }
