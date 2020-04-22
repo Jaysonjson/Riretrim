@@ -7,6 +7,8 @@ TagManager:
   - MaterialCollision
   - Asteroid
   - Bullet
+  - DamagedShipRoomSpawnPoint
+  - DamagedShipRoom
   layers:
   - Default
   - TransparentFX

@@ -25,7 +25,7 @@ public class Sun : MonoBehaviour
             {
                 if (data.color[0] != 255 && data.color[1] != 255 && data.color[2] != 255)
                 {
-                    glows[i].GetComponent<SpriteRenderer>().color = new Color32((byte)(data.color[0] + random.Next(10)), (byte)(data.color[1] + random.Next(10)), (byte)(data.color[2] + random.Next(10)), 255);
+                    glows[i].GetComponent<SpriteRenderer>().color = new Color32((byte)(data.color[0] + random.Next(10)), (byte)(data.color[1] + random.Next(10)), (byte)(data.color[2] + random.Next(10)), (byte)(glows[i].GetComponent<SpriteRenderer>().color.a * 255));
                 }
                 glows[i].GetComponent<SpriteRenderer>().size *= 2.2f;
             }

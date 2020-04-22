@@ -219,7 +219,7 @@ public class Planet
                     materials.Add(Materials.TIN);
                 }
             }
-            speed = (float)(random.NextDouble());
+            speed = (float)(random.NextDouble()) / 5;
             Map.planets.Add(pname);
             Debug.Log("Generated Planet: " + pname);
         }
@@ -272,7 +272,7 @@ public class Planet
         {
             GameObject moon = GameObject.Instantiate(moonDummy, planetMain.transform, false);
             moon.GetComponent<Orbit>().target = planetBody;
-            moon.GetComponent<Orbit>().speed = random.Next(5) + (float)(random.NextDouble());
+            moon.GetComponent<Orbit>().speed = random.Next(2) + (float)(random.NextDouble()) / 5;
             Moon moonObject = Moons.AddMoon(new Moon(moon, pname, this));
             moonObject.Generate();
             moonObject.SaveAsMoon();
@@ -282,7 +282,7 @@ public class Planet
         {
             GameObject spaceStation = GameObject.Instantiate(spaceStationDummy, planetMain.transform, false);
             spaceStation.GetComponent<Orbit>().target = planetBody;
-            spaceStation.GetComponent<Orbit>().speed = random.Next(5) + (float)(random.NextDouble());
+            spaceStation.GetComponent<Orbit>().speed = random.Next(2) + (float)(random.NextDouble()) / 5;
             SpaceStation spaceStationObject = SpaceStations.AddSpaceStation(new SpaceStation(spaceStation, pname, this));
             spaceStationObject.Generate();
             spaceStationObject.SaveAsSpaceStation();
@@ -292,7 +292,7 @@ public class Planet
        {
             GameObject drill = GameObject.Instantiate(drillDummy, planetMain.transform, false);
             drill.GetComponent<Orbit>().target = planetBody;
-            drill.GetComponent<Orbit>().speed = (float)(random.NextDouble());
+            drill.GetComponent<Orbit>().speed = (float)(random.NextDouble()) / 5;
             drill.SetActive(true);
        }
        Map.save();

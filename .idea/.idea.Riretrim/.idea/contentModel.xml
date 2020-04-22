@@ -19,6 +19,10 @@
           </e>
         </e>
         <e p="Scenes" t="Include">
+          <e p="DamagedShip" t="Include">
+            <e p="RoomsDS.cs" t="Include" />
+            <e p="RoomSpawnPointDS.cs" t="Include" />
+          </e>
           <e p="Options" t="Include">
             <e p="OptionsScript.cs" t="Include" />
             <e p="OptionsVideo.cs" t="Include" />
@@ -81,6 +85,7 @@
                 <e p="Asteroid.cs" t="Include" />
                 <e p="AsteroidSpawner.cs" t="Include" />
               </e>
+              <e p="Destroyer.cs" t="Include" />
               <e p="Drill" t="Include">
                 <e p="MiningDrill.cs" t="Include" />
                 <e p="MiningDrillData.cs" t="Include" />
