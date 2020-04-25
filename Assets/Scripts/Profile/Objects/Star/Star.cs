@@ -58,7 +58,7 @@ public class Star
             sname = References.randomNames[random.Next(References.randomNames.Length)] + "-" + random.Next(9999);
             id = random.Next(99999);
             solarSystem = sname;
-            asteroid_count = random.Next(100,750);
+            asteroid_count = random.Next(100,Options.asteroid_max_spawn_amount);
             planet_count = random.Next(5);
             shipwreck_count = random.Next(1, 15);
             sunScale = (float)(random.Next(15,35) + random.NextDouble());
