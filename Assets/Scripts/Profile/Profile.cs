@@ -16,6 +16,7 @@ public class Profile
     public static string latest_galaxy = "";
     public static string current_texturepack = "Default";
     public static string map_path;
+    public static string profile_path;
     public static string save_version;
     public static bool gameStart;
 
@@ -59,7 +60,8 @@ public class Profile
         current_texturepack = data.current_texturepack;
         save_version = data.save_version;
         currency = data.currency;
-        map_path = Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Profile.current_galaxy + "/" + Profile.current_solarsystem + "/";
+        profile_path = Application.persistentDataPath + "/profiles/" + References.current_profile + "/";
+        map_path = profile_path + current_galaxy + "/" + current_solarsystem + "/";
     }
 
     public static void save()

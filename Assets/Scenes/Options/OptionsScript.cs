@@ -11,8 +11,6 @@ public class OptionsScript : MonoBehaviour
     public GameObject ADDSliderValue;
     public Toggle ASToggle;
     public Toggle PSToggle;
-    public Slider ASASlider;
-    public GameObject ASASliderValue;
     void Start()
     {
         Options.load();
@@ -26,12 +24,6 @@ public class OptionsScript : MonoBehaviour
     {
         Options.asteroid_despawn_distance = ADDSlider.value;
         ADDSliderValue.GetComponent<TextMeshProUGUI>().text = Options.asteroid_despawn_distance + "";
-    }
-
-    public void UpdateASASlider()
-    {
-        Options.asteroid_max_spawn_amount = (int) ASASlider.value;
-        ASASliderValue.GetComponent<TextMeshProUGUI>().text = Options.asteroid_max_spawn_amount + "";
     }
     
     public void UpdateASToggle()
