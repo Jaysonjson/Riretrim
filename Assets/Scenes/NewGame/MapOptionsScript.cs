@@ -39,7 +39,8 @@ public class MapOptionsScript : MonoBehaviour
         ASASlider.minValue = ASAMINSlider.value;
         if (ASASlider.value < ASAMINSlider.value)
         {
-            ASASlider.value = ASAMINSlider.value;
+            ASASlider.value = ASAMINSlider.value + 1;
+            UpdateASASlider();
         }
     }
 }
