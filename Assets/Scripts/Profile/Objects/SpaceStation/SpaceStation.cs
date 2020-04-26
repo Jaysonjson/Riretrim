@@ -53,8 +53,8 @@ public class SpaceStation
             planetObject.spaceStations.Add(name);
             planetObject.save(planetObject.index);
         }
-        spaceStation.name = name;
-       // spaceStation.transform.localScale = new Vector3(scale,scale,1);
+        spaceStation.name = name; 
+        spaceStation.transform.localScale = new Vector3((scale / planetObject.scale) * 2,(scale / planetObject.scale) * 2,1);
     }
 
     public void LoadUsingName(string Name)
