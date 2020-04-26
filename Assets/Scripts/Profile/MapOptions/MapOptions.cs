@@ -1,7 +1,7 @@
 ﻿public class MapOptions
 {
-    public static int asteroid_max_spawn_amount = 750;
-    public static int asteroid_min_spawn_amount = 100;
+    public static int asteroid_max_spawn_amount = 550;
+    public static int asteroid_min_spawn_amount = 75;
     public static bool shipwrecks = true;
     public static void load()
     {

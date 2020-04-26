@@ -31,6 +31,30 @@ public class Asteroid : MonoBehaviour
         }
     }
 
+    private void OnBecameVisible()
+    {
+        foreach (var monoBehaviour in gameObject.GetComponents<MonoBehaviour>())
+        {
+            if (monoBehaviour != gameObject.GetComponent<ShadowCaster2D>())
+            {
+                monoBehaviour.enabled = true;
+                gameObject.GetComponent<BoxCollider2D>().enabled = true;
+            }
+        }
+    }
+
+    private void OnBecameInvisible()
+    {
+        foreach (var monoBehaviour in gameObject.GetComponents<MonoBehaviour>())
+        {
+            if (monoBehaviour != gameObject.GetComponent<ShadowCaster2D>())
+            {
+                monoBehaviour.enabled = false;
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            }
+        }
+    }
+
     private void DropMaterials()
     {
         System.Random random = new System.Random();
