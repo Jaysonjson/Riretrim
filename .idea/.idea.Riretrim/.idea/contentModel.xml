@@ -70,6 +70,7 @@
               <e p="MaterialDropDown.cs" t="Include" />
               <e p="MaterialList.cs" t="Include" />
             </e>
+            <e p="FPS.cs" t="Include" />
             <e p="HUDRescale.cs" t="Include" />
             <e p="InformationText.cs" t="Include" />
             <e p="PlayerInformation.cs" t="Include" />
