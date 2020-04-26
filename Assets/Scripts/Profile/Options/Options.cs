@@ -7,6 +7,7 @@ public class Options
     public static bool AsteroidShadows = false;
     public static bool ParticleSystems = true;
     public static bool ObjectShadows = true;
+    public static bool Lights = true;
 
     public static void load()
     {
@@ -15,6 +16,7 @@ public class Options
         AsteroidShadows = data.asteroidShadows;
         ParticleSystems = data.particleSystems;
         ObjectShadows = data.objectShadows;
+        Lights = data.lights;
     }
 
     public static void save()

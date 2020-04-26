@@ -7,25 +7,27 @@ using UnityEngine.SceneManagement;
 
 public class OptionsScript : MonoBehaviour
 {
-    public Slider ADDSlider;
-    public GameObject ADDSliderValue;
+    public Slider asteroidDespawnDistanceSlider;
+    public GameObject asteroidDespawnDistanceSliderValue;
     public Toggle asteroidShadowToggle;
     public Toggle particleSystemToggle;
     public Toggle objectShadowToggle;
+    public Toggle lightToggle;
     void Start()
     {
         Options.load();
-        ADDSliderValue.GetComponent<TextMeshProUGUI>().text = Options.AsteroidDespawnDistance + "";
-        ADDSlider.value = Options.AsteroidDespawnDistance;
+        asteroidDespawnDistanceSliderValue.GetComponent<TextMeshProUGUI>().text = Options.AsteroidDespawnDistance + "";
+        asteroidDespawnDistanceSlider.value = Options.AsteroidDespawnDistance;
         asteroidShadowToggle.isOn = Options.AsteroidShadows;
         particleSystemToggle.isOn = Options.ParticleSystems;
         objectShadowToggle.isOn = Options.ObjectShadows;
+        lightToggle.isOn = Options.Lights;
     }
 
-    public void UpdateADDSlider()
+    public void UpdateAsteroidDespawnDistanceSliderValue()
     {
-        Options.AsteroidDespawnDistance = ADDSlider.value;
-        ADDSliderValue.GetComponent<TextMeshProUGUI>().text = Options.AsteroidDespawnDistance + "";
+        Options.AsteroidDespawnDistance = asteroidDespawnDistanceSlider.value;
+        asteroidDespawnDistanceSliderValue.GetComponent<TextMeshProUGUI>().text = Options.AsteroidDespawnDistance + "";
     }
     
     public void UpdateAsteroidsShadowToggle()
@@ -40,6 +42,11 @@ public class OptionsScript : MonoBehaviour
     public void UpdateObjectShadowToggle()
     {
         Options.ObjectShadows = objectShadowToggle.isOn;
+    }
+
+    public void UpdateLightsToggle()
+    {
+        Options.Lights = lightToggle.isOn;
     }
     public void saveButton()
     {

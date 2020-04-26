@@ -52,7 +52,6 @@
             <e p="OutofBonds.cs" t="Include" />
             <e p="OutOfCamera.cs" t="Include" />
           </e>
-          <e p="DisableParticlesystem.cs" t="Include" />
           <e p="Discord Rich Presence" t="Include">
             <e p="DiscordController.cs" t="Include" />
           </e>
@@ -73,6 +72,7 @@
             <e p="StarSpeed18Button.cs" t="Include" />
             <e p="TitlescreenButton.cs" t="Include" />
           </e>
+          <e p="LightObject.cs" t="Include" />
           <e p="Material" t="Include">
             <e p="Material.cs" t="Include" />
             <e p="MaterialPickUp.cs" t="Include" />
@@ -85,6 +85,7 @@
             <e p="SelfRotation.cs" t="Include" />
             <e p="SingleMovement.cs" t="Include" />
           </e>
+          <e p="ParticleSystemObject.cs" t="Include" />
           <e p="Profile" t="Include">
             <e p="MapOptions" t="Include">
               <e p="MapOptions.cs" t="Include" />
@@ -180,6 +181,7 @@
             </e>
           </e>
           <e p="Registry.cs" t="Include" />
+          <e p="ShadowCasterObject.cs" t="Include" />
           <e p="SpaceMap.cs" t="Include" />
           <e p="Sprites.cs" t="Include" />
           <e p="Warp.cs" t="Include" />
