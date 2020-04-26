@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 702001954}
+  - component: {fileID: 702001957}
   - component: {fileID: 702001955}
   - component: {fileID: 702001956}
   m_Layer: 0
@@ -188,6 +189,18 @@ MonoBehaviour:
   ASTEROID: {fileID: 21300000, guid: 1e8f0aa9f08ec4c47a63b5b5acec6bb9, type: 3}
   PLAYER: {fileID: -2311659948842064771, guid: a3947292a085345c1897051d29e1f726, type: 3}
   FALLBACK: {fileID: 21300000, guid: 1047fc1134d9942dbbb9df35361740d9, type: 3}
+--- !u!114 &702001957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702001953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c86f834b87d9a494e9a688fb1c9dec61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1230865745
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,7 +301,6 @@ MonoBehaviour:
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
-  m_CameraOutput: 0
   m_Cameras: []
   m_RendererIndex: -1
   m_VolumeLayerMask:
@@ -300,6 +312,7 @@ MonoBehaviour:
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
+  m_ClearDepth: 1
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2

@@ -37,6 +37,12 @@
           <e p="SaveCheckscreen" t="Include">
             <e p="SaveCheck.cs" t="Include" />
           </e>
+          <e p="SpaceMap" t="Include">
+            <e p="RichPresenceSpacemap.cs" t="Include" />
+          </e>
+          <e p="Titlescreen" t="Include">
+            <e p="RichPresenceTitlescreen.cs" t="Include" />
+          </e>
         </e>
         <e p="Scripts" t="Include">
           <e p="Bullet" t="Include">
@@ -55,6 +61,7 @@
           <e p="Discord Rich Presence" t="Include">
             <e p="DiscordController.cs" t="Include" />
           </e>
+          <e p="DiscordRPC.cs" t="Include" />
           <e p="Escape.cs" t="Include" />
           <e p="Health.cs" t="Include" />
           <e p="HUD" t="Include">

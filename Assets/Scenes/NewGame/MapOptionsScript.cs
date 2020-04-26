@@ -15,32 +15,32 @@ public class MapOptionsScript : MonoBehaviour
     
     public void UpdateASASlider()
     {
-        MapOptions.asteroid_max_spawn_amount = (int) ASASlider.value;
-        ASASliderValue.GetComponent<TextMeshProUGUI>().text = MapOptions.asteroid_max_spawn_amount + "";
+        MapOptions.AsteroidMaxSpawnAmount = (int) ASASlider.value;
+        ASASliderValue.GetComponent<TextMeshProUGUI>().text = MapOptions.AsteroidMaxSpawnAmount + "";
         UpdateAsteroidSliders();
     }
     
     public void UpdateASAMINSlider()
     {
-        MapOptions.asteroid_min_spawn_amount = (int) ASAMINSlider.value;
-        ASAMINSliderValue.GetComponent<TextMeshProUGUI>().text = MapOptions.asteroid_min_spawn_amount + "";
+        MapOptions.AsteroidMinSpawnAmount = (int) ASAMINSlider.value;
+        ASAMINSliderValue.GetComponent<TextMeshProUGUI>().text = MapOptions.AsteroidMinSpawnAmount + "";
         UpdateAsteroidSliders();
     }
 
     public void UpdateShipWreckToggle()
     {
-        MapOptions.shipwrecks = ShipwreckToggle.isOn;
+        MapOptions.ShipWrecks = ShipwreckToggle.isOn;
     }
     
     void Start()
     {
-        ASASliderValue.GetComponent<TextMeshProUGUI>().text = MapOptions.asteroid_max_spawn_amount + "";
-        ASASlider.value = MapOptions.asteroid_max_spawn_amount;
+        ASASliderValue.GetComponent<TextMeshProUGUI>().text = MapOptions.AsteroidMaxSpawnAmount + "";
+        ASASlider.value = MapOptions.AsteroidMaxSpawnAmount;
         
-        ASAMINSliderValue.GetComponent<TextMeshProUGUI>().text = MapOptions.asteroid_min_spawn_amount + "";
-        ASAMINSlider.value = MapOptions.asteroid_min_spawn_amount;
+        ASAMINSliderValue.GetComponent<TextMeshProUGUI>().text = MapOptions.AsteroidMinSpawnAmount + "";
+        ASAMINSlider.value = MapOptions.AsteroidMinSpawnAmount;
 
-        ShipwreckToggle.isOn = MapOptions.shipwrecks;
+        ShipwreckToggle.isOn = MapOptions.ShipWrecks;
     }
 
     public void UpdateAsteroidSliders()
@@ -49,7 +49,7 @@ public class MapOptionsScript : MonoBehaviour
         if (ASASlider.value < ASAMINSlider.value)
         {
             ASASlider.value = ASAMINSlider.value + 1;
-            MapOptions.asteroid_max_spawn_amount = (int)ASASlider.value;
+            MapOptions.AsteroidMaxSpawnAmount = (int) ASASlider.value;
             UpdateASASlider();
         }
     }

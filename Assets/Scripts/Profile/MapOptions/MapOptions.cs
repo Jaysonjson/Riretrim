@@ -1,14 +1,14 @@
 ﻿public class MapOptions
 {
-    public static int asteroid_max_spawn_amount = 550;
-    public static int asteroid_min_spawn_amount = 75;
-    public static bool shipwrecks = true;
+    public static int AsteroidMaxSpawnAmount = 550;
+    public static int AsteroidMinSpawnAmount = 125;
+    public static bool ShipWrecks = true;
     public static void load()
     {
         MapOptionsData data = MapOptionsSave.load();
-        asteroid_max_spawn_amount = data.asteroid_max_spawn_amount;
-        asteroid_min_spawn_amount = data.asteroid_min_spawn_amount;
-        shipwrecks = data.shipwrecks;
+        AsteroidMaxSpawnAmount = data.asteroidMaxSpawnAmount;
+        AsteroidMinSpawnAmount = data.asteroidMinSpawnAmount;
+        ShipWrecks = data.shipWrecks;
     }
 
     public static void save()
