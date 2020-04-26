@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MapOptionsScript : MonoBehaviour
@@ -26,7 +27,6 @@ public class MapOptionsScript : MonoBehaviour
     
     void Start()
     {
-        MapOptions.load();
         ASASliderValue.GetComponent<TextMeshProUGUI>().text = MapOptions.asteroid_max_spawn_amount + "";
         ASASlider.value = MapOptions.asteroid_max_spawn_amount;
         
@@ -36,11 +36,19 @@ public class MapOptionsScript : MonoBehaviour
 
     public void UpdateAsteroidSliders()
     {
-        ASASlider.minValue = ASAMINSlider.value;
+        ASASlider.minValue = ASAMINSlider.value + 1;
         if (ASASlider.value < ASAMINSlider.value)
         {
             ASASlider.value = ASAMINSlider.value + 1;
+            MapOptions.asteroid_max_spawn_amount = (int)ASASlider.value;
             UpdateASASlider();
         }
+    }
+
+    public void StartButton()
+    {
+        //Profile.start();
+        MapOptions.save();
+        SceneManager.LoadScene("Galaxyscreen");
     }
 }

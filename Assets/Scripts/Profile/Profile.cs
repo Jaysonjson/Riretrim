@@ -90,7 +90,7 @@ public class Profile
                     current_solarsystem = References.randomNames[random.Next(References.randomNames.Length)] + "-" + random.Next(9999);
                     gameStart = true;
                     save();
-                    SceneManager.LoadScene("Galaxyscreen");
+                    SceneManager.LoadScene("NewGameScreen");
                 }
                 else
                 {
