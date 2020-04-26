@@ -8,6 +8,7 @@ public class Options
     public static bool ParticleSystems = true;
     public static bool ObjectShadows = true;
     public static bool Lights = true;
+    public static bool ShowFPS = false;
 
     public static void load()
     {
@@ -17,6 +18,7 @@ public class Options
         ParticleSystems = data.particleSystems;
         ObjectShadows = data.objectShadows;
         Lights = data.lights;
+        ShowFPS = data.showFPS;
     }
 
     public static void save()

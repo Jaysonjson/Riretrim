@@ -13,6 +13,7 @@ public class OptionsScript : MonoBehaviour
     public Toggle particleSystemToggle;
     public Toggle objectShadowToggle;
     public Toggle lightToggle;
+    public Toggle showFPSToggle;
     void Start()
     {
         Options.load();
@@ -22,6 +23,7 @@ public class OptionsScript : MonoBehaviour
         particleSystemToggle.isOn = Options.ParticleSystems;
         objectShadowToggle.isOn = Options.ObjectShadows;
         lightToggle.isOn = Options.Lights;
+        showFPSToggle.isOn = Options.ShowFPS;
     }
 
     public void UpdateAsteroidDespawnDistanceSliderValue()
@@ -44,6 +46,11 @@ public class OptionsScript : MonoBehaviour
         Options.ObjectShadows = objectShadowToggle.isOn;
     }
 
+    public void UpdateShowFPSToggle()
+    {
+        Options.ShowFPS = showFPSToggle.isOn;
+    }
+    
     public void UpdateLightsToggle()
     {
         Options.Lights = lightToggle.isOn;

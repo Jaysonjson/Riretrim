@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 [System.Serializable]
 public class OptionsData
@@ -8,6 +9,7 @@ public class OptionsData
     public bool particleSystems;
     public bool objectShadows;
     public bool lights;
+    public bool showFPS;
     public OptionsData()
     {
         asteroidDespawnDistance = Options.AsteroidDespawnDistance;
@@ -15,5 +17,6 @@ public class OptionsData
         particleSystems = Options.ParticleSystems;
         objectShadows = Options.ObjectShadows;
         lights = Options.Lights;
+        showFPS = Options.ShowFPS;
     }
 }
