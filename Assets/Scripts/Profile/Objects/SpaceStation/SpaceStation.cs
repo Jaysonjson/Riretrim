@@ -54,9 +54,7 @@ public class SpaceStation
             planetObject.save(planetObject.index);
         }
         spaceStation.name = name;
-        spaceStation.transform.localScale = new Vector3(scale,scale,1);
-        //moon.GetComponentInParent<TextMeshProUGUI>().text = name;
-        //moon.transform.FindChild("MoonDummyText").GetComponent<TextMeshProUGUI>().text = name;
+       // spaceStation.transform.localScale = new Vector3(scale,scale,1);
     }
 
     public void LoadUsingName(string Name)

@@ -10,6 +10,8 @@ public class MapOptionsScript : MonoBehaviour
 
     public GameObject ASAMINSliderValue;
     public Slider ASAMINSlider;
+
+    public Toggle ShipwreckToggle;
     
     public void UpdateASASlider()
     {
@@ -23,7 +25,12 @@ public class MapOptionsScript : MonoBehaviour
         MapOptions.asteroid_min_spawn_amount = (int) ASAMINSlider.value;
         ASAMINSliderValue.GetComponent<TextMeshProUGUI>().text = MapOptions.asteroid_min_spawn_amount + "";
         UpdateAsteroidSliders();
-    } 
+    }
+
+    public void UpdateShipWreckToggle()
+    {
+        MapOptions.shipwrecks = ShipwreckToggle.isOn;
+    }
     
     void Start()
     {
@@ -32,6 +39,8 @@ public class MapOptionsScript : MonoBehaviour
         
         ASAMINSliderValue.GetComponent<TextMeshProUGUI>().text = MapOptions.asteroid_min_spawn_amount + "";
         ASAMINSlider.value = MapOptions.asteroid_min_spawn_amount;
+
+        ShipwreckToggle.isOn = MapOptions.shipwrecks;
     }
 
     public void UpdateAsteroidSliders()
