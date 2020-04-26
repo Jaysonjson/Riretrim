@@ -3,16 +3,18 @@ using UnityEngine.SceneManagement;
 
 public class Options
 {
-    public static float asteroid_despawn_distance = 45f;
-    public static bool asteroid_shadows = false;
-    public static bool particle_systems = true;
+    public static float AsteroidDespawnDistance = 45f;
+    public static bool AsteroidShadows = false;
+    public static bool ParticleSystems = true;
+    public static bool ObjectShadows = true;
 
     public static void load()
     {
         OptionsData data = OptionsSave.load();
-        asteroid_despawn_distance = data.asteroid_despawn_distance;
-        asteroid_shadows = data.asteroid_shadows;
-        particle_systems = data.particle_systems;
+        AsteroidDespawnDistance = data.asteroidDespawnDistance;
+        AsteroidShadows = data.asteroidShadows;
+        ParticleSystems = data.particleSystems;
+        ObjectShadows = data.objectShadows;
     }
 
     public static void save()

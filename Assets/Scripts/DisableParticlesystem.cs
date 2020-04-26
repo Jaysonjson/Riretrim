@@ -6,6 +6,6 @@ public class DisableParticlesystem : MonoBehaviour
 {
     void Start()
     {
-        gameObject.SetActive(Options.particle_systems);  
+        gameObject.SetActive(Options.ParticleSystems);  
     }
 }

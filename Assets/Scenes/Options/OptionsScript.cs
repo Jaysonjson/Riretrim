@@ -9,33 +9,38 @@ public class OptionsScript : MonoBehaviour
 {
     public Slider ADDSlider;
     public GameObject ADDSliderValue;
-    public Toggle ASToggle;
-    public Toggle PSToggle;
+    public Toggle asteroidShadowToggle;
+    public Toggle particleSystemToggle;
+    public Toggle objectShadowToggle;
     void Start()
     {
         Options.load();
-        ADDSliderValue.GetComponent<TextMeshProUGUI>().text = Options.asteroid_despawn_distance + "";
-        ADDSlider.value = Options.asteroid_despawn_distance;
-        ASToggle.isOn = Options.asteroid_shadows;
-        PSToggle.isOn = Options.particle_systems;
+        ADDSliderValue.GetComponent<TextMeshProUGUI>().text = Options.AsteroidDespawnDistance + "";
+        ADDSlider.value = Options.AsteroidDespawnDistance;
+        asteroidShadowToggle.isOn = Options.AsteroidShadows;
+        particleSystemToggle.isOn = Options.ParticleSystems;
+        objectShadowToggle.isOn = Options.ObjectShadows;
     }
 
     public void UpdateADDSlider()
     {
-        Options.asteroid_despawn_distance = ADDSlider.value;
-        ADDSliderValue.GetComponent<TextMeshProUGUI>().text = Options.asteroid_despawn_distance + "";
+        Options.AsteroidDespawnDistance = ADDSlider.value;
+        ADDSliderValue.GetComponent<TextMeshProUGUI>().text = Options.AsteroidDespawnDistance + "";
     }
     
-    public void UpdateASToggle()
+    public void UpdateAsteroidsShadowToggle()
     {
-        Options.asteroid_shadows = ASToggle.isOn;
+        Options.AsteroidShadows = asteroidShadowToggle.isOn;
     }
 
-    public void UpdatePSToggle()
+    public void UpdateParticleSystemToggle()
     {
-        Options.particle_systems = PSToggle.isOn;
+        Options.ParticleSystems = particleSystemToggle.isOn;
     }
-
+    public void UpdateObjectShadowToggle()
+    {
+        Options.ObjectShadows = objectShadowToggle.isOn;
+    }
     public void saveButton()
     {
         Options.save();
