@@ -13,7 +13,7 @@ public class ShipMono : MonoBehaviour
         Ship.gunDamage += 0.000000001f;
         Ship.thrusterDamage += 0.000001f;
         Ship.engineDamage += 0.0000001f;
-        ShipDMGProgressbar.UpdateBars();
+        ShipDMGProgressbar.INSTANCE.UpdateBars();
 
         if (sun != null)
         {

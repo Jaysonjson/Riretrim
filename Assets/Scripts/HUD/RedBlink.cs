@@ -11,7 +11,7 @@ public class RedBlink : MonoBehaviour
       //byte alpha = (byte)spriteRenderer.color.a;
       if (alpha < 254 && !decrease)
       { 
-         alpha += 5;
+         alpha += 1;
       }
 
       if (alpha > 253)
@@ -20,7 +20,7 @@ public class RedBlink : MonoBehaviour
       }
       if (decrease)
       {
-         alpha -= 5;
+         alpha -= 1;
       }
 
       if (alpha < 85)
