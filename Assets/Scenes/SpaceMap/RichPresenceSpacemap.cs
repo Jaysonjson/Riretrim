@@ -19,10 +19,6 @@ public class RichPresenceSpacemap : MonoBehaviour
         };
         DiscordRPC.activityManager.UpdateActivity(activity, (res) =>
         {
-            if (res == Discord.Result.Ok)
-            {
-                Debug.Log("Discord Loaded");
-            }
         });
     }
     private void Update () {
