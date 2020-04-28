@@ -59,7 +59,7 @@ public class Star
             id = random.Next(99999);
             solarSystem = sname;
             asteroid_count = random.Next(MapOptions.AsteroidMinSpawnAmount, MapOptions.AsteroidMaxSpawnAmount);
-            planet_count = random.Next(5);
+            planet_count = random.Next(MapOptions.PlanetMaxAmount / 4);
             shipwreck_count = random.Next(1, 15);
             sunScale = (float)(random.Next(15,35) + random.NextDouble());
             if(random.Next(1) == 1)
@@ -68,11 +68,11 @@ public class Star
             }
             if(random.Next(10) == 1)
             {
-                planet_count = random.Next(12);
+                planet_count = random.Next(MapOptions.PlanetMaxAmount / 2);
             }
             if (random.Next(25) == 1)
             {
-                planet_count = random.Next(25);
+                planet_count = random.Next(MapOptions.PlanetMaxAmount);
             }
             position_x = (float)(random.Next(-5, 5) + random.NextDouble());
             position_y = (float)(random.Next(-4, 4) + random.NextDouble());

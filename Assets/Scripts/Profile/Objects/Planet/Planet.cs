@@ -268,16 +268,20 @@ public class Planet
             athmospheres[i].GetComponent<SpriteRenderer>().color = new Color32(color[0], color[1], color[2], 255);
         }
 
-        for (var i = 0; i < moonAmount; i++)
+        if (MapOptions.Moons)
         {
-            GameObject moon = GameObject.Instantiate(moonDummy, planetMain.transform, false);
-            moon.GetComponent<Orbit>().target = planetBody;
-            moon.GetComponent<Orbit>().speed = random.Next(2) + (float)(random.NextDouble()) / 5;
-            Moon moonObject = Moons.AddMoon(new Moon(moon, pname, this));
-            moonObject.Generate();
-            moonObject.SaveAsMoon();
-            moon.SetActive(true);
+            for (var i = 0; i < moonAmount; i++)
+            {
+                GameObject moon = GameObject.Instantiate(moonDummy, planetMain.transform, false);
+                moon.GetComponent<Orbit>().target = planetBody;
+                moon.GetComponent<Orbit>().speed = random.Next(2) + (float) (random.NextDouble()) / 5;
+                Moon moonObject = Moons.AddMoon(new Moon(moon, pname, this));
+                moonObject.Generate();
+                moonObject.SaveAsMoon();
+                moon.SetActive(true);
+            }
         }
+
         for (var i = 0; i < spaceStationAmount; i++)
         {
             GameObject spaceStation = GameObject.Instantiate(spaceStationDummy, planetMain.transform, false);

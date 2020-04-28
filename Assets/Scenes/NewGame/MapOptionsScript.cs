@@ -11,7 +11,12 @@ public class MapOptionsScript : MonoBehaviour
     public GameObject ASAMINSliderValue;
     public Slider ASAMINSlider;
 
+    public GameObject PlanetMaxSliderValue;
+    public Slider PlanetMaxSlider;
+
     public Toggle ShipwreckToggle;
+
+    public Toggle MoonToggle;
     
     public void UpdateASASlider()
     {
@@ -27,9 +32,20 @@ public class MapOptionsScript : MonoBehaviour
         UpdateAsteroidSliders();
     }
 
+    public void UpdatePlanetMaxSlider()
+    {
+        MapOptions.PlanetMaxAmount = (int) PlanetMaxSlider.value;
+        PlanetMaxSliderValue.GetComponent<TextMeshProUGUI>().text = MapOptions.PlanetMaxAmount + "";
+    }
+    
     public void UpdateShipWreckToggle()
     {
         MapOptions.ShipWrecks = ShipwreckToggle.isOn;
+    }
+
+    public void UpdateMoonToggle()
+    {
+        MapOptions.Moons = MoonToggle.isOn;
     }
     
     void Start()
@@ -40,7 +56,11 @@ public class MapOptionsScript : MonoBehaviour
         ASAMINSliderValue.GetComponent<TextMeshProUGUI>().text = MapOptions.AsteroidMinSpawnAmount + "";
         ASAMINSlider.value = MapOptions.AsteroidMinSpawnAmount;
 
+        PlanetMaxSliderValue.GetComponent<TextMeshProUGUI>().text = MapOptions.PlanetMaxAmount + "";
+        PlanetMaxSlider.value = MapOptions.PlanetMaxAmount;
+
         ShipwreckToggle.isOn = MapOptions.ShipWrecks;
+        MoonToggle.isOn = MapOptions.Moons;
     }
 
     public void UpdateAsteroidSliders()
