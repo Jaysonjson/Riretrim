@@ -8,9 +8,9 @@ public class LanguageText : MonoBehaviour
     public string value;
     private void Start()
     {
-        if (value != null)
+        if (value != null && Registry.Language.GetType().GetField(value) != null)
         {
-            GetComponent<TextMeshProUGUI>().text = Registry.Language.GetType().GetField(value).GetValue(Registry.Language) as string;
+                GetComponent<TextMeshProUGUI>().text = Registry.Language.GetType().GetField(value).GetValue(Registry.Language) as string;
         }
     }
 }

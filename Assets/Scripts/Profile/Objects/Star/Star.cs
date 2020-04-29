@@ -60,7 +60,7 @@ public class Star
             solarSystem = sname;
             asteroid_count = random.Next(MapOptions.AsteroidMinSpawnAmount, MapOptions.AsteroidMaxSpawnAmount);
             planet_count = random.Next(MapOptions.PlanetMaxAmount / 4);
-            shipwreck_count = random.Next(1, 15);
+            shipwreck_count = random.Next(2, 25);
             sunScale = (float)(random.Next(15,35) + random.NextDouble());
             if(random.Next(1) == 1)
             {
