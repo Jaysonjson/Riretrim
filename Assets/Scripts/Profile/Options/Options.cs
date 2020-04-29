@@ -9,7 +9,7 @@ public class Options
     public static bool ObjectShadows = true;
     public static bool Lights = true;
     public static bool ShowFPS = false;
-
+    public static string Language = "English";
     public static void load()
     {
         OptionsData data = OptionsSave.load();
@@ -19,6 +19,7 @@ public class Options
         ObjectShadows = data.objectShadows;
         Lights = data.lights;
         ShowFPS = data.showFPS;
+        Language = data.language;
     }
 
     public static void save()

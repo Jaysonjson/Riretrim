@@ -14,6 +14,7 @@ public class OptionsScript : MonoBehaviour
     public Toggle objectShadowToggle;
     public Toggle lightToggle;
     public Toggle showFPSToggle;
+    public TMP_Dropdown languageDropdown;
     void Start()
     {
         Options.load();
@@ -24,6 +25,14 @@ public class OptionsScript : MonoBehaviour
         objectShadowToggle.isOn = Options.ObjectShadows;
         lightToggle.isOn = Options.Lights;
         showFPSToggle.isOn = Options.ShowFPS;
+        for (var i = 0; i < languageDropdown.options.Count; i++)
+        {
+            if (languageDropdown.options[i].text.Equals(Options.Language))
+            {
+                languageDropdown.value = i;
+                break;
+            }
+        }
     }
 
     public void UpdateAsteroidDespawnDistanceSliderValue()
@@ -49,6 +58,11 @@ public class OptionsScript : MonoBehaviour
     public void UpdateShowFPSToggle()
     {
         Options.ShowFPS = showFPSToggle.isOn;
+    }
+
+    public void UpdateLanguageDropdown()
+    {
+        Options.Language = languageDropdown.options[languageDropdown.value].text;
     }
     
     public void UpdateLightsToggle()

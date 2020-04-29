@@ -10,6 +10,7 @@ public class OptionsData
     public bool objectShadows;
     public bool lights;
     public bool showFPS;
+    public string language;
     public OptionsData()
     {
         asteroidDespawnDistance = Options.AsteroidDespawnDistance;
@@ -18,5 +19,6 @@ public class OptionsData
         objectShadows = Options.ObjectShadows;
         lights = Options.Lights;
         showFPS = Options.ShowFPS;
+        language = Options.Language;
     }
 }
