@@ -10,5 +10,22 @@
   "nickel": "Nickel",
   "tungsten": "Wolfram",
   "iron": "Eisen",
-  "copper": "Kupfer"
+  "copper": "Kupfer",
+  
+  "suns": "Sonnen",
+  "moons": "Monde",
+  "asteroids": "Asteroiden",
+  "planets": "Planeten",
+
+  "sun_distance": "Distanz zur Sonne: ",
+
+  "titlescreen": "Titelbildschirm",
+  "save_game": "Speichern",
+  "quit_game": "Verlassen",
+  "resume": "Fortsetzen",
+
+  "body_damage": "Körper Schaden",
+  "gun_damage": "Waffen Schaden",
+  "thruster_damage": "D Schaden",
+  "engine_damage": "Motor Schaden"
 }

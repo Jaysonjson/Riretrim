@@ -97,7 +97,7 @@ public class PlayerMapMovement : MonoBehaviour
         coordinatesText.text = "X = " + rb.position.x + ", Y = " + rb.position.y;
         if (sunObject != null)
         {
-            sunDistanceText.text = "Sun Distance: " + Vector2.Distance(rb.position, sunObject.transform.position);
+            sunDistanceText.text = Registry.Language.sun_distance + Vector2.Distance(rb.position, sunObject.transform.position);
         }
         
         if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))

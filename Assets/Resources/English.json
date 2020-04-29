@@ -10,5 +10,22 @@
   "nickel": "Nickel",
   "tungsten": "Tungsten",
   "iron": "Iron",
-  "copper": "Copper"
+  "copper": "Copper",
+  
+  "suns": "Suns",
+  "moons": "Moons",
+  "asteroids": "Asteroids",
+  "planets": "Planets",
+  
+  "sun_distance": "Sun Distance: ",
+
+  "titlescreen": "Titlescreen",
+  "save_game": "Save Game",
+  "quit_game": "Quit Game",
+  "resume": "Resume",
+
+  "body_damage": "Body Damage",
+  "gun_damage": "Gun Damage",
+  "thruster_damage": "Thruster Damage",
+  "engine_damage": "Engine Damage"
 }
