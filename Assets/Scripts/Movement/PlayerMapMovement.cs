@@ -12,6 +12,7 @@ public class PlayerMapMovement : MonoBehaviour
     public TextMeshProUGUI coordinatesText;
     public TextMeshProUGUI sunDistanceText;
     public RectTransform miniMap;
+    public ShipMono ShipMono;
     private bool isMoving = false;
     Vector2 movement;
     void Update()
@@ -114,10 +115,18 @@ public class PlayerMapMovement : MonoBehaviour
         {
             GetComponent<Orbit>().speed = 0.15f;
             GetComponent<SelfRotation>().speed = 0.75f;
+            if (ShipMono != null)
+            {
+                ShipMono.STATE = ShipState.IDLE;
+            }
         } else if (isMoving)
         {
             GetComponent<Orbit>().speed = 0f;
             GetComponent<SelfRotation>().speed = 0f;
+            if (ShipMono != null)
+            {
+                ShipMono.STATE = ShipState.FLIGHT;
+            }
         }
     }
 

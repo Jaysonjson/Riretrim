@@ -16,6 +16,7 @@ public class Ship
     public static float gunDamageMax = 200f;
     public static float bodyDamageMax = 200f;
 
+    public static string body = "Observatory";
     public static void Load()
     {
         ShipData data = ShipSave.Load();
@@ -29,6 +30,7 @@ public class Ship
         gunDamageMax = data.gunDamageMax;
         bodyDamageMax = data.bodyDamageMax;
         heatResistance = data.heatResistance;
+        body = data.body;
     }
 
     public static void Save()

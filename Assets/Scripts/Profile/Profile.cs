@@ -73,6 +73,7 @@ public class Profile
     public static void start()
     {
         Options.load();
+        Ship.Load();
         load();
         if (save_version != null)
         {

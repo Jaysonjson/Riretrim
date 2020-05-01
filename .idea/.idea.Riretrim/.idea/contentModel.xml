@@ -191,6 +191,12 @@
               <e p="ShipData.cs" t="Include" />
               <e p="ShipMono.cs" t="Include" />
               <e p="ShipSave.cs" t="Include" />
+              <e p="ShipState.cs" t="Include" />
+              <e p="ShipStates" t="Include">
+                <e p="ShipStateFlight.cs" t="Include" />
+                <e p="ShipStateIdle.cs" t="Include" />
+                <e p="ShipStateWing.cs" t="Include" />
+              </e>
             </e>
           </e>
           <e p="Registry.cs" t="Include" />

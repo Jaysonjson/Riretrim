@@ -15,6 +15,8 @@ public class ShipData
     public float bodyDamageMax;
 
     public float heatResistance;
+    
+    public string body;
     public ShipData()
     {
         thrusterDamage = Ship.thrusterDamage;
@@ -27,5 +29,6 @@ public class ShipData
         gunDamageMax = Ship.gunDamageMax;
         bodyDamageMax = Ship.bodyDamageMax;
         heatResistance = Ship.heatResistance;
+        body = Ship.body;
     }
 }
