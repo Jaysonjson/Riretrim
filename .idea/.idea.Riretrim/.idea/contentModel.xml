@@ -201,6 +201,12 @@
           </e>
           <e p="Registry.cs" t="Include" />
           <e p="ShadowCasterObject.cs" t="Include" />
+          <e p="Shop" t="Include">
+            <e p="Shop.cs" t="Include" />
+            <e p="ShopLeftPanel.cs" t="Include" />
+            <e p="ShopMainPanel.cs" t="Include" />
+            <e p="ShopRightPanel.cs" t="Include" />
+          </e>
           <e p="SpaceMap.cs" t="Include" />
           <e p="Sprites.cs" t="Include" />
           <e p="Warp.cs" t="Include" />

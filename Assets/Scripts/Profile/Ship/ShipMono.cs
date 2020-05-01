@@ -19,7 +19,7 @@ public class ShipMono : MonoBehaviour
         ShipStateFlight = shipObject.GetComponent<ShipStateFlight>();
         ShipStateIdle = shipObject.GetComponent<ShipStateIdle>();
         ShipStateWing = shipObject.GetComponent<ShipStateWing>();
-        Instantiate(shipObject,transform);
+        Instantiate(shipObject,transform).SetActive(true);
         if (shipObject.name != "PlayerDefault")
         {
             GetComponent<Animator>().enabled = false;

@@ -16,7 +16,7 @@ public class Ship
     public static float gunDamageMax = 200f;
     public static float bodyDamageMax = 200f;
 
-    public static string body = "Observatory";
+    public static string body = "PlayerDefault"; //PlayerDefault
     public static void Load()
     {
         ShipData data = ShipSave.Load();

@@ -1,0 +1,12 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Shop : MonoBehaviour
+{
+    public int currentObject = 0;
+    public ShopMainPanel ShopMainPanel;
+    public ShopLeftPanel ShopLeftPanel;
+    public ShopRightPanel ShopRightPanel;
+    public GameObject[] ships;
+}
