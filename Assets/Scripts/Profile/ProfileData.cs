@@ -27,6 +27,7 @@ public class ProfileData
     public int copper_amount;
     public int iron_amount;
     public int currency;
+    public int ship_xp;
     public ProfileData()
     {
         name = Profile.name;
@@ -52,5 +53,6 @@ public class ProfileData
         current_texturepack = Profile.current_texturepack;
         save_version = Profile.save_version;
         currency = Profile.currency;
+        ship_xp = Profile.ship_xp;
     }
 }

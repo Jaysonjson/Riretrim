@@ -22,7 +22,7 @@ public class ShopMainPanel : MonoBehaviour
         GetObject();
         Object = Instantiate(Object, transform);
         Object.SetActive(true);
-        Object.GetComponent<SpriteRenderer>().size *= 2;
+        Object.transform.localScale = new Vector3(200, 200);
     }
     private void OnMouseUp()
     {

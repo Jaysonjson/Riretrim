@@ -33,6 +33,7 @@ public class Profile
     public static int iron_amount;
     public static int copper_amount;
 
+    public static int ship_xp;
 
     public static void load()
     {
@@ -60,6 +61,7 @@ public class Profile
         current_texturepack = data.current_texturepack;
         save_version = data.save_version;
         currency = data.currency;
+        ship_xp = data.ship_xp;
         profile_path = Application.persistentDataPath + "/profiles/" + References.current_profile + "/";
         map_path = profile_path + current_galaxy + "/" + current_solarsystem + "/";
     }
