@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class Escape : MonoBehaviour
 {
-    public Dropdown dropdown;
     void Update()
     { 
         if(Input.GetKeyDown(KeyCode.F1))
