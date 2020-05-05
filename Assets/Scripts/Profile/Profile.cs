@@ -1,112 +1,114 @@
 ﻿using System;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Profile
 {
-    public static string name = "Player";
-    public static float health = 4F;
-    public static int hearts = 4;
-    public static int currency;
-    public static string currency_name = "Credit";
-    public static string current_galaxy = "Galaxy";
-    public static string current_solarsystem = "Solarsystem";
-    public static string current_planet = "";
-    public static string latest_solarSystem = "";
-    public static string latest_galaxy = "";
-    public static string current_texturepack = "Default";
+    public static ProfileData Data;
     public static string map_path;
     public static string profile_path;
-    public static string save_version;
-    public static bool gameStart;
 
-    public static int tin_amount;
-    public static int gold_amount;
-    public static int crystal_amount;
-    public static int bronze_amount;
-    public static int titan_amount;
-    public static int aluminium_amount;
-    public static int coal_amount;
-    public static int carbon_amount;
-    public static int nickel_amount;
-    public static int tungsten_amount;
-    public static int iron_amount;
-    public static int copper_amount;
-
-    public static float ship_xp;
-
-    public static void load()
+    public static void Load()
     {
-        ProfileData data = ProfileSave.load();
-        name = data.name;
-        health = data.health;
-        hearts = data.hearts;
-        gameStart = data.gameStart;
-        current_galaxy = data.current_galaxy;
-        current_solarsystem = data.current_solarsystem;
-        latest_galaxy = data.latest_galaxy;
-        latest_solarSystem = data.latest_solarSystem;
-        tin_amount = data.tin_amount;
-        gold_amount = data.gold_amount;
-        crystal_amount = data.crystal_amount;
-        bronze_amount = data.bronze_amount;
-        titan_amount = data.titan_amount;
-        aluminium_amount = data.aluminium_amount;
-        coal_amount = data.coal_amount;
-        carbon_amount = data.carbon_amount;
-        nickel_amount = data.nickel_amount;
-        tungsten_amount = data.tungsten_amount;
-        copper_amount = data.copper_amount;
-        iron_amount = data.iron_amount;
-        current_texturepack = data.current_texturepack;
-        save_version = data.save_version;
-        currency = data.currency;
-        ship_xp = data.ship_xp;
+        Data = new ProfileData();
+        Data.Load();
         profile_path = Application.persistentDataPath + "/profiles/" + References.current_profile + "/";
-        map_path = profile_path + current_galaxy + "/" + current_solarsystem + "/";
+        map_path = profile_path + Data.current_galaxy + "/" + Data.current_solarsystem + "/";
     }
 
-    public static void save()
+    public static void Save()
     {
-        ProfileSave.save();
         Ship.Save();
+        Data.Save();
     }
 
     public static void start()
     {
         Options.load();
         Ship.Load();
-        load();
-        if (save_version != null)
+        Load();
+        if (Data.save_version != null)
         {
-            if (!save_version.Equals(Application.version))
+            if (!Data.save_version.Equals(Application.version))
             {
                 SceneManager.LoadScene("SaveCheckscreen");
             }
             else
             {
-                save_version = Application.version;
-                if (!gameStart)
+                Data.save_version = Application.version;
+                if (!Data.gameStart)
                 {
                     System.Random random = new System.Random();
-                    current_galaxy = References.randomNames[random.Next(References.randomNames.Length)] + " " + References.randomNumbersRom[random.Next(References.randomNumbersRom.Length)];
-                    current_solarsystem = References.randomNames[random.Next(References.randomNames.Length)] + "-" + random.Next(9999);
-                    gameStart = true;
-                    save();
+                    Data.current_galaxy = References.randomNames[random.Next(References.randomNames.Length)] + " " + References.randomNumbersRom[random.Next(References.randomNumbersRom.Length)];
+                    Data.current_solarsystem = References.randomNames[random.Next(References.randomNames.Length)] + "-" + random.Next(9999);
+                    Data.gameStart = true;
+                    Save();
                     SceneManager.LoadScene("NewGameScreen");
                 }
                 else
                 {
                     //SceneManager.LoadScene("Galaxyscreen");
                     SceneManager.LoadScene("SpaceMap");
-                    save();
+                    Save();
                 }
             }
         } else
         {
-            save_version = Application.version;
-            save();
+            Data.save_version = Application.version;
+            Save();
             start();
         }
+    }
+}
+
+public class ProfileData
+{
+    public string name = "Player";
+    public float health = 4F;
+    public int hearts = 4;
+    public int currency;
+    public string currency_name = "Credit";
+    public string current_galaxy = "Galaxy";
+    public string current_solarsystem = "Solarsystem";
+    public string current_planet = "";
+    public string latest_solarSystem = "";
+    public string latest_galaxy = "";
+    public string current_texturepack = "Default";
+    public string save_version;
+    public bool gameStart;
+
+    public int tin_amount;
+    public int gold_amount;
+    public int crystal_amount;
+    public int bronze_amount;
+    public int titan_amount;
+    public int aluminium_amount;
+    public int coal_amount;
+    public int carbon_amount;
+    public int nickel_amount;
+    public int tungsten_amount;
+    public int iron_amount;
+    public int copper_amount;
+
+    public float ship_xp;
+    
+    public void Load()
+    {
+        string json = "{}";
+        if (File.Exists(Application.persistentDataPath + "/profiles/" + References.current_profile + "/data.json"))
+        {
+            json = File.ReadAllText(Application.persistentDataPath + "/profiles/" + References.current_profile + "/data.json");
+        }
+        JsonUtility.FromJsonOverwrite(json, this);   
+    }
+        
+    public void Save()
+    {
+        if (!Directory.Exists(Application.persistentDataPath + "/profiles/" + References.current_profile + "/"))
+        {
+            Directory.CreateDirectory(Application.persistentDataPath + "/profiles/" + References.current_profile + "/");
+        }
+        File.WriteAllText(Application.persistentDataPath + "/profiles/" + References.current_profile + "/data.json", JsonUtility.ToJson(this));
     }
 }

@@ -7,7 +7,7 @@ public class FirstSun : MonoBehaviour
     void Start()
     {
         Star star = new Star();
-        star.LoadUsingName(Profile.current_solarsystem);
+        star.LoadUsingName(Profile.Data.current_solarsystem);
         if (star.secondSun)
         {
             GetComponent<Orbit>().enabled = true;

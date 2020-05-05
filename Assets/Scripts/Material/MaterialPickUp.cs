@@ -11,53 +11,23 @@ public class MaterialPickUp : MonoBehaviour
     {
         if (collision.gameObject == GameObject.Find("Player"))
         {
-            if (material == Materials.ALUMINIUM)
+            switch (material)
             {
-                Profile.aluminium_amount++;
-            }
-            if (material == Materials.TIN)
-            {
-                Profile.tin_amount++;
-            }
-            if (material == Materials.TITAN)
-            {
-                Profile.titan_amount++;
-            }
-            if (material == Materials.BRONZE)
-            {
-                Profile.bronze_amount++;
-            }
-            if (material == Materials.GOLD)
-            {
-                Profile.gold_amount++;
-            }
-            if (material == Materials.NICKEL)
-            {
-                Profile.nickel_amount++;
-            }
-            if (material == Materials.TUNGSTEN)
-            {
-                Profile.tungsten_amount++;
-            }
-            if (material == Materials.CRYSTAL)
-            {
-                Profile.crystal_amount++;
-            }
-            if (material == Materials.IRON)
-            {
-                Profile.iron_amount++;
-            }
-            if (material == Materials.COPPER)
-            {
-                Profile.copper_amount++;
-            }
-            if (material == Materials.COAL)
-            {
-                Profile.coal_amount++;
+                case Materials.ALUMINIUM: Profile.Data.aluminium_amount++; break;
+                case Materials.TIN: Profile.Data.tin_amount++; break;
+                case Materials.TITAN: Profile.Data.titan_amount++; break;
+                case Materials.BRONZE: Profile.Data.bronze_amount++; break;
+                case Materials.GOLD: Profile.Data.gold_amount++; break;
+                case Materials.NICKEL: Profile.Data.nickel_amount++; break;
+                case Materials.TUNGSTEN: Profile.Data.tungsten_amount++; break;
+                case Materials.CRYSTAL: Profile.Data.crystal_amount++; break;
+                case Materials.IRON: Profile.Data.iron_amount++; break;
+                case Materials.COPPER: Profile.Data.copper_amount++; break;
+                case Materials.COAL: Profile.Data.coal_amount++; break;
             }
             SpaceMap.updateMaterialText();
             Destroy(gameObject);
-            Profile.save();
+            Profile.Save();
         }
     }
 }

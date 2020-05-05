@@ -31,13 +31,13 @@ public class ShopMainPanel : MonoBehaviour
         Object.name = name;
         Object.transform.localScale = new Vector3(200, 200);
         ShopShip data = Object.GetComponent<ShopShip>();
-        if (data.xp < Profile.ship_xp)
+        if (data.xp < Profile.Data.ship_xp)
         {
             XPCircle.GetComponent<Image>().fillAmount = 1;
         }
         else
         {
-            XPCircle.GetComponent<Image>().fillAmount = ((Profile.ship_xp) * 100 / data.xp) / 100;
+            XPCircle.GetComponent<Image>().fillAmount = ((Profile.Data.ship_xp) * 100 / data.xp) / 100;
         }
 
         ShipNameText.GetComponent<TextMeshProUGUI>().text = Object.name;

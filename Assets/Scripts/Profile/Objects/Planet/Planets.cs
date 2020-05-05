@@ -52,7 +52,6 @@ public class Planets : MonoBehaviour
         rockySprites = RockySprites;
         exoticSprites = ExoticSprites;
         iceSprites = IceSprites;
-        Profile.load();
         addPlanet(new Planet(text, gameObject, planetMain, lights, atmospheres, sun, miniMapIcon, moonDummy, drillDummy, spaceStationDummy, informationText));
     }
 
@@ -80,7 +79,7 @@ public class Planets : MonoBehaviour
 
     public void Click()
     {
-        Profile.current_planet = gameObject.name.Replace("-Body", "");
+        Profile.Data.current_planet = gameObject.name.Replace("-Body", "");
         SceneManager.LoadScene("PlanetMap");
     }
 }

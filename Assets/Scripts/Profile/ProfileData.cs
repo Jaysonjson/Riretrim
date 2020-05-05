@@ -1,8 +1,8 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 
 [System.Serializable]
-public class ProfileData
+public class ProfileDataOld
 {
     public string name;
     public float health;
@@ -56,3 +56,4 @@ public class ProfileData
         ship_xp = Profile.ship_xp;
     }
 }
+*/

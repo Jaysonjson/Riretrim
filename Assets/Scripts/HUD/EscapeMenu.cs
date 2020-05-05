@@ -39,7 +39,7 @@ public class EscapeMenu : MonoBehaviour
 
    public void Save()
    {
-      Profile.save();
+      Profile.Save();
    }
 
    public void TitleScreen()

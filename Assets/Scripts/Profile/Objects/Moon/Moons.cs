@@ -18,7 +18,6 @@ public class Moons
 
     void Start()
     {
-        Profile.load();
         AddMoon(new Moon());
     }
 

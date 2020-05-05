@@ -1,8 +1,8 @@
-﻿using System.IO;
+﻿/*using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-public class ProfileSave
+public class ProfileSaveOld
 {
     public static void save()
     {
@@ -40,3 +40,4 @@ public class ProfileSave
         }
     }
 }
+*/

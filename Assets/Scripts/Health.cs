@@ -11,28 +11,28 @@ public class Health : MonoBehaviour
     private void Update()
     {
         staticHeart = hearts;
-        if (Profile.health > Profile.hearts)
+        if (Profile.Data.health > Profile.Data.hearts)
         {
-            Profile.health = Profile.hearts;
+            Profile.Data.health = Profile.Data.hearts;
         }
-        if ((Profile.health + 0.5) % 1 == 0)
+        if ((Profile.Data.health + 0.5) % 1 == 0)
         {
             hearts[getLastHeart()].fillAmount = 0.5F;
             emptyHeartObject.transform.position = hearts[getLastHeart()].transform.position;
         }
-        if ((Profile.health + 0.75) % 1 == 0)
+        if ((Profile.Data.health + 0.75) % 1 == 0)
         {
             hearts[getLastHeart()].fillAmount = 0.75F;
             emptyHeartObject.transform.position = hearts[getLastHeart()].transform.position;
         }
-        if ((Profile.health + 0.25) % 1 == 0)
+        if ((Profile.Data.health + 0.25) % 1 == 0)
         {
             hearts[getLastHeart()].fillAmount = 0.25F;
             emptyHeartObject.transform.position = hearts[getLastHeart()].transform.position;
         }
         for (int i = 0; i < hearts.Length; i++)
         {
-            if (i < Profile.health)
+            if (i < Profile.Data.health)
             {
                 hearts[i].sprite = fullHeart;
             }
@@ -40,7 +40,7 @@ public class Health : MonoBehaviour
             {
                 hearts[i].sprite = emptyHeart;
             }
-            if (i < Profile.hearts)
+            if (i < Profile.Data.hearts)
             {
                 hearts[i].enabled = true;
             }
@@ -54,7 +54,7 @@ public class Health : MonoBehaviour
     {
         int lastHeart = -1;
         for (int i = 0; i < hearts.Length; i++)
-            if (i < Profile.health)
+            if (i < Profile.Data.health)
             {
                 hearts[i].sprite = fullHeart;
                 lastHeart++;
@@ -63,7 +63,7 @@ public class Health : MonoBehaviour
     }
     public static void setHealth(float amount)
     {
-        Profile.health = amount;
+        Profile.Data.health = amount;
         for (int i = 0; i < staticHeart.Length; i++)
         {
             staticHeart[i].fillAmount = 1F;

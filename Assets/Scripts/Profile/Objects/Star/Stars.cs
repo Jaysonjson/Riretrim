@@ -23,7 +23,6 @@ public class Stars : MonoBehaviour
 
     void Start()
     {
-        Profile.load();
         scale = gameObject.transform.localScale.x;
         AddStar(new Star(text, gameObject));
     }
@@ -39,11 +38,11 @@ public class Stars : MonoBehaviour
 
     public void Click()
     {
-        Profile.current_solarsystem = gameObject.name;
-        Profile.latest_solarSystem = gameObject.name;
-        Profile.save();
+        Profile.Data.current_solarsystem = gameObject.name;
+        Profile.Data.latest_solarSystem = gameObject.name;
+        Profile.Save();
         Star star = new Star();
-        star.LoadUsingName(Profile.current_solarsystem);
+        star.LoadUsingName(Profile.Data.current_solarsystem);
         star.visited = true;
         star.visitTime = DateTime.Now;
         star.SaveAsStar();

@@ -88,7 +88,7 @@ public class Asteroid : MonoBehaviour
             //int starIndex = Array.IndexOf(Galaxy.stars.ToArray(), Profile.current_solarsystem);
           // Star star = Stars.GetStar(starIndex);
             Star star = new Star();
-            star.LoadUsingName(Profile.current_solarsystem);
+            star.LoadUsingName(Profile.Data.current_solarsystem);
             //star.load(starIndex);
             Debug.Log(star.sname + " / " + star.asteroid_count);
             star.asteroid_count--;

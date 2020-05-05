@@ -41,7 +41,7 @@ public class Star
             return false;
         }
         sname = Galaxy.stars[index];
-        return Directory.Exists(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Profile.current_galaxy + "/stars/" + Galaxy.stars[index] + "/");
+        return Directory.Exists(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Profile.Data.current_galaxy + "/stars/" + Galaxy.stars[index] + "/");
     }
 
     public void Generate()
