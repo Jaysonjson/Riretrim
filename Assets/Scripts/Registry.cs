@@ -16,7 +16,12 @@ public class Registry : MonoBehaviour
         {
             defaultLangFile = Resources.Load(Options.Language) as TextAsset;
         }
-        JsonUtility.FromJsonOverwrite(defaultLangFile.text, Language);
+
+        if (defaultLangFile != null)
+        {
+            JsonUtility.FromJsonOverwrite(defaultLangFile.text, Language);
+        }
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         // StartCoroutine(End());
     }

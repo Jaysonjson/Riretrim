@@ -33,7 +33,7 @@ public class Profile
     public static int iron_amount;
     public static int copper_amount;
 
-    public static int ship_xp;
+    public static float ship_xp;
 
     public static void load()
     {

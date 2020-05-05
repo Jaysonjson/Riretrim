@@ -27,7 +27,7 @@ public class ProfileData
     public int copper_amount;
     public int iron_amount;
     public int currency;
-    public int ship_xp;
+    public float ship_xp;
     public ProfileData()
     {
         name = Profile.name;
