@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xp: 1250
+  price: 0
 --- !u!1 &236859528
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +291,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 107.4}
+  m_AnchoredPosition: {x: 0, y: 113.8}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &242251806
@@ -601,6 +602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xp: 252
+  price: 0
 --- !u!1 &460368046
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,6 +736,9 @@ MonoBehaviour:
   Shop: {fileID: 1567476212}
   Object: {fileID: 0}
   XPCircle: {fileID: 668332106}
+  ShipNameText: {fileID: 242251804}
+  BuyOrSelectButton: {fileID: 1390418532}
+  BuyOrSelectText: {fileID: 1953162390}
 --- !u!61 &517672824
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1363,7 +1368,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1390418533}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 517672823}
+        m_TargetAssemblyTypeName: ShopMainPanel, Assembly-CSharp
+        m_MethodName: onBuyOrSelectClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1390418533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1726,6 +1743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xp: 1
+  price: 0
 --- !u!1 &1745758213
 GameObject:
   m_ObjectHideFlags: 0
@@ -1822,6 +1840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xp: 125
+  price: 0
 --- !u!1 &1953162388
 GameObject:
   m_ObjectHideFlags: 0

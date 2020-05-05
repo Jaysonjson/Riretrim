@@ -54,4 +54,10 @@ public class EscapeMenu : MonoBehaviour
       Save();      
       Application.Quit();
    }
+   
+   public void Shop()
+   {
+      Time.timeScale = 1f;
+      SceneManager.LoadScene("Shop");
+   }
 }

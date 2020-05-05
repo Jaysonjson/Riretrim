@@ -144,10 +144,5 @@ public class SpaceMap : MonoBehaviour
                 UI.SetActive(true);
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            Ship.body = "Observatory";
-        }
     }
 }
