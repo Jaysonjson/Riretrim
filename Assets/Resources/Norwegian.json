@@ -1,14 +1,14 @@
 ﻿{
-  "tin": "Tin",
-  "gold": "Gold",
-  "crystal": "Crystal",
-  "bronze": "Bronze",
-  "titanium": "Titanium",
+  "tin": "Tinn",
+  "gold": "Gull",
+  "crystal": "Krystall",
+  "bronze": "Bronse",
+  "titanium": "Titan",
   "aluminium": "Aluminium",
-  "coal": "Coal",
-  "carbon": "Carbon",
-  "nickel": "Nickel",
-  "tungsten": "Tungsten",
-  "iron": "Iron",
-  "copper": "Copper"
+  "coal": "Kull",
+  "carbon": "Karbon",
+  "nickel": "Nikkel",
+  "tungsten": "Wolfram",
+  "iron": "Jern",
+  "copper": "Kobber"
 }

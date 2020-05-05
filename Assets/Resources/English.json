@@ -27,5 +27,7 @@
   "body_damage": "Body Damage",
   "gun_damage": "Gun Damage",
   "thruster_damage": "Thruster Damage",
-  "engine_damage": "Engine Damage"
+  "engine_damage": "Engine Damage",
+  
+  "drpc_inside_solarsystem": "Inside Solar System: %S"
 }

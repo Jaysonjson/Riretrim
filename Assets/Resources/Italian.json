@@ -1,14 +1,33 @@
 ﻿{
-  "tin": "Tin",
-  "gold": "Gold",
-  "crystal": "Crystal",
-  "bronze": "Bronze",
-  "titanium": "Titanium",
-  "aluminium": "Aluminium",
-  "coal": "Coal",
-  "carbon": "Carbon",
+  "tin": "Stagno",
+  "gold": "Oro",
+  "crystal": "Cristallo",
+  "bronze": "Bronzo",
+  "titanium": "Titanio",
+  "aluminium": "Alluminio",
+  "coal": "Carbone",
+  "carbon": "Carbonio",
   "nickel": "Nickel",
-  "tungsten": "Tungsten",
-  "iron": "Iron",
-  "copper": "Copper"
+  "tungsten": "Tungsteno",
+  "iron": "Ferro",
+  "copper": "Rame",
+
+  "suns": "Soli",
+  "moons": "Lune",
+  "asteroids": "Asteroidi",
+  "planets": "Pianeti",
+
+  "sun_distance": "Distanza dal Sole: ",
+
+  "titlescreen": "Schermata iniziale",
+  "save_game": "Salva",
+  "quit_game": "Esci",
+  "resume": "Riprendi",
+
+  "body_damage": "Danni Nave",
+  "gun_damage": "Danni Armi",
+  "thruster_damage": "Danni Propulsori",
+  "engine_damage": "Danni Motore",
+  
+  "drpc_inside_solarsystem": "Dentro il Sistema Solare: %S"
 }

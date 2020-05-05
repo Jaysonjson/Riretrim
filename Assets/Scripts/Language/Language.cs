@@ -32,4 +32,6 @@ public class Language
     public string gun_damage = "Gun Damage";
     public string thruster_damage = "Thruster Damage";
     public string engine_damage = "Engine Damage";
+
+    public string drpc_inside_solarsystem = "Inside Solar System: %S";
 }
