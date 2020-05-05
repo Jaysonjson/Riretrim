@@ -5,29 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class Profile
 {
-    public static ProfileData Data;
-    public static string map_path;
-    public static string profile_path;
+    public ProfileData Data = new ProfileData();
+    public string map_path;
+    public string profile_path;
 
-    public static void Load()
+    public void Load()
     {
-        Data = new ProfileData();
         Data.Load();
         profile_path = Application.persistentDataPath + "/profiles/" + References.current_profile + "/";
         map_path = profile_path + Data.current_galaxy + "/" + Data.current_solarsystem + "/";
     }
 
-    public static void Save()
+    public void Save()
     {
         Ship.Save();
         Data.Save();
     }
 
-    public static void start()
+    public void start()
     {
         Options.load();
-        Ship.Load();
         Load();
+        Ship.Load();
         if (Data.save_version != null)
         {
             if (!Data.save_version.Equals(Application.version))

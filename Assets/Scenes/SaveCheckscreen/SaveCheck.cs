@@ -9,7 +9,7 @@ public class SaveCheck : MonoBehaviour
     public TextMeshProUGUI infoText;
     void Start()
     {
-        infoText.text = "Your current save is from " + Profile.Data.save_version + ". Current game is on " + Application.version + "!";
+        infoText.text = "Your current save is from " + Registry.profile.Data.save_version + ". Current game is on " + Application.version + "!";
     }
     public void ContinueButton()
     {

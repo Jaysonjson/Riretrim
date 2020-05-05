@@ -9,11 +9,11 @@ public class SpaceStationSave
     public static void SaveNewSpaceStation(string planet, SpaceStation spaceStation)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        if (!Directory.Exists(Profile.map_path + "/planets/" + planet + "/spacestations/" + spaceStation.name + "/"))
+        if (!Directory.Exists(Registry.profile.map_path + "/planets/" + planet + "/spacestations/" + spaceStation.name + "/"))
         {
-            Directory.CreateDirectory(Profile.map_path + "/planets/" + planet + "/spacestations/" + spaceStation.name + "/");
+            Directory.CreateDirectory(Registry.profile.map_path + "/planets/" + planet + "/spacestations/" + spaceStation.name + "/");
         }
-        string path = Profile.map_path + "/planets/" + planet + "/spacestations/" + spaceStation.name + "/data" + ".station";
+        string path = Registry.profile.map_path + "/planets/" + planet + "/spacestations/" + spaceStation.name + "/data" + ".station";
         FileStream stream = new FileStream(path, FileMode.Create);
 
         SpaceStationData data = new SpaceStationData(spaceStation);
@@ -23,7 +23,7 @@ public class SpaceStationSave
 
     public static SpaceStationData LoadUsingName(string planet, string spaceStation)
     {
-        string path = Profile.map_path + "/planets/" + planet + "/spacestations/" + spaceStation + "/data" + ".station";
+        string path = Registry.profile.map_path + "/planets/" + planet + "/spacestations/" + spaceStation + "/data" + ".station";
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();

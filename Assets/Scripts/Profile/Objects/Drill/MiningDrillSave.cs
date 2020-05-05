@@ -9,11 +9,11 @@ public class MiningDrillSave
     public static void SaveNewMiningDrill(string planet, MiningDrill miningDrill)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        if (!Directory.Exists(Profile.map_path + "/planets/" + planet + "/drills/" + miningDrill.index + "/"))
+        if (!Directory.Exists(Registry.profile.map_path + "/planets/" + planet + "/drills/" + miningDrill.index + "/"))
         {
-            Directory.CreateDirectory(Profile.map_path + "/planets/" + planet + "/drills/" + miningDrill.index + "/");
+            Directory.CreateDirectory(Registry.profile.map_path + "/planets/" + planet + "/drills/" + miningDrill.index + "/");
         }
-        string path = Profile.map_path + "/planets/" + planet + "/drills/" + miningDrill.index + "/data" + ".drill";
+        string path = Registry.profile.map_path + "/planets/" + planet + "/drills/" + miningDrill.index + "/data" + ".drill";
         FileStream stream = new FileStream(path, FileMode.Create);
 
         MiningDrillData data = new MiningDrillData(miningDrill);
@@ -23,7 +23,7 @@ public class MiningDrillSave
 
     public static MiningDrillData LoadUsingIndex(string planet, string miningDrill)
     {
-        string path = Profile.map_path + "/planets/" + planet + "/drills/" + miningDrill + "/data" + ".drill";
+        string path = Registry.profile.map_path + "/planets/" + planet + "/drills/" + miningDrill + "/data" + ".drill";
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();

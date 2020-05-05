@@ -18,7 +18,7 @@ public class MiningDrill
 
     public bool Exists()
     {
-        return Directory.Exists(Profile.map_path + "/planets/" + planet + "/drills/" + index + "/");
+        return Directory.Exists(Registry.profile.map_path + "/planets/" + planet + "/drills/" + index + "/");
     }
 
     public void Generate()

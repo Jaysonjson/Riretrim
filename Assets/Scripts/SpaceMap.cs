@@ -49,8 +49,9 @@ public class SpaceMap : MonoBehaviour
     
     void Start()
     {
-        galaxyText.GetComponent<TextMeshProUGUI>().text = Profile.Data.current_galaxy;
-        solarSystemText.GetComponent<TextMeshProUGUI>().text = Profile.Data.current_solarsystem;
+        Registry.profile.Load();
+        galaxyText.GetComponent<TextMeshProUGUI>().text = Registry.profile.Data.current_galaxy;
+        solarSystemText.GetComponent<TextMeshProUGUI>().text = Registry.profile.Data.current_solarsystem;
 
         aluminiumUIText = aluminiumText.GetComponent<TextMeshProUGUI>();
         bronzeUIText = bronzeText.GetComponent<TextMeshProUGUI>();
@@ -68,12 +69,12 @@ public class SpaceMap : MonoBehaviour
         updateMaterialText();
 
         Star star = new Star();
-        star.LoadUsingName(Profile.Data.current_solarsystem);
+        star.LoadUsingName(Registry.profile.Data.current_solarsystem);
         asteroidSpawner.amount = star.asteroid_count;
         planetSpawner.amount = star.planet_count;
         ShipWreckSpawner.amount = star.shipwreck_count;
-        currencyAmount.text = Profile.Data.currency + "";
-        currencyName.text = Profile.Data.currency_name;
+        currencyAmount.text = Registry.profile.Data.currency + "";
+        currencyName.text = Registry.profile.Data.currency_name;
         asteroidCountText.text = star.asteroid_count + "";
         planetCountText.text = star.planet_count + "";
         StartCoroutine(LateStart());
@@ -99,7 +100,7 @@ public class SpaceMap : MonoBehaviour
     }
     void OnApplicationQuit()
     {
-        Profile.Save();
+        Registry.profile.Save();
         for (int i = 0; i < References.planets.Count; i++)
         {
             Planets.GetPlanet(i).position_x = Planets.GetPlanet(i).planetBody.transform.position.x;
@@ -109,18 +110,18 @@ public class SpaceMap : MonoBehaviour
     }
     public static void updateMaterialText()
     {
-        aluminiumUIText.text = Profile.Data.aluminium_amount + "";
-        bronzeUIText.text = Profile.Data.bronze_amount + "";
-        carbonUIText.text = Profile.Data.carbon_amount + "";
-        coalUIText.text = Profile.Data.coal_amount + "";
-        crystalUIText.text = Profile.Data.crystal_amount + "";
-        goldUIText.text = Profile.Data.gold_amount + "";
-        tinUIText.text = Profile.Data.tin_amount + "";
-        titanUIText.text = Profile.Data.titan_amount + "";
-        nickelUIText.text = Profile.Data.nickel_amount + "";
-        tungstenUIText.text = Profile.Data.tungsten_amount + "";
-        copperUIText.text = Profile.Data.copper_amount + "";
-        ironUIText.text = Profile.Data.iron_amount + "";
+        aluminiumUIText.text = Registry.profile.Data.aluminium_amount + "";
+        bronzeUIText.text = Registry.profile.Data.bronze_amount + "";
+        carbonUIText.text = Registry.profile.Data.carbon_amount + "";
+        coalUIText.text = Registry.profile.Data.coal_amount + "";
+        crystalUIText.text = Registry.profile.Data.crystal_amount + "";
+        goldUIText.text = Registry.profile.Data.gold_amount + "";
+        tinUIText.text = Registry.profile.Data.tin_amount + "";
+        titanUIText.text = Registry.profile.Data.titan_amount + "";
+        nickelUIText.text = Registry.profile.Data.nickel_amount + "";
+        tungstenUIText.text = Registry.profile.Data.tungsten_amount + "";
+        copperUIText.text = Registry.profile.Data.copper_amount + "";
+        ironUIText.text = Registry.profile.Data.iron_amount + "";
     }
 
     private void Update()

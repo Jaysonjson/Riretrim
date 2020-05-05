@@ -71,18 +71,18 @@ public class BuyMaterial : MonoBehaviour
         TextMeshProUGUI text = amountText.GetComponent<TextMeshProUGUI>();
         switch (material)
         {
-            case Materials.TIN: text.text = Profile.Data.tin_amount + ""; break;
-            case Materials.COAL: text.text = Profile.Data.coal_amount + ""; break;
-            case Materials.GOLD: text.text = Profile.Data.gold_amount + ""; break;
-            case Materials.IRON: text.text = Profile.Data.iron_amount + ""; break;
-            case Materials.TITAN: text.text = Profile.Data.titan_amount + ""; break;
-            case Materials.BRONZE: text.text = Profile.Data.bronze_amount + ""; break;
-            case Materials.CARBON: text.text = Profile.Data.carbon_amount + ""; break;
-            case Materials.COPPER: text.text = Profile.Data.copper_amount + ""; break;
-            case Materials.NICKEL: text.text = Profile.Data.nickel_amount + ""; break;
-            case Materials.CRYSTAL: text.text = Profile.Data.crystal_amount + ""; break;
-            case Materials.TUNGSTEN: text.text = Profile.Data.tungsten_amount + ""; break;
-            case Materials.ALUMINIUM: text.text = Profile.Data.aluminium_amount + ""; break;
+            case Materials.TIN: text.text = Registry.profile.Data.tin_amount + ""; break;
+            case Materials.COAL: text.text = Registry.profile.Data.coal_amount + ""; break;
+            case Materials.GOLD: text.text = Registry.profile.Data.gold_amount + ""; break;
+            case Materials.IRON: text.text = Registry.profile.Data.iron_amount + ""; break;
+            case Materials.TITAN: text.text = Registry.profile.Data.titan_amount + ""; break;
+            case Materials.BRONZE: text.text = Registry.profile.Data.bronze_amount + ""; break;
+            case Materials.CARBON: text.text = Registry.profile.Data.carbon_amount + ""; break;
+            case Materials.COPPER: text.text = Registry.profile.Data.copper_amount + ""; break;
+            case Materials.NICKEL: text.text = Registry.profile.Data.nickel_amount + ""; break;
+            case Materials.CRYSTAL: text.text = Registry.profile.Data.crystal_amount + ""; break;
+            case Materials.TUNGSTEN: text.text = Registry.profile.Data.tungsten_amount + ""; break;
+            case Materials.ALUMINIUM: text.text = Registry.profile.Data.aluminium_amount + ""; break;
             default: text.text = "UNDEFINED"; break;
          }
     }

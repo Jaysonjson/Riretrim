@@ -8,8 +8,8 @@ public class PlanetMapPlanet : MonoBehaviour
     public void Start()
     {
         Planet planet = new Planet();
-        gameObject.name = Profile.Data.current_planet;
-        planet.LoadUsingName(Profile.Data.current_planet);
+        gameObject.name = Registry.profile.Data.current_planet;
+        planet.LoadUsingName(Registry.profile.Data.current_planet);
         for (int i = 0; i < planet.drillAmount; i++)
         {
             GameObject drill = GameObject.Instantiate(drillDummy, gameObject.transform, false);

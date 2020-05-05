@@ -11,11 +11,11 @@ public class TitlescreenButton : MonoBehaviour
     }
     public void MapButton()
     {
-        Profile.Load();
-        MapOptions.load();
-        Profile.start();
+        Registry.profile.Load();
+        MapOptions.load(); 
+        Registry.profile.start();
         //SceneManager.LoadScene("SpaceMap");
-        if (!Profile.Data.gameStart)
+        if (!Registry.profile.Data.gameStart)
         {
            // SceneManager.LoadScene("Galaxyscreen");
         }

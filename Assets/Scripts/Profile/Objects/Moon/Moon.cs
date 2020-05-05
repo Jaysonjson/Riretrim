@@ -36,7 +36,7 @@ public class Moon
             return false;
         }
         name = planetObject.moons[index];
-        return Directory.Exists(Profile.map_path + "/planets/" + planetObject.pname + "/moons/" + planetObject.moons[index]);
+        return Directory.Exists(Registry.profile.map_path + "/planets/" + planetObject.pname + "/moons/" + planetObject.moons[index]);
     }
     public void Generate()
     {

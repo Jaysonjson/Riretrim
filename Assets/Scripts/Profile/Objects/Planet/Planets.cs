@@ -79,7 +79,7 @@ public class Planets : MonoBehaviour
 
     public void Click()
     {
-        Profile.Data.current_planet = gameObject.name.Replace("-Body", "");
+        Registry.profile.Data.current_planet = gameObject.name.Replace("-Body", "");
         SceneManager.LoadScene("PlanetMap");
     }
 }

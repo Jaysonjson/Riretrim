@@ -7,12 +7,12 @@ public class MapOptionsSave
     public static void save()
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        if (!Directory.Exists(Profile.profile_path))
+        if (!Directory.Exists(Registry.profile.profile_path))
         {
-            Directory.CreateDirectory(Profile.profile_path);
+            Directory.CreateDirectory(Registry.profile.profile_path);
 
         }
-        string path = Profile.profile_path + "map_settings";
+        string path = Registry.profile.profile_path + "map_settings";
         FileStream stream = new FileStream(path, FileMode.Create);
 
         MapOptionsData data = new MapOptionsData();
@@ -22,7 +22,7 @@ public class MapOptionsSave
 
     public static MapOptionsData load()
     {
-        string path = Profile.profile_path + "map_settings";
+        string path = Registry.profile.profile_path + "map_settings";
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();

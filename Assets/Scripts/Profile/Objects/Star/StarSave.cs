@@ -9,11 +9,11 @@ public class StarSave
     public static void save(int index)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        if (!Directory.Exists(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Profile.Data.current_galaxy + "/stars/" + Stars.GetStar(index).sname + "/"))
+        if (!Directory.Exists(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/stars/" + Stars.GetStar(index).sname + "/"))
         {
-            Directory.CreateDirectory(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Profile.Data.current_galaxy + "/stars/" + Stars.GetStar(index).sname + "/");
+            Directory.CreateDirectory(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/stars/" + Stars.GetStar(index).sname + "/");
         }
-        string path = Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Profile.Data.current_galaxy + "/stars/" + Stars.GetStar(index).sname + "/data.star";
+        string path = Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/stars/" + Stars.GetStar(index).sname + "/data.star";
         FileStream stream = new FileStream(path, FileMode.Create);
 
         StarData data = new StarData(Stars.GetStar(index));
@@ -24,11 +24,11 @@ public class StarSave
     public static void saveNewstar(Star star)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        if (!Directory.Exists(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Profile.Data.current_galaxy + "/stars/" + star.sname + "/"))
+        if (!Directory.Exists(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/stars/" + star.sname + "/"))
         {
-            Directory.CreateDirectory(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Profile.Data.current_galaxy + "/stars/" + star.sname + "/");
+            Directory.CreateDirectory(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/stars/" + star.sname + "/");
         }
-        string path = Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Profile.Data.current_galaxy + "/stars/" + star.sname + "/data.star";
+        string path = Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/stars/" + star.sname + "/data.star";
         FileStream stream = new FileStream(path, FileMode.Create);
 
         StarData data = new StarData(star);
@@ -38,7 +38,7 @@ public class StarSave
 
     public static StarData load(int index)
     {
-        string path = Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Profile.Data.current_galaxy + "/stars/" + Stars.GetStar(index).sname + "/data.star";
+        string path = Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/stars/" + Stars.GetStar(index).sname + "/data.star";
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();
@@ -58,7 +58,7 @@ public class StarSave
 
     public static StarData LoadUsingName(string name)
     {
-        string path = Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Profile.Data.current_galaxy + "/stars/" + name + "/data.star";
+        string path = Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/stars/" + name + "/data.star";
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();

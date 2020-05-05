@@ -35,7 +35,7 @@ public class SpaceStation
             return false;
         }
         name = planetObject.spaceStations[index];
-        return Directory.Exists(Profile.map_path + "/planets/" + planetObject.pname + "/spacestations/" + planetObject.spaceStations[index]);
+        return Directory.Exists(Registry.profile.map_path + "/planets/" + planetObject.pname + "/spacestations/" + planetObject.spaceStations[index]);
     }
     public void Generate()
     {

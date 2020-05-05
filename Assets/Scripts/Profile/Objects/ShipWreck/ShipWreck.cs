@@ -21,7 +21,7 @@ public class ShipWreck
             return false;
         }
         name = Map.shipwrecks[index];
-        return Directory.Exists(Profile.map_path + "/shipwrecks/" + Map.shipwrecks[index] + "/");
+        return Directory.Exists(Registry.profile.map_path + "/shipwrecks/" + Map.shipwrecks[index] + "/");
     }
     public void Generate()
     {

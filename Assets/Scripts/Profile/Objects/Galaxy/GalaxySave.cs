@@ -9,11 +9,11 @@ public class GalaxySave
     public static void save()
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        if (!Directory.Exists(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Profile.Data.current_galaxy + "/"))
+        if (!Directory.Exists(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/"))
         {
-            Directory.CreateDirectory(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Profile.Data.current_galaxy + "/");
+            Directory.CreateDirectory(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/");
         }
-        string path = Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Profile.Data.current_galaxy + "/stars.star";
+        string path = Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/stars.star";
         FileStream stream = new FileStream(path, FileMode.Create);
 
         GalaxyData data = new GalaxyData();
@@ -23,7 +23,7 @@ public class GalaxySave
 
     public static GalaxyData load()
     {
-        string path = Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Profile.Data.current_galaxy + "/stars.star";
+        string path = Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/stars.star";
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();

@@ -10,7 +10,7 @@ public class MaterialList : MonoBehaviour
     private void Start()
     {
         Planet planet = new Planet();
-        planet.LoadUsingName(Profile.Data.current_planet);
+        planet.LoadUsingName(Registry.profile.Data.current_planet);
         float lastObject = 0;
         for (var i = 0; i < planet.materials.Count; i++)
         {

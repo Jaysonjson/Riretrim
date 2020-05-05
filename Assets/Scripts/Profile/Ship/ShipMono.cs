@@ -38,7 +38,7 @@ public class ShipMono : MonoBehaviour
         Ship.gunDamage += 0.000000001f;
         Ship.thrusterDamage += 0.000001f;
         Ship.engineDamage += 0.0000001f;
-        Profile.Data.ship_xp += 0.000001f;
+        Registry.profile.Data.ship_xp += 0.000001f;
         ShipDMGProgressbar.INSTANCE.UpdateBars();
         if (STATE == ShipState.IDLE)
         {

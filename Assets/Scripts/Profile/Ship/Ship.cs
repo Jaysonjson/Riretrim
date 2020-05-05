@@ -5,11 +5,11 @@ using UnityEngine;
 public class Ship
 {
     public static float heatResistance = 1538f;
-    
-    public static float thrusterDamage;
-    public static float engineDamage;
-    public static float gunDamage;
-    public static float bodyDamage;
+
+    public static float thrusterDamage = 0f;
+    public static float engineDamage = 0f;
+    public static float gunDamage = 0f;
+    public static float bodyDamage = 0f;
 
     public static float thrusterDamageMax = 200f;
     public static float engineDamageMax = 200f;

@@ -69,7 +69,7 @@ public class Planet
             return false;
         }
         pname = Map.planets[index];
-        return Directory.Exists(Profile.map_path + "/planets/" + Map.planets[index] + "/");
+        return Directory.Exists(Registry.profile.map_path + "/planets/" + Map.planets[index] + "/");
     }
 
     public void Generate()

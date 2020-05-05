@@ -30,18 +30,18 @@ public class Material : MonoBehaviour
     {
         switch (material)
         {
-            case Materials.ALUMINIUM: Profile.Data.aluminium_amount += amount; break;
-            case Materials.TIN: Profile.Data.tin_amount += amount; break;
-            case Materials.TITAN: Profile.Data.titan_amount += amount; break;
-            case Materials.BRONZE: Profile.Data.bronze_amount += amount; break;
-            case Materials.GOLD: Profile.Data.gold_amount += amount; break;
-            case Materials.NICKEL: Profile.Data.nickel_amount += amount; break;
-            case Materials.TUNGSTEN: Profile.Data.tungsten_amount += amount; break;
-            case Materials.CRYSTAL: Profile.Data.crystal_amount += amount; break;
-            case Materials.IRON: Profile.Data.iron_amount += amount; break;
-            case Materials.COPPER: Profile.Data.copper_amount += amount; break;
-            case Materials.COAL: Profile.Data.coal_amount += amount; break;
+            case Materials.ALUMINIUM: Registry.profile.Data.aluminium_amount += amount; break;
+            case Materials.TIN: Registry.profile.Data.tin_amount += amount; break;
+            case Materials.TITAN: Registry.profile.Data.titan_amount += amount; break;
+            case Materials.BRONZE: Registry.profile.Data.bronze_amount += amount; break;
+            case Materials.GOLD: Registry.profile.Data.gold_amount += amount; break;
+            case Materials.NICKEL: Registry.profile.Data.nickel_amount += amount; break;
+            case Materials.TUNGSTEN: Registry.profile.Data.tungsten_amount += amount; break;
+            case Materials.CRYSTAL: Registry.profile.Data.crystal_amount += amount; break;
+            case Materials.IRON: Registry.profile.Data.iron_amount += amount; break;
+            case Materials.COPPER: Registry.profile.Data.copper_amount += amount; break;
+            case Materials.COAL: Registry.profile.Data.coal_amount += amount; break;
         }
-        Profile.Save();
+        Registry.profile.Save();
     }
 }

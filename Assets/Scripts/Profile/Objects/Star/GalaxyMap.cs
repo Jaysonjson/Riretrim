@@ -11,7 +11,7 @@ public class GalaxyMap : MonoBehaviour
     void Start()
     {
         References.stars.Clear();
-        galaxyText.GetComponent<TextMeshProUGUI>().text = Profile.Data.current_galaxy;
+        galaxyText.GetComponent<TextMeshProUGUI>().text = Registry.profile.Data.current_galaxy;
         StartCoroutine(LateStart());
     }
 
@@ -23,7 +23,7 @@ public class GalaxyMap : MonoBehaviour
     }
     void OnApplicationQuit()
     {
-        Profile.Save();
+        Registry.profile.Save();
        // for (int i = 0; i < References.planets.Count; i++)
        // {
            //Stars.GetPlanet(i).position_x = Planets.GetPlanet(i).planet.transform.position.x;

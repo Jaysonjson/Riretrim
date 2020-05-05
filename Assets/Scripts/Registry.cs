@@ -7,6 +7,7 @@ public class Registry : MonoBehaviour
 {
     public static Language Language = new Language();
     public TextAsset defaultLangFile;
+    public static Profile profile = new Profile();
     private void Start()
     {
         References.sprite = gameObject.GetComponent<Sprites>();

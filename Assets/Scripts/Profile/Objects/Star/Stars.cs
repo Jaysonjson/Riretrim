@@ -38,11 +38,11 @@ public class Stars : MonoBehaviour
 
     public void Click()
     {
-        Profile.Data.current_solarsystem = gameObject.name;
-        Profile.Data.latest_solarSystem = gameObject.name;
-        Profile.Save();
+        Registry.profile.Data.current_solarsystem = gameObject.name;
+        Registry.profile.Data.latest_solarSystem = gameObject.name;
+        Registry.profile.Save();
         Star star = new Star();
-        star.LoadUsingName(Profile.Data.current_solarsystem);
+        star.LoadUsingName(Registry.profile.Data.current_solarsystem);
         star.visited = true;
         star.visitTime = DateTime.Now;
         star.SaveAsStar();

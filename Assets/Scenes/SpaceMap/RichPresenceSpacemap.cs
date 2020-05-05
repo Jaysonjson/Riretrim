@@ -8,13 +8,13 @@ public class RichPresenceSpacemap : MonoBehaviour
     void Start () {
         var activity = new Discord.Activity
         {
-            Details = Registry.Language.drpc_inside_solarsystem.Replace("%S", Profile.Data.current_solarsystem),
+            Details = Registry.Language.drpc_inside_solarsystem.Replace("%S", Registry.profile.Data.current_solarsystem),
             Assets =
             {
                 SmallImage = "riretrim",
                 SmallText = Application.unityVersion + " || " + Application.version,
                 LargeImage = "sun",
-                LargeText = Profile.Data.current_solarsystem
+                LargeText = Registry.profile.Data.current_solarsystem
             },
             State = "Cruisin'"
         };
