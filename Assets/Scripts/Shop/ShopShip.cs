@@ -39,6 +39,6 @@ public class ShopShipData
                 {
                         Directory.CreateDirectory(Registry.profile.profile_path + "/shop/" + "ships/");
                 }
-                File.WriteAllText(Registry.profile.profile_path + "/shop/" + "ships/" + ship + ".json", JsonUtility.ToJson(this));
+                File.WriteAllText(Registry.profile.profile_path + "/shop/" + "ships/" + ship + ".json", JsonUtility.ToJson(this, true));
         }
 }
