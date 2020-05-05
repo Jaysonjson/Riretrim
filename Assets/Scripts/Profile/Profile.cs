@@ -109,6 +109,6 @@ public class ProfileData
         {
             Directory.CreateDirectory(Application.persistentDataPath + "/profiles/" + References.current_profile + "/");
         }
-        File.WriteAllText(Application.persistentDataPath + "/profiles/" + References.current_profile + "/data.json", JsonUtility.ToJson(this));
+        File.WriteAllText(Application.persistentDataPath + "/profiles/" + References.current_profile + "/data.json", JsonUtility.ToJson(this, true));
     }
 }
