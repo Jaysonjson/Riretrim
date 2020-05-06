@@ -4,13 +4,11 @@ using UnityEngine;
 public class ShipWreck
 {
     public int index;
-    public string name;
-    public string type;
     public GameObject main;
-    
+    public ShipWreckData Data = new ShipWreckData();
     public ShipWreck(string type, GameObject main)
     {
-        this.type = type;
+        Data.type = type;
         this.main = main;
     }
     
@@ -20,7 +18,7 @@ public class ShipWreck
         {
             return false;
         }
-        name = Map.Data.shipwrecks[index];
+        Data.name = Map.Data.shipwrecks[index];
         return Directory.Exists(Registry.profile.map_path + "/shipwrecks/" + Map.Data.shipwrecks[index] + "/");
     }
     public void Generate()
@@ -28,25 +26,58 @@ public class ShipWreck
         System.Random random = new System.Random();
         Map.Load();
         if (Exists()) {
-            LoadUsingName(name);
-            Debug.Log("Loaded ShipWreck: " + name);
+            Load(Data.name);
+            Debug.Log("Loaded ShipWreck: " + Data.name);
         }
 
         if (!Exists())
         {
-            name = References.randomNames[random.Next(References.randomNames.Length)] + "-" + random.Next(9999);
-            Map.Data.shipwrecks.Add(name);
-            Debug.Log("Generated ShipWreck: " + name);
+            Data.name = References.randomNames[random.Next(References.randomNames.Length)] + "-" + random.Next(9999);
+            Map.Data.shipwrecks.Add(Data.name);
+            Debug.Log("Generated ShipWreck: " + Data.name);
         }
         Map.Save();
     }
-    public void LoadUsingName(string name)
+    public void Load(string name)
     {
-        ShipWreckData data = ShipWreckSave.LoadUsingName(name);
-        name = data.name;
+        Data.Load(name);
     }
-    public void SaveAsShipWreck()
+    public void Save()
     {
-        ShipWreckSave.SaveNewShipWreck(this);
+        Data.Save();
+    }
+}
+
+public class ShipWreckData
+{
+    public string name = "";
+    public string type = "ShipWreck-0";
+    
+    public void Load(string shipwreckName)
+    {
+        string json = "{}";
+        if (File.Exists(Registry.profile.map_path + "/shipwrecks/" + shipwreckName + "/data.json"))
+        {
+            json = File.ReadAllText(Registry.profile.map_path + "/shipwrecks/" + shipwreckName + "/data.json");
+        }
+        else
+        {
+            Save(shipwreckName);
+        }
+        JsonUtility.FromJsonOverwrite(json, this);   
+    }
+        
+    public void Save(string shipwreckName)
+    {
+        if (!Directory.Exists(Registry.profile.map_path + "/shipwrecks/" + shipwreckName + "/"))
+        {
+            Directory.CreateDirectory(Registry.profile.map_path + "/shipwrecks/" + shipwreckName + "/");
+        }
+        File.WriteAllText(Registry.profile.map_path + "/shipwrecks/" + shipwreckName + "/data.json", JsonUtility.ToJson(this, true));
+    }
+
+    public void Save()
+    {
+        Save(name);
     }
 }

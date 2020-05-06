@@ -148,9 +148,7 @@
               </e>
               <e p="ShipWreck" t="Include">
                 <e p="ShipWreck.cs" t="Include" />
-                <e p="ShipWreckData.cs" t="Include" />
                 <e p="ShipWrecks.cs" t="Include" />
-                <e p="ShipWreckSave.cs" t="Include" />
                 <e p="ShipWreckSpawner.cs" t="Include" />
               </e>
               <e p="SpaceStation" t="Include">
@@ -181,7 +179,6 @@
             <e p="References.cs" t="Include" />
             <e p="Ship" t="Include">
               <e p="Ship.cs" t="Include" />
-              <e p="ShipData.cs" t="Include" />
               <e p="ShipMono.cs" t="Include" />
               <e p="ShipSave.cs" t="Include" />
               <e p="ShipState.cs" t="Include" />

@@ -34,11 +34,11 @@ public class ShipMono : MonoBehaviour
 
     void Update()
     {
-        Ship.bodyDamage += 0.0001f;
-        Ship.gunDamage += 0.000000001f;
-        Ship.thrusterDamage += 0.000001f;
-        Ship.engineDamage += 0.0000001f;
-        Registry.profile.Data.ship_xp += 0.000001f;
+        Ship.Data.bodyDamage += 0.0001f;
+        Ship.Data.gunDamage += 0.000001f;
+        Ship.Data.thrusterDamage += 0.00001f;
+        Ship.Data.engineDamage += 0.00001f;
+        Registry.profile.Data.ship_xp += 0.000000001f;
         ShipDMGProgressbar.INSTANCE.UpdateBars();
         if (STATE == ShipState.IDLE)
         {
@@ -55,10 +55,10 @@ public class ShipMono : MonoBehaviour
             float distance = Vector2.Distance(sun.transform.position, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y));
             if (distance < 12)
             {
-                Ship.bodyDamage += 0.065f;
-                Ship.gunDamage += 0.001f;
-                Ship.thrusterDamage += 0.001f;
-                Ship.engineDamage += 0.001f;
+                Ship.Data.bodyDamage += 0.065f;
+                Ship.Data.gunDamage += 0.00035f;
+                Ship.Data.thrusterDamage += 0.00069f;
+                Ship.Data.engineDamage += 0.00094f;
                 redBlink.SetActive(true);
                 redBlinkText.SetActive(true);
             }

@@ -89,7 +89,7 @@ public class SpaceMap : MonoBehaviour
             ShipWrecks.LoadShipWrecks();
             for (int i = 0; i < References.shipwrecks.Count; i++)
             {
-                GameObject shipWreck = Instantiate(GameObject.Find(ShipWrecks.GetShipWreck(i).type), ShipWrecks.GetShipWreck(i).main.transform, false);
+                GameObject shipWreck = Instantiate(GameObject.Find(ShipWrecks.GetShipWreck(i).Data.type), ShipWrecks.GetShipWreck(i).main.transform, false);
                 Debug.Log("Instantiated ShipWreck: " + shipWreck.name);
             }
         }

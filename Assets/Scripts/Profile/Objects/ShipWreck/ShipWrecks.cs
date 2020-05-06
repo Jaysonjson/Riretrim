@@ -22,7 +22,7 @@ public class ShipWrecks : MonoBehaviour
         for (int i = 0; i < References.shipwrecks.Count; i++)
         {
             GetShipWreck(i).Generate();
-            GetShipWreck(i).SaveAsShipWreck();
+            GetShipWreck(i).Save();
         }
     }
 

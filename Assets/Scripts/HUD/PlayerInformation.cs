@@ -6,6 +6,6 @@ public class PlayerInformation : MonoBehaviour
 {
     private void Start()
     {
-        GetComponent<TextMeshPro>().text = "Heat Resistance: " + Ship.heatResistance + "°C";
+        GetComponent<TextMeshPro>().text = "Heat Resistance: " + Ship.Data.heatResistance + "°C";
     }
 }
