@@ -102,8 +102,6 @@
           <e p="Profile" t="Include">
             <e p="MapOptions" t="Include">
               <e p="MapOptions.cs" t="Include" />
-              <e p="MapOptionsData.cs" t="Include" />
-              <e p="MapOptionsSave.cs" t="Include" />
             </e>
             <e p="MaterialData.cs" t="Include" />
             <e p="Objects" t="Include">
@@ -119,13 +117,9 @@
               </e>
               <e p="Galaxy" t="Include">
                 <e p="Galaxy.cs" t="Include" />
-                <e p="GalaxyData.cs" t="Include" />
-                <e p="GalaxySave.cs" t="Include" />
               </e>
               <e p="Map" t="Include">
                 <e p="Map.cs" t="Include" />
-                <e p="MapData.cs" t="Include" />
-                <e p="MapSave.cs" t="Include" />
               </e>
               <e p="Moon" t="Include">
                 <e p="Moon.cs" t="Include" />

@@ -24,17 +24,17 @@ public class Star
 
     public bool Exists()
     {
-        if (Galaxy.stars.Count < index + 1)
+        if (Galaxy.Data.stars.Count < index + 1)
         {
             return false;
         }
-        Data.name = Galaxy.stars[index];
-        return Directory.Exists(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/stars/" + Galaxy.stars[index] + "/");
+        Data.name = Galaxy.Data.stars[index];
+        return Directory.Exists(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/stars/" + Galaxy.Data.stars[index] + "/");
     }
 
     public void Generate()
     {
-        Galaxy.load();
+        Galaxy.Load();
         System.Random random = new System.Random();
         if (Exists())
         {
@@ -46,8 +46,8 @@ public class Star
             Data.name = References.randomNames[random.Next(References.randomNames.Length)] + "-" + random.Next(9999);
             id = random.Next(99999);
             Data.solarSystem = Data.name;
-            Data.asteroid_count = random.Next(MapOptions.AsteroidMinSpawnAmount, MapOptions.AsteroidMaxSpawnAmount);
-            Data.planet_count = random.Next(MapOptions.PlanetMaxAmount / 4);
+            Data.asteroid_count = random.Next(MapOptions.Data.AsteroidMinSpawnAmount, MapOptions.Data.AsteroidMaxSpawnAmount);
+            Data.planet_count = random.Next(MapOptions.Data.PlanetMaxAmount / 4);
             Data.shipwreck_count = random.Next(2, 25);
             Data.sunScale = (float)(random.Next(15,35) + random.NextDouble());
             if(random.Next(1) == 1)
@@ -56,11 +56,11 @@ public class Star
             }
             if(random.Next(10) == 1)
             {
-                Data.planet_count = random.Next(MapOptions.PlanetMaxAmount / 2);
+                Data.planet_count = random.Next(MapOptions.Data.PlanetMaxAmount / 2);
             }
             if (random.Next(25) == 1)
             {
-                Data.planet_count = random.Next(MapOptions.PlanetMaxAmount);
+                Data.planet_count = random.Next(MapOptions.Data.PlanetMaxAmount);
             }
             Data.position_x = (float)(random.Next(-5, 5) + random.NextDouble());
             Data.position_y = (float)(random.Next(-4, 4) + random.NextDouble());
@@ -72,7 +72,7 @@ public class Star
                 Data.color[1] = (byte)(random.Next(250));
                 Data.color[2] = (byte)(random.Next(250));
             }
-            Galaxy.stars.Add(Data.name);
+            Galaxy.Data.stars.Add(Data.name);
             Debug.Log("Generated Star: " + Data.name);
         }
         text.GetComponent<TextMeshPro>().text = Data.name + "\nLast Visited on: " + Data.visitTime.ToString("dd/M/yyyy hh:mm:ss");
@@ -88,7 +88,7 @@ public class Star
         //star.GetComponent<SpriteRenderer>().color = color;
         star.GetComponent<SpriteRenderer>().color = new Color32(Data.color[0],Data.color[1],Data.color[2], 255);
         star.transform.position = new Vector2(Data.position_x, Data.position_y);
-        Galaxy.save();
+        Galaxy.Save();
     }
 
 

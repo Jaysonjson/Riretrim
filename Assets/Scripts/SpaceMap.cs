@@ -84,7 +84,7 @@ public class SpaceMap : MonoBehaviour
     {
         yield return new WaitForSeconds(0.8f);
         Planets.LoadPlanets();
-        if (MapOptions.ShipWrecks)
+        if (MapOptions.Data.ShipWrecks)
         {
             ShipWrecks.LoadShipWrecks();
             for (int i = 0; i < References.shipwrecks.Count; i++)

@@ -12,7 +12,7 @@ public class TitlescreenButton : MonoBehaviour
     public void MapButton()
     {
         Registry.profile.Load();
-        MapOptions.load(); 
+        MapOptions.Load(); 
         Registry.profile.start();
         //SceneManager.LoadScene("SpaceMap");
         if (!Registry.profile.Data.gameStart)

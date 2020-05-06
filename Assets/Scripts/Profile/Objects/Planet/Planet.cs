@@ -64,17 +64,17 @@ public class Planet
     }
     public bool Exists()
     {
-        if(Map.planets.Count < index + 1)
+        if(Map.Data.planets.Count < index + 1)
         {
             return false;
         }
-        pname = Map.planets[index];
-        return Directory.Exists(Registry.profile.map_path + "/planets/" + Map.planets[index] + "/");
+        pname = Map.Data.planets[index];
+        return Directory.Exists(Registry.profile.map_path + "/planets/" + Map.Data.planets[index] + "/");
     }
 
     public void Generate()
     {
-        Map.load();
+        Map.Load();
         System.Random random = new System.Random();
         if (Exists()) {
             load(index);
@@ -220,7 +220,7 @@ public class Planet
                 }
             }
             speed = (float)(random.NextDouble()) / 5;
-            Map.planets.Add(pname);
+            Map.Data.planets.Add(pname);
             Debug.Log("Generated Planet: " + pname);
         }
         for (int i = 0; i < text.Length; i++)
@@ -268,7 +268,7 @@ public class Planet
             athmospheres[i].GetComponent<SpriteRenderer>().color = new Color32(color[0], color[1], color[2], 255);
         }
 
-        if (MapOptions.Moons)
+        if (MapOptions.Data.Moons)
         {
             for (var i = 0; i < moonAmount; i++)
             {
@@ -299,7 +299,7 @@ public class Planet
             drill.GetComponent<Orbit>().speed = (float)(random.NextDouble()) / 5;
             drill.SetActive(true);
        }
-       Map.save();
+       Map.Save();
     }
 
     public void load(int index)

@@ -1,20 +1,46 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class Galaxy
 {
-    public static int current_star_id = 0;
-    public static List<string> stars = new List<string>();
-
-    public static void load()
+    public static GalaxyData Data = new GalaxyData();
+    public static void Load()
     {
-        GalaxyData data = GalaxySave.load();
-        stars = data.stars;
+        Data.Load();
     }
 
-    public static void save()
+    public static void Save()
     {
-        GalaxySave.save();
+        Data.Save();
+    }
+}
+
+public class GalaxyData
+{
+    public List<string> stars = new List<string>();
+    
+    public void Load()
+    {
+        string json = "{}";
+        if (File.Exists(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/galaxy_data.json"))
+        {
+            json = File.ReadAllText(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/galaxy_data.json");
+        }
+        else
+        {
+            Save();
+        }
+        JsonUtility.FromJsonOverwrite(json, this);   
+    }
+        
+    public void Save()
+    {
+        if (!Directory.Exists(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy))
+        {
+            Directory.CreateDirectory(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy);
+        }
+        File.WriteAllText(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/galaxy_data.json", JsonUtility.ToJson(this, true));
     }
 }

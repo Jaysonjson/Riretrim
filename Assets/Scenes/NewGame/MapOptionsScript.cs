@@ -20,47 +20,47 @@ public class MapOptionsScript : MonoBehaviour
     
     public void UpdateASASlider()
     {
-        MapOptions.AsteroidMaxSpawnAmount = (int) ASASlider.value;
-        ASASliderValue.GetComponent<TextMeshProUGUI>().text = MapOptions.AsteroidMaxSpawnAmount + "";
+        MapOptions.Data.AsteroidMaxSpawnAmount = (int) ASASlider.value;
+        ASASliderValue.GetComponent<TextMeshProUGUI>().text = MapOptions.Data.AsteroidMaxSpawnAmount + "";
         UpdateAsteroidSliders();
     }
     
     public void UpdateASAMINSlider()
     {
-        MapOptions.AsteroidMinSpawnAmount = (int) ASAMINSlider.value;
-        ASAMINSliderValue.GetComponent<TextMeshProUGUI>().text = MapOptions.AsteroidMinSpawnAmount + "";
+        MapOptions.Data.AsteroidMinSpawnAmount = (int) ASAMINSlider.value;
+        ASAMINSliderValue.GetComponent<TextMeshProUGUI>().text = MapOptions.Data.AsteroidMinSpawnAmount + "";
         UpdateAsteroidSliders();
     }
 
     public void UpdatePlanetMaxSlider()
     {
-        MapOptions.PlanetMaxAmount = (int) PlanetMaxSlider.value;
-        PlanetMaxSliderValue.GetComponent<TextMeshProUGUI>().text = MapOptions.PlanetMaxAmount + "";
+        MapOptions.Data.PlanetMaxAmount = (int) PlanetMaxSlider.value;
+        PlanetMaxSliderValue.GetComponent<TextMeshProUGUI>().text = MapOptions.Data.PlanetMaxAmount + "";
     }
     
     public void UpdateShipWreckToggle()
     {
-        MapOptions.ShipWrecks = ShipwreckToggle.isOn;
+        MapOptions.Data.ShipWrecks = ShipwreckToggle.isOn;
     }
 
     public void UpdateMoonToggle()
     {
-        MapOptions.Moons = MoonToggle.isOn;
+        MapOptions.Data.Moons = MoonToggle.isOn;
     }
     
     void Start()
     {
-        ASASliderValue.GetComponent<TextMeshProUGUI>().text = MapOptions.AsteroidMaxSpawnAmount + "";
-        ASASlider.value = MapOptions.AsteroidMaxSpawnAmount;
+        ASASliderValue.GetComponent<TextMeshProUGUI>().text = MapOptions.Data.AsteroidMaxSpawnAmount + "";
+        ASASlider.value = MapOptions.Data.AsteroidMaxSpawnAmount;
         
-        ASAMINSliderValue.GetComponent<TextMeshProUGUI>().text = MapOptions.AsteroidMinSpawnAmount + "";
-        ASAMINSlider.value = MapOptions.AsteroidMinSpawnAmount;
+        ASAMINSliderValue.GetComponent<TextMeshProUGUI>().text = MapOptions.Data.AsteroidMinSpawnAmount + "";
+        ASAMINSlider.value = MapOptions.Data.AsteroidMinSpawnAmount;
 
-        PlanetMaxSliderValue.GetComponent<TextMeshProUGUI>().text = MapOptions.PlanetMaxAmount + "";
-        PlanetMaxSlider.value = MapOptions.PlanetMaxAmount;
+        PlanetMaxSliderValue.GetComponent<TextMeshProUGUI>().text = MapOptions.Data.PlanetMaxAmount + "";
+        PlanetMaxSlider.value = MapOptions.Data.PlanetMaxAmount;
 
-        ShipwreckToggle.isOn = MapOptions.ShipWrecks;
-        MoonToggle.isOn = MapOptions.Moons;
+        ShipwreckToggle.isOn = MapOptions.Data.ShipWrecks;
+        MoonToggle.isOn = MapOptions.Data.Moons;
     }
 
     public void UpdateAsteroidSliders()
@@ -69,7 +69,7 @@ public class MapOptionsScript : MonoBehaviour
         if (ASASlider.value < ASAMINSlider.value)
         {
             ASASlider.value = ASAMINSlider.value + 1;
-            MapOptions.AsteroidMaxSpawnAmount = (int) ASASlider.value;
+            MapOptions.Data.AsteroidMaxSpawnAmount = (int) ASASlider.value;
             UpdateASASlider();
         }
     }
@@ -77,7 +77,7 @@ public class MapOptionsScript : MonoBehaviour
     public void StartButton()
     {
         //Profile.start();
-        MapOptions.save();
+        MapOptions.Save();
         SceneManager.LoadScene("Galaxyscreen");
     }
 }

@@ -1,22 +1,48 @@
-﻿public class MapOptions
+﻿using System.IO;
+using UnityEngine;
+
+public class MapOptions
 {
-    public static int AsteroidMaxSpawnAmount = 550;
-    public static int AsteroidMinSpawnAmount = 125;
-    public static int PlanetMaxAmount = 25;
-    public static bool ShipWrecks = true;
-    public static bool Moons = true;
-    public static void load()
+    public static MapOptionData Data = new MapOptionData();
+    public static void Load()
     {
-        MapOptionsData data = MapOptionsSave.load();
-        AsteroidMaxSpawnAmount = data.asteroidMaxSpawnAmount;
-        AsteroidMinSpawnAmount = data.asteroidMinSpawnAmount;
-        ShipWrecks = data.shipWrecks;
-        Moons = data.moons;
-        PlanetMaxAmount = data.planetMaxAmount;
+        Data.Load();
     }
 
-    public static void save()
+    public static void Save()
     {
-        MapOptionsSave.save();
+        Data.Save();
+    }
+}
+
+public class MapOptionData
+{
+    public int AsteroidMaxSpawnAmount = 550;
+    public int AsteroidMinSpawnAmount = 125;
+    public int PlanetMaxAmount = 25;
+    public bool ShipWrecks = true;
+    public bool Moons = true;
+    
+    public void Load()
+    {
+        string json = "{}";
+        if (File.Exists(Registry.profile.profile_path + "map_settings.json"))
+        {
+            json = File.ReadAllText(Registry.profile.profile_path + "map_settings.json");
+        }
+        else
+        {
+            Save();
+        }
+        JsonUtility.FromJsonOverwrite(json, this);   
+    }
+        
+    public void Save()
+    {
+        if (!Directory.Exists( Registry.profile.profile_path))
+        {
+            Directory.CreateDirectory(Registry.profile.profile_path);
+        }
+        File.WriteAllText( Registry.profile.profile_path + "map_settings.json", JsonUtility.ToJson(this, true));
     }
 }
