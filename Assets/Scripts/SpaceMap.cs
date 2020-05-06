@@ -69,14 +69,14 @@ public class SpaceMap : MonoBehaviour
         updateMaterialText();
 
         Star star = new Star();
-        star.LoadUsingName(Registry.profile.Data.current_solarsystem);
-        asteroidSpawner.amount = star.asteroid_count;
-        planetSpawner.amount = star.planet_count;
-        ShipWreckSpawner.amount = star.shipwreck_count;
+        star.Load(Registry.profile.Data.current_solarsystem);
+        asteroidSpawner.amount = star.Data.asteroid_count;
+        planetSpawner.amount = star.Data.planet_count;
+        ShipWreckSpawner.amount = star.Data.shipwreck_count;
         currencyAmount.text = Registry.profile.Data.currency + "";
         currencyName.text = Registry.profile.Data.currency_name;
-        asteroidCountText.text = star.asteroid_count + "";
-        planetCountText.text = star.planet_count + "";
+        asteroidCountText.text = star.Data.asteroid_count + "";
+        planetCountText.text = star.Data.planet_count + "";
         StartCoroutine(LateStart());
     }
 

@@ -27,6 +27,7 @@ public class Profile
         Options.Load();
         Load();
         Ship.Load();
+        Data.save_version = Application.version;
         if (Data.save_version != null)
         {
             if (!Data.save_version.Equals(Application.version))
@@ -91,7 +92,7 @@ public class ProfileData
     public int copper_amount;
 
     public float ship_xp;
-    
+
     public void Load()
     {
         string json = "{}";

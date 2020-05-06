@@ -165,9 +165,7 @@
               <e p="Star" t="Include">
                 <e p="GalaxyMap.cs" t="Include" />
                 <e p="Star.cs" t="Include" />
-                <e p="StarData.cs" t="Include" />
                 <e p="Stars.cs" t="Include" />
-                <e p="StarSave.cs" t="Include" />
                 <e p="StarSpawner.cs" t="Include" />
                 <e p="StarSpawnerGalaxy.cs" t="Include" />
               </e>

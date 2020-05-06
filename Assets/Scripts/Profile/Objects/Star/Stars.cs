@@ -32,7 +32,7 @@ public class Stars : MonoBehaviour
         for (int i = 0; i < References.stars.Count; i++)
         {
             GetStar(i).Generate();
-            GetStar(i).Save(i);
+            GetStar(i).Save(GetStar(i).Data.name);
         }
     }
 
@@ -42,10 +42,10 @@ public class Stars : MonoBehaviour
         Registry.profile.Data.latest_solarSystem = gameObject.name;
         Registry.profile.Save();
         Star star = new Star();
-        star.LoadUsingName(Registry.profile.Data.current_solarsystem);
-        star.visited = true;
-        star.visitTime = DateTime.Now;
-        star.SaveAsStar();
+        star.Data.Load(Registry.profile.Data.current_solarsystem);
+        star.Data.visited = true;
+        star.Data.visitTime = DateTime.Now;
+        star.Data.Save();
         SceneManager.LoadScene("SpaceMap");
     }
 

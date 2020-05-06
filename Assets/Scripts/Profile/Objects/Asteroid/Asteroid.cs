@@ -85,14 +85,14 @@ public class Asteroid : MonoBehaviour
             //int starIndex = Array.IndexOf(Galaxy.stars.ToArray(), Profile.current_solarsystem);
           // Star star = Stars.GetStar(starIndex);
             Star star = new Star();
-            star.LoadUsingName(Registry.profile.Data.current_solarsystem);
+            star.Load(Registry.profile.Data.current_solarsystem);
             //star.load(starIndex);
-            Debug.Log(star.sname + " / " + star.asteroid_count);
-            star.asteroid_count--;
+            Debug.Log(star.Data.name + " / " + star.Data.asteroid_count);
+            star.Data.asteroid_count--;
             //References.stars.Where(References.stars[starIndex](true)).Select(u => { u.asteroid_count = star.asteroid_count; return u; }).ToList();
-            star.SaveAsStar();
-            Debug.Log("Decreased Asteroid Count to " + star.asteroid_count + " from Solarsystem " + star.sname);
-            asteroidCountText.text = star.asteroid_count + "";
+            star.Data.Save();
+            Debug.Log("Decreased Asteroid Count to " + star.Data.asteroid_count + " from Solarsystem " + star.Data.name);
+            asteroidCountText.text = star.Data.asteroid_count + "";
         //  }
     }
 }

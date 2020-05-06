@@ -8,8 +8,8 @@ public class SecondSun : MonoBehaviour
     void Start()
     {
         Star star = new Star();
-        star.LoadUsingName(Registry.profile.Data.current_solarsystem);
-        if(star.secondSun)
+        star.Load(Registry.profile.Data.current_solarsystem);
+        if(star.Data.secondSun)
         {
             gameObject.SetActive(true);
         }
