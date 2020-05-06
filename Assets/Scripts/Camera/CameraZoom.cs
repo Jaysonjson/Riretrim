@@ -22,7 +22,7 @@ public class CameraZoom : MonoBehaviour
                 zoomText.GetComponent<TextMeshProUGUI>().text = cameraComp.orthographicSize + "x";
                 //UpdateOtherText(cameraComp);
             }
-            if (cameraComp.orthographicSize > Options.AsteroidDespawnDistance)
+            if (cameraComp.orthographicSize > Options.Data.AsteroidDespawnDistance)
             {
                 for (int i = 0; i < asteroids.Count; i++)
                 {
@@ -46,7 +46,7 @@ public class CameraZoom : MonoBehaviour
                 zoomText.GetComponent<TextMeshProUGUI>().text = cameraComp.orthographicSize + "x";
                 //UpdateOtherText(cameraComp);
             }
-            if (cameraComp.orthographicSize < Options.AsteroidDespawnDistance)
+            if (cameraComp.orthographicSize < Options.Data.AsteroidDespawnDistance)
             {
                 for (int i = 0; i < asteroids.Count; i++)
                 {

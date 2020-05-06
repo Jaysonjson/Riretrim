@@ -12,10 +12,10 @@ public class Registry : MonoBehaviour
     {
         References.sprite = gameObject.GetComponent<Sprites>();
         Debug.Log("Loading Languages..");
-        Options.load();
-        if (Options.Language != "English")
+        Options.Load();
+        if (Options.Data.Language != "English")
         {
-            defaultLangFile = Resources.Load(Options.Language) as TextAsset;
+            defaultLangFile = Resources.Load("lang/" + Options.Data.Language) as TextAsset;
         }
 
         if (defaultLangFile != null)

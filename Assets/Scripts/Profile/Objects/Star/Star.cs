@@ -147,3 +147,7 @@ public class Star
         StarSave.saveNewstar(this);
     }
 }
+public class StarData 
+{
+
+}

@@ -24,7 +24,7 @@ public class Profile
 
     public void start()
     {
-        Options.load();
+        Options.Load();
         Load();
         Ship.Load();
         if (Data.save_version != null)
@@ -98,6 +98,10 @@ public class ProfileData
         if (File.Exists(Application.persistentDataPath + "/profiles/" + References.current_profile + "/data.json"))
         {
             json = File.ReadAllText(Application.persistentDataPath + "/profiles/" + References.current_profile + "/data.json");
+        }
+        else
+        {
+            Save();
         }
         JsonUtility.FromJsonOverwrite(json, this);   
     }

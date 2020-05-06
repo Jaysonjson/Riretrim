@@ -17,17 +17,17 @@ public class OptionsScript : MonoBehaviour
     public TMP_Dropdown languageDropdown;
     void Start()
     {
-        Options.load();
-        asteroidDespawnDistanceSliderValue.GetComponent<TextMeshProUGUI>().text = Options.AsteroidDespawnDistance + "";
-        asteroidDespawnDistanceSlider.value = Options.AsteroidDespawnDistance;
-        asteroidShadowToggle.isOn = Options.AsteroidShadows;
-        particleSystemToggle.isOn = Options.ParticleSystems;
-        objectShadowToggle.isOn = Options.ObjectShadows;
-        lightToggle.isOn = Options.Lights;
-        showFPSToggle.isOn = Options.ShowFPS;
+        Options.Load();
+        asteroidDespawnDistanceSliderValue.GetComponent<TextMeshProUGUI>().text = Options.Data.AsteroidDespawnDistance + "";
+        asteroidDespawnDistanceSlider.value = Options.Data.AsteroidDespawnDistance;
+        asteroidShadowToggle.isOn = Options.Data.AsteroidShadows;
+        particleSystemToggle.isOn = Options.Data.ParticleSystems;
+        objectShadowToggle.isOn = Options.Data.ObjectShadows;
+        lightToggle.isOn = Options.Data.Lights;
+        showFPSToggle.isOn = Options.Data.ShowFPS;
         for (var i = 0; i < languageDropdown.options.Count; i++)
         {
-            if (languageDropdown.options[i].text.Equals(Options.Language))
+            if (languageDropdown.options[i].text.Equals(Options.Data.Language))
             {
                 languageDropdown.value = i;
                 break;
@@ -37,41 +37,41 @@ public class OptionsScript : MonoBehaviour
 
     public void UpdateAsteroidDespawnDistanceSliderValue()
     {
-        Options.AsteroidDespawnDistance = asteroidDespawnDistanceSlider.value;
-        asteroidDespawnDistanceSliderValue.GetComponent<TextMeshProUGUI>().text = Options.AsteroidDespawnDistance + "";
+        Options.Data.AsteroidDespawnDistance = asteroidDespawnDistanceSlider.value;
+        asteroidDespawnDistanceSliderValue.GetComponent<TextMeshProUGUI>().text = Options.Data.AsteroidDespawnDistance + "";
     }
     
     public void UpdateAsteroidsShadowToggle()
     {
-        Options.AsteroidShadows = asteroidShadowToggle.isOn;
+        Options.Data.AsteroidShadows = asteroidShadowToggle.isOn;
     }
 
     public void UpdateParticleSystemToggle()
     {
-        Options.ParticleSystems = particleSystemToggle.isOn;
+        Options.Data.ParticleSystems = particleSystemToggle.isOn;
     }
     public void UpdateObjectShadowToggle()
     {
-        Options.ObjectShadows = objectShadowToggle.isOn;
+        Options.Data.ObjectShadows = objectShadowToggle.isOn;
     }
 
     public void UpdateShowFPSToggle()
     {
-        Options.ShowFPS = showFPSToggle.isOn;
+        Options.Data.ShowFPS = showFPSToggle.isOn;
     }
 
     public void UpdateLanguageDropdown()
     {
-        Options.Language = languageDropdown.options[languageDropdown.value].text;
+        Options.Data.Language = languageDropdown.options[languageDropdown.value].text;
     }
     
     public void UpdateLightsToggle()
     {
-        Options.Lights = lightToggle.isOn;
+        Options.Data.Lights = lightToggle.isOn;
     }
     public void saveButton()
     {
-        Options.save();
+        Options.Save();
         SceneManager.LoadScene("Titlescreen");
     }
 

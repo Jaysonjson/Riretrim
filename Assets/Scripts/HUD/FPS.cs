@@ -8,7 +8,7 @@ public class FPS : MonoBehaviour
 {
     void Start()
     {
-        gameObject.SetActive(Options.ShowFPS);
+        gameObject.SetActive(Options.Data.ShowFPS);
     }
 
     void Update()

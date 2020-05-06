@@ -1,29 +1,47 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Options
 {
-    public static float AsteroidDespawnDistance = 45f;
-    public static bool AsteroidShadows = false;
-    public static bool ParticleSystems = true;
-    public static bool ObjectShadows = true;
-    public static bool Lights = true;
-    public static bool ShowFPS = false;
-    public static string Language = "English";
-    public static void load()
+    public static OptionData Data = new OptionData();
+    public static void Load()
     {
-        OptionsData data = OptionsSave.load();
-        AsteroidDespawnDistance = data.asteroidDespawnDistance;
-        AsteroidShadows = data.asteroidShadows;
-        ParticleSystems = data.particleSystems;
-        ObjectShadows = data.objectShadows;
-        Lights = data.lights;
-        ShowFPS = data.showFPS;
-        Language = data.language;
+        Data.Load();
     }
 
-    public static void save()
+    public static void Save()
     {
-        OptionsSave.save();
+        Data.Save();
+    }
+}
+
+public class OptionData
+{
+    public float AsteroidDespawnDistance = 45f;
+    public bool AsteroidShadows = false;
+    public bool ParticleSystems = true;
+    public bool ObjectShadows = true;
+    public bool Lights = true;
+    public bool ShowFPS = false;
+    public string Language = "English";
+
+    public void Load()
+    {
+        string json = "{}";
+        if (File.Exists(Application.persistentDataPath + "/settings.json"))
+        {
+            json = File.ReadAllText(Application.persistentDataPath + "/settings.json");
+        }
+        else
+        {
+            Save();
+        }
+        JsonUtility.FromJsonOverwrite(json, this);   
+    }
+        
+    public void Save()
+    {
+        File.WriteAllText(Application.persistentDataPath + "/settings.json", JsonUtility.ToJson(this, true));
     }
 }

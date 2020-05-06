@@ -8,7 +8,7 @@ public class ShadowCasterObject : MonoBehaviour
     {
         if (gameObject.GetComponent<ShadowCaster2D>() != null)
         {
-            gameObject.GetComponent<ShadowCaster2D>().enabled = Options.ObjectShadows;
+            gameObject.GetComponent<ShadowCaster2D>().enabled = Options.Data.ObjectShadows;
         }
     }
 }

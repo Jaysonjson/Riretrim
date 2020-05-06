@@ -8,7 +8,7 @@ public class LightObject : MonoBehaviour
     {
         if (gameObject.GetComponent<Light2D>() != null)
         {
-            gameObject.GetComponent<Light2D>().enabled = Options.Lights;
+            gameObject.GetComponent<Light2D>().enabled = Options.Data.Lights;
         }
     }
 }

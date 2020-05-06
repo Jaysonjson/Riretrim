@@ -16,10 +16,7 @@ public class Asteroid : MonoBehaviour
 
     private void Start()
     {
-        if (Options.AsteroidShadows)
-        {
-            GetComponent<ShadowCaster2D>().enabled = true;
-        }
+        GetComponent<ShadowCaster2D>().enabled = Options.Data.AsteroidShadows;
     }
 
 

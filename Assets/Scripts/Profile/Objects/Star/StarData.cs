@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class StarData
+public class StarDataOld
 {
     public string solarSystem;
     public string sname;
@@ -19,7 +19,7 @@ public class StarData
     public float sunScale;
     public bool visited;
     public DateTime visitTime;
-    public StarData(Star star)
+    public StarDataOld(Star star)
     {
         solarSystem = star.solarSystem;
         sname = star.sname;
