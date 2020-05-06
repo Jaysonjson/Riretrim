@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class ShipMono : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class ShipMono : MonoBehaviour
     private ShipStateIdle ShipStateIdle;
     private ShipStateWing ShipStateWing;
     public ShipState STATE = ShipState.IDLE;
+    private Random Random = new Random();
     void Start()
     {
         GameObject shipObject = GameObject.Find(Ship.body);
@@ -38,7 +40,11 @@ public class ShipMono : MonoBehaviour
         Ship.Data.gunDamage += 0.000001f;
         Ship.Data.thrusterDamage += 0.00001f;
         Ship.Data.engineDamage += 0.00001f;
-        Registry.profile.Data.ship_xp += 0.000000001f;
+        if (Random.Next(15) == 1)
+        {
+            Registry.profile.Data.ship_xp += 0.01f;
+        }
+
         ShipDMGProgressbar.INSTANCE.UpdateBars();
         if (STATE == ShipState.IDLE)
         {
