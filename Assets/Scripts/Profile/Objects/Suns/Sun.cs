@@ -15,10 +15,8 @@ public class Sun : MonoBehaviour
         string path = Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/stars/" + Registry.profile.Data.current_solarsystem + "/data.star";
         if (File.Exists(path))
         {
-            BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Open);
-
-            StarData data = formatter.Deserialize(stream) as StarData;
+            StarData data = new StarData();
+            data.Load(Registry.profile.Data.current_solarsystem);
             System.Random random = new System.Random();
             gameObject.GetComponent<SpriteRenderer>().color = new Color32(data.color[0], data.color[1], data.color[2], 255);
             for (int i = 0; i < glows.Length; i++)
@@ -33,7 +31,6 @@ public class Sun : MonoBehaviour
             {
                 light2d[i].color = new Color32(data.color[0], data.color[1], data.color[2], 255);
             }
-            stream.Close();
         }
     }
 }

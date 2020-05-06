@@ -75,7 +75,7 @@ public class Star
             Galaxy.Data.stars.Add(Data.name);
             Debug.Log("Generated Star: " + Data.name);
         }
-        text.GetComponent<TextMeshPro>().text = Data.name + "\nLast Visited on: " + Data.visitTime.ToString("dd/M/yyyy hh:mm:ss");
+        text.GetComponent<TextMeshPro>().text = Data.name + "\nLast Visited on: " + Data.visitTime.convertToDateTime().ToString("dd/M/yyyy hh:mm:ss");
         if(Data.visited)
         {
             text.GetComponent<TextMeshPro>().color = new Color32(0, 163, 14, 255);
@@ -114,7 +114,7 @@ public class StarData
     public bool secondSun = false;
     public bool visited = false;
     public float sunScale = 1;
-    public DateTime visitTime = new DateTime();
+    public JsonDateTime visitTime;
     public byte[] color = { 253, 184, 19 };
     
     public void Load(string starName)

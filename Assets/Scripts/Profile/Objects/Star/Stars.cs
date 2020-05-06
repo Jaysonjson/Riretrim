@@ -44,7 +44,7 @@ public class Stars : MonoBehaviour
         Star star = new Star();
         star.Data.Load(Registry.profile.Data.current_solarsystem);
         star.Data.visited = true;
-        star.Data.visitTime = DateTime.Now;
+        star.Data.visitTime = star.Data.visitTime.convertToJsonDateTime(DateTime.Now);
         star.Data.Save();
         SceneManager.LoadScene("SpaceMap");
     }
