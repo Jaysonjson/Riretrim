@@ -4,7 +4,7 @@ using UnityEngine;
 [System.Serializable]
 public class JsonDateTime
 {
-    public long time;
+    public long time = 0l;
 
     public DateTime convertToDateTime()
     {

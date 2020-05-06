@@ -114,7 +114,7 @@ public class StarData
     public bool secondSun = false;
     public bool visited = false;
     public float sunScale = 1;
-    public JsonDateTime visitTime;
+    public JsonDateTime visitTime = new JsonDateTime();
     public byte[] color = { 253, 184, 19 };
     
     public void Load(string starName)
