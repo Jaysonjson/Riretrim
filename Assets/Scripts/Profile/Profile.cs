@@ -74,7 +74,6 @@ public class ProfileData
     public string current_planet = "";
     public string latest_solarSystem = "";
     public string latest_galaxy = "";
-    public string current_texturepack = "Default";
     public string save_version;
     public bool gameStart;
 

@@ -38,8 +38,7 @@ public class ShopMainPanel : MonoBehaviour
         else
         {
             XPCircle.GetComponent<Image>().fillAmount = Registry.profile.Data.ship_xp / data.xp;
-            //Debug.Log(((Registry.profile.Data.ship_xp * 100) / data.xp) / 100);
-            //Debug.Log((Registry.profile.Data.ship_xp) * 100 / data.xp);
+            Debug.Log(Registry.profile.Data.ship_xp / data.xp);
         }
 
         ShipNameText.GetComponent<TextMeshProUGUI>().text = Object.name;

@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6eb17a9433f4b29b7b2ee2fd649277d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xp: 12500
+  xp: 5250
   price: 0
 --- !u!1 &236859528
 GameObject:

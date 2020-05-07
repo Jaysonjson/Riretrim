@@ -15,7 +15,6 @@ public class Shop : MonoBehaviour
     private void Start()
     {
         //Registry.profile.Load();
-        Debug.Log(Registry.profile.Data.ship_xp);
         ShopMainPanel.UpdateObject();
         ShopLeftPanel.UpdateObject();
         ShopRightPanel.UpdateObject();

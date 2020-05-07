@@ -25,6 +25,7 @@ public class OptionData
     public bool Lights = true;
     public bool ShowFPS = false;
     public string Language = "English";
+    public string Texturepack = "Default";
 
     public void Load()
     {
