@@ -48,6 +48,7 @@
           <e p="Bullet" t="Include">
             <e p="BulletSpaceMap.cs" t="Include" />
             <e p="PlayerBullet.cs" t="Include" />
+            <e p="RiretrimGameObject.cs" t="Include" />
             <e p="SpaceMapBullet.cs" t="Include" />
           </e>
           <e p="BuyMaterial.cs" t="Include" />
@@ -63,6 +64,9 @@
           </e>
           <e p="DiscordRPC.cs" t="Include" />
           <e p="Escape.cs" t="Include" />
+          <e p="Gamescreen" t="Include">
+            <e p="ObjectSpawner.cs" t="Include" />
+          </e>
           <e p="Health.cs" t="Include" />
           <e p="HUD" t="Include">
             <e p="BuyDrillHUD" t="Include">
@@ -88,6 +92,7 @@
             <e p="Language.cs" t="Include" />
             <e p="LanguageText.cs" t="Include" />
           </e>
+          <e p="Lifetime.cs" t="Include" />
           <e p="LightObject.cs" t="Include" />
           <e p="Material" t="Include">
             <e p="Material.cs" t="Include" />
@@ -131,7 +136,6 @@
                 <e p="MoonSave.cs" t="Include" />
               </e>
               <e p="ObjectDestroyer.cs" t="Include" />
-              <e p="ObjectSpawner.cs" t="Include" />
               <e p="Planet" t="Include">
                 <e p="Planet.cs" t="Include" />
                 <e p="PlanetData.cs" t="Include" />

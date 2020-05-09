@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 833a4275afdc47e09f25ae2e531cbfe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultLangFile: {fileID: 4900000, guid: 06948108b6175e54aac141e3631488a4, type: 3}
+  defaultLangFile: {fileID: 4900000, guid: 49f0889f7a5a84a4584c2bf8ebd3648f, type: 3}
 --- !u!114 &702001956
 MonoBehaviour:
   m_ObjectHideFlags: 0
