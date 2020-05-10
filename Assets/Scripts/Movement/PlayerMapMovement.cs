@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMapMovement : MonoBehaviour
 {
@@ -15,66 +14,82 @@ public class PlayerMapMovement : MonoBehaviour
     public ShipMono ShipMono;
     private bool isMoving = false;
     Vector2 movement;
+    
+    private InputActionMap playerActionMap;
+    private InputAction UpKey;
+    private InputAction DownKey;
+    private InputAction RightKey;
+    private InputAction LeftKey;
+
+    private void Start()
+    {
+        playerActionMap = GetComponent<PlayerInput>().actions.FindActionMap("PlayerMovement");
+        UpKey = playerActionMap.FindAction("Up");
+        DownKey = playerActionMap.FindAction("Down");
+        RightKey = playerActionMap.FindAction("Right");
+        LeftKey = playerActionMap.FindAction("Left");
+    }
     void Update()
     {
         movement.y = 0;
         movement.x = 0;
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S)) 
+        if (UpKey.ReadValue<float>() > 0 || DownKey.ReadValue<float>() > 0)
         {
             movement.y = Input.GetAxisRaw("Vertical");
         }
 
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        if (LeftKey.ReadValue<float>() > 0 || RightKey.ReadValue<float>() > 0)
         {
             movement.x = Input.GetAxisRaw("Horizontal");
         }
-        if (Input.GetKey(KeyCode.A))
+  
+        if (LeftKey.ReadValue<float>() > 0)
         {
             transform.rotation = new Quaternion(0, 0, 0, 0);
             //miniMap.transform.rotation = new Quaternion(0, 0, 0, 0);
             transform.Rotate(0, 0, 90);
            // miniMap.transform.Rotate(0, 0, 90);
         }
-        if (Input.GetKey(KeyCode.D))
+        if (RightKey.ReadValue<float>() > 0)
         {
             transform.rotation = new Quaternion(0, 0, 0, 0);
            // miniMap.transform.rotation = new Quaternion(0, 0, 0, 0);
             transform.Rotate(0, 0, 270);
            // miniMap.transform.Rotate(0, 0, 270);
         }
-        if (Input.GetKey(KeyCode.W))
+        if (UpKey.ReadValue<float>() > 0)
         {
             transform.rotation = new Quaternion(0, 0, 0, 0);
         }
-        if (Input.GetKey(KeyCode.S))
+        if (DownKey.ReadValue<float>() > 0)
         {
             transform.rotation = new Quaternion(0, 0, 0, 0);
            // miniMap.transform.rotation = new Quaternion(0, 0, 0, 0);
             transform.Rotate(0, 0, 180);
            //miniMap.transform.Rotate(0, 0, 180);
         }
-        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W))
+        if (LeftKey.ReadValue<float>() > 0 && UpKey.ReadValue<float>() > 0)
         {
             transform.rotation = new Quaternion(0, 0, 0, 0);
            // miniMap.transform.rotation = new Quaternion(0, 0, 0, 0);
             transform.Rotate(0, 0, 45);
            // miniMap.transform.Rotate(0, 0, 45);
         }
-        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S))
+        if (LeftKey.ReadValue<float>() > 0 && DownKey.ReadValue<float>() > 0)
         {
             transform.rotation = new Quaternion(0, 0, 0, 0);
            // miniMap.transform.rotation = new Quaternion(0, 0, 0, 0);
             transform.Rotate(0, 0, 145);
            // miniMap.transform.Rotate(0, 0, 145);
         }
-        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
+        if (DownKey.ReadValue<float>() > 0 && RightKey.ReadValue<float>() > 0)
         {
             transform.rotation = new Quaternion(0, 0, 0, 0);
            // miniMap.transform.rotation = new Quaternion(0, 0, 0, 0);
             transform.Rotate(0, 0, 215);
            // miniMap.transform.Rotate(0, 0, 215);
         }
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
+        if (UpKey.ReadValue<float>() > 0 && RightKey.ReadValue<float>() > 0)
         {
             transform.rotation = new Quaternion(0, 0, 0, 0);
            // miniMap.transform.rotation = new Quaternion(0, 0, 0, 0);
@@ -129,12 +144,7 @@ public class PlayerMapMovement : MonoBehaviour
             }
         }
     }
-
-    private void Start()
-    {
-       // particleSystem.Stop();
-    }
-
+    
     void FixedUpdate()
     {
         //rb.AddRelativeForce(-rb.velocity);
