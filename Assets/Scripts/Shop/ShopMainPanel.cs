@@ -10,6 +10,7 @@ public class ShopMainPanel : MonoBehaviour
     public Shop Shop;
     public GameObject Object;
     public GameObject XPCircle;
+    public GameObject MoneyCircle;
     public GameObject ShipNameText;
     public Button BuyOrSelectButton;
     public TextMeshProUGUI BuyOrSelectText;
@@ -38,7 +39,15 @@ public class ShopMainPanel : MonoBehaviour
         else
         {
             XPCircle.GetComponent<Image>().fillAmount = Registry.profile.Data.ship_xp / data.xp;
-            Debug.Log(Registry.profile.Data.ship_xp / data.xp);
+        }
+
+        if (data.price < Registry.profile.Data.currency)
+        {
+            MoneyCircle.GetComponent<Image>().fillAmount = 1;
+        }
+        else
+        {
+            MoneyCircle.GetComponent<Image>().fillAmount = (float) Registry.profile.Data.currency / data.price;
         }
 
         ShipNameText.GetComponent<TextMeshProUGUI>().text = Object.name;
