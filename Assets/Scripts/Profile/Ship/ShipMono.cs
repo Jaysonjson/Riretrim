@@ -10,27 +10,35 @@ public class ShipMono : MonoBehaviour
     public GameObject redBlink;
     public GameObject redBlinkText;
     public GameObject wing;
-    private ShipStateFlight ShipStateFlight;
-    private ShipStateIdle ShipStateIdle;
-    private ShipStateWing ShipStateWing;
+    public GameObject ships;
+    public GameObject shadow;
+    private ShipSprites Sprites;
     public ShipState STATE = ShipState.IDLE;
     private Random Random = new Random();
     void Start()
     {
         GameObject shipObject = GameObject.Find(Ship.body);
-        ShipStateFlight = shipObject.GetComponent<ShipStateFlight>();
-        ShipStateIdle = shipObject.GetComponent<ShipStateIdle>();
-        ShipStateWing = shipObject.GetComponent<ShipStateWing>();
+        shipObject.SetActive(true);
+        Sprites = shipObject.GetComponent<ShipSprites>();
         Instantiate(shipObject,transform).SetActive(true);
         if (shipObject.name != "PlayerDefault")
         {
             GetComponent<Animator>().enabled = false;
-            GetComponent<SpriteRenderer>().sprite = ShipStateIdle.sprite;
+            GetComponent<SpriteRenderer>().sprite = Sprites.Idle;
+        }
+        else
+        {
+            shadow.SetActive(false);
         }
 
-        if (ShipStateWing.sprite != null)
+        if (Sprites.Wing != null)
         {
-            wing.GetComponent<SpriteRenderer>().sprite = ShipStateWing.sprite;
+            wing.GetComponent<SpriteRenderer>().sprite = Sprites.Wing;
+        }
+
+        if (ships != null)
+        {
+            ships.SetActive(false);
         }
     }
 
@@ -48,14 +56,14 @@ public class ShipMono : MonoBehaviour
         ShipDMGProgressbar.INSTANCE.UpdateBars();
         if (STATE == ShipState.IDLE)
         {
-            GetComponent<SpriteRenderer>().sprite = ShipStateIdle.sprite;
+            GetComponent<SpriteRenderer>().sprite = Sprites.Idle;
         }
 
         if (STATE == ShipState.FLIGHT)
         {
-            GetComponent<SpriteRenderer>().sprite = ShipStateFlight.sprite;
+            GetComponent<SpriteRenderer>().sprite = Sprites.Flight;
         }
-        
+
         if (sun != null)
         {
             float distance = Vector2.Distance(sun.transform.position, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y));
