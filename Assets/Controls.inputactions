@@ -1,0 +1,44 @@
+{
+    "name": "Controls",
+    "maps": [
+        {
+            "name": "GSPlayer",
+            "id": "9a8bdabd-62e7-486c-8dde-f1ba59540c1a",
+            "actions": [
+                {
+                    "name": "Shoot",
+                    "type": "Button",
+                    "id": "e6815a71-0ede-4de3-83c7-d55ffa560c97",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d58e5b07-a9d9-43d5-974c-38587819d06e",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a5248769-96ee-4ac0-9740-cc64b3eb5e65",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
