@@ -51,7 +51,6 @@
             <e p="RiretrimGameObject.cs" t="Include" />
             <e p="SpaceMapBullet.cs" t="Include" />
           </e>
-          <e p="BuyMaterial.cs" t="Include" />
           <e p="Camera" t="Include">
             <e p="CameraFollow.cs" t="Include" />
             <e p="CameraZoom.cs" t="Include" />
@@ -100,6 +99,10 @@
             <e p="Material.cs" t="Include" />
             <e p="MaterialPickUp.cs" t="Include" />
             <e p="Materials.cs" t="Include" />
+          </e>
+          <e p="MaterialShop" t="Include">
+            <e p="BuyMaterial.cs" t="Include" />
+            <e p="MaterialShop.cs" t="Include" />
           </e>
           <e p="Movement" t="Include">
             <e p="Orbit.cs" t="Include" />

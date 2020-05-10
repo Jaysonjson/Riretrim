@@ -61,4 +61,11 @@ public class EscapeMenu : MonoBehaviour
       Save();
       SceneManager.LoadScene("Shop");
    }
+
+   public void MaterialShop()
+   {
+      Time.timeScale = 1f;
+      Save();
+      SceneManager.LoadScene("MaterialShop");
+   }
 }

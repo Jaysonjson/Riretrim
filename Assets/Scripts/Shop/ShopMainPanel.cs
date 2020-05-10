@@ -86,9 +86,14 @@ public class ShopMainPanel : MonoBehaviour
         }
         else
         {
-            shipData.bought = true;
-            shipData.Save(Object.name);
-            BuyOrSelectText.text = "Select";
+            ShopShip data = Object.GetComponent<ShopShip>();
+            if (data.xp <= Registry.profile.Data.ship_xp && data.price <= Registry.profile.Data.currency)
+            {
+                Registry.profile.Data.currency -= data.price;
+                shipData.bought = true;
+                shipData.Save(Object.name);
+                BuyOrSelectText.text = "Select";
+            }
         }
         Ship.Save();
     }
