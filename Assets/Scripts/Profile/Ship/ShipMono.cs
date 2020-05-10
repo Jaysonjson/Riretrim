@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 using Random = System.Random;
 
 public class ShipMono : MonoBehaviour
@@ -11,7 +12,6 @@ public class ShipMono : MonoBehaviour
     public GameObject redBlinkText;
     public GameObject wing;
     public GameObject ships;
-    public GameObject shadow;
     private ShipSprites Sprites;
     public ShipState STATE = ShipState.IDLE;
     private Random Random = new Random();
@@ -26,9 +26,9 @@ public class ShipMono : MonoBehaviour
             GetComponent<Animator>().enabled = false;
             GetComponent<SpriteRenderer>().sprite = Sprites.Idle;
         }
-        else
+        else if(shipObject.name == "PlayerDefault")
         {
-            shadow.SetActive(false);
+            GetComponent<ShadowCaster2D>().enabled = true;
         }
 
         if (Sprites.Wing != null)
