@@ -23,7 +23,7 @@ public class PlayerMapMovement : MonoBehaviour
 
     private void Start()
     {
-        playerActionMap = GetComponent<PlayerInput>().actions.FindActionMap("PlayerMovement");
+        playerActionMap = GetComponent<PlayerInput>().actions.FindActionMap("GSPlayer");
         UpKey = playerActionMap.FindAction("Up");
         DownKey = playerActionMap.FindAction("Down");
         RightKey = playerActionMap.FindAction("Right");

@@ -25,6 +25,38 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Left"",
+                    ""type"": ""Button"",
+                    ""id"": ""60ca5ad9-5730-4074-bbdd-6a5fd7654ca1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Right"",
+                    ""type"": ""Button"",
+                    ""id"": ""f77fe549-4974-4c44-90f8-5b16dfe69b26"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Down"",
+                    ""type"": ""Button"",
+                    ""id"": ""ba39b3d8-152a-4fb5-b6ab-18c836778ae9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Up"",
+                    ""type"": ""Button"",
+                    ""id"": ""e7ed604d-f163-4c4a-b515-857b4db2e908"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -60,50 +92,10 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""PlayerMovement"",
-            ""id"": ""317c5782-a4af-4a4d-8424-5e7191cacbc7"",
-            ""actions"": [
-                {
-                    ""name"": ""Up"",
-                    ""type"": ""Button"",
-                    ""id"": ""005da218-a6dd-4e8b-93eb-e302834344ab"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
                 },
-                {
-                    ""name"": ""Down"",
-                    ""type"": ""Button"",
-                    ""id"": ""773b71b1-f0db-4eb3-a92e-b6258f21f47e"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""Right"",
-                    ""type"": ""Button"",
-                    ""id"": ""5bf28da0-5a0e-4230-aceb-0f373ecb04a7"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""Left"",
-                    ""type"": ""Button"",
-                    ""id"": ""d7a13058-66f0-4619-8a15-f72604666d59"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                }
-            ],
-            ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""e7d09b33-d057-443f-aee6-7b8d254383e6"",
+                    ""id"": ""f603437e-7b1a-46d9-8183-1bf9fe7227c1"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -114,7 +106,7 @@ public class @Controls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""004fed99-025b-41f8-bd7b-829169f151e4"",
+                    ""id"": ""6ac88852-16f4-450a-9977-2fddc2b7da6e"",
                     ""path"": ""<Gamepad>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -125,7 +117,7 @@ public class @Controls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""1bc89ff3-07aa-41fb-86e6-5082b58229eb"",
+                    ""id"": ""4e40fd21-a96b-4978-9370-021e3611b647"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -136,7 +128,7 @@ public class @Controls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""d90ae9c8-8e37-45c8-af49-9c160a67ea7e"",
+                    ""id"": ""16fbded9-95eb-4e55-9f89-43e8a4e86c29"",
                     ""path"": ""<Gamepad>/leftStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -147,7 +139,7 @@ public class @Controls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""395db1a3-8dbe-4832-a0ca-23934ef845c0"",
+                    ""id"": ""2b088fa4-b65a-4a2b-9ae9-a5b5c35cb942"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -158,7 +150,7 @@ public class @Controls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""995b1788-2a1d-4752-ab1c-db682bffec02"",
+                    ""id"": ""f9842c1f-3fd4-4f1b-af2c-8bac4e50db4f"",
                     ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -169,7 +161,7 @@ public class @Controls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""19bc992f-c653-437d-a204-005a072dd541"",
+                    ""id"": ""325e363b-7d02-49cd-9fb5-27b164cb2ed4"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -180,7 +172,7 @@ public class @Controls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""9792db25-ea43-43b4-b9fc-ffa782a4823c"",
+                    ""id"": ""3ec09565-c216-408a-8fbd-84830e37ee4c"",
                     ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -197,12 +189,10 @@ public class @Controls : IInputActionCollection, IDisposable
         // GSPlayer
         m_GSPlayer = asset.FindActionMap("GSPlayer", throwIfNotFound: true);
         m_GSPlayer_Shoot = m_GSPlayer.FindAction("Shoot", throwIfNotFound: true);
-        // PlayerMovement
-        m_PlayerMovement = asset.FindActionMap("PlayerMovement", throwIfNotFound: true);
-        m_PlayerMovement_Up = m_PlayerMovement.FindAction("Up", throwIfNotFound: true);
-        m_PlayerMovement_Down = m_PlayerMovement.FindAction("Down", throwIfNotFound: true);
-        m_PlayerMovement_Right = m_PlayerMovement.FindAction("Right", throwIfNotFound: true);
-        m_PlayerMovement_Left = m_PlayerMovement.FindAction("Left", throwIfNotFound: true);
+        m_GSPlayer_Left = m_GSPlayer.FindAction("Left", throwIfNotFound: true);
+        m_GSPlayer_Right = m_GSPlayer.FindAction("Right", throwIfNotFound: true);
+        m_GSPlayer_Down = m_GSPlayer.FindAction("Down", throwIfNotFound: true);
+        m_GSPlayer_Up = m_GSPlayer.FindAction("Up", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -253,11 +243,19 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputActionMap m_GSPlayer;
     private IGSPlayerActions m_GSPlayerActionsCallbackInterface;
     private readonly InputAction m_GSPlayer_Shoot;
+    private readonly InputAction m_GSPlayer_Left;
+    private readonly InputAction m_GSPlayer_Right;
+    private readonly InputAction m_GSPlayer_Down;
+    private readonly InputAction m_GSPlayer_Up;
     public struct GSPlayerActions
     {
         private @Controls m_Wrapper;
         public GSPlayerActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Shoot => m_Wrapper.m_GSPlayer_Shoot;
+        public InputAction @Left => m_Wrapper.m_GSPlayer_Left;
+        public InputAction @Right => m_Wrapper.m_GSPlayer_Right;
+        public InputAction @Down => m_Wrapper.m_GSPlayer_Down;
+        public InputAction @Up => m_Wrapper.m_GSPlayer_Up;
         public InputActionMap Get() { return m_Wrapper.m_GSPlayer; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -270,6 +268,18 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Shoot.started -= m_Wrapper.m_GSPlayerActionsCallbackInterface.OnShoot;
                 @Shoot.performed -= m_Wrapper.m_GSPlayerActionsCallbackInterface.OnShoot;
                 @Shoot.canceled -= m_Wrapper.m_GSPlayerActionsCallbackInterface.OnShoot;
+                @Left.started -= m_Wrapper.m_GSPlayerActionsCallbackInterface.OnLeft;
+                @Left.performed -= m_Wrapper.m_GSPlayerActionsCallbackInterface.OnLeft;
+                @Left.canceled -= m_Wrapper.m_GSPlayerActionsCallbackInterface.OnLeft;
+                @Right.started -= m_Wrapper.m_GSPlayerActionsCallbackInterface.OnRight;
+                @Right.performed -= m_Wrapper.m_GSPlayerActionsCallbackInterface.OnRight;
+                @Right.canceled -= m_Wrapper.m_GSPlayerActionsCallbackInterface.OnRight;
+                @Down.started -= m_Wrapper.m_GSPlayerActionsCallbackInterface.OnDown;
+                @Down.performed -= m_Wrapper.m_GSPlayerActionsCallbackInterface.OnDown;
+                @Down.canceled -= m_Wrapper.m_GSPlayerActionsCallbackInterface.OnDown;
+                @Up.started -= m_Wrapper.m_GSPlayerActionsCallbackInterface.OnUp;
+                @Up.performed -= m_Wrapper.m_GSPlayerActionsCallbackInterface.OnUp;
+                @Up.canceled -= m_Wrapper.m_GSPlayerActionsCallbackInterface.OnUp;
             }
             m_Wrapper.m_GSPlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -277,76 +287,28 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Shoot.started += instance.OnShoot;
                 @Shoot.performed += instance.OnShoot;
                 @Shoot.canceled += instance.OnShoot;
+                @Left.started += instance.OnLeft;
+                @Left.performed += instance.OnLeft;
+                @Left.canceled += instance.OnLeft;
+                @Right.started += instance.OnRight;
+                @Right.performed += instance.OnRight;
+                @Right.canceled += instance.OnRight;
+                @Down.started += instance.OnDown;
+                @Down.performed += instance.OnDown;
+                @Down.canceled += instance.OnDown;
+                @Up.started += instance.OnUp;
+                @Up.performed += instance.OnUp;
+                @Up.canceled += instance.OnUp;
             }
         }
     }
     public GSPlayerActions @GSPlayer => new GSPlayerActions(this);
-
-    // PlayerMovement
-    private readonly InputActionMap m_PlayerMovement;
-    private IPlayerMovementActions m_PlayerMovementActionsCallbackInterface;
-    private readonly InputAction m_PlayerMovement_Up;
-    private readonly InputAction m_PlayerMovement_Down;
-    private readonly InputAction m_PlayerMovement_Right;
-    private readonly InputAction m_PlayerMovement_Left;
-    public struct PlayerMovementActions
-    {
-        private @Controls m_Wrapper;
-        public PlayerMovementActions(@Controls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Up => m_Wrapper.m_PlayerMovement_Up;
-        public InputAction @Down => m_Wrapper.m_PlayerMovement_Down;
-        public InputAction @Right => m_Wrapper.m_PlayerMovement_Right;
-        public InputAction @Left => m_Wrapper.m_PlayerMovement_Left;
-        public InputActionMap Get() { return m_Wrapper.m_PlayerMovement; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerMovementActions set) { return set.Get(); }
-        public void SetCallbacks(IPlayerMovementActions instance)
-        {
-            if (m_Wrapper.m_PlayerMovementActionsCallbackInterface != null)
-            {
-                @Up.started -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnUp;
-                @Up.performed -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnUp;
-                @Up.canceled -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnUp;
-                @Down.started -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnDown;
-                @Down.performed -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnDown;
-                @Down.canceled -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnDown;
-                @Right.started -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnRight;
-                @Right.performed -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnRight;
-                @Right.canceled -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnRight;
-                @Left.started -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnLeft;
-                @Left.performed -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnLeft;
-                @Left.canceled -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnLeft;
-            }
-            m_Wrapper.m_PlayerMovementActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @Up.started += instance.OnUp;
-                @Up.performed += instance.OnUp;
-                @Up.canceled += instance.OnUp;
-                @Down.started += instance.OnDown;
-                @Down.performed += instance.OnDown;
-                @Down.canceled += instance.OnDown;
-                @Right.started += instance.OnRight;
-                @Right.performed += instance.OnRight;
-                @Right.canceled += instance.OnRight;
-                @Left.started += instance.OnLeft;
-                @Left.performed += instance.OnLeft;
-                @Left.canceled += instance.OnLeft;
-            }
-        }
-    }
-    public PlayerMovementActions @PlayerMovement => new PlayerMovementActions(this);
     public interface IGSPlayerActions
     {
         void OnShoot(InputAction.CallbackContext context);
-    }
-    public interface IPlayerMovementActions
-    {
-        void OnUp(InputAction.CallbackContext context);
-        void OnDown(InputAction.CallbackContext context);
-        void OnRight(InputAction.CallbackContext context);
         void OnLeft(InputAction.CallbackContext context);
+        void OnRight(InputAction.CallbackContext context);
+        void OnDown(InputAction.CallbackContext context);
+        void OnUp(InputAction.CallbackContext context);
     }
 }

@@ -82,9 +82,9 @@ public class Asteroid : MonoBehaviour
 
             if (random.Next(5) == 1)
             {
-                GameObject currency_mat = Instantiate(currency, new Vector3(gameObject.transform.position.x + random.Next(2), gameObject.transform.position.y + random.Next(2), gameObject.transform.position.y), new Quaternion(0, 0, random.Next(360), 0), GameObject.Find("Materials").transform);
+                GameObject currency_mat = Instantiate(currency, new Vector3(gameObject.transform.position.x + ((float)random.NextDouble() / 2), gameObject.transform.position.y + (float)random.NextDouble(), gameObject.transform.position.y), new Quaternion(0, 0, random.Next(360), 0), GameObject.Find("Materials").transform);
                 currency_mat.SetActive(true);
-                currency_mat.GetComponent<Currency>().amount = random.Next(3);
+                currency_mat.GetComponent<Currency>().amount = 1 + random.Next(3);
             }
         }
         Star star = new Star();
@@ -92,6 +92,7 @@ public class Asteroid : MonoBehaviour
         Debug.Log(star.Data.name + " / " + star.Data.asteroid_count);
         star.Data.asteroid_count--;
         star.Data.Save();
+        Registry.profile.Data.ship_xp += (float)random.NextDouble();
         Debug.Log("Decreased Asteroid Count to " + star.Data.asteroid_count + " from Solarsystem " + star.Data.name);
         asteroidCountText.text = star.Data.asteroid_count + "";
     }

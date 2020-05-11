@@ -25,7 +25,7 @@ public class MaterialPickUp : MonoBehaviour
                 case Materials.COPPER: Registry.profile.Data.copper_amount++; break;
                 case Materials.COAL: Registry.profile.Data.coal_amount++; break;
             }
-            SpaceMap.updateMaterialText();
+            SpaceMap.INSTANCE.updateMaterialText();
             Destroy(gameObject);
             Registry.profile.Save();
         }

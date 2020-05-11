@@ -19,9 +19,13 @@ public class Currency : MonoBehaviour
         transform.Rotate(0, 0, 0.05f);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Registry.profile.Data.currency += amount;
-        Destroy(gameObject);
+        if (other.gameObject == GameObject.Find("Player"))
+        {
+            Registry.profile.Data.currency += amount;
+            SpaceMap.INSTANCE.updateMaterialText();
+            Destroy(gameObject);
+        }
     }
 }

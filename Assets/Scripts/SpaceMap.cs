@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,18 +10,18 @@ public class SpaceMap : MonoBehaviour
     public GameObject galaxyText;
     public GameObject solarSystemText;
 
-    public GameObject aluminiumText;
-    public GameObject bronzeText;
-    public GameObject carbonText;
-    public GameObject coalText;
-    public GameObject crystalText;
-    public GameObject goldText;
-    public GameObject tinText;
-    public GameObject titanText;
-    public GameObject tungstenText;
-    public GameObject nickelText;
-    public GameObject copperText;
-    public GameObject ironText;
+    public TextMeshProUGUI aluminiumText;
+    public TextMeshProUGUI bronzeText;
+    public TextMeshProUGUI carbonText;
+    public TextMeshProUGUI coalText;
+    public TextMeshProUGUI crystalText;
+    public TextMeshProUGUI goldText;
+    public TextMeshProUGUI tinText;
+    public TextMeshProUGUI titanText;
+    public TextMeshProUGUI tungstenText;
+    public TextMeshProUGUI nickelText;
+    public TextMeshProUGUI copperText;
+    public TextMeshProUGUI ironText;
     public TextMeshProUGUI asteroidCountText;
     public TextMeshProUGUI moonCountText;
     public TextMeshProUGUI planetCountText;
@@ -32,39 +33,16 @@ public class SpaceMap : MonoBehaviour
     public TextMeshProUGUI currencyName;
     public GameObject UI;
 
-    public static TextMeshProUGUI aluminiumUIText;
-    public static TextMeshProUGUI bronzeUIText;
-    public static TextMeshProUGUI carbonUIText;
-    public static TextMeshProUGUI coalUIText;
-    public static TextMeshProUGUI crystalUIText;
-    public static TextMeshProUGUI goldUIText;
-    public static TextMeshProUGUI tinUIText;
-    public static TextMeshProUGUI titanUIText;
-    public static TextMeshProUGUI tungstenUIText;
-    public static TextMeshProUGUI nickelUIText;
-    public static TextMeshProUGUI copperUIText;
-    public static TextMeshProUGUI ironUIText;
+    public static SpaceMap INSTANCE;
 
     
     
     void Start()
     {
+        INSTANCE = this;
         Registry.profile.Load();
         galaxyText.GetComponent<TextMeshProUGUI>().text = Registry.profile.Data.current_galaxy;
         solarSystemText.GetComponent<TextMeshProUGUI>().text = Registry.profile.Data.current_solarsystem;
-
-        aluminiumUIText = aluminiumText.GetComponent<TextMeshProUGUI>();
-        bronzeUIText = bronzeText.GetComponent<TextMeshProUGUI>();
-        carbonUIText = carbonText.GetComponent<TextMeshProUGUI>();
-        coalUIText = coalText.GetComponent<TextMeshProUGUI>();
-        crystalUIText = crystalText.GetComponent<TextMeshProUGUI>();
-        goldUIText = goldText.GetComponent<TextMeshProUGUI>();
-        tinUIText = tinText.GetComponent<TextMeshProUGUI>();
-        titanUIText = titanText.GetComponent<TextMeshProUGUI>();
-        nickelUIText = nickelText.GetComponent<TextMeshProUGUI>();
-        tungstenUIText = tungstenText.GetComponent<TextMeshProUGUI>();
-        copperUIText = copperText.GetComponent<TextMeshProUGUI>();
-        ironUIText = ironText.GetComponent<TextMeshProUGUI>();
 
         updateMaterialText();
 
@@ -108,20 +86,21 @@ public class SpaceMap : MonoBehaviour
             Planets.GetPlanet(i).save(i);
         }
     }
-    public static void updateMaterialText()
+    public void updateMaterialText()
     {
-        aluminiumUIText.text = Registry.profile.Data.aluminium_amount + "";
-        bronzeUIText.text = Registry.profile.Data.bronze_amount + "";
-        carbonUIText.text = Registry.profile.Data.carbon_amount + "";
-        coalUIText.text = Registry.profile.Data.coal_amount + "";
-        crystalUIText.text = Registry.profile.Data.crystal_amount + "";
-        goldUIText.text = Registry.profile.Data.gold_amount + "";
-        tinUIText.text = Registry.profile.Data.tin_amount + "";
-        titanUIText.text = Registry.profile.Data.titan_amount + "";
-        nickelUIText.text = Registry.profile.Data.nickel_amount + "";
-        tungstenUIText.text = Registry.profile.Data.tungsten_amount + "";
-        copperUIText.text = Registry.profile.Data.copper_amount + "";
-        ironUIText.text = Registry.profile.Data.iron_amount + "";
+        aluminiumText.text = Registry.profile.Data.aluminium_amount + "";
+        bronzeText.text = Registry.profile.Data.bronze_amount + "";
+        carbonText.text = Registry.profile.Data.carbon_amount + "";
+        coalText.text = Registry.profile.Data.coal_amount + "";
+        crystalText.text = Registry.profile.Data.crystal_amount + "";
+        goldText.text = Registry.profile.Data.gold_amount + "";
+        tinText.text = Registry.profile.Data.tin_amount + "";
+        titanText.text = Registry.profile.Data.titan_amount + "";
+        nickelText.text = Registry.profile.Data.nickel_amount + "";
+        tungstenText.text = Registry.profile.Data.tungsten_amount + "";
+        copperText.text = Registry.profile.Data.copper_amount + "";
+        ironText.text = Registry.profile.Data.iron_amount + "";
+        currencyAmount.text = Registry.profile.Data.currency + "";
     }
 
     private void Update()
