@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 72415350}
   - component: {fileID: 72415351}
+  - component: {fileID: 72415352}
   m_Layer: 0
   m_Name: Parametric Light (1)
   m_TagString: Untagged
@@ -195,6 +196,18 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &72415352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72415349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026f2a96189b44109e1ab9c8276cb278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &242844349
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,7 +407,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &633832594
 Transform:
   m_ObjectHideFlags: 0
@@ -565,6 +578,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 2110641644}
   scale: 1
+  lights:
+  - {fileID: 72415351}
+  - {fileID: 2092605367}
 --- !u!114 &633832598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6423,6 +6439,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2092605366}
   - component: {fileID: 2092605367}
+  - component: {fileID: 2092605368}
   m_Layer: 0
   m_Name: Parametric Light
   m_TagString: Untagged
@@ -6485,6 +6502,18 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &2092605368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092605365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026f2a96189b44109e1ab9c8276cb278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2110641644
 GameObject:
   m_ObjectHideFlags: 0

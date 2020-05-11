@@ -12,6 +12,7 @@ public class Asteroid : MonoBehaviour
     public GameObject gold;
     public GameObject crystal;
     public GameObject coal;
+    public GameObject currency;
     public TextMeshProUGUI asteroidCountText;
 
     private void Start()
@@ -55,8 +56,6 @@ public class Asteroid : MonoBehaviour
     private void DropMaterials()
     {
         System.Random random = new System.Random();
-        // if (random.Next(3) == 1)
-        //{
         for (int i = 0; i < random.Next(7); i++)
         {
             GameObject material = Instantiate(materials[random.Next(materials.Length)], gameObject.transform.position, new Quaternion(0, 0, random.Next(360), 0), GameObject.Find("Materials").transform);
@@ -80,20 +79,21 @@ public class Asteroid : MonoBehaviour
                 coal_mat.SetActive(true);
                 coal_mat.transform.Rotate(0, 0, random.Next(360));
             }
-                // material.GetComponent<Rigidbody2D>().AddForce(material.transform.up * 0.1f);
+
+            if (random.Next(5) == 1)
+            {
+                GameObject currency_mat = Instantiate(currency, new Vector3(gameObject.transform.position.x + random.Next(2), gameObject.transform.position.y + random.Next(2), gameObject.transform.position.y), new Quaternion(0, 0, random.Next(360), 0), GameObject.Find("Materials").transform);
+                currency_mat.SetActive(true);
+                currency_mat.GetComponent<Currency>().amount = random.Next(3);
+            }
         }
-            //int starIndex = Array.IndexOf(Galaxy.stars.ToArray(), Profile.current_solarsystem);
-          // Star star = Stars.GetStar(starIndex);
-            Star star = new Star();
-            star.Load(Registry.profile.Data.current_solarsystem);
-            //star.load(starIndex);
-            Debug.Log(star.Data.name + " / " + star.Data.asteroid_count);
-            star.Data.asteroid_count--;
-            //References.stars.Where(References.stars[starIndex](true)).Select(u => { u.asteroid_count = star.asteroid_count; return u; }).ToList();
-            star.Data.Save();
-            Debug.Log("Decreased Asteroid Count to " + star.Data.asteroid_count + " from Solarsystem " + star.Data.name);
-            asteroidCountText.text = star.Data.asteroid_count + "";
-        //  }
+        Star star = new Star();
+        star.Load(Registry.profile.Data.current_solarsystem);
+        Debug.Log(star.Data.name + " / " + star.Data.asteroid_count);
+        star.Data.asteroid_count--;
+        star.Data.Save();
+        Debug.Log("Decreased Asteroid Count to " + star.Data.asteroid_count + " from Solarsystem " + star.Data.name);
+        asteroidCountText.text = star.Data.asteroid_count + "";
     }
 }
 

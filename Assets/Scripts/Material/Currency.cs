@@ -18,4 +18,10 @@ public class Currency : MonoBehaviour
     {
         transform.Rotate(0, 0, 0.05f);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Registry.profile.Data.currency += amount;
+        Destroy(gameObject);
+    }
 }
