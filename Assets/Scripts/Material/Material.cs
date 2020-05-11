@@ -1,15 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Material : MonoBehaviour
 {
     public bool spaceMap;
+    System.Random Random = new System.Random();
     void Start()
     {
         if(spaceMap)
         {
-            GetComponent<Rigidbody2D>().AddForce(transform.up * 0.5f);
+            GetComponent<Rigidbody2D>().AddForce(transform.up * (float)Random.NextDouble());
         }
     }
 

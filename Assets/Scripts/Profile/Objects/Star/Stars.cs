@@ -2,12 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 public class Stars : MonoBehaviour
 {
     public GameObject text;
     public float scale;
+    public Light2D[] lights;
 
     public Star AddStar(Star star)
     {
@@ -24,7 +26,7 @@ public class Stars : MonoBehaviour
     void Start()
     {
         scale = gameObject.transform.localScale.x;
-        AddStar(new Star(text, gameObject));
+        AddStar(new Star(text, gameObject, lights));
     }
 
     public static void LoadStars()

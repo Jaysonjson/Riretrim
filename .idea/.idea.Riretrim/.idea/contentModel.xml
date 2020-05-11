@@ -96,6 +96,8 @@
           <e p="Lifetime.cs" t="Include" />
           <e p="LightObject.cs" t="Include" />
           <e p="Material" t="Include">
+            <e p="Currency.cs" t="Include" />
+            <e p="CurrencyLight.cs" t="Include" />
             <e p="Material.cs" t="Include" />
             <e p="MaterialPickUp.cs" t="Include" />
             <e p="Materials.cs" t="Include" />

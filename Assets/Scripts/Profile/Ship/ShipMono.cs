@@ -64,6 +64,11 @@ public class ShipMono : MonoBehaviour
             GetComponent<SpriteRenderer>().sprite = Sprites.Flight;
         }
 
+        if (STATE == ShipState.SPECIAL)
+        {
+            GetComponent<SpriteRenderer>().sprite = Sprites.Special;
+        }
+
         if (sun != null)
         {
             float distance = Vector2.Distance(sun.transform.position, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y));

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 public class Star
@@ -13,10 +14,12 @@ public class Star
     public int index;
     public GameObject text;
     public GameObject star;
-    public Star(GameObject text, GameObject star)
+    public Light2D[] lights;
+    public Star(GameObject text, GameObject star, Light2D[] lights)
     {
         this.text = text;
         this.star = star;
+        this.lights = lights;
     }
     public Star()
     {
@@ -88,6 +91,10 @@ public class Star
         //star.GetComponent<SpriteRenderer>().color = color;
         star.GetComponent<SpriteRenderer>().color = new Color32(Data.color[0],Data.color[1],Data.color[2], 255);
         star.transform.position = new Vector2(Data.position_x, Data.position_y);
+        for (var i = 0; i < lights.Length; i++)
+        {
+            lights[i].color = new Color32(Data.color[0],Data.color[1],Data.color[2], 255);
+        }
         Galaxy.Save();
     }
 
