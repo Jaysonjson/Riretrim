@@ -114,6 +114,7 @@
             <e p="SingleMovement.cs" t="Include" />
           </e>
           <e p="ParticleSystemObject.cs" t="Include" />
+          <e p="PlayerFuelCircle.cs" t="Include" />
           <e p="Profile" t="Include">
             <e p="MapOptions" t="Include">
               <e p="MapOptions.cs" t="Include" />

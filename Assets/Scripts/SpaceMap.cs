@@ -54,7 +54,7 @@ public class SpaceMap : MonoBehaviour
         currencyAmount.text = Registry.profile.Data.currency + "";
         currencyName.text = Registry.profile.Data.currency_name;
         asteroidCountText.text = star.Data.asteroid_count + "";
-        planetCountText.text = star.Data.planet_count + "";
+        planetCountText.text = (star.Data.planet_count + 1) + "";
         StartCoroutine(LateStart());
     }
 
