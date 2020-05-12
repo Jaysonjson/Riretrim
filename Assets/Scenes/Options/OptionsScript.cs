@@ -66,6 +66,7 @@ public class OptionsScript : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         CanvasScaler.referenceResolution = new Vector2(__old_res, 1080);
+        Options.Data.HUDScale = __old_res;
     }
     
     public void UpdateAsteroidsShadowToggle()
