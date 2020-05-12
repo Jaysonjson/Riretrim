@@ -36,7 +36,7 @@ public class SpaceMap : MonoBehaviour
     public Image fuelCircle;
     public Image energyCircle;
     public static SpaceMap INSTANCE;
-
+    public CanvasScaler CanvasScaler;
     
     
     void Start()
@@ -57,6 +57,8 @@ public class SpaceMap : MonoBehaviour
         currencyName.text = Registry.profile.Data.currency_name;
         asteroidCountText.text = star.Data.asteroid_count + "";
         planetCountText.text = (star.Data.planet_count + 1) + "";
+        //CanvasScaler.scaleFactor = Options.Data.HUDScale;
+        CanvasScaler.referenceResolution = new Vector2(Options.Data.HUDScale, 1080);
         StartCoroutine(LateStart());
     }
 

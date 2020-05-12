@@ -8,13 +8,16 @@ using UnityEngine.SceneManagement;
 public class OptionsScript : MonoBehaviour
 {
     public Slider asteroidDespawnDistanceSlider;
+    public Slider hudScaleSlider;
     public GameObject asteroidDespawnDistanceSliderValue;
+    public TextMeshProUGUI hudScaleValue;
     public Toggle asteroidShadowToggle;
     public Toggle particleSystemToggle;
     public Toggle objectShadowToggle;
     public Toggle lightToggle;
     public Toggle showFPSToggle;
     public TMP_Dropdown languageDropdown;
+    public CanvasScaler CanvasScaler;
     void Start()
     {
         Options.Load();
@@ -25,6 +28,9 @@ public class OptionsScript : MonoBehaviour
         objectShadowToggle.isOn = Options.Data.ObjectShadows;
         lightToggle.isOn = Options.Data.Lights;
         showFPSToggle.isOn = Options.Data.ShowFPS;
+        hudScaleSlider.value = Options.Data.HUDScale;
+        hudScaleValue.text = Options.Data.HUDScale + "";
+        CanvasScaler.referenceResolution = new Vector2(Options.Data.HUDScale, 1080);
         for (var i = 0; i < languageDropdown.options.Count; i++)
         {
             if (languageDropdown.options[i].text.Equals(Options.Data.Language))
@@ -39,6 +45,13 @@ public class OptionsScript : MonoBehaviour
     {
         Options.Data.AsteroidDespawnDistance = asteroidDespawnDistanceSlider.value;
         asteroidDespawnDistanceSliderValue.GetComponent<TextMeshProUGUI>().text = Options.Data.AsteroidDespawnDistance + "";
+    }
+
+    public void UpdateHUDScaleSlider()
+    {
+        Options.Data.HUDScale = (int)hudScaleSlider.value;
+        hudScaleValue.text = Options.Data.HUDScale + "";
+        CanvasScaler.referenceResolution = new Vector2(Options.Data.HUDScale, 1080);
     }
     
     public void UpdateAsteroidsShadowToggle()

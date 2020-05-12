@@ -26,7 +26,7 @@ public class OptionData
     public bool ShowFPS = false;
     public string Language = "English";
     public string Texturepack = "Default";
-
+    public int HUDScale = 1920;
     public void Load()
     {
         string json = "{}";
