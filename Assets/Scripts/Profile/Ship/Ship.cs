@@ -5,15 +5,14 @@ using UnityEngine;
 
 public class Ship
 {
-    public static ShipData Data = new ShipData();
+    public ShipData Data = new ShipData();
 
-    public static string body = "PlayerDefault"; //PlayerDefault
-    public static void Load()
+    public void Load()
     {
         Data.Load();
     }
 
-    public static void Save()
+    public void Save()
     {
         Data.Save();
     }
@@ -34,6 +33,13 @@ public class ShipData
     public float bodyDamageMax = 200f;
 
     public string body = "PlayerDefault"; //PlayerDefault
+
+    public float energy = 125f;
+    public float fuel = 250f;
+    public float fuelMax = 250f;
+    public float energyMax = 125f;
+
+    public bool on = true;
     
     public void Load()
     {

@@ -17,7 +17,7 @@ public class ShipMono : MonoBehaviour
     private Random Random = new Random();
     void Start()
     {
-        GameObject shipObject = GameObject.Find(Ship.body);
+        GameObject shipObject = GameObject.Find(Registry.profile.Ship.Data.body);
         shipObject.SetActive(true);
         Sprites = shipObject.GetComponent<ShipSprites>();
         Instantiate(shipObject,transform).SetActive(true);
@@ -44,10 +44,21 @@ public class ShipMono : MonoBehaviour
 
     void Update()
     {
-        Ship.Data.bodyDamage += 0.0001f;
-        Ship.Data.gunDamage += 0.000001f;
-        Ship.Data.thrusterDamage += 0.00001f;
-        Ship.Data.engineDamage += 0.00001f;
+        Registry.profile.Ship.Data.bodyDamage += 0.0001f;
+        Registry.profile.Ship.Data.gunDamage += 0.000001f;
+        Registry.profile.Ship.Data.thrusterDamage += 0.00001f;
+        Registry.profile.Ship.Data.engineDamage += 0.00001f;
+        if (Registry.profile.Ship.Data.on)
+        {
+            if (Registry.profile.Ship.Data.energy > 0)
+            {
+                Registry.profile.Ship.Data.energy -= 0.05f;
+            }
+            else
+            {
+                Registry.profile.Ship.Data.energy = 0;
+            }
+        }
         if (Random.Next(15) == 1)
         {
             Registry.profile.Data.ship_xp += 0.01f;
@@ -74,10 +85,10 @@ public class ShipMono : MonoBehaviour
             float distance = Vector2.Distance(sun.transform.position, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y));
             if (distance < 12)
             {
-                Ship.Data.bodyDamage += 0.065f;
-                Ship.Data.gunDamage += 0.00035f;
-                Ship.Data.thrusterDamage += 0.00069f;
-                Ship.Data.engineDamage += 0.00094f;
+                Registry.profile.Ship.Data.bodyDamage += 0.065f;
+                Registry.profile.Ship.Data.gunDamage += 0.00035f;
+                Registry.profile.Ship.Data.thrusterDamage += 0.00069f;
+                Registry.profile.Ship.Data.engineDamage += 0.00094f;
                 redBlink.SetActive(true);
                 redBlinkText.SetActive(true);
             }

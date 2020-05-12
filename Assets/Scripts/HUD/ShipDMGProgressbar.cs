@@ -25,13 +25,13 @@ public class ShipDMGProgressbar : MonoBehaviour
     }
     public void UpdateBars()
     {
-        thrusterProgress.sizeDelta = new Vector2((Ship.Data.thrusterDamage / Ship.Data.thrusterDamageMax) * progressBar.sizeDelta.x, progressBar.sizeDelta.y);
-        gunProgress.sizeDelta = new Vector2((Ship.Data.gunDamage / Ship.Data.gunDamageMax) * progressBar.sizeDelta.x, progressBar.sizeDelta.y);
-        engineProgress.sizeDelta = new Vector2((Ship.Data.engineDamage / Ship.Data.engineDamageMax) * progressBar.sizeDelta.x, progressBar.sizeDelta.y);
-        bodyProgress.sizeDelta = new Vector2((Ship.Data.bodyDamage / Ship.Data.bodyDamageMax) * progressBar.sizeDelta.x, progressBar.sizeDelta.y);
-        thrusterProgressPercentage.text = ((Ship.Data.thrusterDamage / Ship.Data.thrusterDamageMax) * 100).ToString("0.00") + "%";
-        gunProgressPercentage.text = ((Ship.Data.gunDamage / Ship.Data.gunDamageMax) * 100).ToString("0.00") + "%";
-        engineProgressPercentage.text = ((Ship.Data.engineDamage / Ship.Data.engineDamageMax) * 100).ToString("0.00") + "%";
-        bodyProgressPercentage.text = ((Ship.Data.bodyDamage / Ship.Data.bodyDamageMax) * 100).ToString("0.00") + "%";
+        thrusterProgress.sizeDelta = new Vector2((Registry.profile.Ship.Data.thrusterDamage / Registry.profile.Ship.Data.thrusterDamageMax) * progressBar.sizeDelta.x, progressBar.sizeDelta.y);
+        gunProgress.sizeDelta = new Vector2((Registry.profile.Ship.Data.gunDamage / Registry.profile.Ship.Data.gunDamageMax) * progressBar.sizeDelta.x, progressBar.sizeDelta.y);
+        engineProgress.sizeDelta = new Vector2((Registry.profile.Ship.Data.engineDamage / Registry.profile.Ship.Data.engineDamageMax) * progressBar.sizeDelta.x, progressBar.sizeDelta.y);
+        bodyProgress.sizeDelta = new Vector2((Registry.profile.Ship.Data.bodyDamage / Registry.profile.Ship.Data.bodyDamageMax) * progressBar.sizeDelta.x, progressBar.sizeDelta.y);
+        thrusterProgressPercentage.text = ((Registry.profile.Ship.Data.thrusterDamage / Registry.profile.Ship.Data.thrusterDamageMax) * 100).ToString("0.00") + "%";
+        gunProgressPercentage.text = ((Registry.profile.Ship.Data.gunDamage / Registry.profile.Ship.Data.gunDamageMax) * 100).ToString("0.00") + "%";
+        engineProgressPercentage.text = ((Registry.profile.Ship.Data.engineDamage / Registry.profile.Ship.Data.engineDamageMax) * 100).ToString("0.00") + "%";
+        bodyProgressPercentage.text = ((Registry.profile.Ship.Data.bodyDamage / Registry.profile.Ship.Data.bodyDamageMax) * 100).ToString("0.00") + "%";
     }
 }

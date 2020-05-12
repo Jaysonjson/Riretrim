@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SpaceMap : MonoBehaviour
 {
@@ -32,7 +33,8 @@ public class SpaceMap : MonoBehaviour
     public TextMeshProUGUI currencyAmount;
     public TextMeshProUGUI currencyName;
     public GameObject UI;
-
+    public Image fuelCircle;
+    public Image energyCircle;
     public static SpaceMap INSTANCE;
 
     
@@ -123,5 +125,8 @@ public class SpaceMap : MonoBehaviour
                 UI.SetActive(true);
             }
         }
+
+        fuelCircle.fillAmount = Registry.profile.Ship.Data.fuel / Registry.profile.Ship.Data.fuelMax;
+        energyCircle.fillAmount = Registry.profile.Ship.Data.energy / Registry.profile.Ship.Data.energyMax;
     }
 }

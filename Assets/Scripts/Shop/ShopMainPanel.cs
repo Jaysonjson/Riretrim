@@ -57,7 +57,7 @@ public class ShopMainPanel : MonoBehaviour
         if (shipData.bought)
         {
             BuyOrSelectText.text = "Select";
-            if (Ship.body.Equals(Object.name))
+            if (Registry.profile.Ship.Data.body.Equals(Object.name))
             {
                 BuyOrSelectText.text = "Selected";
                 BuyOrSelectButton.enabled = false;
@@ -81,7 +81,7 @@ public class ShopMainPanel : MonoBehaviour
         shipData.Load(Object.name);
         if (shipData.bought)
         {
-            Ship.body = Object.name;
+            Registry.profile.Ship.Data.body = Object.name;
             BuyOrSelectText.text = "Selected";
         }
         else
@@ -95,6 +95,6 @@ public class ShopMainPanel : MonoBehaviour
                 BuyOrSelectText.text = "Select";
             }
         }
-        Ship.Save();
+        Registry.profile.Ship.Save();
     }
 }

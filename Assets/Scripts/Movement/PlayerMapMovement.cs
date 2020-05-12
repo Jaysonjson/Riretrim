@@ -102,6 +102,14 @@ public class PlayerMapMovement : MonoBehaviour
             //particleSystem.Play();
             particleSystem.maxParticles = 20000;
             //particleSystem.enableEmission = true;
+            if (Registry.profile.Ship.Data.fuel > 0)
+            {
+                Registry.profile.Ship.Data.fuel -= 2.7f;
+            }
+            else
+            {
+                Registry.profile.Ship.Data.fuel = 0;
+            }
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Profile
 {
     public ProfileData Data = new ProfileData();
+    public Ship Ship = new Ship();
     public string map_path;
     public string profile_path;
 
