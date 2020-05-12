@@ -18,9 +18,11 @@ public class OptionsScript : MonoBehaviour
     public Toggle showFPSToggle;
     public TMP_Dropdown languageDropdown;
     public CanvasScaler CanvasScaler;
+    private int __old_res;
     void Start()
     {
         Options.Load();
+        __old_res = Options.Data.HUDScale;
         asteroidDespawnDistanceSliderValue.GetComponent<TextMeshProUGUI>().text = Options.Data.AsteroidDespawnDistance + "";
         asteroidDespawnDistanceSlider.value = Options.Data.AsteroidDespawnDistance;
         asteroidShadowToggle.isOn = Options.Data.AsteroidShadows;
@@ -51,7 +53,19 @@ public class OptionsScript : MonoBehaviour
     {
         Options.Data.HUDScale = (int)hudScaleSlider.value;
         hudScaleValue.text = Options.Data.HUDScale + "";
+        //CanvasScaler.referenceResolution = new Vector2(Options.Data.HUDScale, 1080);
+    }
+
+    public void HUDShow()
+    {
         CanvasScaler.referenceResolution = new Vector2(Options.Data.HUDScale, 1080);
+        StartCoroutine(HUDShowReset());
+    }
+
+    IEnumerator HUDShowReset()
+    {
+        yield return new WaitForSeconds(3f);
+        CanvasScaler.referenceResolution = new Vector2(__old_res, 1080);
     }
     
     public void UpdateAsteroidsShadowToggle()
