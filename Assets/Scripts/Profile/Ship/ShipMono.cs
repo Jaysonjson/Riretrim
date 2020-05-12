@@ -52,7 +52,7 @@ public class ShipMono : MonoBehaviour
         {
             if (Registry.profile.Ship.Data.energy > 0)
             {
-                Registry.profile.Ship.Data.energy -= 0.05f;
+                Registry.profile.Ship.Data.energy -= 0.005f;
             }
             else
             {

@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMapMovement : MonoBehaviour
 {
-    public float speed = 2.25F;
+    private float speed = 1.25F;
     public Rigidbody2D rb;
     public GameObject sunObject;
     public ParticleSystem particleSystem;
@@ -98,25 +98,34 @@ public class PlayerMapMovement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            speed *= 5f;
+            speed = 5f;
             //particleSystem.Play();
             particleSystem.maxParticles = 20000;
             //particleSystem.enableEmission = true;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            speed = 5f;
+            //particleSystem.Stop();
+            particleSystem.maxParticles = 0;
+            //StartCoroutine(ParticleDespawn());
+        }
+
+        if(Registry.profile.Ship.Data.fuel <= 0)
+        {
+            speed = 1.25f;
+        }
+        
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
             if (Registry.profile.Ship.Data.fuel > 0)
             {
-                Registry.profile.Ship.Data.fuel -= 2.7f;
+                Registry.profile.Ship.Data.fuel -= 0.7f;
             }
             else
             {
                 Registry.profile.Ship.Data.fuel = 0;
-            }
-        }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            speed /= 5f;
-            //particleSystem.Stop();
-            particleSystem.maxParticles = 0;
-            //StartCoroutine(ParticleDespawn());
+            } 
         }
         coordinatesText.text = "X = " + rb.position.x + ", Y = " + rb.position.y;
         if (sunObject != null)
