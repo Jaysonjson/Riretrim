@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using TMPro;
@@ -37,8 +38,10 @@ public class SpaceMap : MonoBehaviour
     public Image energyCircle;
     public static SpaceMap INSTANCE;
     public CanvasScaler CanvasScaler;
-    
-    
+    public Image circleMiniMap;
+    public Image squareMiniMap;
+    public Image minimapBar;
+    public GameObject player;
     void Start()
     {
         INSTANCE = this;
@@ -48,6 +51,19 @@ public class SpaceMap : MonoBehaviour
 
         updateMaterialText();
 
+        if (Options.Data.MiniMapHud == MiniMapHUD.CIRCLE)
+        {
+            squareMiniMap.gameObject.SetActive(false);
+            minimapBar = circleMiniMap;
+        }
+
+        if (Options.Data.MiniMapHud == MiniMapHUD.SQUARE)
+        {
+            circleMiniMap.gameObject.SetActive(false);
+            circleMiniMap.gameObject.transform.parent.gameObject.SetActive(false);
+            minimapBar = squareMiniMap;
+        }
+        
         Star star = new Star();
         star.Load(Registry.profile.Data.current_solarsystem);
         asteroidSpawner.amount = star.Data.asteroid_count;
@@ -127,8 +143,9 @@ public class SpaceMap : MonoBehaviour
                 UI.SetActive(true);
             }
         }
-
+        
         fuelCircle.fillAmount = Registry.profile.Ship.Data.fuel / Registry.profile.Ship.Data.fuelMax;
         energyCircle.fillAmount = Registry.profile.Ship.Data.energy / Registry.profile.Ship.Data.energyMax;
+        minimapBar.fillAmount = (((player.GetComponent<PlayerMapMovement>().getDistanceToSun() - 8) / 125) - 1) / -1;
     }
 }

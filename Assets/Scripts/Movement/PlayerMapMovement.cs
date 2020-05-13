@@ -130,7 +130,7 @@ public class PlayerMapMovement : MonoBehaviour
         coordinatesText.text = "X = " + rb.position.x + ", Y = " + rb.position.y;
         if (sunObject != null)
         {
-            sunDistanceText.text = Registry.Language.sun_distance + Vector2.Distance(rb.position, sunObject.transform.position);
+            sunDistanceText.text = Registry.Language.sun_distance + getDistanceToSun();
         }
         
         if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
@@ -166,6 +166,11 @@ public class PlayerMapMovement : MonoBehaviour
     {
         //rb.AddRelativeForce(-rb.velocity);
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+    }
+
+    public float getDistanceToSun()
+    {
+        return Vector2.Distance(rb.position, sunObject.transform.position);
     }
 }
 

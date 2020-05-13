@@ -27,6 +27,7 @@ public class OptionData
     public string Language = "English";
     public string Texturepack = "Default";
     public int HUDScale = 1920;
+    public MiniMapHUD MiniMapHud = MiniMapHUD.SQUARE;
     public void Load()
     {
         string json = "{}";
@@ -45,4 +46,9 @@ public class OptionData
     {
         File.WriteAllText(Application.persistentDataPath + "/settings.json", JsonUtility.ToJson(this, true));
     }
+}
+
+public enum MiniMapHUD
+{
+    CIRCLE, SQUARE
 }

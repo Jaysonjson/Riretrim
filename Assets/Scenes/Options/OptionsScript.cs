@@ -1,7 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -17,6 +20,7 @@ public class OptionsScript : MonoBehaviour
     public Toggle lightToggle;
     public Toggle showFPSToggle;
     public TMP_Dropdown languageDropdown;
+    public TMP_Dropdown minimapHUD;
     public CanvasScaler CanvasScaler;
     private int __old_res;
     void Start()
@@ -38,6 +42,15 @@ public class OptionsScript : MonoBehaviour
             if (languageDropdown.options[i].text.Equals(Options.Data.Language))
             {
                 languageDropdown.value = i;
+                break;
+            }
+        }
+        
+        for (var i = 0; i < minimapHUD.options.Count; i++)
+        {
+            if (minimapHUD.options[i].text.ToUpper().Equals(Options.Data.MiniMapHud.ToString()))
+            {
+                minimapHUD.value = i;
                 break;
             }
         }
@@ -78,6 +91,7 @@ public class OptionsScript : MonoBehaviour
     {
         Options.Data.ParticleSystems = particleSystemToggle.isOn;
     }
+    
     public void UpdateObjectShadowToggle()
     {
         Options.Data.ObjectShadows = objectShadowToggle.isOn;
@@ -91,6 +105,11 @@ public class OptionsScript : MonoBehaviour
     public void UpdateLanguageDropdown()
     {
         Options.Data.Language = languageDropdown.options[languageDropdown.value].text;
+    }
+
+    public void UpdateMiniMapHUDDropdown()
+    {
+        Options.Data.MiniMapHud = (MiniMapHUD) Enum.Parse(typeof(MiniMapHUD), minimapHUD.options[minimapHUD.value].text.ToUpper());
     }
     
     public void UpdateLightsToggle()
