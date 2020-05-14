@@ -30,12 +30,12 @@ public class SpaceStation
     }
     public bool Exists()
     {
-        if (planetObject.spaceStations.Count < index + 1)
+        if (planetObject.Data.spaceStations.Count < index + 1)
         {
             return false;
         }
-        name = planetObject.spaceStations[index];
-        return Directory.Exists(Registry.profile.map_path + "/planets/" + planetObject.pname + "/spacestations/" + planetObject.spaceStations[index]);
+        name = planetObject.Data.spaceStations[index];
+        return Directory.Exists(Registry.profile.map_path + "/planets/" + planetObject.Data.name + "/spacestations/" + planetObject.Data.spaceStations[index]);
     }
     public void Generate()
     {
@@ -43,18 +43,18 @@ public class SpaceStation
         if (Exists())
         {
             LoadUsingName(name);
-            Debug.Log("Loaded Space Station: " + name + "; from Planet: " + planetObject.pname);
+            Debug.Log("Loaded Space Station: " + name + "; from Planet: " + planetObject.Data.name);
         }
         if (!Exists())
         {
             name = References.randomNames[random.Next(References.randomNames.Length)] + "-" + random.Next(9999);
             scale = (planetObject.planetMain.transform.localScale.x / (float)(random.Next(3,6) + random.NextDouble())) / 5.5f;
-            Debug.Log("Generated Space Station: " + name + "; from Planet: " + planetObject.pname);
-            planetObject.spaceStations.Add(name);
-            planetObject.save(planetObject.index);
+            Debug.Log("Generated Space Station: " + name + "; from Planet: " + planetObject.Data.name);
+            planetObject.Data.spaceStations.Add(name);
+            planetObject.Data.Save();
         }
         spaceStation.name = name; 
-        spaceStation.transform.localScale = new Vector3((scale / planetObject.scale) * 2,(scale / planetObject.scale) * 2,1);
+        spaceStation.transform.localScale = new Vector3((scale / planetObject.Data.scale) * 2,(scale / planetObject.Data.scale) * 2,1);
     }
 
     public void LoadUsingName(string Name)

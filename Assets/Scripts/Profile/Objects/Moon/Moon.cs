@@ -31,12 +31,12 @@ public class Moon
     }
     public bool Exists()
     {
-        if (planetObject.moons.Count < index + 1)
+        if (planetObject.Data.moons.Count < index + 1)
         {
             return false;
         }
-        name = planetObject.moons[index];
-        return Directory.Exists(Registry.profile.map_path + "/planets/" + planetObject.pname + "/moons/" + planetObject.moons[index]);
+        name = planetObject.Data.moons[index];
+        return Directory.Exists(Registry.profile.map_path + "/planets/" + planetObject.Data.name + "/moons/" + planetObject.Data.moons[index]);
     }
     public void Generate()
     {
@@ -45,15 +45,15 @@ public class Moon
         if (Exists())
         {
             LoadUsingName(name);
-            Debug.Log("Loaded Moon: " + name + "; from Planet: " + planetObject.pname);
+            Debug.Log("Loaded Moon: " + name + "; from Planet: " + planetObject.Data.name);
         }
         if (!Exists())
         {
             name = References.randomNames[random.Next(References.randomNames.Length)] + "-" + random.Next(9999);
             scale = (planetObject.planetMain.transform.localScale.x / (float)(random.Next(3,6) + random.NextDouble())) / 7.5f;
-            Debug.Log("Generated Moon: " + name + "; from Planet: " + planetObject.pname);
-            planetObject.moons.Add(name);
-            planetObject.save(planetObject.index);
+            Debug.Log("Generated Moon: " + name + "; from Planet: " + planetObject.Data.name);
+            planetObject.Data.moons.Add(name);
+            planetObject.Data.Save();
         }
         moon.name = name;
         moon.transform.localScale = new Vector3(scale,scale,1);

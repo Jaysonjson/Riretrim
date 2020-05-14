@@ -65,8 +65,8 @@ public class Planets : MonoBehaviour
         for (int i = 0; i < References.planets.Count; i++)
         {
             GetPlanet(i).Generate();
-            GetPlanet(i).save(i);
-            SpaceMap.moonAmount += GetPlanet(i).moonAmount;
+            GetPlanet(i).Data.Save();
+            SpaceMap.moonAmount += GetPlanet(i).Data.moonAmount;
             instance.StartCoroutine(updateSpeed(i));
         }
     }
@@ -74,7 +74,7 @@ public class Planets : MonoBehaviour
     public static IEnumerator updateSpeed(int i)
     {
         yield return new WaitForSeconds(0.3f);
-        GetPlanet(i).planetMain.GetComponent<Orbit>().speed = GetPlanet(i).speed;
+        GetPlanet(i).planetMain.GetComponent<Orbit>().speed = GetPlanet(i).Data.speed;
     }
 
     public void Click()

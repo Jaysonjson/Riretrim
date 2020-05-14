@@ -10,9 +10,9 @@ public class MaterialList : MonoBehaviour
     private void Start()
     {
         Planet planet = new Planet();
-        planet.LoadUsingName(Registry.profile.Data.current_planet);
+        planet.Load(Registry.profile.Data.current_planet);
         float lastObject = 0;
-        for (var i = 0; i < planet.materials.Count; i++)
+        for (var i = 0; i < planet.Data.materials.Count; i++)
         {
             GameObject materialObject = Instantiate(materialDummy, gameObject.transform, false);
             materialObject.GetComponent<RectTransform>().position = new Vector3(materialObject.transform.position.x, (int)((materialObject.GetComponent<RectTransform>().position.y - lastObject)));

@@ -9,20 +9,20 @@ public class PlanetMapPlanet : MonoBehaviour
     {
         Planet planet = new Planet();
         gameObject.name = Registry.profile.Data.current_planet;
-        planet.LoadUsingName(Registry.profile.Data.current_planet);
+        planet.Load(Registry.profile.Data.current_planet);
         for (int i = 0; i < planet.drillAmount; i++)
         {
             GameObject drill = GameObject.Instantiate(drillDummy, gameObject.transform, false);
-            MiningDrill drillObject = new MiningDrill(drill, planet.pname);
+            MiningDrill drillObject = new MiningDrill(drill, planet.Data.name);
             drillObject.index = References.drills.Count;
             drillObject.Generate();
         }
 
-        if (planet.type == PlanetType.EXOTIC) { gameObject.GetComponent<SpriteRenderer>().sprite = Planets.exoticSprites[planet.spriteNumber]; }
-        if (planet.type == PlanetType.EARTHLIKE) { gameObject.GetComponent<SpriteRenderer>().sprite = Planets.earthLikeSprites[planet.spriteNumber]; }
-        if (planet.type == PlanetType.LAVA) { gameObject.GetComponent<SpriteRenderer>().sprite = Planets.lavaSprites[planet.spriteNumber]; }
-        if (planet.type == PlanetType.ROCKY) { gameObject.GetComponent<SpriteRenderer>().sprite = Planets.rockySprites[planet.spriteNumber]; }
-        if (planet.type == PlanetType.GAS) { gameObject.GetComponent<SpriteRenderer>().sprite = Planets.gasSprites[planet.spriteNumber]; }
-        if (planet.type == PlanetType.ICE) { gameObject.GetComponent<SpriteRenderer>().sprite = Planets.iceSprites[planet.spriteNumber]; }
+        if (planet.Data.type == PlanetType.EXOTIC) { gameObject.GetComponent<SpriteRenderer>().sprite = Planets.exoticSprites[planet.Data.spriteNumber]; }
+        if (planet.Data.type == PlanetType.EARTHLIKE) { gameObject.GetComponent<SpriteRenderer>().sprite = Planets.earthLikeSprites[planet.Data.spriteNumber]; }
+        if (planet.Data.type == PlanetType.LAVA) { gameObject.GetComponent<SpriteRenderer>().sprite = Planets.lavaSprites[planet.Data.spriteNumber]; }
+        if (planet.Data.type == PlanetType.ROCKY) { gameObject.GetComponent<SpriteRenderer>().sprite = Planets.rockySprites[planet.Data.spriteNumber]; }
+        if (planet.Data.type == PlanetType.GAS) { gameObject.GetComponent<SpriteRenderer>().sprite = Planets.gasSprites[planet.Data.spriteNumber]; }
+        if (planet.Data.type == PlanetType.ICE) { gameObject.GetComponent<SpriteRenderer>().sprite = Planets.iceSprites[planet.Data.spriteNumber]; }
     }
 }

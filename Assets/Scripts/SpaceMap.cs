@@ -101,9 +101,9 @@ public class SpaceMap : MonoBehaviour
         Registry.profile.Save();
         for (int i = 0; i < References.planets.Count; i++)
         {
-            Planets.GetPlanet(i).position_x = Planets.GetPlanet(i).planetBody.transform.position.x;
-            Planets.GetPlanet(i).position_y = Planets.GetPlanet(i).planetBody.transform.position.y;
-            Planets.GetPlanet(i).save(i);
+            Planets.GetPlanet(i).Data.position_x = Planets.GetPlanet(i).planetBody.transform.position.x;
+            Planets.GetPlanet(i).Data.position_y = Planets.GetPlanet(i).planetBody.transform.position.y;
+            Planets.GetPlanet(i).Data.Save();
         }
     }
     public void updateMaterialText()
