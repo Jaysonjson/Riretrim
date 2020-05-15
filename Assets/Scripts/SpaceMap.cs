@@ -40,7 +40,7 @@ public class SpaceMap : MonoBehaviour
     public CanvasScaler CanvasScaler;
     public Image circleMiniMap;
     public Image squareMiniMap;
-    public Image minimapBar;
+    private Image minimapBar;
     public GameObject player;
     void Start()
     {
@@ -108,7 +108,9 @@ public class SpaceMap : MonoBehaviour
     }
     public void updateMaterialText()
     {
+        Debug.Log(aluminiumText.text);
         aluminiumText.text = Registry.profile.Data.aluminium_amount + "";
+        Debug.Log(aluminiumText.text);
         bronzeText.text = Registry.profile.Data.bronze_amount + "";
         carbonText.text = Registry.profile.Data.carbon_amount + "";
         coalText.text = Registry.profile.Data.coal_amount + "";

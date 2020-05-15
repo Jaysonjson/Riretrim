@@ -56,7 +56,7 @@ public class Asteroid : MonoBehaviour
     private void DropMaterials()
     {
         System.Random random = new System.Random();
-        for (int i = 0; i < random.Next(7); i++)
+        for (int i = 0; i < random.Next(3); i++)
         {
             GameObject material = Instantiate(materials[random.Next(materials.Length)], gameObject.transform.position, new Quaternion(0, 0, random.Next(360), 0), GameObject.Find("Materials").transform);
             material.SetActive(true);
@@ -87,12 +87,16 @@ public class Asteroid : MonoBehaviour
                 currency_mat.GetComponent<Currency>().amount = 1 + random.Next(3);
             }
         }
+        Registry.profile.Data.ship_xp += (float)random.NextDouble();
+    }
+
+    private void OnDestroy()
+    {
         Star star = new Star();
         star.Load(Registry.profile.Data.current_solarsystem);
         Debug.Log(star.Data.name + " / " + star.Data.asteroid_count);
         star.Data.asteroid_count--;
         star.Data.Save();
-        Registry.profile.Data.ship_xp += (float)random.NextDouble();
         Debug.Log("Decreased Asteroid Count to " + star.Data.asteroid_count + " from Solarsystem " + star.Data.name);
         asteroidCountText.text = star.Data.asteroid_count + "";
     }
