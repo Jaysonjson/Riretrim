@@ -129,9 +129,9 @@ public class SpaceMap : MonoBehaviour
         {
             SceneManager.LoadScene("Galaxyscreen");
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.L))
         {
-            
+            SceneManager.LoadScene("Gamescreen");
         }
         if(Input.GetKeyDown(KeyCode.Tab))
         {

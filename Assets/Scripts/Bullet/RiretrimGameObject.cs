@@ -14,7 +14,7 @@ public class RiretrimGameObject : MonoBehaviour
                 if (GetComponent<HealthObject>() != null)
                 {
                     GetComponent<HealthObject>().health -= Registry.profile.Ship.Data.damage;
-                    Destroy(other);
+                    Destroy(other.gameObject);
                 }
                 else
                 {
