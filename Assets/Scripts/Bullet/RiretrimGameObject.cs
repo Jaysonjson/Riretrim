@@ -12,8 +12,14 @@ public class RiretrimGameObject : MonoBehaviour
         {
             if (other.tag.Equals("Bullet"))
             {
-                Debug.Log(gameObject);
-                Destroy(gameObject);
+                if (other.GetComponent<HealthObject>() != null)
+                {
+                    other.GetComponent<HealthObject>().health -= Registry.profile.Ship.Data.damage;
+                }
+                else
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }

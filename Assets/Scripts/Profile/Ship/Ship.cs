@@ -39,6 +39,8 @@ public class ShipData
     public float fuelMax = 250f;
     public float energyMax = 125f;
 
+    public float damage = 0.25f;
+    
     public bool on = true;
     
     public void Load()
