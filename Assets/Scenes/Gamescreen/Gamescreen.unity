@@ -16360,7 +16360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e497e7feefe04f85a7b37539ff5f737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: 0.005
+  movement: 0.0005
   direction: 1
 --- !u!114 &1894476850
 MonoBehaviour:

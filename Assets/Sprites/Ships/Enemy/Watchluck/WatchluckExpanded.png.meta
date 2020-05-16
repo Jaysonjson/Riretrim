@@ -1,0 +1,970 @@
+fileFormatVersion: 2
+guid: 3052a394192a4456a93d24b64f5bcb0f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1752072525865037594
+    second: WatchluckExpanded_n_0
+  - first:
+      213: 1759340225443804012
+    second: WatchluckExpanded_n_1
+  - first:
+      213: -5564783778115771944
+    second: WatchluckExpanded_n_10
+  - first:
+      213: 43639330775699768
+    second: WatchluckExpanded_n_11
+  - first:
+      213: -2071233913970098119
+    second: WatchluckExpanded_n_12
+  - first:
+      213: -2983516105376452136
+    second: WatchluckExpanded_n_13
+  - first:
+      213: 1802692108237903826
+    second: WatchluckExpanded_n_14
+  - first:
+      213: 3832494431075862423
+    second: WatchluckExpanded_n_15
+  - first:
+      213: -2590776107629799544
+    second: WatchluckExpanded_n_16
+  - first:
+      213: -4204143666654015200
+    second: WatchluckExpanded_n_17
+  - first:
+      213: 5828357039987143371
+    second: WatchluckExpanded_n_18
+  - first:
+      213: 2479950578572468487
+    second: WatchluckExpanded_n_19
+  - first:
+      213: 1010398015324375359
+    second: WatchluckExpanded_n_2
+  - first:
+      213: -620043090853602190
+    second: WatchluckExpanded_n_20
+  - first:
+      213: -387076735467129031
+    second: WatchluckExpanded_n_21
+  - first:
+      213: 8171412126628442183
+    second: WatchluckExpanded_n_22
+  - first:
+      213: -2560029117384527377
+    second: WatchluckExpanded_n_23
+  - first:
+      213: 8847086761393290929
+    second: WatchluckExpanded_n_3
+  - first:
+      213: -1220113118128715064
+    second: WatchluckExpanded_n_4
+  - first:
+      213: 5659065804456328026
+    second: WatchluckExpanded_n_5
+  - first:
+      213: 5723523835217143362
+    second: WatchluckExpanded_n_6
+  - first:
+      213: 1167790133433704129
+    second: WatchluckExpanded_n_7
+  - first:
+      213: -8615489264134937665
+    second: WatchluckExpanded_n_8
+  - first:
+      213: 1173361800387224400
+    second: WatchluckExpanded_n_9
+  - first:
+      213: -5608951838065176915
+    second: WatchluckExpanded_24
+  - first:
+      213: 3863723262325615010
+    second: WatchluckExpanded_25
+  - first:
+      213: 6421655919573427379
+    second: WatchluckExpanded_26
+  - first:
+      213: 6821995124226601788
+    second: WatchluckExpanded_27
+  - first:
+      213: -2532591796927869442
+    second: WatchluckExpanded_28
+  - first:
+      213: -4528424829437473680
+    second: WatchluckExpanded_29
+  - first:
+      213: 5214252942920003113
+    second: WatchluckExpanded_30
+  - first:
+      213: 5496829242546178517
+    second: WatchluckExpanded_31
+  - first:
+      213: 7824283388061114967
+    second: WatchluckExpanded_32
+  - first:
+      213: 4875633728032751877
+    second: WatchluckExpanded_33
+  - first:
+      213: 1254809482903041618
+    second: WatchluckExpanded_34
+  - first:
+      213: -3874535511019612551
+    second: WatchluckExpanded_35
+  - first:
+      213: 268568583171883235
+    second: WatchluckExpanded_36
+  - first:
+      213: 2735466296735492586
+    second: WatchluckExpanded_37
+  - first:
+      213: 2289827597810405304
+    second: WatchluckExpanded_38
+  - first:
+      213: -8781900191072680168
+    second: WatchluckExpanded_39
+  - first:
+      213: 8147008776550802827
+    second: WatchluckExpanded_40
+  - first:
+      213: -7327855155186143062
+    second: WatchluckExpanded_41
+  - first:
+      213: -6910816494238039421
+    second: WatchluckExpanded_42
+  - first:
+      213: -9201158830327541689
+    second: WatchluckExpanded_43
+  - first:
+      213: 8435555132692615806
+    second: WatchluckExpanded_44
+  - first:
+      213: -8933941808209997509
+    second: WatchluckExpanded_45
+  - first:
+      213: 3458355496490681644
+    second: WatchluckExpanded_46
+  - first:
+      213: -4242618561665912147
+    second: WatchluckExpanded_47
+  - first:
+      213: 3663078460145666513
+    second: WatchluckExpanded_48
+  - first:
+      213: 655327704051902107
+    second: WatchluckExpanded_49
+  - first:
+      213: 7682931084789707848
+    second: WatchluckExpanded_50
+  - first:
+      213: 5926565288128843039
+    second: WatchluckExpanded_51
+  - first:
+      213: -4498798045394914564
+    second: WatchluckExpanded_52
+  - first:
+      213: -4824443323592875029
+    second: WatchluckExpanded_53
+  - first:
+      213: 4917998130536952378
+    second: WatchluckExpanded_54
+  - first:
+      213: -200515248691838638
+    second: WatchluckExpanded_55
+  - first:
+      213: -2836910595337767723
+    second: WatchluckExpanded_56
+  - first:
+      213: 1733033898055887117
+    second: WatchluckExpanded_57
+  - first:
+      213: 1604231337946829064
+    second: WatchluckExpanded_58
+  - first:
+      213: 434869948695721358
+    second: WatchluckExpanded_59
+  - first:
+      213: 3732052424616475853
+    second: WatchluckExpanded_60
+  - first:
+      213: -4960312628004050719
+    second: WatchluckExpanded_61
+  - first:
+      213: -1027675014333170147
+    second: WatchluckExpanded_62
+  - first:
+      213: -3005531179313345057
+    second: WatchluckExpanded_63
+  - first:
+      213: -4987898549621404384
+    second: WatchluckExpanded_64
+  - first:
+      213: 2331880980179798180
+    second: WatchluckExpanded_65
+  - first:
+      213: 4963747832431958069
+    second: WatchluckExpanded_66
+  - first:
+      213: 8785028636262190546
+    second: WatchluckExpanded_67
+  - first:
+      213: -8298942292611666828
+    second: WatchluckExpanded_68
+  - first:
+      213: -688727882200719290
+    second: WatchluckExpanded_69
+  - first:
+      213: -938514634333622217
+    second: WatchluckExpanded_70
+  - first:
+      213: 1259486553875464441
+    second: WatchluckExpanded_71
+  - first:
+      213: 5620426591427618164
+    second: WatchluckExpanded_72
+  - first:
+      213: 5892585428039561731
+    second: WatchluckExpanded_73
+  - first:
+      213: 6161513627489623751
+    second: WatchluckExpanded_74
+  - first:
+      213: 4226553099919658832
+    second: WatchluckExpanded_75
+  - first:
+      213: -1287487039046939518
+    second: WatchluckExpanded_76
+  - first:
+      213: 7418022614456138287
+    second: WatchluckExpanded_77
+  - first:
+      213: -6109626927692129342
+    second: WatchluckExpanded_78
+  - first:
+      213: -4562971876928797935
+    second: WatchluckExpanded_79
+  - first:
+      213: -6496882145072873932
+    second: WatchluckExpanded_80
+  - first:
+      213: -692244700681171435
+    second: WatchluckExpanded_81
+  - first:
+      213: 3816559201821994104
+    second: WatchluckExpanded_82
+  - first:
+      213: -2006387138489613033
+    second: WatchluckExpanded_83
+  - first:
+      213: -4692669157843645212
+    second: WatchluckExpanded_84
+  - first:
+      213: 1811440630380237261
+    second: WatchluckExpanded_85
+  - first:
+      213: -8032686934436224830
+    second: WatchluckExpanded_86
+  - first:
+      213: 7625049588443340892
+    second: WatchluckExpanded_87
+  - first:
+      213: -3769480469968900487
+    second: WatchluckExpanded_88
+  - first:
+      213: -3900043016854558536
+    second: WatchluckExpanded_89
+  - first:
+      213: 3605690263071380195
+    second: WatchluckExpanded_90
+  - first:
+      213: 6408352347531428785
+    second: WatchluckExpanded_91
+  - first:
+      213: 3010771473695141593
+    second: WatchluckExpanded_92
+  - first:
+      213: -8202898120946513544
+    second: WatchluckExpanded_93
+  - first:
+      213: 4783444243424416756
+    second: WatchluckExpanded_94
+  - first:
+      213: -8996487037878572195
+    second: WatchluckExpanded_95
+  - first:
+      213: 1379388541669292757
+    second: WatchluckExpanded_96
+  - first:
+      213: -1106335401058044397
+    second: WatchluckExpanded_97
+  - first:
+      213: 5462122178859070039
+    second: WatchluckExpanded_98
+  - first:
+      213: 2041357828438080626
+    second: WatchluckExpanded_99
+  - first:
+      213: 2903300388470404057
+    second: WatchluckExpanded_100
+  - first:
+      213: -3594940192854303262
+    second: WatchluckExpanded_101
+  - first:
+      213: 8386352269364130226
+    second: WatchluckExpanded_102
+  - first:
+      213: -4504007206783530207
+    second: WatchluckExpanded_103
+  - first:
+      213: -6307463739157911506
+    second: WatchluckExpanded_104
+  - first:
+      213: 2246481556066114032
+    second: WatchluckExpanded_105
+  - first:
+      213: -489514953454288377
+    second: WatchluckExpanded_106
+  - first:
+      213: 557120861137069977
+    second: WatchluckExpanded_107
+  - first:
+      213: -8365688968345231453
+    second: WatchluckExpanded_108
+  - first:
+      213: 618455008390434576
+    second: WatchluckExpanded_109
+  - first:
+      213: -7551798430775718032
+    second: WatchluckExpanded_110
+  - first:
+      213: -6174682753028009725
+    second: WatchluckExpanded_111
+  - first:
+      213: 977741135845816445
+    second: WatchluckExpanded_112
+  - first:
+      213: 8744530597429401422
+    second: WatchluckExpanded_113
+  - first:
+      213: 4840670319506854297
+    second: WatchluckExpanded_114
+  - first:
+      213: 6034735408425524763
+    second: WatchluckExpanded_115
+  - first:
+      213: 525003947030547201
+    second: WatchluckExpanded_116
+  - first:
+      213: 5851767138494388960
+    second: WatchluckExpanded_117
+  - first:
+      213: -8948134458897906439
+    second: WatchluckExpanded_118
+  - first:
+      213: 3093663378894236353
+    second: WatchluckExpanded_119
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: WatchluckExpanded_n_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e0d71312536fa7e0800000000000000
+      internalID: -1752072525865037594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WatchluckExpanded_n_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6332a81d9e6a6810800000000000000
+      internalID: 1759340225443804012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WatchluckExpanded_n_10
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d1ad8523aae5c2b0800000000000000
+      internalID: -5564783778115771944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WatchluckExpanded_n_11
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8311f197db90b9000800000000000000
+      internalID: 43639330775699768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WatchluckExpanded_n_12
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9300217aabf7143e0800000000000000
+      internalID: -2071233913970098119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WatchluckExpanded_n_13
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d13165d8eb6896d0800000000000000
+      internalID: -2983516105376452136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WatchluckExpanded_n_14
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d79beedbe2740910800000000000000
+      internalID: 1802692108237903826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WatchluckExpanded_n_15
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79780ff2161cf2530800000000000000
+      internalID: 3832494431075862423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WatchluckExpanded_n_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 887182c4bd6bb0cd0800000000000000
+      internalID: -2590776107629799544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WatchluckExpanded_n_17
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02111641c91e7a5c0800000000000000
+      internalID: -4204143666654015200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WatchluckExpanded_n_18
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc2b49019db72e050800000000000000
+      internalID: 5828357039987143371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WatchluckExpanded_n_19
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 701265079ed8a6220800000000000000
+      internalID: 2479950578572468487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WatchluckExpanded_n_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f394b2144a7a50e00800000000000000
+      internalID: 1010398015324375359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WatchluckExpanded_n_20
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27c5c30181a2567f0800000000000000
+      internalID: -620043090853602190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WatchluckExpanded_n_21
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 937f9a982c3d0aaf0800000000000000
+      internalID: -387076735467129031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WatchluckExpanded_n_22
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 740f1010900b66170800000000000000
+      internalID: 8171412126628442183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WatchluckExpanded_n_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe173a3d413f87cd0800000000000000
+      internalID: -2560029117384527377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WatchluckExpanded_n_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1be78ed198a27ca70800000000000000
+      internalID: 8847086761393290929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WatchluckExpanded_n_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cac4206599411fe0800000000000000
+      internalID: -1220113118128715064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WatchluckExpanded_n_5
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5bfd2bbd5a098e40800000000000000
+      internalID: 5659065804456328026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WatchluckExpanded_n_6
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24669958a9a0e6f40800000000000000
+      internalID: 5723523835217143362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WatchluckExpanded_n_7
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ce958b60f2d43010800000000000000
+      internalID: 1167790133433704129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WatchluckExpanded_n_8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb3ab0d3922af6880800000000000000
+      internalID: -8615489264134937665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WatchluckExpanded_n_9
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 053e719375e984010800000000000000
+      internalID: 1173361800387224400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
