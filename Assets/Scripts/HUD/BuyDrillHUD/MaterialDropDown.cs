@@ -13,6 +13,7 @@ public class MaterialDropDown : MonoBehaviour
         for (var i = 0; i < planet.Data.materials.Count; i++)
         {
             gameObject.GetComponent<TMP_Dropdown>().options.Add(new TMP_Dropdown.OptionData(planet.Data.materials[i].ToString()));
+            GetComponent<TMP_Dropdown>().value = i;
         }
     }
 }

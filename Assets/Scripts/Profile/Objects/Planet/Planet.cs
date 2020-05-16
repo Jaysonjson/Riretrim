@@ -320,11 +320,11 @@ public class PlanetData
 
     public void Load(string planetName)
     {
-        Debug.Log("Loading Star... " + planetName + "_" + name);
+        Debug.Log("Loading Planet... " + planetName + "_" + name);
         string json = "{}";
-        if (File.Exists(Registry.profile.map_path + "/planets/" + name + "/data" + ".json"))
+        if (File.Exists(Registry.profile.map_path + "/planets/" + planetName + "/data" + ".json"))
         {
-            json = File.ReadAllText(Registry.profile.map_path + "/planets/" + name + "/data" + ".json");
+            json = File.ReadAllText(Registry.profile.map_path + "/planets/" + planetName + "/data" + ".json");
         }
         else
         {
@@ -335,11 +335,11 @@ public class PlanetData
         
     public void Save(string planetName)
     {
-        if (!Directory.Exists(Registry.profile.map_path + "/planets/" + name + "/"))
+        if (!Directory.Exists(Registry.profile.map_path + "/planets/" + planetName + "/"))
         {
-            Directory.CreateDirectory(Registry.profile.map_path + "/planets/" + name + "/");
+            Directory.CreateDirectory(Registry.profile.map_path + "/planets/" + planetName + "/");
         }
-        File.WriteAllText(Registry.profile.map_path + "/planets/" + name + "/data" + ".json", JsonUtility.ToJson(this, true));
+        File.WriteAllText(Registry.profile.map_path + "/planets/" + planetName + "/data" + ".json", JsonUtility.ToJson(this, true));
     }
 
     public void Save()
