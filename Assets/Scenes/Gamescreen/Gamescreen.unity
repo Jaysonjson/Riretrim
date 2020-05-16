@@ -696,7 +696,7 @@ RectTransform:
   m_GameObject: {fileID: 206811211}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 397545477}
   m_Father: {fileID: 868379175}
@@ -16249,6 +16249,7 @@ GameObject:
   - component: {fileID: 1894476846}
   - component: {fileID: 1894476845}
   - component: {fileID: 1894476852}
+  - component: {fileID: 1894476853}
   m_Layer: 0
   m_Name: Watchluck
   m_TagString: Untagged
@@ -16265,7 +16266,7 @@ Transform:
   m_GameObject: {fileID: 1894476843}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 11.249839}
-  m_LocalScale: {x: 2.25, y: 2.25, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 695464403}
   - {fileID: 1468020310}
@@ -16293,9 +16294,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 397545476}
-  health: 2
-  maxHealth: 2
-  regeneration: 0.0005
+  health: 4
+  maxHealth: 4
+  regeneration: 0.00005
   destroy: 1
 --- !u!114 &1894476846
 MonoBehaviour:
@@ -16503,6 +16504,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1894476853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894476843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c6b4b837059478c83532747bbb07b56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fast: 0
+  timeChange: 3
 --- !u!43 &1897680355
 Mesh:
   m_ObjectHideFlags: 0
