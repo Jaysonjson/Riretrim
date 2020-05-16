@@ -14,11 +14,15 @@ public class Watchluck : MonoBehaviour
         {
             fast = true;
         }
+        if(GetComponent<SingleMovement>() != null)
+        {
+            GetComponent<SingleMovement>().movement = (float)random.NextDouble() / 1000;
+        }
     }
 
     private void OnDestroy()
     {
-        Time.timeScale = 1;
+        Time.timeScale = 1; 
     }
 
     private void OnBecameInvisible()

@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = System.Random;
 
 public class Currency : MonoBehaviour
@@ -23,9 +24,12 @@ public class Currency : MonoBehaviour
     {
         if (other.gameObject == GameObject.Find("Player"))
         {
-            Registry.profile.Data.currency += amount;
-            SpaceMap.INSTANCE.updateMaterialText();
-            Destroy(gameObject);
+           Registry.profile.Data.currency += amount;
+           Destroy(gameObject);
+        }
+        if(SceneManager.GetActiveScene().name.Equals("SpaceMap"))
+        {
+           SpaceMap.INSTANCE.updateMaterialText();
         }
     }
 }

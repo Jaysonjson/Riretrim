@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - DamagedShipRoomSpawnPoint
   - DamagedShipRoom
+  - Currency
   layers:
   - Default
   - TransparentFX
