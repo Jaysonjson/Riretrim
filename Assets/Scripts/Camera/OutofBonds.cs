@@ -6,8 +6,12 @@ public class OutofBonds : MonoBehaviour
 {
     void OnBecameInvisible()
     {
-        if (gameObject.active)
+        if (gameObject.activeSelf)
         {
+            if (GetComponent<LootList>() != null)
+            {
+                GetComponent<LootList>().dropLoot = false;
+            }
             Destroy(gameObject);
         }
     }

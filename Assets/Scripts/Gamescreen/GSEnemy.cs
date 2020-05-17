@@ -6,7 +6,7 @@ public class GSEnemy : MonoBehaviour
 {
     public GameScreen gameScreen;
     public int percentageAddition;
-    public void onDestroy()
+    private void OnDestroy()
     {
         gameScreen.percentage += percentageAddition;
     }

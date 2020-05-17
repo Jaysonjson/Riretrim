@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xp: 120
-  price: 436
+  price: 10018
 --- !u!1 &236859528
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,7 +737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xp: 2520
-  price: 642
+  price: 17189
 --- !u!1 &460368046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1881,7 +1881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xp: 0.0005
-  price: 5
+  price: 1
 --- !u!1 &1745758213
 GameObject:
   m_ObjectHideFlags: 0
@@ -1978,7 +1978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xp: 1250
-  price: 654
+  price: 14632
 --- !u!1 &1953162388
 GameObject:
   m_ObjectHideFlags: 0

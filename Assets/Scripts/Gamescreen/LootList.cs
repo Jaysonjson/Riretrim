@@ -11,27 +11,31 @@ public class LootList : MonoBehaviour
     public int minCurrencyAmount;
     public int xpAmount;
     public GameObject currency;
+    public bool dropLoot = true;
     private System.Random random = new System.Random();
     private void OnDestroy()
     {
-        Vector3 position = gameObject.transform.position;
-        GameObject currencyDrop = Instantiate(currency);
-        currencyDrop.SetActive(true);
-        currencyDrop.transform.position = position;
-        currencyDrop.GetComponent<Currency>().amount = random.Next(minCurrencyAmount, currencyAmount);
-        Registry.profile.Data.ship_xp += random.Next(xpAmount);
-        for (int i = 0; i < lootAmount; i++)
+        if (dropLoot)
         {
-            for(int j = 0; j < lootList.Length; j++)
+            Vector3 position = gameObject.transform.position;
+            GameObject currencyDrop = Instantiate(currency);
+            currencyDrop.SetActive(true);
+            currencyDrop.transform.position = position;
+            currencyDrop.GetComponent<Currency>().amount = random.Next(minCurrencyAmount, currencyAmount);
+            Registry.profile.Data.ship_xp += random.Next(xpAmount);
+            for (int i = 0; i < lootAmount; i++)
             {
-                if(random.Next(lootList[j].dropChance) == 1)
-                {  
-                    GameObject lootDrop = Instantiate(lootList[j].gameObject);
-                    lootDrop.transform.position = position;
-                    lootDrop.SetActive(true);
-                    if (lootList[j].GetComponent<Currency>() != null)
+                for (int j = 0; j < lootList.Length; j++)
+                {
+                    if (random.Next(lootList[j].dropChance) == 1)
                     {
-                        lootList[j].GetComponent<Currency>().amount = random.Next(minCurrencyAmount, currencyAmount) * 3;
+                        GameObject lootDrop = Instantiate(lootList[j].gameObject);
+                        lootDrop.transform.position = position;
+                        lootDrop.SetActive(true);
+                        if (lootList[j].GetComponent<Currency>() != null)
+                        {
+                            lootList[j].GetComponent<Currency>().amount = random.Next(minCurrencyAmount, currencyAmount) * 3;
+                        }
                     }
                 }
             }

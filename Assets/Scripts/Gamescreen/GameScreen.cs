@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameScreen : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class GameScreen : MonoBehaviour
     void onEnd()
     {
         Registry.profile.Save();
-        endScreen.SetActive(true);
+        //endScreen.SetActive(true);
+        SceneManager.LoadScene("Spacemap");
     }
 }
