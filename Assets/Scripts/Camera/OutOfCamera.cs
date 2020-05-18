@@ -7,7 +7,7 @@ public class OutOfCamera : MonoBehaviour
     public bool activate = true;
     void OnBecameInvisible()
     {
-        if (gameObject.active)
+        if (gameObject.activeSelf)
         {
             MonoBehaviour[] comps = GetComponents<MonoBehaviour>();
             foreach (MonoBehaviour c in comps)
@@ -19,7 +19,7 @@ public class OutOfCamera : MonoBehaviour
     }
     private void OnBecameVisible()
     {
-        if(gameObject.active && activate)
+        if(gameObject.activeSelf && activate)
         {
             MonoBehaviour[] comps = GetComponents<MonoBehaviour>();
             foreach (MonoBehaviour c in comps)

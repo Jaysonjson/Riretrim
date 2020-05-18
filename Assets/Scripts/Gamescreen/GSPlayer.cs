@@ -17,16 +17,20 @@ public class GSPlayer : MonoBehaviour
     private bool isShooting = false;
     private InputActionMap playerActionMap;
     private InputAction Shoot;
+    public bool moveUp = false;
+    private float moveUpSpeed = 0.02f;
     private void Start()
     {
         playerActionMap = GetComponent<PlayerInput>().actions.FindActionMap("GSPlayer");
         Shoot = playerActionMap.FindAction("Shoot");
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (Shoot.ReadValue<float>() > 0)
+        if (!moveUp)
         {
+            if (Shoot.ReadValue<float>() > 0)
+            {
                 if (ableToShoot)
                 {
                     StartCoroutine(shootBullet());
@@ -36,8 +40,12 @@ public class GSPlayer : MonoBehaviour
                 {
                     StartCoroutine(coolGun());
                 }
+            }
+        } else if(moveUp)
+        {
+            moveUpSpeed += 0.0005f;
+            transform.position = new Vector2(transform.position.x, transform.position.y + moveUpSpeed);
         }
-
     }
     public IEnumerator shootBullet ()
     {
