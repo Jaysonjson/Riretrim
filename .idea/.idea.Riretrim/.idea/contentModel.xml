@@ -63,9 +63,16 @@
           </e>
           <e p="DiscordRPC.cs" t="Include" />
           <e p="Escape.cs" t="Include" />
+          <e p="FixedLifeTime.cs" t="Include" />
           <e p="Gamescreen" t="Include">
+            <e p="GameScreen.cs" t="Include" />
+            <e p="GSEnemy.cs" t="Include" />
             <e p="GSPlayer.cs" t="Include" />
+            <e p="Loot.cs" t="Include" />
+            <e p="LootList.cs" t="Include" />
+            <e p="MoveToPlayer.cs" t="Include" />
             <e p="ObjectSpawner.cs" t="Include" />
+            <e p="ObjectSpawnerEntry.cs" t="Include" />
           </e>
           <e p="Health.cs" t="Include" />
           <e p="HealthObject.cs" t="Include" />
@@ -206,6 +213,7 @@
             <e p="ShopRightPanel.cs" t="Include" />
             <e p="ShopShip.cs" t="Include" />
           </e>
+          <e p="SMEnemy.cs" t="Include" />
           <e p="SpaceMap.cs" t="Include" />
           <e p="Sprites.cs" t="Include" />
           <e p="Warp.cs" t="Include" />
