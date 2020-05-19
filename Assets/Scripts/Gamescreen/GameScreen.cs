@@ -9,7 +9,7 @@ public class GameScreen : MonoBehaviour
 {
     public TextMeshProUGUI CurrencyText;
     public TextMeshProUGUI PercentageText;
-    public GameObject endScreen;
+    public GSPlayer player;
     public int percentage;
 
     void Start()
@@ -38,7 +38,7 @@ public class GameScreen : MonoBehaviour
     void onEnd()
     {
         Registry.profile.Save();
+        player.moveUp = true;
         //endScreen.SetActive(true);
-        SceneManager.LoadScene("Spacemap");
     }
 }
