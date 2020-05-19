@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class SMEnemy : MonoBehaviour
 {
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        Registry.profile.Save();
-       // Destroy(gameObject);
-        SceneManager.LoadScene("Gamescreen");
+        if (other.tag.Equals("Player"))
+        {
+            Registry.profile.Save();
+            // Destroy(gameObject);
+            SceneManager.LoadScene("Gamescreen");
+        }
     }
 }

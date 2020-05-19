@@ -43,7 +43,7 @@ public class GSPlayer : MonoBehaviour
             }
         } else if(moveUp)
         {
-            moveUpSpeed += 0.0005f;
+            moveUpSpeed += 0.00075f;
             transform.position = new Vector2(transform.position.x, transform.position.y + moveUpSpeed);
         }
     }
