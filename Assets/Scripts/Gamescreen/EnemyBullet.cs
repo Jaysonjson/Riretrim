@@ -18,7 +18,10 @@ public class EnemyBullet : MonoBehaviour
         if (other.tag.Equals("Player"))
         {
             Registry.profile.Data.health -= damage;
-            Debug.Log(Registry.profile.Data.health);
+            Registry.profile.Ship.Data.bodyDamage += damage * 2;
+            Registry.profile.Ship.Data.gunDamage += damage * 1.25f;
+            Registry.profile.Ship.Data.thrusterDamage += damage * 1.1f;
+            Registry.profile.Ship.Data.engineDamage += damage * 1.6f;
         }
     }
 }

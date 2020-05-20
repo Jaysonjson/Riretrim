@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
@@ -6,8 +7,21 @@ public class Health : MonoBehaviour
     public Image[] hearts;
     public static Image[] staticHeart;
     public GameObject emptyHeartObject;
+    public ShipSprites ShipSprites; 
     public Sprite fullHeart;
     public Sprite emptyHeart;
+
+    private void Start()
+    {
+        if (GameObject.Find(Registry.profile.Ship.Data.body) != null)
+        {
+            ShipSprites = GameObject.Find(Registry.profile.Ship.Data.body).GetComponent<ShipSprites>();
+            fullHeart = ShipSprites.Flight;
+            emptyHeart = ShipSprites.Damaged;
+            emptyHeartObject.GetComponent<SpriteRenderer>().sprite = ShipSprites.Damaged;
+        }
+    }
+
     private void Update()
     {
         staticHeart = hearts;
