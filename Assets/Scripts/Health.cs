@@ -18,7 +18,7 @@ public class Health : MonoBehaviour
             ShipSprites = GameObject.Find(Registry.profile.Ship.Data.body).GetComponent<ShipSprites>();
             fullHeart = ShipSprites.Flight;
             emptyHeart = ShipSprites.Damaged;
-            emptyHeartObject.GetComponent<SpriteRenderer>().sprite = ShipSprites.Damaged;
+            emptyHeartObject.GetComponent<Image>().sprite = ShipSprites.Damaged;
         }
     }
 
