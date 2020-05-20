@@ -21,6 +21,12 @@ public class GameScreen : MonoBehaviour
     {
         CurrencyText.text = Registry.profile.Data.currency + "";
         PercentageText.text = percentage + "%";
+        if (Registry.profile.Data.health <= 0)
+        {
+            Registry.profile.Data.health = 0.25f;
+            Registry.profile.Save();
+            SceneManager.LoadScene("SpaceMap");
+        }
     }
 
     IEnumerator addPercentage()

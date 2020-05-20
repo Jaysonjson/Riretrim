@@ -78,7 +78,7 @@ public class ProfileData
     public string save_version;
     public bool gameStart;
 
-    public int tin_amount;
+    public int tin_amount = 0;
     public int gold_amount;
     public int crystal_amount;
     public int bronze_amount;

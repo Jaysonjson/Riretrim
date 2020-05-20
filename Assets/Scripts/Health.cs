@@ -22,12 +22,12 @@ public class Health : MonoBehaviour
         }
         if ((Registry.profile.Data.health + 0.75) % 1 == 0)
         {
-            hearts[getLastHeart()].fillAmount = 0.75F;
+            hearts[getLastHeart()].fillAmount = 0.25F;
             emptyHeartObject.transform.position = hearts[getLastHeart()].transform.position;
         }
         if ((Registry.profile.Data.health + 0.25) % 1 == 0)
         {
-            hearts[getLastHeart()].fillAmount = 0.25F;
+            hearts[getLastHeart()].fillAmount = 0.75F;
             emptyHeartObject.transform.position = hearts[getLastHeart()].transform.position;
         }
         for (int i = 0; i < hearts.Length; i++)
