@@ -67,6 +67,7 @@
           <e p="Gamescreen" t="Include">
             <e p="EnemyBullet.cs" t="Include" />
             <e p="GameScreen.cs" t="Include" />
+            <e p="GSEndBorder.cs" t="Include" />
             <e p="GSEnemy.cs" t="Include" />
             <e p="GSPlayer.cs" t="Include" />
             <e p="Loot.cs" t="Include" />
