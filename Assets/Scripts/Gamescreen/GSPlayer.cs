@@ -23,6 +23,10 @@ public class GSPlayer : MonoBehaviour
     {
         playerActionMap = GetComponent<PlayerInput>().actions.FindActionMap("GSPlayer");
         Shoot = playerActionMap.FindAction("Shoot");
+        if (GameObject.Find(Registry.profile.Ship.Data.body) != null)
+        {
+            GameObject playerBody = GameObject.Find(Registry.profile.Ship.Data.body);
+        }
     }
 
     void FixedUpdate()
@@ -52,10 +56,10 @@ public class GSPlayer : MonoBehaviour
         isShooting = true;
         GameObject spawned_bullet = Instantiate(bullet, bulletGroup.transform);
         spawned_bullet.SetActive(true);
-        spawned_bullet.transform.position = new Vector3(gameObject.transform.position.x + 0.25f, gameObject.transform.position.y + 0.5f, gameObject.transform.position.z);
+        spawned_bullet.transform.position = new Vector3(gameObject.transform.position.x + 0.15f, gameObject.transform.position.y + 0.5f, gameObject.transform.position.z);
         GameObject spawned_bullet1 = Instantiate(bullet, bulletGroup.transform);
         spawned_bullet1.SetActive(true);
-        spawned_bullet1.transform.position = new Vector3(gameObject.transform.position.x - 0.25f, gameObject.transform.position.y + 0.5f, gameObject.transform.position.z);
+        spawned_bullet1.transform.position = new Vector3(gameObject.transform.position.x - 0.15f, gameObject.transform.position.y + 0.5f, gameObject.transform.position.z);
         ableToShoot = false;
         gun_temperature += Random.Next(15);
         GunTemperatureProgressbar.UpdateBar();

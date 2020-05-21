@@ -20,14 +20,18 @@ public class GSEnemy : MonoBehaviour
     {
         yield return new WaitForSeconds(bulletSpeed);
         StartCoroutine(Shoot());
-        bulletHandler.GetComponent<IEnemyBullet>().damage = damage;
-        bulletHandler.GetComponent<IEnemyBullet>().Shoot(bullet, this);
+        if (bulletHandler != null && bulletHandler.GetComponent<IEnemyBullet>() != null && bullet != null)
+        {
+            bulletHandler.GetComponent<IEnemyBullet>().damage = damage;
+            bulletHandler.GetComponent<IEnemyBullet>().Shoot(bullet, this);
+        }
     }
     
     private void OnDestroy()
     {
         gameScreen.percentage += percentageAddition;
     }
-    
+
+ 
 }
 

@@ -16,8 +16,10 @@ public class ShipMono : MonoBehaviour
     public ShipSprites Sprites;
     public ShipState STATE = ShipState.IDLE;
     private Random Random = new Random();
+    private SpriteRenderer spriteRenderer;
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         GameObject shipObject = GameObject.Find(Registry.profile.Ship.Data.body);
         shipObject.SetActive(true);
         Sprites = shipObject.GetComponent<ShipSprites>();
@@ -25,7 +27,7 @@ public class ShipMono : MonoBehaviour
         if (shipObject.name != "PlayerDefault")
         {
             GetComponent<Animator>().enabled = false;
-            GetComponent<SpriteRenderer>().sprite = Sprites.Idle;
+            spriteRenderer.sprite = Sprites.Idle;
         }
         else if(shipObject.name == "PlayerDefault")
         {
@@ -44,6 +46,11 @@ public class ShipMono : MonoBehaviour
         if (ships != null)
         {
             ships.SetActive(false);
+        }
+        
+        if(shipObject.GetComponent<BoxCollider2D>() != null)
+        {
+            GetComponent<BoxCollider2D>().size = shipObject.GetComponent<BoxCollider2D>().size;
         }
     }
 
@@ -73,21 +80,21 @@ public class ShipMono : MonoBehaviour
         {
             ShipDMGProgressbar.INSTANCE.UpdateBars();
         }
-        if (GetComponent<SpriteRenderer>() != null)
+        if (spriteRenderer != null)
         {
             if (STATE == ShipState.IDLE)
             {
-                GetComponent<SpriteRenderer>().sprite = Sprites.Idle;
+                spriteRenderer.sprite = Sprites.Idle;
             }
 
             if (STATE == ShipState.FLIGHT)
             {
-                GetComponent<SpriteRenderer>().sprite = Sprites.Flight;
+                spriteRenderer.sprite = Sprites.Flight;
             }
 
             if (STATE == ShipState.SPECIAL)
             {
-                GetComponent<SpriteRenderer>().sprite = Sprites.Special;
+                spriteRenderer.sprite = Sprites.Special;
             }
         }
         if (sun != null)
@@ -104,7 +111,7 @@ public class ShipMono : MonoBehaviour
             }
             else
             {
-                if (redBlink.active)
+                if (redBlink.activeSelf)
                 {
                     redBlink.SetActive(false);
                     redBlinkText.SetActive(false);
