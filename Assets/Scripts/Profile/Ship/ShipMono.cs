@@ -73,22 +73,23 @@ public class ShipMono : MonoBehaviour
         {
             ShipDMGProgressbar.INSTANCE.UpdateBars();
         }
-
-        if (STATE == ShipState.IDLE)
+        if (GetComponent<SpriteRenderer>() != null)
         {
-            GetComponent<SpriteRenderer>().sprite = Sprites.Idle;
-        }
+            if (STATE == ShipState.IDLE)
+            {
+                GetComponent<SpriteRenderer>().sprite = Sprites.Idle;
+            }
 
-        if (STATE == ShipState.FLIGHT)
-        {
-            GetComponent<SpriteRenderer>().sprite = Sprites.Flight;
-        }
+            if (STATE == ShipState.FLIGHT)
+            {
+                GetComponent<SpriteRenderer>().sprite = Sprites.Flight;
+            }
 
-        if (STATE == ShipState.SPECIAL)
-        {
-            GetComponent<SpriteRenderer>().sprite = Sprites.Special;
+            if (STATE == ShipState.SPECIAL)
+            {
+                GetComponent<SpriteRenderer>().sprite = Sprites.Special;
+            }
         }
-
         if (sun != null)
         {
             float distance = Vector2.Distance(sun.transform.position, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y));

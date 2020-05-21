@@ -15,5 +15,4 @@ public class DiscordRPC : MonoBehaviour
         riretrimDefault.LargeImage = "riretrim";
         riretrimDefault.LargeText = Application.unityVersion + " || " + Application.version;
     }
-    
 }

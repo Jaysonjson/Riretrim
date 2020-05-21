@@ -7,6 +7,7 @@ public class EnemyBullet : MonoBehaviour
     public float x = 1;
     public float y = 1;
     public float damage = 0.25f;
+    
     private void Start()
     {
         _rigidBody = GetComponent<Rigidbody2D>();

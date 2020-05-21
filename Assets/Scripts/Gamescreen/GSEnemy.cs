@@ -8,6 +8,8 @@ public class GSEnemy : MonoBehaviour
     public GameScreen gameScreen;
     public int percentageAddition;
     public float bulletSpeed = 0.5f;
+    public float damage;
+    public GameObject bulletHandler;
     public GameObject bullet;
     public void Start()
     {
@@ -18,9 +20,8 @@ public class GSEnemy : MonoBehaviour
     {
         yield return new WaitForSeconds(bulletSpeed);
         StartCoroutine(Shoot());
-        GameObject shotBullet = Instantiate(bullet, gameObject.transform);
-        shotBullet.SetActive(true);
-        shotBullet.transform.position = new Vector3(gameObject.transform.position.x + 0.25f, gameObject.transform.position.y + 0.5f, gameObject.transform.position.z);
+        bulletHandler.GetComponent<IEnemyBullet>().damage = damage;
+        bulletHandler.GetComponent<IEnemyBullet>().Shoot(bullet, this);
     }
     
     private void OnDestroy()
