@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
+using UnityEngine.SceneManagement;
 using Random = System.Random;
 
 public class ShipMono : MonoBehaviour
@@ -12,7 +13,7 @@ public class ShipMono : MonoBehaviour
     public GameObject redBlinkText;
     public GameObject wing;
     public GameObject ships;
-    private ShipSprites Sprites;
+    public ShipSprites Sprites;
     public ShipState STATE = ShipState.IDLE;
     private Random Random = new Random();
     void Start()
@@ -34,6 +35,10 @@ public class ShipMono : MonoBehaviour
         if (Sprites.Wing != null)
         {
             wing.GetComponent<SpriteRenderer>().sprite = Sprites.Wing;
+        }
+        else
+        {
+            wing.SetActive(false);
         }
 
         if (ships != null)
@@ -64,7 +69,11 @@ public class ShipMono : MonoBehaviour
             Registry.profile.Data.ship_xp += 0.01f;
         }
 
-        ShipDMGProgressbar.INSTANCE.UpdateBars();
+        if (SceneManager.GetActiveScene().name.Equals("SpaceMap"))
+        {
+            ShipDMGProgressbar.INSTANCE.UpdateBars();
+        }
+
         if (STATE == ShipState.IDLE)
         {
             GetComponent<SpriteRenderer>().sprite = Sprites.Idle;
