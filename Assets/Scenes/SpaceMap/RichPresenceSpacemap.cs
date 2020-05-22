@@ -30,4 +30,5 @@ public class RichPresenceSpacemap : MonoBehaviour
     {
         DiscordRPC.discord.Dispose();
     }
+
 }

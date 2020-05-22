@@ -31,7 +31,6 @@ public class GSEnemy : MonoBehaviour
     {
         gameScreen.percentage += percentageAddition;
     }
-
  
 }
 
