@@ -24,7 +24,7 @@ public class OptionData
     public bool ObjectShadows = true;
     public bool Lights = true;
     public bool ShowFPS = false;
-    public bool postProcessing = true;
+    public bool postProcessing = false;
     public string Language = "English";
     public string Texturepack = "Default";
     public int HUDScale = 1920;
