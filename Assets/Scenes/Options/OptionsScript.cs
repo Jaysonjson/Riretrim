@@ -18,6 +18,7 @@ public class OptionsScript : MonoBehaviour
     public Toggle objectShadowToggle;
     public Toggle lightToggle;
     public Toggle showFPSToggle;
+    public Toggle postProcessingToggle;
     public TMP_Dropdown languageDropdown;
     public TMP_Dropdown minimapHUD;
     public CanvasScaler CanvasScaler;
@@ -34,6 +35,7 @@ public class OptionsScript : MonoBehaviour
         lightToggle.isOn = Options.Data.Lights;
         showFPSToggle.isOn = Options.Data.ShowFPS;
         hudScaleSlider.value = Options.Data.HUDScale;
+        postProcessingToggle.isOn = Options.Data.postProcessing;
         hudScaleValue.text = Options.Data.HUDScale + "";
         CanvasScaler.referenceResolution = new Vector2(Options.Data.HUDScale, 1080);
         for (var i = 0; i < languageDropdown.options.Count; i++)
@@ -84,6 +86,11 @@ public class OptionsScript : MonoBehaviour
     public void UpdateAsteroidsShadowToggle()
     {
         Options.Data.AsteroidShadows = asteroidShadowToggle.isOn;
+    }
+
+    public void UpdatePostProcessingToggle()
+    {
+        Options.Data.postProcessing = postProcessingToggle.isOn;
     }
 
     public void UpdateParticleSystemToggle()
