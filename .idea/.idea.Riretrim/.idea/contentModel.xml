@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$PROJECT_DIR$/../Library/Caches/JetBrains/Rider2020.1/extResources" t="IncludeRecursive" />
-    <e p="$PROJECT_DIR$/../Library/Caches/JetBrains/Rider2020.1/resharper-host/local/Transient/ReSharperHost/v201/SolutionCaches/_Riretrim.567712506.00" t="ExcludeRecursive" />
-    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+    <e p="C:\Users\Jayson\AppData\local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Jayson\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_Riretrim.-690993140.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Jayson\Documents\UnityProjects\Riretrim" t="IncludeRecursive">
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -27,6 +27,9 @@
           <e p="DamagedShip" t="Include">
             <e p="RoomsDS.cs" t="Include" />
             <e p="RoomSpawnPointDS.cs" t="Include" />
+          </e>
+          <e p="Gamescreen" t="Include">
+            <e p="RichPresenceGamescreen.cs" t="Include" />
           </e>
           <e p="NewGame" t="Include">
             <e p="MapOptionsScript.cs" t="Include" />
@@ -65,16 +68,22 @@
           <e p="Escape.cs" t="Include" />
           <e p="FixedLifeTime.cs" t="Include" />
           <e p="Gamescreen" t="Include">
-            <e p="EnemyBullet.cs" t="Include" />
+            <e p="EnemyBullets" t="Include">
+              <e p="EnemyBullet.cs" t="Include" />
+              <e p="EnemyBulletZenin.cs" t="Include" />
+              <e p="IEnemyBullet.cs" t="Include" />
+            </e>
             <e p="GameScreen.cs" t="Include" />
             <e p="GSEndBorder.cs" t="Include" />
             <e p="GSEnemy.cs" t="Include" />
             <e p="GSPlayer.cs" t="Include" />
+            <e p="Hitbox.cs" t="Include" />
             <e p="Loot.cs" t="Include" />
             <e p="LootList.cs" t="Include" />
             <e p="MoveToPlayer.cs" t="Include" />
             <e p="ObjectSpawner.cs" t="Include" />
             <e p="ObjectSpawnerEntry.cs" t="Include" />
+            <e p="PlayerBulletHandler.cs" t="Include" />
           </e>
           <e p="Health.cs" t="Include" />
           <e p="HealthObject.cs" t="Include" />
@@ -262,7 +271,7 @@
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Riretrim.sln" t="IncludeFlat" />
-      <e p="Temp/Bin" t="ExcludeRecursive" />
+      <e p="Temp\Bin" t="ExcludeRecursive" />
     </e>
   </component>
 </project>

@@ -1,27 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class RichPresenceGamescreen : MonoBehaviour
 {
+    Discord.Activity activity;
     void Start()
     {
-        var activity = new Discord.Activity
+        activity = new Discord.Activity
         {
             Details = Registry.Language.drpc_inside_solarsystem.Replace("%S", Registry.profile.Data.current_solarsystem),
             Assets =
             {
                 SmallImage = "riretrim",
-                SmallText = Application.unityVersion + " || " + Application.version
+                SmallText = Application.unityVersion + " || " + Application.version,
+                LargeImage = "zenin",
+                LargeText = "Health: " + Registry.profile.Data.health
             },
             State = "Fightin'"
         };
-        DiscordRPC.activityManager.UpdateActivity(activity, (res) =>
-        {
-        });
     }
     private void Update()
     {
+        DiscordRPC.activityManager.UpdateActivity(activity, (res) =>
+        {
+        });
         DiscordRPC.discord.RunCallbacks();
     }
 
