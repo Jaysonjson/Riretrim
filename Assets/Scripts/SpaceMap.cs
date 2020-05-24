@@ -27,6 +27,7 @@ public class SpaceMap : MonoBehaviour
     public TextMeshProUGUI asteroidCountText;
     public TextMeshProUGUI moonCountText;
     public TextMeshProUGUI planetCountText;
+    public TextMeshProUGUI orbit;
     public static int moonAmount = 0;
     public AsteroidSpawner asteroidSpawner;
     public PlanetSpawner planetSpawner;
@@ -147,5 +148,6 @@ public class SpaceMap : MonoBehaviour
         fuelCircle.fillAmount = Registry.profile.Ship.Data.fuel / Registry.profile.Ship.Data.fuelMax;
         energyCircle.fillAmount = Registry.profile.Ship.Data.energy / Registry.profile.Ship.Data.energyMax;
         minimapBar.fillAmount = (((player.GetComponent<PlayerMapMovement>().getDistanceToSun() - 8) / 125) - 1) / -1;
+        orbit.text = "Orbiting: " + player.GetComponent<Orbit>().target.name;
     }
 }

@@ -11,6 +11,7 @@ TagManager:
   - DamagedShipRoom
   - Currency
   - EnemyBullet
+  - GravityCollider
   layers:
   - Default
   - TransparentFX
