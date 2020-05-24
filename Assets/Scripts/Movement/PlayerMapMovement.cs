@@ -139,7 +139,7 @@ public class PlayerMapMovement : MonoBehaviour
         
         if (!isMoving)
         {
-            GetComponent<Orbit>().speed = 0.15f;
+            GetComponent<Orbit>().speed = 0.25f;
             GetComponent<SelfRotation>().speed = 0.75f;
             if (ShipMono != null)
             {
@@ -147,8 +147,8 @@ public class PlayerMapMovement : MonoBehaviour
             }
         } else if (isMoving)
         {
-            GetComponent<Orbit>().speed = 0f;
-            GetComponent<SelfRotation>().speed = 0f;
+            GetComponent<Orbit>().speed = 0.10f;
+            GetComponent<SelfRotation>().speed = 0.25f;
             if (ShipMono != null)
             {
                 ShipMono.STATE = ShipState.FLIGHT;
