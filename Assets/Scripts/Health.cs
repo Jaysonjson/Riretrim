@@ -62,6 +62,8 @@ public class Health : MonoBehaviour
         
         for (int i = 0; i < hearts.Length; i++)
         {
+            Image image = hearts[i].GetComponent<Image>();
+            Color color = image.color;
             if (i < Registry.profile.Data.health)
             {
                 hearts[i].sprite = fullHeart;
@@ -72,12 +74,14 @@ public class Health : MonoBehaviour
             }
             if (i < Registry.profile.Data.hearts)
             {
-                hearts[i].enabled = true;
+                color = new Color(color.r, color.g, color.b, 1f);
             }
             else
             {
-                hearts[i].enabled = false;
+                color = new Color(image.color.r, color.g, color.b, 0.25f);
             }
+
+            image.color = color;
         }
     }
     public int getLastHeart()
