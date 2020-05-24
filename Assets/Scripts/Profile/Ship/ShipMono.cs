@@ -23,13 +23,13 @@ public class ShipMono : MonoBehaviour
         GameObject shipObject = GameObject.Find(Registry.profile.Ship.Data.body);
         shipObject.SetActive(true);
         Sprites = shipObject.GetComponent<ShipSprites>();
-        Instantiate(shipObject,transform).SetActive(true);
+        Instantiate(shipObject, transform).SetActive(true);
         if (shipObject.name != "PlayerDefault")
         {
             GetComponent<Animator>().enabled = false;
             spriteRenderer.sprite = Sprites.Idle;
         }
-        else if(shipObject.name == "PlayerDefault")
+        else if (shipObject.name == "PlayerDefault")
         {
             GetComponent<ShadowCaster2D>().enabled = true;
         }
@@ -47,8 +47,8 @@ public class ShipMono : MonoBehaviour
         {
             ships.SetActive(false);
         }
-        
-        if(shipObject.GetComponent<BoxCollider2D>() != null)
+
+        if (shipObject.GetComponent<BoxCollider2D>() != null)
         {
             GetComponent<BoxCollider2D>().size = shipObject.GetComponent<BoxCollider2D>().size;
         }
@@ -80,7 +80,7 @@ public class ShipMono : MonoBehaviour
         {
             ShipDMGProgressbar.INSTANCE.UpdateBars();
         }
-        if (spriteRenderer != null)
+        if (spriteRenderer != null && Sprites != null)
         {
             if (STATE == ShipState.IDLE)
             {
@@ -97,7 +97,7 @@ public class ShipMono : MonoBehaviour
                 spriteRenderer.sprite = Sprites.Special;
             }
         }
-        if (sun != null)
+        if (sun != null && redBlink != null)
         {
             float distance = Vector2.Distance(sun.transform.position, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y));
             if (distance < 12)

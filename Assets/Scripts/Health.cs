@@ -11,6 +11,7 @@ public class Health : MonoBehaviour
     public Sprite fullHeart;
     public Sprite emptyHeart;
     public ShipMono ShipMono;
+    public float defaultAlpha = 0.3f;
     private void Start()
     {
         if (GameObject.Find(Registry.profile.Ship.Data.body) != null)
@@ -74,11 +75,11 @@ public class Health : MonoBehaviour
             }
             if (i < Registry.profile.Data.hearts)
             {
-                color = new Color(color.r, color.g, color.b, 1f);
+                color = new Color(color.r, color.g, color.b, defaultAlpha);
             }
             else
             {
-                color = new Color(image.color.r, color.g, color.b, 0.25f);
+                color = new Color(image.color.r, color.g, color.b, defaultAlpha / 3);
             }
 
             image.color = color;

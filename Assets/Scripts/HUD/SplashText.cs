@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class SplashText : MonoBehaviour
@@ -13,6 +14,10 @@ public class SplashText : MonoBehaviour
     {
         splashText = $"{splashs[rand.Next(splashs.Length)]}";
         GetComponent<TextMeshProUGUI>().text = splashText;
+        if (splashText.Equals("Color"))
+        {
+            StartCoroutine(colorSplash());
+        }
     }
     void Update()
     {
@@ -20,12 +25,12 @@ public class SplashText : MonoBehaviour
         {
             transform.Rotate(Vector3.up * 45.5f * Time.deltaTime, Space.Self);
         }
-        if(splashText.Equals("Color"))
-        {
-            if (rand.Next(10) == 1)
-            {
-                GetComponent<TextMeshProUGUI>().color = new Color32((byte)(rand.Next(255)), (byte)(rand.Next(255)), (byte)(rand.Next(255)), 255);
-            }
-        }
+    }
+
+    IEnumerator colorSplash()
+    {
+        yield return new WaitForSeconds(0.5f);
+        GetComponent<TextMeshProUGUI>().color = new Color32((byte)(rand.Next(255)), (byte)(rand.Next(255)), (byte)(rand.Next(255)), 255);
+        StartCoroutine(colorSplash());
     }
 }
