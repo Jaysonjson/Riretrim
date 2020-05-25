@@ -22,8 +22,12 @@ public class RichPresenceSpacemap : MonoBehaviour
         {
         });
     }
-    private void Update () {
+    private void Update()
+    {
+        if (DiscordRPC.discord != null)
+        { 
         DiscordRPC.discord.RunCallbacks();
+        }
     }
 
     private void OnApplicationQuit()

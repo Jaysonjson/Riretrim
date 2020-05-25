@@ -59,6 +59,9 @@ public class Planet
 
     public void Generate()
     {
+        SpriteRenderer planetBodySprite = planetBody.GetComponent<SpriteRenderer>();
+        SpriteRenderer planetMiniMapSprite = miniMap.GetComponent<SpriteRenderer>();
+
         Map.Load();
         System.Random random = new System.Random();
         if (Exists()) {
@@ -215,23 +218,23 @@ public class Planet
             text[0].GetComponent<TextMeshPro>().fontSize /= 4;
         }
         if (Data.type == PlanetType.EXOTIC) {
-            planetBody.GetComponent<SpriteRenderer>().sprite = Planets.exoticSprites[Data.spriteNumber];
-            miniMap.GetComponent<SpriteRenderer>().sprite = Planets.exoticSprites[Data.spriteNumber]; }
+            planetBodySprite.sprite = Planets.exoticSprites[Data.spriteNumber];
+            planetMiniMapSprite.sprite = Planets.exoticSprites[Data.spriteNumber]; }
         if (Data.type == PlanetType.EARTHLIKE) {
-            planetBody.GetComponent<SpriteRenderer>().sprite = Planets.earthLikeSprites[Data.spriteNumber];
-            miniMap.GetComponent<SpriteRenderer>().sprite = Planets.earthLikeSprites[Data.spriteNumber]; }
+            planetBodySprite.sprite = Planets.earthLikeSprites[Data.spriteNumber];
+            planetMiniMapSprite.sprite = Planets.earthLikeSprites[Data.spriteNumber]; }
         if (Data.type == PlanetType.LAVA) {
-            planetBody.GetComponent<SpriteRenderer>().sprite = Planets.lavaSprites[Data.spriteNumber];
-            miniMap.GetComponent<SpriteRenderer>().sprite = Planets.lavaSprites[Data.spriteNumber]; }
+            planetBodySprite.sprite = Planets.lavaSprites[Data.spriteNumber];
+            planetMiniMapSprite.sprite = Planets.lavaSprites[Data.spriteNumber]; }
         if (Data.type == PlanetType.ROCKY) {
-            planetBody.GetComponent<SpriteRenderer>().sprite = Planets.rockySprites[Data.spriteNumber];
-            miniMap.GetComponent<SpriteRenderer>().sprite = Planets.rockySprites[Data.spriteNumber]; }
+            planetBodySprite.sprite = Planets.rockySprites[Data.spriteNumber];
+            planetMiniMapSprite.sprite = Planets.rockySprites[Data.spriteNumber]; }
         if (Data.type == PlanetType.GAS) {
-            planetBody.GetComponent<SpriteRenderer>().sprite = Planets.gasSprites[Data.spriteNumber];
-            miniMap.GetComponent<SpriteRenderer>().sprite = Planets.gasSprites[Data.spriteNumber]; }
+            planetBodySprite.sprite = Planets.gasSprites[Data.spriteNumber];
+            planetMiniMapSprite.sprite = Planets.gasSprites[Data.spriteNumber]; }
         if (Data.type == PlanetType.ICE) {
-            planetBody.GetComponent<SpriteRenderer>().sprite = Planets.iceSprites[Data.spriteNumber];
-            miniMap.GetComponent<SpriteRenderer>().sprite = Planets.iceSprites[Data.spriteNumber]; }
+            planetBodySprite.sprite = Planets.iceSprites[Data.spriteNumber];
+            planetMiniMapSprite.sprite = Planets.iceSprites[Data.spriteNumber]; }
         planetMain.name = Data.name;
         planetBody.name = Data.name + "-Body";
         planetMain.transform.position = new Vector3(Data.position_x, Data.position_y,-780f);
