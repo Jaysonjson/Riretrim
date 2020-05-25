@@ -27,6 +27,7 @@ public class SpaceMap : MonoBehaviour
     public TextMeshProUGUI asteroidCountText;
     public TextMeshProUGUI moonCountText;
     public TextMeshProUGUI planetCountText;
+    public TextMeshProUGUI enemyCountText;
     public TextMeshProUGUI orbit;
     public static int moonAmount = 0;
     public AsteroidSpawner asteroidSpawner;
@@ -43,6 +44,8 @@ public class SpaceMap : MonoBehaviour
     public Image squareMiniMap;
     private Image minimapBar;
     public GameObject player;
+
+    public Star star = new Star();
     void Start()
     {
         INSTANCE = this;
@@ -65,7 +68,6 @@ public class SpaceMap : MonoBehaviour
             minimapBar = squareMiniMap;
         }
         
-        Star star = new Star();
         star.Load(Registry.profile.Data.current_solarsystem);
         asteroidSpawner.amount = star.Data.asteroid_count;
         planetSpawner.amount = star.Data.planet_count;
@@ -74,6 +76,7 @@ public class SpaceMap : MonoBehaviour
         currencyName.text = Registry.profile.Data.currency_name;
         asteroidCountText.text = star.Data.asteroid_count + "";
         planetCountText.text = (star.Data.planet_count + 1) + "";
+        enemyCountText.text = star.Data.enemy_count + "";
         //CanvasScaler.scaleFactor = Options.Data.HUDScale;
         CanvasScaler.referenceResolution = new Vector2(Options.Data.HUDScale, 1080);
         StartCoroutine(LateStart());

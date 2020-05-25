@@ -41,8 +41,13 @@ public class GameScreen : MonoBehaviour
 
     void onEnd()
     {
+        Star star = new Star();
+        star.Load(Registry.profile.Data.current_solarsystem);
         Registry.profile.Save();
         player.moveUp = true;
+        star.Data.enemy_count--;
+
+        star.Save(Registry.profile.Data.current_solarsystem);
         //endScreen.SetActive(true);
     }
 }
