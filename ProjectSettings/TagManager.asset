@@ -12,6 +12,7 @@ TagManager:
   - Currency
   - EnemyBullet
   - GravityCollider
+  - EnemyCollider
   layers:
   - Default
   - TransparentFX

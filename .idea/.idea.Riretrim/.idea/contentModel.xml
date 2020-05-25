@@ -126,6 +126,7 @@
             <e p="MaterialShop.cs" t="Include" />
           </e>
           <e p="Movement" t="Include">
+            <e p="GravityCollider.cs" t="Include" />
             <e p="Orbit.cs" t="Include" />
             <e p="PlayerHorizontalMovement.cs" t="Include" />
             <e p="PlayerMapMovement.cs" t="Include" />
