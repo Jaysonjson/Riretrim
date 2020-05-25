@@ -9,17 +9,26 @@ public class SMEnemy : MonoBehaviour
     public bool triggered;
     public GameObject player;
     public Rigidbody2D rb;
+    public float speed = 0.01f;
+    public float maxSpeed = 0.1f;
+    public float acceleration = 0.0001f;
+    private float __speed;
+
+    private void Start()
+    {
+        __speed = speed;
+    }
+
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag.Equals("Player") && other is BoxCollider2D)
         {
-           // Registry.profile.Save();
+            Registry.profile.Save();
             // Destroy(gameObject);
-            //SceneManager.LoadScene("Gamescreen");
+            SceneManager.LoadScene("Gamescreen");
         }
         if (other.tag.Equals("EnemyCollider") && other is CircleCollider2D)
         {
-            //gameObject.transform.LookAt(other.gameObject.transform);
             triggered = true;
         }
     }
@@ -28,11 +37,25 @@ public class SMEnemy : MonoBehaviour
     {
         if (triggered)
         {
+            if(maxSpeed > speed)
+            {
+                speed += acceleration;
+            }
+
             Vector3 playerDirection = player.transform.position - transform.position;
             float angle = Mathf.Atan2(playerDirection.y,playerDirection.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle + 90, Vector3.forward);
             
-            gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, player.transform.position, 0.035f);
+            gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, player.transform.position, speed);
+
+            StartCoroutine(giveUp());
       }
+    }
+
+    IEnumerator giveUp()
+    {
+        yield return new WaitForSeconds(30f);
+        triggered = false;
+        speed = __speed;
     }
 }
