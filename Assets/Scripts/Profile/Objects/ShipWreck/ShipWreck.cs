@@ -32,7 +32,7 @@ public class ShipWreck
 
         if (!Exists())
         {
-            Data.name = References.randomNames[random.Next(References.randomNames.Length)] + "-" + random.Next(9999);
+            Data.name = generateName(random);
             Map.Data.shipwrecks.Add(Data.name);
             Debug.Log("Generated ShipWreck: " + Data.name);
         }
@@ -46,8 +46,17 @@ public class ShipWreck
     {
         Data.Save();
     }
-}
 
+    private string generateName(System.Random random)
+    {
+        string genName = Registry.Names.OTHER[random.Next(Registry.Names.OTHER.Count)] + "-" + random.Next(9999);
+        if (Map.Data.shipwrecks.Contains(genName))
+        {
+            return generateName(random);
+        }
+        return genName;
+    }
+}
 public class ShipWreckData
 {
     public string name = "";

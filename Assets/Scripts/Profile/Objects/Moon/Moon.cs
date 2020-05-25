@@ -49,7 +49,7 @@ public class Moon
         }
         if (!Exists())
         {
-            name = References.randomNames[random.Next(References.randomNames.Length)] + "-" + random.Next(9999);
+            name = generateName(random);
             scale = (planetObject.planetMain.transform.localScale.x / (float)(random.Next(3,6) + random.NextDouble())) / 7.5f;
             Debug.Log("Generated Moon: " + name + "; from Planet: " + planetObject.Data.name);
             planetObject.Data.moons.Add(name);
@@ -59,6 +59,16 @@ public class Moon
         moon.transform.localScale = new Vector3(scale,scale,1);
         //moon.GetComponentInParent<TextMeshProUGUI>().text = name;
         //moon.transform.FindChild("MoonDummyText").GetComponent<TextMeshProUGUI>().text = name;
+    }
+
+    private string generateName(System.Random random)
+    {
+        string genName = Registry.Names.MOON[random.Next(Registry.Names.MOON.Count)] + "-" + random.Next(9999);
+        if (planetObject.Data.moons.Contains(genName))
+        {
+            return generateName(random);
+        }
+        return genName;
     }
 
     public void LoadUsingName(string Name)

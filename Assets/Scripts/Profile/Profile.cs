@@ -41,8 +41,8 @@ public class Profile
                 if (!Data.gameStart)
                 {
                     System.Random random = new System.Random();
-                    Data.current_galaxy = References.randomNames[random.Next(References.randomNames.Length)] + " " + References.randomNumbersRom[random.Next(References.randomNumbersRom.Length)];
-                    Data.current_solarsystem = References.randomNames[random.Next(References.randomNames.Length)] + "-" + random.Next(9999);
+                    Data.current_galaxy = Registry.Names.GALAXY[random.Next(Registry.Names.GALAXY.Count)] + "-" + Registry.Names.SUFFIX[random.Next(Registry.Names.SUFFIX.Count)];
+                    Data.current_solarsystem = Registry.Names.SOLARSYSTEM[random.Next(Registry.Names.SOLARSYSTEM.Count)] + "-" + random.Next(9999);
                     Data.gameStart = true;
                     Save();
                     SceneManager.LoadScene("NewGameScreen");

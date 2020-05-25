@@ -47,7 +47,7 @@ public class SpaceStation
         }
         if (!Exists())
         {
-            name = References.randomNames[random.Next(References.randomNames.Length)] + "-" + random.Next(9999);
+            name = generateName(random);
             scale = (planetObject.planetMain.transform.localScale.x / (float)(random.Next(3,6) + random.NextDouble())) / 5.5f;
             Debug.Log("Generated Space Station: " + name + "; from Planet: " + planetObject.Data.name);
             planetObject.Data.spaceStations.Add(name);
@@ -55,6 +55,16 @@ public class SpaceStation
         }
         spaceStation.name = name; 
         spaceStation.transform.localScale = new Vector3((scale / planetObject.Data.scale) * 2,(scale / planetObject.Data.scale) * 2,1);
+    }
+
+    private string generateName(System.Random random)
+    {
+        string genName = Registry.Names.SPACESTATION[random.Next(Registry.Names.SPACESTATION.Count)] + "-" + random.Next(9999);
+        if (planetObject.Data.spaceStations.Contains(genName))
+        {
+            return generateName(random);
+        }
+        return genName;
     }
 
     public void LoadUsingName(string Name)

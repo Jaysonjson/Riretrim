@@ -46,7 +46,7 @@ public class Star
         }
         if (!Exists())
         {
-            Data.name = References.randomNames[random.Next(References.randomNames.Length)] + "-" + random.Next(9999);
+            Data.name = generateName(random);
             id = random.Next(99999);
             Data.solarSystem = Data.name;
             Data.asteroid_count = random.Next(MapOptions.Data.AsteroidMinSpawnAmount, MapOptions.Data.AsteroidMaxSpawnAmount);
@@ -99,6 +99,15 @@ public class Star
         Galaxy.Save();
     }
 
+    private string generateName(System.Random random)
+    {
+        string genName = Registry.Names.SOLARSYSTEM[random.Next(Registry.Names.SOLARSYSTEM.Count)] + "-" + random.Next(9999);
+        if (Galaxy.Data.stars.Contains(genName))
+        {
+            return generateName(random);
+        }
+        return genName;
+    }
 
     public void Load(string starName)
     {

@@ -9,7 +9,6 @@ using UnityEngine.SceneManagement;
 
 public class Planet
 {
-    public string[] names = {"Dix","Apol","Zert","Kepler","Keygrocarro","Uphocarro","Bunrao","Vogov","Iruta","Ouwei","Vaditera","Phucetis"};
     public int index;
     public int drillAmount = 0;
     public GameObject planetBody;
@@ -70,7 +69,7 @@ public class Planet
         {
             if(planetMain == null) {return;}
             planetMain.GetComponent<Orbit>().speed = random.Next(120, 500);
-            Data.name = names[random.Next(names.Length)] + "-" + random.Next(9999);
+            Data.name = generateName(random);
             Data.id = random.Next(99999999);
             Data.moonAmount = random.Next(4);
             if (random.Next(3) == 1)
@@ -287,6 +286,16 @@ public class Planet
             drill.SetActive(true);
        }
        Map.Save();
+    }
+
+    private string generateName(System.Random random)
+    {
+        string genName = Registry.Names.PLANET[random.Next(Registry.Names.PLANET.Count)] + "-" + random.Next(9999);
+        if (Map.Data.planets.Contains(genName))
+        {
+            return generateName(random);
+        }
+        return genName;
     }
 
     public PlanetData Load(string name)

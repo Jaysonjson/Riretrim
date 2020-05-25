@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultLangFile: {fileID: 4900000, guid: 49f0889f7a5a84a4584c2bf8ebd3648f, type: 3}
+  defaultNames: {fileID: 4900000, guid: d1435b36ae1923644a1a3c878e5189db, type: 3}
 --- !u!114 &702001956
 MonoBehaviour:
   m_ObjectHideFlags: 0

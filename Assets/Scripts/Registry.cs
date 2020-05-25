@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 public class Registry : MonoBehaviour
 {
     public static Language Language = new Language();
+    public static Names Names = new Names();
     public TextAsset defaultLangFile;
+    public TextAsset defaultNames;
     public static Profile profile = new Profile();
     private void Start()
     {
@@ -21,6 +23,11 @@ public class Registry : MonoBehaviour
         if (defaultLangFile != null)
         {
             JsonUtility.FromJsonOverwrite(defaultLangFile.text, Language);
+        }
+
+        if(defaultNames != null)
+        {
+           JsonUtility.FromJsonOverwrite(defaultNames.text, Names);
         }
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
