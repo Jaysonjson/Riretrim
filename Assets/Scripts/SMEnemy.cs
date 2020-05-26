@@ -17,17 +17,17 @@ public class SMEnemy : MonoBehaviour
     private void Start()
     {
         __speed = speed;
+        transform.rotation = Quaternion.AngleAxis(new System.Random().Next(360), Vector3.forward);
     }
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag.Equals("Player") && other is BoxCollider2D)
+        if (other.CompareTag("Player") && other is BoxCollider2D)
         {
             Registry.profile.Save();
-            // Destroy(gameObject);
             SceneManager.LoadScene("Gamescreen");
         }
-        if (other.tag.Equals("EnemyCollider") && other is CircleCollider2D)
+        if (other.CompareTag("EnemyCollider") && other is CircleCollider2D)
         {
             triggered = true;
         }

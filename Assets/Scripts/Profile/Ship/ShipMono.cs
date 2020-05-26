@@ -24,6 +24,7 @@ public class ShipMono : MonoBehaviour
         shipObject.SetActive(true);
         Sprites = shipObject.GetComponent<ShipSprites>();
         Instantiate(shipObject, transform).SetActive(true);
+        wing.GetComponent<SpriteRenderer>().color = Registry.profile.Ship.Data.wingColor;
         if (shipObject.name != "PlayerDefault")
         {
             GetComponent<Animator>().enabled = false;
