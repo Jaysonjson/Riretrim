@@ -195,5 +195,6 @@ public class PlayerMapMovement : MonoBehaviour
     {
         return Vector2.Distance(rb.position, sunObject.transform.position);
     }
+
 }
 
