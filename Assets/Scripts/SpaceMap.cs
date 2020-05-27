@@ -44,10 +44,15 @@ public class SpaceMap : MonoBehaviour
     public Image squareMiniMap;
     private Image minimapBar;
     public GameObject player;
-
+    private System.Random random = new System.Random();
     public Star star = new Star();
     void Start()
     {
+        References.planets.Clear();
+        References.moons.Clear();
+        References.shipwrecks.Clear();
+
+
         INSTANCE = this;
         Registry.profile.Load();
         galaxyText.GetComponent<TextMeshProUGUI>().text = Registry.profile.Data.current_galaxy;
@@ -152,5 +157,11 @@ public class SpaceMap : MonoBehaviour
         energyCircle.fillAmount = Registry.profile.Ship.Data.energy / Registry.profile.Ship.Data.energyMax;
         minimapBar.fillAmount = (((player.GetComponent<PlayerMapMovement>().getDistanceToSun() - 8) / 125) - 1) / -1;
         orbit.text = "Orbiting: " + player.GetComponent<Orbit>().target.name;
+
+        if(random.Next(1500) == 1)
+        {
+            star.Data.enemy_count++;
+            star.Save(star.Data.name);
+        }
     }
 }

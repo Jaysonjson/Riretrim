@@ -20,6 +20,11 @@ public class RiretrimGameObject : MonoBehaviour
                 {
                     Destroy(gameObject);
                 }
+
+                if(GetComponent<DamagedShip>())
+                {
+                    GetComponent<DamagedShip>().UpdateSprite();
+                }
             }
         }
     }

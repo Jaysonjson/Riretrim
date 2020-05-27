@@ -39,9 +39,9 @@ public class ShipData
     public float fuelMax = 250f;
     public float energyMax = 125f;
 
-    public float damage = 0.25f;
+    public float damage = 0.55f;
 
-    public Color wingColor = new Color(new System.Random().Next(255), new System.Random().Next(255), new System.Random().Next(255));
+    public Color wingColor = new Color(new System.Random().Next(125), new System.Random().Next(237), new System.Random().Next(184));
 
     public bool on = true;
     

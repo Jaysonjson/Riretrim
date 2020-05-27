@@ -20,10 +20,10 @@ public class RichPresenceGamescreen : MonoBehaviour
     }
     private void Update()
     {
-        DiscordRPC.activityManager.UpdateActivity(activity, (res) =>
+        if (DiscordRPC.discord != null)
         {
-        });
-        DiscordRPC.discord.RunCallbacks();
+            DiscordRPC.discord.RunCallbacks();
+        }
     }
 
     private void OnApplicationQuit()

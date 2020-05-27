@@ -13,11 +13,14 @@ public class ObjectSpawner : MonoBehaviour
 
     IEnumerator Spawn()
     {
-        if (random.Next(2) == 1)
+        if (random.Next(4) == 1)
         {
-            GameObject spawnedObject = Instantiate(objects[0].gameObject, gameObject.transform);
-            spawnedObject.SetActive(true);
-            spawnedObject.transform.position = new Vector3((float)(random.Next(-4, 4) + random.NextDouble()), 4.5f, 0);
+            if (objects[0].spawn)
+            {
+                GameObject spawnedObject = Instantiate(objects[0].gameObject, gameObject.transform);
+                spawnedObject.SetActive(true);
+                spawnedObject.transform.position = new Vector3((float)(random.Next(-4, 4) + random.NextDouble()), 4.5f, 0);
+            }
         }
         for (int i = 0; i < objects.Length; i++)
         {
@@ -30,12 +33,15 @@ public class ObjectSpawner : MonoBehaviour
                     break;
             }
             */
-            if (random.Next(objects[i].spawnChance) == 1)
+            if (objects[i].spawn)
             {
-                GameObject spawnedObject = Instantiate(objects[i].gameObject, gameObject.transform);
-                spawnedObject.SetActive(true);
-                spawnedObject.transform.position = new Vector3((float)(random.Next(-4, 4) + random.NextDouble()), 4.5f, 0);
-                break;
+                if (random.Next(objects[i].spawnChance) == 1)
+                {
+                    GameObject spawnedObject = Instantiate(objects[i].gameObject, gameObject.transform);
+                    spawnedObject.SetActive(true);
+                    spawnedObject.transform.position = new Vector3((float)(random.Next(-4, 4) + random.NextDouble()), 4.5f, 0);
+                    break;
+                }
             }
         }
         yield return new WaitForSeconds(1.2f);

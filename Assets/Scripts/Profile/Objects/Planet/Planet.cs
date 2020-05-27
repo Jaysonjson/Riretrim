@@ -329,7 +329,7 @@ public class PlanetData
     public List<string> moons = new List<string>();
     public int spaceStationAmount = 0;
     public List<string> spaceStations = new List<string>();
-
+    public List<MoonData> moonDatas = new List<MoonData>();
     public void Load(string planetName)
     {
         Debug.Log("Loading Planet... " + planetName + "_" + name);
