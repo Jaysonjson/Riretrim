@@ -20,7 +20,9 @@ public class ModdedShipShopEntry : MonoBehaviour
                     Debug.Log("Creating Sprite");
                     Texture2D shipSprite = new Texture2D(64, 64);
                     shipSprite.LoadImage(File.ReadAllBytes(Registry.profile.mod_path + "ships/" + moddedShipData.sprite));
-                    Sprite shipSpriteTex = Sprite.Create(shipSprite, new Rect(0, 0, shipSprite.width, shipSprite.height), new Vector2(0, 0), 64);
+                    shipSprite.filterMode = FilterMode.Point;
+                    //shipSprite.Resize(64, 64);
+                    Sprite shipSpriteTex = Sprite.Create(shipSprite, new Rect(0, 0, shipSprite.width, shipSprite.height), new Vector2(0, 0), 100);
                     ship.GetComponent<SpriteRenderer>().sprite = shipSpriteTex;
                 }
                 ship.GetComponent<ShopShip>().xp = moddedShipData.xp;

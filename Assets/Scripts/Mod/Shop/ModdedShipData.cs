@@ -7,6 +7,9 @@ public class ModdedShipData {
     public int xp = 0;
     public int price = 0;
 
+    public float damage = 0;
+    public float armor = 0;
+
     public void Load(string file)
     {
         string json = "{}";
