@@ -15,7 +15,7 @@ public class ShopLeftPanel : MonoBehaviour
             Object = Shop.ships[Shop.currentObject - 1];
         } else if(Shop.currentObject == 0)
         {
-            Object = Shop.ships[Shop.ships.Length - 1];
+            Object = Shop.ships[Shop.ships.Count - 1];
         } else
         {
             Object = Shop.ships[0];
@@ -34,12 +34,12 @@ public class ShopLeftPanel : MonoBehaviour
     }
     private void OnMouseUp()
     {
-        if(Shop.currentObject < Shop.ships.Length && Shop.currentObject != 0)
+        if(Shop.currentObject < Shop.ships.Count && Shop.currentObject != 0)
         {
             Shop.currentObject--;
         } else if(Shop.currentObject == 0)
         {
-            Shop.currentObject = Shop.ships.Length - 1;
+            Shop.currentObject = Shop.ships.Count - 1;
         }
         UpdateObject();
         Shop.ShopMainPanel.UpdateObject();

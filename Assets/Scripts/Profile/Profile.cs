@@ -10,11 +10,13 @@ public class Profile
     public string map_path;
     public string profile_path;
 
+    public string mod_path;
     public void Load()
     {
         Data.Load();
         profile_path = Application.persistentDataPath + "/profiles/" + References.current_profile + "/";
         map_path = profile_path + Data.current_galaxy + "/" + Data.current_solarsystem + "/";
+        mod_path = Application.persistentDataPath + "/mods/";
     }
 
     public void Save()
@@ -25,6 +27,10 @@ public class Profile
 
     public void start()
     {
+        if(!Directory.Exists(mod_path)) {
+            Directory.CreateDirectory(mod_path);
+            Directory.CreateDirectory(mod_path + "/ships/");
+        }
         Options.Load();
         Load();
         Ship.Load();

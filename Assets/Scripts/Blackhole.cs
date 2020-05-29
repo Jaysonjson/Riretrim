@@ -5,14 +5,15 @@ using UnityEngine.Rendering;
 
 public class Blackhole : MonoBehaviour
 {
+    public SMPlayer SMPlayer;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag.Equals("Player"))
         {
-            if (other.GetComponent<SMPlayer>() != null) 
+            if (SMPlayer != null) 
             { 
-            other.GetComponent<SMPlayer>().blackhole = true;
-            other.GetComponent<SMPlayer>().blackholeObject = gameObject;
+                SMPlayer.blackhole = true;
+                SMPlayer.blackholeObject = gameObject;
                 other.GetComponent<Orbit>().target = gameObject;
             }
         }
@@ -22,9 +23,9 @@ public class Blackhole : MonoBehaviour
     {
         if (other.tag.Equals("Player"))
         {
-            if (other.GetComponent<SMPlayer>() != null)
+            if (SMPlayer != null)
             {
-                other.GetComponent<SMPlayer>().blackhole = false;
+                SMPlayer.blackhole = false;
             }
         }
     }

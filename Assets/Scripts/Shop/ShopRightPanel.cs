@@ -9,7 +9,7 @@ public class ShopRightPanel : MonoBehaviour
     public GameObject Object;
     public void GetObject()
     {
-        if(Shop.currentObject < Shop.ships.Length - 1)
+        if(Shop.currentObject < Shop.ships.Count - 1)
         {
             Object = Shop.ships[Shop.currentObject + 1];
         } else
@@ -31,10 +31,10 @@ public class ShopRightPanel : MonoBehaviour
     
     private void OnMouseUp()
     {
-        if(Shop.currentObject < Shop.ships.Length && Shop.currentObject != Shop.ships.Length - 1)
+        if(Shop.currentObject < Shop.ships.Count && Shop.currentObject != Shop.ships.Count - 1)
         {
             Shop.currentObject++;
-        } else if(Shop.currentObject == Shop.ships.Length - 1)
+        } else if(Shop.currentObject == Shop.ships.Count - 1)
         {
             Shop.currentObject = 0;
         }

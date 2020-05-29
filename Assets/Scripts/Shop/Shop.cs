@@ -12,7 +12,7 @@ public class Shop : MonoBehaviour
     public ShopMainPanel ShopMainPanel;
     public ShopLeftPanel ShopLeftPanel;
     public ShopRightPanel ShopRightPanel;
-    public GameObject[] ships;
+    public List<GameObject> ships;
 
     private void Start()
     {

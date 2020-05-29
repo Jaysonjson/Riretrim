@@ -39,4 +39,5 @@ public class Registry : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
 }
