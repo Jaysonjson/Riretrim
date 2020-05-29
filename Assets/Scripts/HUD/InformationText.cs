@@ -7,6 +7,6 @@ public class InformationText : MonoBehaviour
 {
     private void Start()
     {
-        GetComponent<TextMeshProUGUI>().text = Application.productName + " " + Application.version + " | " + Application.companyName + " | " + SystemInfo.operatingSystem + " | " + Application.isEditor +  " | " + Application.unityVersion;
+        GetComponent<TextMeshProUGUI>().text = Application.productName + " " + Application.version + " | ©" + Application.companyName + " | " + SystemInfo.operatingSystem + " | " + Application.isEditor +  " | " + Application.unityVersion;
     }
 }
