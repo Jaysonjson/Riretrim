@@ -6,7 +6,6 @@ using UnityEngine;
 public class Ship
 {
     public ShipData Data = new ShipData();
-
     public void Load()
     {
         Data.Load();
@@ -31,9 +30,7 @@ public class ShipData
     public float engineDamageMax = 200f;
     public float gunDamageMax = 200f;
     public float bodyDamageMax = 200f;
-
     public string body = "PlayerDefault"; //PlayerDefault
-
     public float energy = 125f;
     public float fuel = 250f;
     public float fuelMax = 250f;

@@ -354,6 +354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xp: 120
   price: 10018
+  modded: 0
 --- !u!1 &236859528
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,6 +739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xp: 2520
   price: 17189
+  modded: 0
 --- !u!1 &460368046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,7 +1121,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792843104}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -61.57, y: -61.57, z: -491.82608}
+  m_LocalPosition: {x: -1.21906, y: -4.458244, z: -491.82608}
   m_LocalScale: {x: 100, y: 100, z: 1}
   m_Children: []
   m_Father: {fileID: 1339541843}
@@ -1139,6 +1141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xp: 2520
   price: 17189
+  modded: 0
 --- !u!212 &792843107
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1929,7 +1932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3849258882839440819381ca75b6f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moddedShip: {fileID: 792843104}
+  moddedShipObject: {fileID: 792843104}
   shop: {fileID: 1567476212}
 --- !u!1 &1673795233
 GameObject:
@@ -2029,6 +2032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xp: 0.0005
   price: 1
+  modded: 0
 --- !u!1 &1745758213
 GameObject:
   m_ObjectHideFlags: 0
@@ -2126,6 +2130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xp: 1250
   price: 14632
+  modded: 0
 --- !u!1 &1953162388
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,8 @@ public class ShopShip : MonoBehaviour
         public float xp = 1;
         public int price;
 
+        public bool modded = false;
+
         private void Start()
         {
                 if (gameObject.name.Equals("Player"))

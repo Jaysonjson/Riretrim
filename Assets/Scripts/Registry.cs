@@ -32,6 +32,7 @@ public class Registry : MonoBehaviour
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         // StartCoroutine(End());
+        Mods.ships = ModdedShipUtility.GetShips();
     }
     
     IEnumerator End()
