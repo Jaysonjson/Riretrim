@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class References
 {
-    public static string current_profile = "main";
     public static List<Planet> planets = new List<Planet>();
     public static List<Star> stars = new List<Star>();
     public static List<Moon> moons = new List<Moon>();

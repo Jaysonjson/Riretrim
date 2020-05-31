@@ -14,7 +14,7 @@ public class Profile
     public void Load()
     {
         Data.Load();
-        profile_path = Application.persistentDataPath + "/profiles/" + References.current_profile + "/";
+        profile_path = Application.persistentDataPath + "/profiles/" + Data.profileName + "/";
         map_path = profile_path + Data.current_galaxy + "/" + Data.current_solarsystem + "/";
         mod_path = Application.persistentDataPath + "/mods/";
     }
@@ -27,7 +27,8 @@ public class Profile
 
     public void start()
     {
-        if(!Directory.Exists(mod_path)) {
+        if (!Directory.Exists(mod_path))
+        {
             Directory.CreateDirectory(mod_path);
             Directory.CreateDirectory(mod_path + "/ships/");
         }
@@ -60,7 +61,8 @@ public class Profile
                     Save();
                 }
             }
-        } else
+        }
+        else
         {
             Data.save_version = Application.version;
             Save();
@@ -71,6 +73,7 @@ public class Profile
 
 public class ProfileData
 {
+    public string profileName = "main";
     public string name = "Player";
     public float health = 4F;
     public int hearts = 4;
@@ -102,23 +105,23 @@ public class ProfileData
     public void Load()
     {
         string json = "{}";
-        if (File.Exists(Application.persistentDataPath + "/profiles/" + References.current_profile + "/data.json"))
+        if (File.Exists(Application.persistentDataPath + "/profiles/" + profileName + "/data.json"))
         {
-            json = File.ReadAllText(Application.persistentDataPath + "/profiles/" + References.current_profile + "/data.json");
+            json = File.ReadAllText(Application.persistentDataPath + "/profiles/" + profileName + "/data.json");
         }
         else
         {
             Save();
         }
-        JsonUtility.FromJsonOverwrite(json, this);   
+        JsonUtility.FromJsonOverwrite(json, this);
     }
-        
+
     public void Save()
     {
-        if (!Directory.Exists(Application.persistentDataPath + "/profiles/" + References.current_profile + "/"))
+        if (!Directory.Exists(Application.persistentDataPath + "/profiles/" + profileName + "/"))
         {
-            Directory.CreateDirectory(Application.persistentDataPath + "/profiles/" + References.current_profile + "/");
+            Directory.CreateDirectory(Application.persistentDataPath + "/profiles/" + profileName + "/");
         }
-        File.WriteAllText(Application.persistentDataPath + "/profiles/" + References.current_profile + "/data.json", JsonUtility.ToJson(this, true));
+        File.WriteAllText(Application.persistentDataPath + "/profiles/" + profileName + "/data.json", JsonUtility.ToJson(this, true));
     }
 }

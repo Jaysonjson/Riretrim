@@ -45,9 +45,9 @@ public class ShipData
     public void Load()
     {
         string json = "{}";
-        if (File.Exists(Application.persistentDataPath + "/profiles/" + References.current_profile + "/ship.json"))
+        if (File.Exists(Application.persistentDataPath + "/profiles/" + Registry.profile.Data.profileName + "/ship.json"))
         {
-            json = File.ReadAllText(Application.persistentDataPath + "/profiles/" + References.current_profile + "/ship.json");
+            json = File.ReadAllText(Application.persistentDataPath + "/profiles/" + Registry.profile.Data.profileName + "/ship.json");
         }
         else
         {
@@ -58,10 +58,10 @@ public class ShipData
         
     public void Save()
     {
-        if (!Directory.Exists(Application.persistentDataPath + "/profiles/" + References.current_profile + "/"))
+        if (!Directory.Exists(Application.persistentDataPath + "/profiles/" + Registry.profile.Data.profileName + "/"))
         {
-            Directory.CreateDirectory(Application.persistentDataPath + "/profiles/" + References.current_profile + "/");
+            Directory.CreateDirectory(Application.persistentDataPath + "/profiles/" + Registry.profile.Data.profileName + "/");
         }
-        File.WriteAllText(Application.persistentDataPath + "/profiles/" + References.current_profile + "/ship.json", JsonUtility.ToJson(this, true));
+        File.WriteAllText(Application.persistentDataPath + "/profiles/" + Registry.profile.Data.profileName + "/ship.json", JsonUtility.ToJson(this, true));
     }
 }

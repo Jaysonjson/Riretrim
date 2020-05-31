@@ -12,7 +12,7 @@ public class Sun : MonoBehaviour
     Light2D[] light2d = null;
     void Start()
     {
-        string path = Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/stars/" + Registry.profile.Data.current_solarsystem + "/data.json";
+        string path = Application.persistentDataPath + "/profiles/" + Registry.profile.Data.profileName + "/" + Registry.profile.Data.current_galaxy + "/stars/" + Registry.profile.Data.current_solarsystem + "/data.json";
         if (File.Exists(path))
         {
             StarData data = new StarData();

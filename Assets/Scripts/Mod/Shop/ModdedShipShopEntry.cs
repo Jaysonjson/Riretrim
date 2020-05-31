@@ -2,7 +2,7 @@ using System.Net;
 using System;
 using UnityEngine;
 using System.IO;
-public class ModdedShipShopEntry : MonoBehaviour 
+public class ModdedShipShopEntry : MonoBehaviour
 {
     public GameObject moddedShipObject;
     public Shop shop;

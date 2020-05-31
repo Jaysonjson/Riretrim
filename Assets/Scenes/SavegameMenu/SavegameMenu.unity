@@ -386,8 +386,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2122536359}
   - component: {fileID: 2122536360}
+  - component: {fileID: 2122536361}
   m_Layer: 0
-  m_Name: SaveGame
+  m_Name: main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -458,3 +459,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2122536361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122536358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 914ded3f03ce24d428e4f11acead07a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

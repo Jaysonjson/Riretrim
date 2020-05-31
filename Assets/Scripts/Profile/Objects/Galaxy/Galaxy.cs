@@ -24,9 +24,9 @@ public class GalaxyData
     public void Load()
     {
         string json = "{}";
-        if (File.Exists(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/galaxy_data.json"))
+        if (File.Exists(Application.persistentDataPath + "/profiles/" + Registry.profile.Data.profileName + "/" + Registry.profile.Data.current_galaxy + "/galaxy_data.json"))
         {
-            json = File.ReadAllText(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/galaxy_data.json");
+            json = File.ReadAllText(Application.persistentDataPath + "/profiles/" + Registry.profile.Data.profileName + "/" + Registry.profile.Data.current_galaxy + "/galaxy_data.json");
         }
         else
         {
@@ -37,10 +37,10 @@ public class GalaxyData
         
     public void Save()
     {
-        if (!Directory.Exists(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy))
+        if (!Directory.Exists(Application.persistentDataPath + "/profiles/" + Registry.profile.Data.profileName + "/" + Registry.profile.Data.current_galaxy))
         {
-            Directory.CreateDirectory(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy);
+            Directory.CreateDirectory(Application.persistentDataPath + "/profiles/" + Registry.profile.Data.profileName + "/" + Registry.profile.Data.current_galaxy);
         }
-        File.WriteAllText(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/galaxy_data.json", JsonUtility.ToJson(this, true));
+        File.WriteAllText(Application.persistentDataPath + "/profiles/" + Registry.profile.Data.profileName + "/" + Registry.profile.Data.current_galaxy + "/galaxy_data.json", JsonUtility.ToJson(this, true));
     }
 }

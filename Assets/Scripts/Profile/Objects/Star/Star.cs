@@ -32,7 +32,7 @@ public class Star
             return false;
         }
         Data.name = Galaxy.Data.stars[index];
-        return Directory.Exists(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/stars/" + Galaxy.Data.stars[index] + "/");
+        return Directory.Exists(Application.persistentDataPath + "/profiles/" + Registry.profile.Data.profileName + "/" + Registry.profile.Data.current_galaxy + "/stars/" + Galaxy.Data.stars[index] + "/");
     }
 
     public void Generate()
@@ -139,9 +139,9 @@ public class StarData
     {
         Debug.Log("Loading Star... " + starName + "_" + name);
         string json = "{}";
-        if (File.Exists(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/stars/" + starName + "/data.json"))
+        if (File.Exists(Application.persistentDataPath + "/profiles/" + Registry.profile.Data.profileName + "/" + Registry.profile.Data.current_galaxy + "/stars/" + starName + "/data.json"))
         {
-            json = File.ReadAllText(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/stars/" + starName + "/data.json");
+            json = File.ReadAllText(Application.persistentDataPath + "/profiles/" + Registry.profile.Data.profileName + "/" + Registry.profile.Data.current_galaxy + "/stars/" + starName + "/data.json");
         }
         else
         {
@@ -152,11 +152,11 @@ public class StarData
         
     public void Save(string starName)
     {
-        if (!Directory.Exists(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/stars/" + starName + "/"))
+        if (!Directory.Exists(Application.persistentDataPath + "/profiles/" + Registry.profile.Data.profileName + "/" + Registry.profile.Data.current_galaxy + "/stars/" + starName + "/"))
         {
-            Directory.CreateDirectory(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/stars/" + starName + "/");
+            Directory.CreateDirectory(Application.persistentDataPath + "/profiles/" + Registry.profile.Data.profileName + "/" + Registry.profile.Data.current_galaxy + "/stars/" + starName + "/");
         }
-        File.WriteAllText(Application.persistentDataPath + "/profiles/" + References.current_profile + "/" + Registry.profile.Data.current_galaxy + "/stars/" + starName + "/data.json", JsonUtility.ToJson(this, true));
+        File.WriteAllText(Application.persistentDataPath + "/profiles/" + Registry.profile.Data.profileName + "/" + Registry.profile.Data.current_galaxy + "/stars/" + starName + "/data.json", JsonUtility.ToJson(this, true));
     }
 
     public void Save()

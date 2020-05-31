@@ -16,7 +16,9 @@ public class PlayerMapMovement : MonoBehaviour
     public ShipMono ShipMono;
     private bool isMoving = false;
     Vector2 movement;
-    
+
+    public GameObject mouseObject;
+
     private InputActionMap playerActionMap;
     private InputAction UpKey;
     private InputAction DownKey;
@@ -33,20 +35,21 @@ public class PlayerMapMovement : MonoBehaviour
         __friction = friction;
     }
     void Update()
-    {  
+    {
+
         if (LeftKey.ReadValue<float>() > 0)
         {
             transform.rotation = new Quaternion(0, 0, 0, 0);
             //miniMap.transform.rotation = new Quaternion(0, 0, 0, 0);
             transform.Rotate(0, 0, 90);
-           // miniMap.transform.Rotate(0, 0, 90);
+            // miniMap.transform.Rotate(0, 0, 90);
         }
         if (RightKey.ReadValue<float>() > 0)
         {
             transform.rotation = new Quaternion(0, 0, 0, 0);
-           // miniMap.transform.rotation = new Quaternion(0, 0, 0, 0);
+            // miniMap.transform.rotation = new Quaternion(0, 0, 0, 0);
             transform.Rotate(0, 0, 270);
-           // miniMap.transform.Rotate(0, 0, 270);
+            // miniMap.transform.Rotate(0, 0, 270);
         }
         if (UpKey.ReadValue<float>() > 0)
         {
@@ -55,37 +58,37 @@ public class PlayerMapMovement : MonoBehaviour
         if (DownKey.ReadValue<float>() > 0)
         {
             transform.rotation = new Quaternion(0, 0, 0, 0);
-           // miniMap.transform.rotation = new Quaternion(0, 0, 0, 0);
+            // miniMap.transform.rotation = new Quaternion(0, 0, 0, 0);
             transform.Rotate(0, 0, 180);
-           //miniMap.transform.Rotate(0, 0, 180);
+            //miniMap.transform.Rotate(0, 0, 180);
         }
         if (LeftKey.ReadValue<float>() > 0 && UpKey.ReadValue<float>() > 0)
         {
             transform.rotation = new Quaternion(0, 0, 0, 0);
-           // miniMap.transform.rotation = new Quaternion(0, 0, 0, 0);
+            // miniMap.transform.rotation = new Quaternion(0, 0, 0, 0);
             transform.Rotate(0, 0, 45);
-           // miniMap.transform.Rotate(0, 0, 45);
+            // miniMap.transform.Rotate(0, 0, 45);
         }
         if (LeftKey.ReadValue<float>() > 0 && DownKey.ReadValue<float>() > 0)
         {
             transform.rotation = new Quaternion(0, 0, 0, 0);
-           // miniMap.transform.rotation = new Quaternion(0, 0, 0, 0);
+            // miniMap.transform.rotation = new Quaternion(0, 0, 0, 0);
             transform.Rotate(0, 0, 145);
-           // miniMap.transform.Rotate(0, 0, 145);
+            // miniMap.transform.Rotate(0, 0, 145);
         }
         if (DownKey.ReadValue<float>() > 0 && RightKey.ReadValue<float>() > 0)
         {
             transform.rotation = new Quaternion(0, 0, 0, 0);
-           // miniMap.transform.rotation = new Quaternion(0, 0, 0, 0);
+            // miniMap.transform.rotation = new Quaternion(0, 0, 0, 0);
             transform.Rotate(0, 0, 215);
-           // miniMap.transform.Rotate(0, 0, 215);
+            // miniMap.transform.Rotate(0, 0, 215);
         }
         if (UpKey.ReadValue<float>() > 0 && RightKey.ReadValue<float>() > 0)
         {
             transform.rotation = new Quaternion(0, 0, 0, 0);
-           // miniMap.transform.rotation = new Quaternion(0, 0, 0, 0);
+            // miniMap.transform.rotation = new Quaternion(0, 0, 0, 0);
             transform.Rotate(0, 0, 325);
-           // miniMap.transform.Rotate(0, 0, 325);
+            // miniMap.transform.Rotate(0, 0, 325);
         }
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -102,11 +105,11 @@ public class PlayerMapMovement : MonoBehaviour
             //StartCoroutine(ParticleDespawn());
         }
 
-        if(Registry.profile.Ship.Data.fuel <= 0)
+        if (Registry.profile.Ship.Data.fuel <= 0)
         {
             speed = 1.75F;
         }
-        
+
         if (Input.GetKey(KeyCode.LeftShift))
         {
             if (Registry.profile.Ship.Data.fuel > 0)
@@ -116,27 +119,27 @@ public class PlayerMapMovement : MonoBehaviour
             else
             {
                 Registry.profile.Ship.Data.fuel = 0;
-            } 
+            }
         }
         coordinatesText.text = "X = " + rb.position.x + ", Y = " + rb.position.y;
         if (sunObject != null)
         {
             sunDistanceText.text = Registry.Language.sun_distance + getDistanceToSun();
         }
-        
+
         if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
         {
             isMoving = false;
-           // Debug.Log("Force!");
-           // Debug.Log(transform.forward);
-           // rb.AddForce(transform.forward * 2000, ForceMode2D.Force);
+            // Debug.Log("Force!");
+            // Debug.Log(transform.forward);
+            // rb.AddForce(transform.forward * 2000, ForceMode2D.Force);
         }
-        
+
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
             isMoving = true;
         }
-        
+
         if (!isMoving)
         {
             GetComponent<Orbit>().speed = 0.25f;
@@ -145,7 +148,8 @@ public class PlayerMapMovement : MonoBehaviour
             {
                 ShipMono.STATE = ShipState.IDLE;
             }
-        } else if (isMoving)
+        }
+        else if (isMoving)
         {
             GetComponent<Orbit>().speed = 0.10f;
             GetComponent<SelfRotation>().speed = 0.25f;
@@ -155,7 +159,7 @@ public class PlayerMapMovement : MonoBehaviour
             }
         }
     }
-    
+
     void FixedUpdate()
     {
         rb.AddForce(transform.forward * 10000f, ForceMode2D.Impulse);

@@ -69,7 +69,7 @@ public class SpaceMap : MonoBehaviour
             circleMiniMap.gameObject.transform.parent.gameObject.SetActive(false);
             minimapBar = squareMiniMap;
         }
-        
+
         star.Load(Registry.profile.Data.current_solarsystem);
         asteroidSpawner.amount = star.Data.asteroid_count;
         planetSpawner.amount = star.Data.planet_count;
@@ -139,23 +139,24 @@ public class SpaceMap : MonoBehaviour
         {
             SceneManager.LoadScene("Gamescreen");
         }
-        if(Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if(UI.active)
+            if (UI.activeSelf)
             {
                 UI.SetActive(false);
-            } else
+            }
+            else
             {
                 UI.SetActive(true);
             }
         }
-        
+
         fuelCircle.fillAmount = Registry.profile.Ship.Data.fuel / Registry.profile.Ship.Data.fuelMax;
         energyCircle.fillAmount = Registry.profile.Ship.Data.energy / Registry.profile.Ship.Data.energyMax;
         minimapBar.fillAmount = (((player.GetComponent<PlayerMapMovement>().getDistanceToSun() - 8) / 125) - 1) / -1;
         orbit.text = "Orbiting: " + player.GetComponent<Orbit>().target.name;
 
-        if(random.Next(1500) == 1)
+        if (random.Next(1500) == 1)
         {
             star.Data.enemy_count++;
             star.Save(star.Data.name);
