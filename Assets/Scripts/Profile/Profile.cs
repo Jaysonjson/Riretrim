@@ -12,6 +12,22 @@ public class Profile
     public string profile_path;
 
     public string mod_path;
+
+    public Profile(string name)
+    {
+        profile_path = Application.persistentDataPath + "/profiles/" + name + "/";
+    }
+
+    public Profile()
+    {
+
+    }
+
+    public void SetUp(string name)
+    {
+        profile_path = Application.persistentDataPath + "/profiles/" + name + "/";
+    }
+
     public void Load()
     {
         Data.Load();
@@ -28,14 +44,14 @@ public class Profile
 
     public void start()
     {
+        Options.Load();
+        Load();
+        Ship.Load();
         if (!Directory.Exists(mod_path))
         {
             Directory.CreateDirectory(mod_path);
             Directory.CreateDirectory(mod_path + "/ships/");
         }
-        Options.Load();
-        Load();
-        Ship.Load();
         Data.save_version = Application.version;
         if (Data.save_version != null)
         {
@@ -46,20 +62,19 @@ public class Profile
             else
             {
                 Data.save_version = Application.version;
+                Debug.Log(Data.gameStart);
                 if (!Data.gameStart)
                 {
                     System.Random random = new System.Random();
-                    Data.current_galaxy = Registry.Names.GALAXY[random.Next(Registry.Names.GALAXY.Count)] + "-" + Registry.Names.SUFFIX[random.Next(Registry.Names.SUFFIX.Count)];
-                    Data.current_solarsystem = Registry.Names.SOLARSYSTEM[random.Next(Registry.Names.SOLARSYSTEM.Count)] + "-" + random.Next(9999);
+                    //Data.current_galaxy = Registry.Names.GALAXY[random.Next(Registry.Names.GALAXY.Count)] + "-" + Registry.Names.SUFFIX[random.Next(Registry.Names.SUFFIX.Count)];
+                    //Data.current_solarsystem = Registry.Names.SOLARSYSTEM[random.Next(Registry.Names.SOLARSYSTEM.Count)] + "-" + random.Next(9999);
                     Data.gameStart = true;
-                    Save();
                     SceneManager.LoadScene("NewGameScreen");
                 }
                 else
                 {
                     //SceneManager.LoadScene("Galaxyscreen");
                     SceneManager.LoadScene("SpaceMap");
-                    Save();
                 }
             }
         }
@@ -108,25 +123,25 @@ public class ProfileData
     public void Load()
     {
         string json = "{}";
-        if (File.Exists(Application.persistentDataPath + "/profiles/" + profileName + "/data.json"))
+        if (File.Exists(Registry.profile.profile_path + "/data.json"))
         {
-            json = File.ReadAllText(Application.persistentDataPath + "/profiles/" + profileName + "/data.json");
+            json = File.ReadAllText(Registry.profile.profile_path + "/data.json");
         }
         else
         {
             Save();
         }
         //JsonUtility.FromJsonOverwrite(json, this);
-        JsonConvert.DeserializeObject<ProfileData>(json);
+        Registry.profile.Data = JsonConvert.DeserializeObject<ProfileData>(json);
     }
 
     public void Save()
     {
-        if (!Directory.Exists(Application.persistentDataPath + "/profiles/" + profileName + "/"))
+        if (!Directory.Exists(Registry.profile.profile_path + "/"))
         {
-            Directory.CreateDirectory(Application.persistentDataPath + "/profiles/" + profileName + "/");
+            Directory.CreateDirectory(Registry.profile.profile_path + "/");
         }
         //File.WriteAllText(Application.persistentDataPath + "/profiles/" + profileName + "/data.json", JsonUtility.ToJson(this, true));
-        File.WriteAllText(Application.persistentDataPath + "/profiles/" + profileName + "/data.json", JsonConvert.SerializeObject(this, Formatting.Indented));
+        File.WriteAllText(Registry.profile.profile_path + "/data.json", JsonConvert.SerializeObject(this, Formatting.Indented));
     }
 }

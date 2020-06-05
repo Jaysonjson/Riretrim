@@ -12,25 +12,21 @@ public class Sun : MonoBehaviour
     Light2D[] light2d = null;
     void Start()
     {
-        string path = Application.persistentDataPath + "/profiles/" + Registry.profile.Data.profileName + "/" + Registry.profile.Data.current_galaxy + "/stars/" + Registry.profile.Data.current_solarsystem + "/data.json";
-        if (File.Exists(path))
+        Star star = RiretrimUtility.GetStar(Registry.profile.Data.current_galaxy, Registry.profile.Data.current_solarsystem);
+        StarData data = star.Data;
+        System.Random random = new System.Random();
+        gameObject.GetComponent<SpriteRenderer>().color = new Color32(data.color[0], data.color[1], data.color[2], 255);
+        for (int i = 0; i < glows.Length; i++)
         {
-            Star star = RiretrimUtility.GetStar(Registry.profile.Data.current_galaxy, Registry.profile.Data.current_solarsystem);
-            StarData data = star.Data;
-            System.Random random = new System.Random();
-            gameObject.GetComponent<SpriteRenderer>().color = new Color32(data.color[0], data.color[1], data.color[2], 255);
-            for (int i = 0; i < glows.Length; i++)
+            if (data.color[0] != 255 && data.color[1] != 255 && data.color[2] != 255)
             {
-                if (data.color[0] != 255 && data.color[1] != 255 && data.color[2] != 255)
-                {
-                    glows[i].GetComponent<SpriteRenderer>().color = new Color32((byte)(data.color[0] + random.Next(10)), (byte)(data.color[1] + random.Next(10)), (byte)(data.color[2] + random.Next(10)), (byte)(glows[i].GetComponent<SpriteRenderer>().color.a * 255));
-                }
-                glows[i].GetComponent<SpriteRenderer>().size *= 2.2f;
+                glows[i].GetComponent<SpriteRenderer>().color = new Color32((byte)(data.color[0] + random.Next(10)), (byte)(data.color[1] + random.Next(10)), (byte)(data.color[2] + random.Next(10)), (byte)(glows[i].GetComponent<SpriteRenderer>().color.a * 255));
             }
-            for (int i = 0; i < light2d.Length; i++)
-            {
-                light2d[i].color = new Color32(data.color[0], data.color[1], data.color[2], 255);
-            }
+            glows[i].GetComponent<SpriteRenderer>().size *= 2.2f;
+        }
+        for (int i = 0; i < light2d.Length; i++)
+        {
+            light2d[i].color = new Color32(data.color[0], data.color[1], data.color[2], 255);
         }
     }
 }

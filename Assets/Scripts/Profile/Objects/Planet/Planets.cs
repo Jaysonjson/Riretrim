@@ -1,4 +1,5 @@
-﻿using UnityEngine.Experimental.Rendering.Universal;
+﻿using System.Linq;
+using UnityEngine.Experimental.Rendering.Universal;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -93,6 +94,20 @@ public class Planets : MonoBehaviour
             athmospheres[i].GetComponent<SpriteRenderer>().color = new Color32(planet.Data.color[0], planet.Data.color[1], planet.Data.color[2], 255);
         }
         GetComponent<Orbit>().speed = planet.Data.speed;
+
+        for (int i = 0; i < planet.Data.moons.Count; i++)
+        {
+            Moon moon = planet.Data.moons.ElementAt(i).Value;
+            GameObject moonObject = Instantiate(moonDummy, gameObject.transform, false);
+            moonObject.GetComponent<Moons>().moon = moon;
+        }
+
+        for (int i = 0; i < planet.Data.spaceStations.Count; i++)
+        {
+            SpaceStation spaceStation = planet.Data.spaceStations.ElementAt(i).Value;
+            GameObject spaceStationObject = Instantiate(moonDummy, gameObject.transform, false);
+            spaceStationObject.GetComponent<SpaceStations>().spaceStation = spaceStation;
+        }
     }
 /*
     public static IEnumerator updateSpeed(int i)

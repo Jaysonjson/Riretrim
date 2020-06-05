@@ -15,6 +15,7 @@ public class Registry : MonoBehaviour
         References.sprite = gameObject.GetComponent<Sprites>();
         Debug.Log("Loading Languages..");
         Options.Load();
+        profile.SetUp("main");
         if (Options.Data.Language != "English")
         {
             defaultLangFile = Resources.Load("lang/" + Options.Data.Language) as TextAsset;

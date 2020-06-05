@@ -11,7 +11,7 @@ public class PlanetSpawner : MonoBehaviour
         for (int i = 0; i < RiretrimUtility.GetStar(Registry.profile.Data.current_solarsystem).Data.planets.Count; i++)
         {
             GameObject planet = Instantiate(planetDummy, gameObject.transform, false);
-            planet.GetComponent<Planets>().planet = RiretrimUtility.GetStar(Registry.profile.Data.current_solarsystem).Data.planets.ElementAt(i).Value;
+            planet.GetComponent<PlanetMono>().body.GetComponent<Planets>().planet = RiretrimUtility.GetStar(Registry.profile.Data.current_solarsystem).Data.planets.ElementAt(i).Value;
             planet.SetActive(true);
         }
     }

@@ -6,7 +6,7 @@ public class SpaceStations : MonoBehaviour
     public Planet planet;
     private void Start()
     {
-        name = name;
+        name = spaceStation.Data.name;
         //transform.localScale = new Vector3((scale / planetObject.Data.scale) * 2, (scale / planetObject.Data.scale) * 2, 1);
     }
 }

@@ -2,9 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Moons
+public class Moons : MonoBehaviour
 {
-    public static Moon AddMoon(Moon moon)
+    public Moon moon;
+    private void Start()
+    {
+        name = moon.Data.name;
+        transform.localScale = new Vector3(moon.Data.scale, moon.Data.scale, 1);
+    }
+
+   /* public static Moon AddMoon(Moon moon)
     {
         moon.index = References.moons.Count;
         References.moons.Add(moon);
@@ -29,4 +36,5 @@ public class Moons
             //GetMoon(i).SaveAsMoon();
         }
     }
+    */
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Linq;
+using System;
 using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
@@ -40,8 +41,12 @@ public class MapGeneration : MonoBehaviour
 
     private void End() {
         text = "Finishing...";
+        currentTask = (maxTasks - 10);
         text = "Saving...";
+        Registry.profile.Data.current_galaxy = Registry.profile.Data.galaxies.ElementAt(0).Value.Data.name;
+        Registry.profile.Data.current_solarsystem = Registry.profile.Data.galaxies.ElementAt(0).Value.Data.stars.ElementAt(0).Value.Data.name;
         Registry.profile.Save();
+        currentTask = maxTasks;
         thread.Abort();
     }
 

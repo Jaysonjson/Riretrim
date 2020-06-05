@@ -1,39 +1,35 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using TMPro;
+﻿using System.Threading;
+using Newtonsoft.Json;
 using UnityEngine;
 
 public class Moon
 {
-    public string name;
-    public float scale;
-    public string planet;
-    public int index;
-    public Planet planetObject;
-    public GameObject moon;
-
-    public void Generate()
+    public MoonData Data = new MoonData();
+    public void Generate(MapGeneration map, Planet planet)
     {
         System.Random random = new System.Random();
 
-            name = generateName(random);
-           // scale = (planetObject.planetMain.transform.localScale.x / (float)(random.Next(3,6) + random.NextDouble())) / 7.5f;
-            Debug.Log("Generated Moon: " + name + "; from Planet: " + planetObject.Data.name);
-          //  planetObject.Data.moons.Add(name);
-          //  planetObject.Data.Save();
-        moon.name = name;
-        moon.transform.localScale = new Vector3(scale,scale,1);
-  
+        Data.name = generateName(random, planet);
+        map.currentTask++;
+        map.text = "Generating Moon...";
+        // scale = (planetObject.planetMain.transform.localScale.x / (float)(random.Next(3,6) + random.NextDouble())) / 7.5f;
+        planet.Data.moons.Add(Data.name, this);
     }
 
-    private string generateName(System.Random random)
+    private string generateName(System.Random random, Planet planet)
     {
         string genName = Registry.Names.MOON[random.Next(Registry.Names.MOON.Count)] + "-" + random.Next(9999);
-        if (planetObject.Data.moons.ContainsKey(genName))
+        Thread.Sleep(12);
+        if (planet.Data.moons.ContainsKey(genName))
         {
-            return generateName(random);
+            return generateName(random, planet);
         }
         return genName;
     }
+}
+
+public class MoonData
+{
+    public string name = "";
+    public float scale = 1;
 }

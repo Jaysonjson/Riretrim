@@ -17,7 +17,7 @@ public class Planet
     private int nameTries = 0;
     public void Generate(MapGeneration map)
     {
-        map.currentTask++;
+        map.currentTask += 3;
         System.Random random = new System.Random();
         Data.name = generateName(random);
         map.text = "Generating Planet: " + Data.name + "...";

@@ -54,7 +54,7 @@ public class Star
             Data.color[1] = (byte)(random.Next(250));
             Data.color[2] = (byte)(random.Next(250));
         }
-        map.currentTask++;
+        map.currentTask += 3;
         //Debug.Log(Data.name);
         for (int i = 0; i < planet_count; i++)
         {
