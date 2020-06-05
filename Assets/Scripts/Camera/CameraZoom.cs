@@ -85,10 +85,10 @@ public class CameraZoom : MonoBehaviour
     {
         for (int i = 0; i < References.planets.Count; i++)
         {
-            for (int j = 0; j < Planets.GetPlanet(i).text.Length; j++)
-            {
-                Planets.GetPlanet(i).text[j].GetComponent<TextMeshPro>().fontSize = cameraComp.orthographicSize / 7;
-            }
+            //for (int j = 0; j < Planets.GetPlanet(i).text.Length; j++)
+            //{
+            //    Planets.GetPlanet(i).text[j].GetComponent<TextMeshPro>().fontSize = cameraComp.orthographicSize / 7;
+            //}
         }
     }
 

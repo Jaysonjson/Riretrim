@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Threading;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -13,20 +14,20 @@ public class Galaxy
 
     [JsonIgnore]
     private System.Random random = new System.Random();
-   
+
     public void Generate(MapGeneration map)
     {
-        map.text.text = "Finding Name...";
+        map.text = "Finding Name...";
         Data.name = generateName(random);
-        map.text.text = "Generating Galaxy: " + Data.name;
+        map.text = "Generating Galaxy: " + Data.name;
         int starAmount = random.Next(50, 125);
         for (int i = 0; i < starAmount; i++)
         {
             Star star = new Star(this);
             star.Generate(map);
-            if(!Data.stars.ContainsKey(star.Data.name)) 
+            if (!Data.stars.ContainsKey(star.Data.name))
             {
-            Data.stars.Add(star.Data.name, star);
+                Data.stars.Add(star.Data.name, star);
             }
         }
         map.maxTasks += starAmount;
@@ -37,8 +38,9 @@ public class Galaxy
     private string generateName(System.Random random)
     {
         nameTries++;
+        Thread.Sleep(13);
         string genName = Registry.Names.GALAXY[random.Next(Registry.Names.GALAXY.Count)] + "-" + Registry.Names.SUFFIX[random.Next(Registry.Names.SUFFIX.Count)];
-        if (nameTries < 75)
+        if (nameTries < 1500)
         {
             if (Registry.profile.Data.galaxies.ContainsKey(genName))
             {
@@ -47,6 +49,7 @@ public class Galaxy
         }
         return genName;
     }
+
 }
 
 [System.Serializable]

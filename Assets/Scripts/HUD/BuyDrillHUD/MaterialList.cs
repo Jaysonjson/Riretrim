@@ -9,7 +9,7 @@ public class MaterialList : MonoBehaviour
     public GameObject materialDummy;
     private void Start()
     {
-        Planet planet = new Planet();
+       /* Planet planet = new Planet();
         planet.Load(Registry.profile.Data.current_planet);
         float lastObject = 0;
         for (var i = 0; i < planet.Data.materials.Count; i++)
@@ -20,5 +20,6 @@ public class MaterialList : MonoBehaviour
             //materialObject.GetComponent<Image>().sprite = References.sprite.MATERIALS_METAL;
             lastObject = materialObject.GetComponent<RectTransform>().position.y / 5;
         }
+        */
     }
 }

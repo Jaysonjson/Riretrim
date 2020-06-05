@@ -529,7 +529,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61336a3188a91724a82f74414198791b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 1437359249}
+  text: 
+  textMesh: {fileID: 1437359249}
   image: {fileID: 1640142723}
   currentTask: 0
   maxTasks: 500

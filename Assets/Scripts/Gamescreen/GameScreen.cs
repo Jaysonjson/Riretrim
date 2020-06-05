@@ -41,7 +41,7 @@ public class GameScreen : MonoBehaviour
 
     void onEnd()
     {
-        Star star = RiretrimUtility.getStar(RiretrimUtility.GetGalaxy(Registry.profile.Data.current_galaxy), Registry.profile.Data.current_solarsystem);
+        Star star = RiretrimUtility.GetStar(Registry.profile.Data.current_solarsystem);
         player.moveUp = true;
         star.Data.enemy_count--;
         Registry.profile.Save();

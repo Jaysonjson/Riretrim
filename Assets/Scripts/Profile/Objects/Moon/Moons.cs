@@ -26,7 +26,7 @@ public class Moons
         for (int i = 0; i < References.moons.Count; i++)
         {
             GetMoon(i).Generate();
-            GetMoon(i).SaveAsMoon();
+            //GetMoon(i).SaveAsMoon();
         }
     }
 }

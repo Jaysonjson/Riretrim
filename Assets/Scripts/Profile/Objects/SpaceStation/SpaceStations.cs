@@ -1,15 +1,12 @@
-﻿public class SpaceStations
+﻿using UnityEngine;
+
+public class SpaceStations : MonoBehaviour
 {
-    public static SpaceStation AddSpaceStation(SpaceStation spaceStation)
+    public SpaceStation spaceStation;
+    public Planet planet;
+    private void Start()
     {
-        spaceStation.index = References.spaceStations.Count;
-        References.spaceStations.Add(spaceStation);
-        return spaceStation;
+        name = name;
+        //transform.localScale = new Vector3((scale / planetObject.Data.scale) * 2, (scale / planetObject.Data.scale) * 2, 1);
     }
-
-    public static SpaceStation GetSpaceStation(int index)
-    {
-        return References.spaceStations[index];
-    }
-
 }

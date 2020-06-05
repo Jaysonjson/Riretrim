@@ -1,18 +1,32 @@
-﻿using System.Collections;
+﻿using System;
+using System.Threading;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class MapGeneration : MonoBehaviour
 {
-    public TextMeshProUGUI text;
+    public string text = "Doing Something!";
+    public TextMeshProUGUI textMesh;
+
     public UnityEngine.UI.Image image;
 
     public int currentTask = 0;
     public int maxTasks = 500;
-    void Start()
+    public Thread thread;
+
+
+    private void Start()
     {
-        text.text = "Generating Galaxies...";
+       // StartCoroutine(StartGenerating());
+        text = "Letting Thread Sleep...";
+        thread = new Thread(new ThreadStart(Generation));
+        thread.IsBackground = true;
+        thread.Start();
+    }
+    private void Generation() {
+        //yield return new WaitForSeconds(1f);
         int galaxyAmount = new System.Random().Next(15);
         maxTasks = galaxyAmount;
         for (int i = 0; i < galaxyAmount; i++)
@@ -21,12 +35,24 @@ public class MapGeneration : MonoBehaviour
             currentTask++;
             galaxy.Generate(this);
         }
-        text.text = "Saving...";
+        End();
+    }
+
+    private void End() {
+        text = "Finishing...";
+        text = "Saving...";
         Registry.profile.Save();
+        thread.Abort();
     }
 
     private void Update()
     {
+        textMesh.text = text + " / Task: " + currentTask + " | Out of: " + maxTasks;
         image.fillAmount = (float)((float)currentTask / (float)maxTasks);
     }
+
+    //IEnumerator StartGenerating()
+  //  {
+   //     
+   // }
 }

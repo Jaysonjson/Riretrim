@@ -9,7 +9,7 @@ public class StarSpawnerGalaxy : MonoBehaviour
     public GameObject starDummy;
     void Start()
     {
-        for (int i = 0; i < Registry.profile.Data.galaxies.Count; i++)
+        for (int i = 0; i < RiretrimUtility.GetGalaxy(Registry.profile.Data.current_galaxy).Data.stars.Count; i++)
         {
             GameObject star = Instantiate(starDummy, gameObject.transform, false);
             star.GetComponent<Stars>().star = RiretrimUtility.GetGalaxy(Registry.profile.Data.current_galaxy).Data.stars.ElementAt(i).Value;

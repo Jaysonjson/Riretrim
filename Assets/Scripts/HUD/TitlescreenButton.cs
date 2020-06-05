@@ -42,6 +42,7 @@ public class TitlescreenButton : MonoBehaviour
     }
 
     public void MPTEST() {
+        Registry.profile.Load();
         SceneManager.LoadScene("MapGeneration");
     }
 }

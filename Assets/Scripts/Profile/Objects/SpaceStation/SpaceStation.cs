@@ -1,90 +1,42 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Threading;
+using Newtonsoft.Json;
 using UnityEngine;
 
 public class SpaceStation
 {
-    public string name;
-    public float scale;
-    public string planet;
-    public int index;
-    public Planet planetObject;
-    public GameObject spaceStation;
+    [JsonIgnore]
     private int nameTries = 0;
-
-    public SpaceStation(string PlanetParent, Planet PlanetObject)
-    {
-        planet = PlanetParent;
-        planetObject = PlanetObject;
-    }
-    public SpaceStation(GameObject SpaceStation, string PlanetParent, Planet PlanetObject)
-    {
-        planet = PlanetParent;
-        planetObject = PlanetObject;
-        spaceStation = SpaceStation;
-    }
-
-    public SpaceStation()
-    {
-
-    }
-    public bool Exists()
-    {
-        if (planetObject.Data.spaceStations.Count < index + 1)
-        {
-            return false;
-        }
-        name = planetObject.Data.spaceStations[index];
-        return Directory.Exists(Registry.profile.map_path + "/planets/" + planetObject.Data.name + "/spacestations/" + planetObject.Data.spaceStations[index]);
-    }
-    public void Generate()
+    public SpaceStationData Data = new SpaceStationData();
+    public void Generate(MapGeneration map, Planet planet)
     {
         System.Random random = new System.Random();
-        if (Exists())
-        {
-            LoadUsingName(name);
-            Debug.Log("Loaded Space Station: " + name + "; from Planet: " + planetObject.Data.name);
-        }
-        if (!Exists())
-        {
-            name = generateName(random);
-            scale = (planetObject.planetMain.transform.localScale.x / (float)(random.Next(3, 6) + random.NextDouble())) / 5.5f;
-            Debug.Log("Generated Space Station: " + name + "; from Planet: " + planetObject.Data.name);
-            planetObject.Data.spaceStations.Add(name);
-            planetObject.Data.Save();
-        }
-        spaceStation.name = name;
-        spaceStation.transform.localScale = new Vector3((scale / planetObject.Data.scale) * 2, (scale / planetObject.Data.scale) * 2, 1);
+        Data.name = generateName(random, planet);
+        //scale = (planetObject.planetMain.transform.localScale.x / (float)(random.Next(3, 6) + random.NextDouble())) / 5.5f;
+        map.currentTask++;
+        map.text = "Generating Space Station: " + Data.name + "; from Planet: " + planet.Data.name;
+        //Debug.Log("Generated Space Station: " + Data.name + "; from Planet: " + planet.Data.name);
+        planet.Data.spaceStations.Add(Data.name, this);
     }
 
-    private string generateName(System.Random random)
+    private string generateName(System.Random random, Planet planet)
     {
         nameTries++;
-        string genName = Registry.Names.SPACESTATION[random.Next(Registry.Names.SPACESTATION.Count)] + "-" + random.Next(9999);
-        if (nameTries < 75)
+        Thread.Sleep(13);
+        string genName = Registry.Names.SPACESTATION[new System.Random().Next(Registry.Names.SPACESTATION.Count)] + "-" + new System.Random().Next(9999);
+        if (nameTries < 1500)
         {
-            if (planetObject.Data.spaceStations.Contains(genName))
+            if (planet.Data.spaceStations.ContainsKey(genName))
             {
-                return generateName(random);
+                return generateName(random, planet);
             }
         }
         return genName;
     }
+}
 
-    public void LoadUsingName(string Name)
-    {
-        LoadUsingName(planet, Name);
-    }
-
-    public void LoadUsingName(string PlanetParent, string Name)
-    {
-        SpaceStationData data = SpaceStationSave.LoadUsingName(PlanetParent, Name);
-        scale = data.scale;
-    }
-
-    public void SaveAsSpaceStation()
-    {
-        SpaceStationSave.SaveNewSpaceStation(planet, this);
-    }
+[System.Serializable]
+public class SpaceStationData
+{
+    public string name;
+    public float scale;
 }

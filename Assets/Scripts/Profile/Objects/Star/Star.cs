@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Threading;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -24,7 +25,7 @@ public class Star
     {
         System.Random random = new System.Random();
         Data.name = generateName(random);
-        map.text.text = "Generating Star: " + Data.name;
+        map.text = "Generating Star: " + Data.name;
         Data.solarSystem = Data.name;
         Data.asteroid_count = random.Next(MapOptions.Data.AsteroidMinSpawnAmount, MapOptions.Data.AsteroidMaxSpawnAmount);
         int planet_count = random.Next(MapOptions.Data.PlanetMaxAmount / 4);
@@ -54,13 +55,23 @@ public class Star
             Data.color[2] = (byte)(random.Next(250));
         }
         map.currentTask++;
-        Debug.Log(Data.name);
+        //Debug.Log(Data.name);
+        for (int i = 0; i < planet_count; i++)
+        {
+            Planet planet = new Planet();
+            planet.Generate(map);
+            if (!Data.planets.ContainsKey(planet.Data.name))
+            {
+                Data.planets.Add(planet.Data.name, planet);
+            }
+        }
     }
 
     private string generateName(System.Random random)
     {
         nameTries++;
-        string genName = Registry.Names.SOLARSYSTEM[random.Next(Registry.Names.SOLARSYSTEM.Count)] + "-" + random.Next(9999);
+        Thread.Sleep(13);
+        string genName = Registry.Names.SOLARSYSTEM[new System.Random().Next(Registry.Names.SOLARSYSTEM.Count)] + "-" + new System.Random().Next(9999);
         if (nameTries < 75)
         {
             if (galaxy.Data.stars.ContainsKey(genName))
@@ -86,4 +97,5 @@ public class StarData
     public JsonDateTime visitTime = new JsonDateTime();
     public byte[] color = { 253, 184, 19 };
     public Dictionary<string, Planet> planets = new Dictionary<string, Planet>();
+    public Dictionary<string, ShipWreck> shipWrecks = new Dictionary<string, ShipWreck>();
 }

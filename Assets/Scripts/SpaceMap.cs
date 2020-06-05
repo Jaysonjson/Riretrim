@@ -52,7 +52,7 @@ public class SpaceMap : MonoBehaviour
 
         INSTANCE = this;
         Registry.profile.Load();
-        star = RiretrimUtility.getStar(RiretrimUtility.GetGalaxy(Registry.profile.Data.current_galaxy), Registry.profile.Data.current_solarsystem);
+        star = RiretrimUtility.GetStar(Registry.profile.Data.current_solarsystem);
         galaxyText.GetComponent<TextMeshProUGUI>().text = Registry.profile.Data.current_galaxy;
         solarSystemText.GetComponent<TextMeshProUGUI>().text = Registry.profile.Data.current_solarsystem;
 
@@ -72,22 +72,20 @@ public class SpaceMap : MonoBehaviour
         }
 
         asteroidSpawner.amount = star.Data.asteroid_count;
-        planetSpawner.amount = star.Data.planet_count;
-        ShipWreckSpawner.amount = star.Data.shipwreck_count;
         currencyAmount.text = Registry.profile.Data.currency + "";
         currencyName.text = Registry.profile.Data.currency_name;
         asteroidCountText.text = star.Data.asteroid_count + "";
-        planetCountText.text = (star.Data.planet_count + 1) + "";
+        planetCountText.text = (star.Data.planets.Count + 1) + "";
         enemyCountText.text = star.Data.enemy_count + "";
         //CanvasScaler.scaleFactor = Options.Data.HUDScale;
         CanvasScaler.referenceResolution = new Vector2(Options.Data.HUDScale, 1080);
-        StartCoroutine(LateStart());
+        //StartCoroutine(LateStart());
     }
 
-    IEnumerator LateStart()
+   /* IEnumerator LateStart()
     {
         yield return new WaitForSeconds(0.8f);
-        Planets.LoadPlanets();
+        //Planets.LoadPlanets();
         if (MapOptions.Data.ShipWrecks)
         {
             ShipWrecks.LoadShipWrecks();
@@ -102,15 +100,17 @@ public class SpaceMap : MonoBehaviour
         //yield return new WaitForSeconds(0.2f);
         //Moons.LoadMoons();
     }
+    */
     void OnApplicationQuit()
     {
         Registry.profile.Save();
-        for (int i = 0; i < References.planets.Count; i++)
+       /* for (int i = 0; i < References.planets.Count; i++)
         {
             Planets.GetPlanet(i).Data.position_x = Planets.GetPlanet(i).planetBody.transform.position.x;
             Planets.GetPlanet(i).Data.position_y = Planets.GetPlanet(i).planetBody.transform.position.y;
             Planets.GetPlanet(i).Data.Save();
         }
+        */
     }
     public void updateMaterialText()
     {

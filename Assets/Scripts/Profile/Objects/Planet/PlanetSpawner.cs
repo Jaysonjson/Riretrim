@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,11 +8,11 @@ public class PlanetSpawner : MonoBehaviour
     public GameObject planetDummy;
     void Start()
     {
-        for (int i = 0; i < RiretrimUtility.G; i++)
+        for (int i = 0; i < RiretrimUtility.GetStar(Registry.profile.Data.current_solarsystem).Data.planets.Count; i++)
         {
-            GameObject star = Instantiate(starDummy, gameObject.transform, false);
-            star.GetComponent<Stars>().star = RiretrimUtility.GetGalaxy(Registry.profile.Data.current_galaxy).Data.stars.ElementAt(i).Value;
-            star.SetActive(true);
+            GameObject planet = Instantiate(planetDummy, gameObject.transform, false);
+            planet.GetComponent<Planets>().planet = RiretrimUtility.GetStar(Registry.profile.Data.current_solarsystem).Data.planets.ElementAt(i).Value;
+            planet.SetActive(true);
         }
     }
 }
