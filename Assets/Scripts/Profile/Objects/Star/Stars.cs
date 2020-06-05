@@ -1,63 +1,31 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
-using UnityEngine.SceneManagement;
 
 public class Stars : MonoBehaviour
 {
-    public GameObject text;
-    public float scale;
-    public Light2D[] lights;
+   public Star star;
+   public TextMeshPro text;
 
-    public Star AddStar(Star star)
-    {
-        star.index = References.stars.Count;
-        References.stars.Add(star);
-        return star;
-    }
-
-    public static Star GetStar(int index)
-    {
-        return References.stars[index];
-    }
-
-    void Start()
-    {
-        scale = gameObject.transform.localScale.x;
-        AddStar(new Star(text, gameObject, lights));
-    }
-
-    public static void LoadStars()
-    {
-        for (int i = 0; i < References.stars.Count; i++)
+   public Light2D[] lights;
+   private void Start()
+   {
+        text.GetComponent<TextMeshPro>().text = star.Data.name + "\nLast Visited on: " + star.Data.visitTime.convertToDateTime().ToString("dd/M/yyyy hh:mm:ss");
+        if (star.Data.visited)
         {
-            GetStar(i).Generate();
-            GetStar(i).Save(GetStar(i).Data.name);
+            text.GetComponent<TextMeshPro>().color = new Color32(0, 163, 14, 255);
         }
-    }
-
-    public void Click()
-    {
-        Registry.profile.Data.current_solarsystem = gameObject.name;
-        Registry.profile.Data.latest_solarSystem = gameObject.name;
-        Registry.profile.Save();
-        Star star = new Star();
-        star.Data.Load(Registry.profile.Data.current_solarsystem);
-        star.Data.visited = true;
-        star.Data.visitTime = star.Data.visitTime.convertToJsonDateTime(DateTime.Now);
-        star.Data.Save();
-        SceneManager.LoadScene("SpaceMap");
-    }
-
-    public void sizeAdjust()
-    {
-        gameObject.transform.localScale = new Vector3(scale * 2, scale * 2, 1);
-    }
-
-    public void sizeDecrease()
-    {
-        gameObject.transform.localScale = new Vector3(scale, scale, 1);
-    }
+        else
+        {
+        text.GetComponent<TextMeshPro>().color = new Color32(163, 0, 0, 255);
+        }
+        name = star.Data.name;
+        GetComponent<Orbit>().speed = star.Data.speed;
+        GetComponent<SpriteRenderer>().color = new Color32(star.Data.color[0], star.Data.color[1], star.Data.color[2], 255);
+        transform.position = new Vector2(star.Data.position_x, star.Data.position_y);
+        for (var i = 0; i < lights.Length; i++)
+        {
+         lights[i].color = new Color32(star.Data.color[0], star.Data.color[1], star.Data.color[2], 255);
+        }
+   }
 }

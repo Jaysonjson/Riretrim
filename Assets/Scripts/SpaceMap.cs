@@ -42,7 +42,7 @@ public class SpaceMap : MonoBehaviour
     private Image minimapBar;
     public GameObject player;
     private System.Random random = new System.Random();
-    public Star star = new Star();
+    public Star star;
     void Start()
     {
         References.planets.Clear();
@@ -52,6 +52,7 @@ public class SpaceMap : MonoBehaviour
 
         INSTANCE = this;
         Registry.profile.Load();
+        star = RiretrimUtility.getStar(RiretrimUtility.GetGalaxy(Registry.profile.Data.current_galaxy), Registry.profile.Data.current_solarsystem);
         galaxyText.GetComponent<TextMeshProUGUI>().text = Registry.profile.Data.current_galaxy;
         solarSystemText.GetComponent<TextMeshProUGUI>().text = Registry.profile.Data.current_solarsystem;
 
@@ -70,7 +71,6 @@ public class SpaceMap : MonoBehaviour
             minimapBar = squareMiniMap;
         }
 
-        star.Load(Registry.profile.Data.current_solarsystem);
         asteroidSpawner.amount = star.Data.asteroid_count;
         planetSpawner.amount = star.Data.planet_count;
         ShipWreckSpawner.amount = star.Data.shipwreck_count;
@@ -159,7 +159,6 @@ public class SpaceMap : MonoBehaviour
         if (random.Next(1500) == 1)
         {
             star.Data.enemy_count++;
-            star.Save(star.Data.name);
         }
     }
 }

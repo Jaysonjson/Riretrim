@@ -15,8 +15,8 @@ public class Sun : MonoBehaviour
         string path = Application.persistentDataPath + "/profiles/" + Registry.profile.Data.profileName + "/" + Registry.profile.Data.current_galaxy + "/stars/" + Registry.profile.Data.current_solarsystem + "/data.json";
         if (File.Exists(path))
         {
-            StarData data = new StarData();
-            data.Load(Registry.profile.Data.current_solarsystem);
+            Star star = RiretrimUtility.GetStar(Registry.profile.Data.current_galaxy, Registry.profile.Data.current_solarsystem);
+            StarData data = star.Data;
             System.Random random = new System.Random();
             gameObject.GetComponent<SpriteRenderer>().color = new Color32(data.color[0], data.color[1], data.color[2], 255);
             for (int i = 0; i < glows.Length; i++)

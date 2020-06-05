@@ -92,11 +92,9 @@ public class Asteroid : MonoBehaviour
 
     private void OnDestroy()
     {
-        Star star = new Star();
-        star.Load(Registry.profile.Data.current_solarsystem);
+        Star star = RiretrimUtility.getStar(RiretrimUtility.GetGalaxy(Registry.profile.Data.current_galaxy), Registry.profile.Data.current_solarsystem);
         Debug.Log(star.Data.name + " / " + star.Data.asteroid_count);
         star.Data.asteroid_count--;
-        star.Data.Save();
         Debug.Log("Decreased Asteroid Count to " + star.Data.asteroid_count + " from Solarsystem " + star.Data.name);
         asteroidCountText.text = star.Data.asteroid_count + "";
     }

@@ -6,15 +6,17 @@ public class ShipWreck
     public int index;
     public GameObject main;
     public ShipWreckData Data = new ShipWreckData();
+
+    private int nameTries = 0;
     public ShipWreck(string type, GameObject main)
     {
         Data.type = type;
         this.main = main;
     }
-    
+
     public bool Exists()
-    { 
-        if(Map.Data.shipwrecks.Count < index + 1)
+    {
+        if (Map.Data.shipwrecks.Count < index + 1)
         {
             return false;
         }
@@ -25,7 +27,8 @@ public class ShipWreck
     {
         System.Random random = new System.Random();
         Map.Load();
-        if (Exists()) {
+        if (Exists())
+        {
             Load(Data.name);
             Debug.Log("Loaded ShipWreck: " + Data.name);
         }
@@ -49,10 +52,14 @@ public class ShipWreck
 
     private string generateName(System.Random random)
     {
+        nameTries++;
         string genName = Registry.Names.OTHER[random.Next(Registry.Names.OTHER.Count)] + "-" + random.Next(9999);
-        if (Map.Data.shipwrecks.Contains(genName))
+        if (nameTries < 75)
         {
-            return generateName(random);
+            if (Map.Data.shipwrecks.Contains(genName))
+            {
+                return generateName(random);
+            }
         }
         return genName;
     }
@@ -61,7 +68,7 @@ public class ShipWreckData
 {
     public string name = "";
     public string type = "ShipWreck-0";
-    
+
     public void Load(string shipwreckName)
     {
         string json = "{}";
@@ -73,9 +80,9 @@ public class ShipWreckData
         {
             Save(shipwreckName);
         }
-        JsonUtility.FromJsonOverwrite(json, this);   
+        JsonUtility.FromJsonOverwrite(json, this);
     }
-        
+
     public void Save(string shipwreckName)
     {
         if (!Directory.Exists(Registry.profile.map_path + "/shipwrecks/" + shipwreckName + "/"))

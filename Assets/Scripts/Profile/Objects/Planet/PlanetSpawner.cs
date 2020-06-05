@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PlanetSpawner : MonoBehaviour
 {
-    public int amount;
     public GameObject planetDummy;
     void Start()
     {
-        for (int i = 1; i < amount; i++)
+        for (int i = 0; i < RiretrimUtility.G; i++)
         {
-            GameObject planet = Instantiate(planetDummy, gameObject.transform, false);
+            GameObject star = Instantiate(starDummy, gameObject.transform, false);
+            star.GetComponent<Stars>().star = RiretrimUtility.GetGalaxy(Registry.profile.Data.current_galaxy).Data.stars.ElementAt(i).Value;
+            star.SetActive(true);
         }
     }
 }

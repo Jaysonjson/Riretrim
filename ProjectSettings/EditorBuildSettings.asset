@@ -50,6 +50,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Shop/MaterialShop.unity
     guid: 9b247a821a85a424f9f8a0e665f36079
+  - enabled: 1
+    path: Assets/Scenes/MapGeneration/MapGeneration.unity
+    guid: 778c49cdad8b9f744abd06d62a9c87e7
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: e77aa1cca801c49a092a2a867d20285c,
       type: 2}

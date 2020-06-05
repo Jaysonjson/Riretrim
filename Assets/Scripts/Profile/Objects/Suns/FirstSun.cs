@@ -6,8 +6,7 @@ public class FirstSun : MonoBehaviour
 {
     void Start()
     {
-        Star star = new Star();
-        star.Load(Registry.profile.Data.current_solarsystem);
+        Star star = RiretrimUtility.GetStar(Registry.profile.Data.current_galaxy, Registry.profile.Data.current_solarsystem);
         if (star.Data.secondSun)
         {
             GetComponent<Orbit>().enabled = true;

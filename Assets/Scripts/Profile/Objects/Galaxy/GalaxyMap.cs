@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -12,6 +13,9 @@ public class GalaxyMap : MonoBehaviour
     {
         References.stars.Clear();
         galaxyText.GetComponent<TextMeshProUGUI>().text = Registry.profile.Data.current_galaxy;
+        //Registry.profile.Data.galaxies.Add("test", new Galaxy());
+        //Debug.Log(Registry.profile.Data.galaxies["test"].Data.name);
+        Registry.profile.Save();
         StartCoroutine(LateStart());
     }
 
@@ -19,7 +23,7 @@ public class GalaxyMap : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         Debug.Log("Loading Stars..");
-        Stars.LoadStars();
+        //Stars.LoadStars();
     }
     void OnApplicationQuit()
     {

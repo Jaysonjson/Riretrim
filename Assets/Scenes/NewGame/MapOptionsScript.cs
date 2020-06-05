@@ -78,6 +78,6 @@ public class MapOptionsScript : MonoBehaviour
     {
         //Profile.start();
         MapOptions.Save();
-        SceneManager.LoadScene("Galaxyscreen");
+        SceneManager.LoadScene("MapGeneration");
     }
 }

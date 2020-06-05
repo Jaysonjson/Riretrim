@@ -1,8 +1,9 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using Newtonsoft.Json;
 public class Profile
 {
     public ProfileData Data = new ProfileData();
@@ -77,30 +78,32 @@ public class ProfileData
     public string name = "Player";
     public float health = 4F;
     public int hearts = 4;
-    public int currency;
+    public int currency = 0;
     public string currency_name = "Credit";
     public string current_galaxy = "Galaxy";
     public string current_solarsystem = "Solarsystem";
     public string current_planet = "";
     public string latest_solarSystem = "";
     public string latest_galaxy = "";
-    public string save_version;
-    public bool gameStart;
-
-    public int tin_amount = 0;
-    public int gold_amount;
-    public int crystal_amount;
-    public int bronze_amount;
-    public int titan_amount;
-    public int aluminium_amount;
-    public int coal_amount;
-    public int carbon_amount;
-    public int nickel_amount;
-    public int tungsten_amount;
-    public int iron_amount;
-    public int copper_amount;
+    public string save_version = "";
+    public bool gameStart = false;
+    public int tin_amount = 4;
+    public int gold_amount = 0;
+    public int crystal_amount = 0;
+    public int bronze_amount = 0;
+    public int titan_amount = 0;
+    public int aluminium_amount = 25;
+    public int coal_amount = 30;
+    public int carbon_amount = 0;
+    public int nickel_amount = 0;
+    public int tungsten_amount = 0;
+    public int iron_amount = 7;
+    public int copper_amount = 4;
 
     public float ship_xp;
+
+    public Dictionary<string, Galaxy> galaxies = new Dictionary<string, Galaxy>();
+
 
     public void Load()
     {
@@ -113,7 +116,8 @@ public class ProfileData
         {
             Save();
         }
-        JsonUtility.FromJsonOverwrite(json, this);
+        //JsonUtility.FromJsonOverwrite(json, this);
+        JsonConvert.DeserializeObject<ProfileData>(json);
     }
 
     public void Save()
@@ -122,6 +126,7 @@ public class ProfileData
         {
             Directory.CreateDirectory(Application.persistentDataPath + "/profiles/" + profileName + "/");
         }
-        File.WriteAllText(Application.persistentDataPath + "/profiles/" + profileName + "/data.json", JsonUtility.ToJson(this, true));
+        //File.WriteAllText(Application.persistentDataPath + "/profiles/" + profileName + "/data.json", JsonUtility.ToJson(this, true));
+        File.WriteAllText(Application.persistentDataPath + "/profiles/" + profileName + "/data.json", JsonConvert.SerializeObject(this, Formatting.Indented));
     }
 }

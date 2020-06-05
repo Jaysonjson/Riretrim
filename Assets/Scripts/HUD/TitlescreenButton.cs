@@ -40,4 +40,8 @@ public class TitlescreenButton : MonoBehaviour
     {
         SceneManager.LoadScene("Creditsscreen");
     }
+
+    public void MPTEST() {
+        SceneManager.LoadScene("MapGeneration");
+    }
 }

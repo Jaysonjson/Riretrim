@@ -2,45 +2,56 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-
+using Newtonsoft.Json;
+using TMPro;
+[System.Serializable]
 public class Galaxy
 {
-    public static GalaxyData Data = new GalaxyData();
-    public static void Load()
+    [JsonIgnore]
+    private int nameTries = 0;
+    public GalaxyData Data = new GalaxyData();
+
+    [JsonIgnore]
+    private System.Random random = new System.Random();
+   
+    public void Generate(MapGeneration map)
     {
-        Data.Load();
+        map.text.text = "Finding Name...";
+        Data.name = generateName(random);
+        map.text.text = "Generating Galaxy: " + Data.name;
+        int starAmount = random.Next(50, 125);
+        for (int i = 0; i < starAmount; i++)
+        {
+            Star star = new Star(this);
+            star.Generate(map);
+            if(!Data.stars.ContainsKey(star.Data.name)) 
+            {
+            Data.stars.Add(star.Data.name, star);
+            }
+        }
+        map.maxTasks += starAmount;
+        map.currentTask++;
+        Registry.profile.Data.galaxies.Add(Data.name, this);
     }
 
-    public static void Save()
+    private string generateName(System.Random random)
     {
-        Data.Save();
+        nameTries++;
+        string genName = Registry.Names.GALAXY[random.Next(Registry.Names.GALAXY.Count)] + "-" + Registry.Names.SUFFIX[random.Next(Registry.Names.SUFFIX.Count)];
+        if (nameTries < 75)
+        {
+            if (Registry.profile.Data.galaxies.ContainsKey(genName))
+            {
+                return generateName(random);
+            }
+        }
+        return genName;
     }
 }
 
+[System.Serializable]
 public class GalaxyData
 {
-    public List<string> stars = new List<string>();
-    
-    public void Load()
-    {
-        string json = "{}";
-        if (File.Exists(Application.persistentDataPath + "/profiles/" + Registry.profile.Data.profileName + "/" + Registry.profile.Data.current_galaxy + "/galaxy_data.json"))
-        {
-            json = File.ReadAllText(Application.persistentDataPath + "/profiles/" + Registry.profile.Data.profileName + "/" + Registry.profile.Data.current_galaxy + "/galaxy_data.json");
-        }
-        else
-        {
-            Save();
-        }
-        JsonUtility.FromJsonOverwrite(json, this);   
-    }
-        
-    public void Save()
-    {
-        if (!Directory.Exists(Application.persistentDataPath + "/profiles/" + Registry.profile.Data.profileName + "/" + Registry.profile.Data.current_galaxy))
-        {
-            Directory.CreateDirectory(Application.persistentDataPath + "/profiles/" + Registry.profile.Data.profileName + "/" + Registry.profile.Data.current_galaxy);
-        }
-        File.WriteAllText(Application.persistentDataPath + "/profiles/" + Registry.profile.Data.profileName + "/" + Registry.profile.Data.current_galaxy + "/galaxy_data.json", JsonUtility.ToJson(this, true));
-    }
+    public string name = "NotDefined";
+    public Dictionary<string, Star> stars = new Dictionary<string, Star>();
 }

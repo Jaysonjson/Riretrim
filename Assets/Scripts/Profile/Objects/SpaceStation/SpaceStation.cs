@@ -11,6 +11,7 @@ public class SpaceStation
     public int index;
     public Planet planetObject;
     public GameObject spaceStation;
+    private int nameTries = 0;
 
     public SpaceStation(string PlanetParent, Planet PlanetObject)
     {
@@ -48,21 +49,25 @@ public class SpaceStation
         if (!Exists())
         {
             name = generateName(random);
-            scale = (planetObject.planetMain.transform.localScale.x / (float)(random.Next(3,6) + random.NextDouble())) / 5.5f;
+            scale = (planetObject.planetMain.transform.localScale.x / (float)(random.Next(3, 6) + random.NextDouble())) / 5.5f;
             Debug.Log("Generated Space Station: " + name + "; from Planet: " + planetObject.Data.name);
             planetObject.Data.spaceStations.Add(name);
             planetObject.Data.Save();
         }
-        spaceStation.name = name; 
-        spaceStation.transform.localScale = new Vector3((scale / planetObject.Data.scale) * 2,(scale / planetObject.Data.scale) * 2,1);
+        spaceStation.name = name;
+        spaceStation.transform.localScale = new Vector3((scale / planetObject.Data.scale) * 2, (scale / planetObject.Data.scale) * 2, 1);
     }
 
     private string generateName(System.Random random)
     {
+        nameTries++;
         string genName = Registry.Names.SPACESTATION[random.Next(Registry.Names.SPACESTATION.Count)] + "-" + random.Next(9999);
-        if (planetObject.Data.spaceStations.Contains(genName))
+        if (nameTries < 75)
         {
-            return generateName(random);
+            if (planetObject.Data.spaceStations.Contains(genName))
+            {
+                return generateName(random);
+            }
         }
         return genName;
     }
