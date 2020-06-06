@@ -29,8 +29,8 @@ public class Star
         Data.solarSystem = Data.name;
         Data.asteroid_count = random.Next(MapOptions.Data.AsteroidMinSpawnAmount, MapOptions.Data.AsteroidMaxSpawnAmount);
         int planet_count = random.Next(MapOptions.Data.PlanetMaxAmount / 4);
-        Data.enemy_count = random.Next(15, 75);
-        int shipwreck_count = random.Next(2, 25);
+        Data.enemy_count = random.Next(10, 35);
+        int shipwreck_count = random.Next(10);
         map.maxTasks += planet_count + shipwreck_count;
         Data.sunScale = (float)(random.Next(15, 35) + random.NextDouble());
         if (random.Next(1) == 1)

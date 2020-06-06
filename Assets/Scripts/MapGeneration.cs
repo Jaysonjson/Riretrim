@@ -55,7 +55,9 @@ public class MapGeneration : MonoBehaviour
         //generateRest = true;
         text = "Saving...";
         Registry.profile.Data.current_galaxy = Registry.profile.Data.galaxies.ElementAt(0).Value.Data.name;
-        Registry.profile.Data.current_solarsystem = Registry.profile.Data.galaxies.ElementAt(0).Value.Data.stars.ElementAt(0).Value.Data.name;
+        Star startStar = Registry.profile.Data.galaxies.ElementAt(0).Value.Data.stars.ElementAt(0).Value;
+        startStar.Data.visited = true;
+        Registry.profile.Data.current_solarsystem = startStar.Data.name;
         Registry.profile.Save();
         currentTask = maxTasks;
         text = "Loading SpaceMap...";

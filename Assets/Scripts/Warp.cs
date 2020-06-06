@@ -25,6 +25,7 @@ public class Warp : MonoBehaviour
         }
         gameObject.SetActive(false);
     }
+    
     void Update()
     {
         gameObject.transform.position = new Vector3(camera.transform.position.x, camera.transform.position.y, -26.33833f);
