@@ -61,7 +61,7 @@ public class Planets : MonoBehaviour
         }
         planetMain.name = planet.Data.name;
         name = planet.Data.name + "-Body";
-        planetMain.transform.position = new Vector3(planet.Data.position_x, planet.Data.position_y, -780f);
+        planetMain.transform.position = new Vector3(planet.Data.position.x, planet.Data.position.y, -780f);
         planetMain.transform.localScale = new Vector3(planet.Data.scale, planet.Data.scale, 1);
         informationText.text = "Materials: ";
         for (var i = 0; i < planet.Data.materials.Count; i++)

@@ -64,7 +64,7 @@ public class Planet
         */
         if (Data.type == PlanetType.EXOTIC)
         {
-            Data.position_x = (float)(random.Next(115, 175) + random.NextDouble());
+            Data.position.x = (float)(random.Next(115, 175) + random.NextDouble());
             Data.color[0] = 255;
             Data.color[1] = (byte)(random.Next(135));
             Data.color[2] = 255;
@@ -82,7 +82,7 @@ public class Planet
         }
         if (Data.type == PlanetType.EARTHLIKE)
         {
-            Data.position_x = (float)(random.Next(75, 100) + random.NextDouble());
+            Data.position.x = (float)(random.Next(75, 100) + random.NextDouble());
             Data.color[0] = 0;
             Data.color[1] = (byte)(random.Next(135));
             Data.color[2] = 255;
@@ -100,7 +100,7 @@ public class Planet
         }
         if (Data.type == PlanetType.LAVA)
         {
-            Data.position_x = (float)(random.Next(20, 50) + random.NextDouble());
+            Data.position.x = (float)(random.Next(20, 50) + random.NextDouble());
             Data.color[0] = (byte)(random.Next(150, 255));
             Data.color[1] = (byte)(random.Next(0, 50));
             Data.color[2] = (byte)(random.Next(0, 50));
@@ -118,7 +118,7 @@ public class Planet
         }
         if (Data.type == PlanetType.ROCKY)
         {
-            Data.position_x = (float)(random.Next(55, 70) + random.NextDouble());
+            Data.position.x = (float)(random.Next(55, 70) + random.NextDouble());
             Data.color[0] = (byte)(random.Next(0, 255));
             Data.color[1] = (byte)(random.Next(0, 106));
             Data.color[2] = 0;
@@ -136,7 +136,7 @@ public class Planet
         }
         if (Data.type == PlanetType.GAS)
         {
-            Data.position_x = (float)(random.Next(110, 150) + random.NextDouble());
+            Data.position.x = (float)(random.Next(110, 150) + random.NextDouble());
             Data.color[0] = (byte)(random.Next(255));
             Data.color[1] = (byte)(random.Next(255));
             Data.color[2] = (byte)(random.Next(255));
@@ -154,7 +154,7 @@ public class Planet
         }
         if (Data.type == PlanetType.ICE)
         {
-            Data.position_x = (float)(random.Next(200, 250) + random.NextDouble());
+            Data.position.x = (float)(random.Next(200, 250) + random.NextDouble());
             Data.color[0] = (byte)(random.Next(200, 255));
             Data.color[1] = (byte)(random.Next(135, 255));
             Data.color[2] = (byte)(random.Next(200, 255));
@@ -218,8 +218,7 @@ public class PlanetData
 {
     public string name = "Unknown";
     public int id = 0;
-    public float position_x = 0;
-    public float position_y = 0;
+    public Position position = new Position();
     public List<Materials> materials = new List<Materials>();
     public byte[] color = { 255, 255, 255 };
     public PlanetType type = PlanetType.LAVA;

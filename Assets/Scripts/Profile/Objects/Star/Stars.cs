@@ -24,7 +24,7 @@ public class Stars : MonoBehaviour
         name = star.Data.name;
         GetComponent<Orbit>().speed = star.Data.speed;
         GetComponent<SpriteRenderer>().color = new Color32(star.Data.color[0], star.Data.color[1], star.Data.color[2], 255);
-        transform.position = new Vector2(star.Data.position_x, star.Data.position_y);
+        transform.position = new Vector2(star.Data.position.x, star.Data.position.y);
         for (var i = 0; i < lights.Length; i++)
         {
          lights[i].color = new Color32(star.Data.color[0], star.Data.color[1], star.Data.color[2], 255);
