@@ -17,8 +17,8 @@ public class MapOptions
 
 public class MapOptionData
 {
-    public int AsteroidMaxSpawnAmount = 550;
-    public int AsteroidMinSpawnAmount = 125;
+    public int AsteroidMaxSpawnAmount = 50;
+    public int AsteroidMinSpawnAmount = 5;
     public int PlanetMaxAmount = 25;
     public bool ShipWrecks = true;
     public bool Moons = true;

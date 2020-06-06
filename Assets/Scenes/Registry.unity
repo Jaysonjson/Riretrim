@@ -154,7 +154,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &702001955
 MonoBehaviour:
@@ -170,6 +170,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultLangFile: {fileID: 4900000, guid: 49f0889f7a5a84a4584c2bf8ebd3648f, type: 3}
   defaultNames: {fileID: 4900000, guid: d1435b36ae1923644a1a3c878e5189db, type: 3}
+  shipWreckTypes: {fileID: 1720434649}
+  planetSprites: {fileID: 2126719190}
 --- !u!114 &702001956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,3 +320,109 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!1 &1720434647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1720434648}
+  - component: {fileID: 1720434649}
+  m_Layer: 0
+  m_Name: ShipWreckTypes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1720434648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720434647}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 780.0552}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1720434649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720434647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5aee8b5bdac6c48855bfee9e6d3730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  types:
+  - {fileID: 4687827667175212252, guid: 1476486a9781b2e4c92ab3e8f52f9d6d, type: 3}
+  - {fileID: 3168112047627759936, guid: c5ba0fd9eeed1254fb43307e19fd2c7b, type: 3}
+  - {fileID: 8332669086567977010, guid: 2af2acd2a8eb0334590f858b1a4618b5, type: 3}
+--- !u!1 &2126719188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2126719189}
+  - component: {fileID: 2126719190}
+  m_Layer: 0
+  m_Name: PlanetSprites
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2126719189
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126719188}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.836709, y: 7.478297, z: -352.04437}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2126719190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126719188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aacad52de9875a440a5f9c369f08a20e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  earthLikeSprites:
+  - {fileID: 21300000, guid: 161416abb10fa4c908e813975afff356, type: 3}
+  - {fileID: 21300000, guid: ef4ff889632f8499d9d2774fbfc07723, type: 3}
+  lavaSprites:
+  - {fileID: 21300000, guid: d0a74fa496a194996b0ad08f089a08d1, type: 3}
+  - {fileID: 21300000, guid: cf026fc91f20642ee9b01c4dfbb55c38, type: 3}
+  gasSprites:
+  - {fileID: 21300000, guid: d28b31243e7cc47628e6d3967ca44557, type: 3}
+  rockySprites:
+  - {fileID: 21300000, guid: 27719f1e5be7e47c8a3f2fed8dd9d7d7, type: 3}
+  exoticSprites:
+  - {fileID: 21300000, guid: d28b31243e7cc47628e6d3967ca44557, type: 3}
+  iceSprites:
+  - {fileID: 21300000, guid: 8c0d3dc8245d34a48b4bb7065b885377, type: 3}
+  - {fileID: 21300000, guid: 0208bab4e5abe483eb1d9c41fb05b5c0, type: 3}
+  - {fileID: 21300000, guid: 5e3f2d767ce1b4718a819f55dff614d7, type: 3}

@@ -62,7 +62,6 @@ public class Profile
             else
             {
                 Data.save_version = Application.version;
-                Debug.Log(Data.gameStart);
                 if (!Data.gameStart)
                 {
                     System.Random random = new System.Random();

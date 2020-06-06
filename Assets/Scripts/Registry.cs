@@ -10,6 +10,9 @@ public class Registry : MonoBehaviour
     public TextAsset defaultLangFile;
     public TextAsset defaultNames;
     public static Profile profile = new Profile();
+    public ShipWreckTypes shipWreckTypes;
+    public PlanetSprites planetSprites;
+    public static Registry INSTANCE;
     private void Start()
     {
         References.sprite = gameObject.GetComponent<Sprites>();
@@ -26,16 +29,17 @@ public class Registry : MonoBehaviour
             JsonUtility.FromJsonOverwrite(defaultLangFile.text, Language);
         }
 
-        if(defaultNames != null)
+        if (defaultNames != null)
         {
-           JsonUtility.FromJsonOverwrite(defaultNames.text, Names);
+            JsonUtility.FromJsonOverwrite(defaultNames.text, Names);
         }
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         // StartCoroutine(End());
         Mods.ships = ModdedShipUtility.GetShips();
+        INSTANCE = this;
     }
-    
+
     IEnumerator End()
     {
         yield return new WaitForSeconds(0.2f);

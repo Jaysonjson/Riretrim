@@ -54,15 +54,25 @@ public class Star
             Data.color[1] = (byte)(random.Next(250));
             Data.color[2] = (byte)(random.Next(250));
         }
-        map.currentTask += 3;
+        map.currentTask++;
         //Debug.Log(Data.name);
         for (int i = 0; i < planet_count; i++)
         {
-            Planet planet = new Planet();
+            Planet planet = new Planet(this);
             planet.Generate(map);
             if (!Data.planets.ContainsKey(planet.Data.name))
             {
                 Data.planets.Add(planet.Data.name, planet);
+            }
+        }
+
+        for (int i = 0; i < shipwreck_count; i++)
+        {
+            ShipWreck shipWreck = new ShipWreck(this);
+            shipWreck.Generate(map);
+            if (!Data.shipWrecks.ContainsKey(shipWreck.Data.name))
+            {
+                Data.shipWrecks.Add(shipWreck.Data.name, shipWreck);
             }
         }
     }

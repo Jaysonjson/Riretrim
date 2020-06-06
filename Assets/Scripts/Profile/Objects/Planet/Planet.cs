@@ -15,14 +15,22 @@ public class Planet
     public PlanetData Data = new PlanetData();
     [JsonIgnore]
     private int nameTries = 0;
+    [JsonIgnore]
+    public Star star;
+
+    public Planet(Star star)
+    {
+        this.star = star;
+    }
+
     public void Generate(MapGeneration map)
     {
-        map.currentTask += 3;
+        map.currentTask++;
         System.Random random = new System.Random();
         Data.name = generateName(random);
         map.text = "Generating Planet: " + Data.name + "...";
         Data.id = random.Next(99999999);
-        int moonAmount = random.Next(4);
+        int moonAmount = 0;
         if (random.Next(3) == 1)
         {
             moonAmount = random.Next(3);
@@ -61,7 +69,7 @@ public class Planet
             Data.color[1] = (byte)(random.Next(135));
             Data.color[2] = 255;
             Data.scale = (float)(random.Next(5, 10) + random.NextDouble());
-            //Data.spriteNumber = random.Next(Planets.exoticSprites.Length);
+            Data.spriteNumber = random.Next(Registry.INSTANCE.planetSprites.exoticSprites.Length);
             Data.materials.Add(Materials.ALUMINIUM);
             if (random.Next(3) == 1)
             {
@@ -79,7 +87,7 @@ public class Planet
             Data.color[1] = (byte)(random.Next(135));
             Data.color[2] = 255;
             Data.scale = (float)(random.Next(3, 7) + random.NextDouble());
-            //Data.spriteNumber = random.Next(Planets.earthLikeSprites.Length);
+            Data.spriteNumber = random.Next(Registry.INSTANCE.planetSprites.earthLikeSprites.Length);
             Data.materials.Add(Materials.IRON);
             if (random.Next(3) == 1)
             {
@@ -97,7 +105,7 @@ public class Planet
             Data.color[1] = (byte)(random.Next(0, 50));
             Data.color[2] = (byte)(random.Next(0, 50));
             Data.scale = (float)(random.Next(2, 5) + random.NextDouble());
-            //Data.spriteNumber = random.Next(Planets.lavaSprites.Length);
+            Data.spriteNumber = random.Next(Registry.INSTANCE.planetSprites.lavaSprites.Length);
             Data.materials.Add(Materials.COAL);
             if (random.Next(3) == 1)
             {
@@ -115,7 +123,7 @@ public class Planet
             Data.color[1] = (byte)(random.Next(0, 106));
             Data.color[2] = 0;
             Data.scale = (float)(random.Next(2, 7) + random.NextDouble());
-            //Data.spriteNumber = random.Next(Planets.rockySprites.Length);
+            Data.spriteNumber = random.Next(Registry.INSTANCE.planetSprites.rockySprites.Length);
             Data.materials.Add(Materials.IRON);
             if (random.Next(3) == 1)
             {
@@ -133,7 +141,7 @@ public class Planet
             Data.color[1] = (byte)(random.Next(255));
             Data.color[2] = (byte)(random.Next(255));
             Data.scale = (float)(random.Next(7, 15) + random.NextDouble());
-            //Data.spriteNumber = random.Next(Planets.gasSprites.Length);
+            Data.spriteNumber = random.Next(Registry.INSTANCE.planetSprites.gasSprites.Length);
             Data.materials.Add(Materials.COPPER);
             if (random.Next(3) == 1)
             {
@@ -151,7 +159,7 @@ public class Planet
             Data.color[1] = (byte)(random.Next(135, 255));
             Data.color[2] = (byte)(random.Next(200, 255));
             Data.scale = (float)(random.Next(4, 14) + random.NextDouble());
-            //Data.spriteNumber = random.Next(Planets.iceSprites.Length);
+            Data.spriteNumber = random.Next(Registry.INSTANCE.planetSprites.iceSprites.Length);
             Data.materials.Add(Materials.NICKEL);
             if (random.Next(3) == 1)
             {
@@ -163,7 +171,6 @@ public class Planet
             }
         }
         Data.speed = (float)(random.NextDouble()) / 5;
-        //Debug.Log("Generated Planet: " + Data.name);
 
         for (int i = 0; i < spaceStationAmount; i++)
         {
@@ -174,39 +181,17 @@ public class Planet
                 Data.spaceStations.Add(station.Data.name, station);
             }
         }
-        /*
-            if (MapOptions.Data.Moons)
+
+        if (MapOptions.Data.Moons)
+            for (int i = 0; i < moonAmount; i++)
             {
-                for (var i = 0; i < Data.moonAmount; i++)
+                Moon moon = new Moon();
+                moon.Generate(map, this);
+                if (!Data.moons.ContainsKey(moon.Data.name))
                 {
-                    GameObject moon = GameObject.Instantiate(moonDummy, planetMain.transform, false);
-                    moon.GetComponent<Orbit>().target = planetBody;
-                    moon.GetComponent<Orbit>().speed = random.Next(2) + (float)(random.NextDouble()) / 5;
-                    Moon moonObject = Moons.AddMoon(new Moon(moon, Data.name, this));
-                    moonObject.Generate();
-                    moonObject.SaveAsMoon();
-                    moon.SetActive(true);
+                    Data.moons.Add(moon.Data.name, moon);
                 }
             }
-
-            for (var i = 0; i < Data.spaceStationAmount; i++)
-            {
-                GameObject spaceStation = GameObject.Instantiate(spaceStationDummy, planetMain.transform, false);
-                spaceStation.GetComponent<Orbit>().target = planetBody;
-                spaceStation.GetComponent<Orbit>().speed = random.Next(2) + (float)(random.NextDouble()) / 5;
-                SpaceStation spaceStationObject = SpaceStations.AddSpaceStation(new SpaceStation(spaceStation, Data.name, this));
-                spaceStationObject.Generate();
-                spaceStationObject.SaveAsSpaceStation();
-                spaceStation.SetActive(true);
-            }
-            for (var i = 0; i < drillAmount; i++)
-            {
-                GameObject drill = GameObject.Instantiate(drillDummy, planetMain.transform, false);
-                drill.GetComponent<Orbit>().target = planetBody;
-                drill.GetComponent<Orbit>().speed = (float)(random.NextDouble()) / 5;
-                drill.SetActive(true);
-            }
-            */
     }
 
     private string generateName(System.Random random)
@@ -216,15 +201,18 @@ public class Planet
         string genName = Registry.Names.PLANET[new System.Random().Next(Registry.Names.PLANET.Count)] + "-" + new System.Random().Next(9999);
         if (nameTries < 1500)
         {
-            if (Map.Data.planets.Contains(genName))
+            if (star.Data.planets.ContainsKey(genName))
             {
                 return generateName(random);
             }
         }
         return genName;
     }
-
 }
+
+
+
+
 
 public class PlanetData
 {

@@ -17,20 +17,7 @@ public class Planets : MonoBehaviour
     public GameObject drillDummy;
     public GameObject spaceStationDummy;
     public TextMeshPro informationText;
-    public Sprite[] EarthLikeSprites;
-    public Sprite[] LavaSprites;
-    public Sprite[] GasSprites;
-    public Sprite[] RockySprites;
-    public Sprite[] ExoticSprites;
-    public Sprite[] IceSprites;
-    public static Planets instance;
     public GameObject miniMapIcon;
-    public static Sprite[] earthLikeSprites;
-    public static Sprite[] lavaSprites;
-    public static Sprite[] gasSprites;
-    public static Sprite[] rockySprites;
-    public static Sprite[] exoticSprites;
-    public static Sprite[] iceSprites;
 
     private void Start()
     {
@@ -44,33 +31,33 @@ public class Planets : MonoBehaviour
         }
         if (planet.Data.type == PlanetType.EXOTIC)
         {
-            planetBodySprite.sprite = Planets.exoticSprites[planet.Data.spriteNumber];
-            planetMiniMapSprite.sprite = Planets.exoticSprites[planet.Data.spriteNumber];
+            planetBodySprite.sprite = Registry.INSTANCE.planetSprites.exoticSprites[planet.Data.spriteNumber];
+            planetMiniMapSprite.sprite = Registry.INSTANCE.planetSprites.exoticSprites[planet.Data.spriteNumber];
         }
         if (planet.Data.type == PlanetType.EARTHLIKE)
         {
-            planetBodySprite.sprite = Planets.earthLikeSprites[planet.Data.spriteNumber];
-            planetMiniMapSprite.sprite = Planets.earthLikeSprites[planet.Data.spriteNumber];
+            planetBodySprite.sprite = Registry.INSTANCE.planetSprites.earthLikeSprites[planet.Data.spriteNumber];
+            planetMiniMapSprite.sprite = Registry.INSTANCE.planetSprites.earthLikeSprites[planet.Data.spriteNumber];
         }
         if (planet.Data.type == PlanetType.LAVA)
         {
-            planetBodySprite.sprite = Planets.lavaSprites[planet.Data.spriteNumber];
-            planetMiniMapSprite.sprite = Planets.lavaSprites[planet.Data.spriteNumber];
+            planetBodySprite.sprite = Registry.INSTANCE.planetSprites.lavaSprites[planet.Data.spriteNumber];
+            planetMiniMapSprite.sprite = Registry.INSTANCE.planetSprites.lavaSprites[planet.Data.spriteNumber];
         }
         if (planet.Data.type == PlanetType.ROCKY)
         {
-            planetBodySprite.sprite = Planets.rockySprites[planet.Data.spriteNumber];
-            planetMiniMapSprite.sprite = Planets.rockySprites[planet.Data.spriteNumber];
+            planetBodySprite.sprite = Registry.INSTANCE.planetSprites.rockySprites[planet.Data.spriteNumber];
+            planetMiniMapSprite.sprite = Registry.INSTANCE.planetSprites.rockySprites[planet.Data.spriteNumber];
         }
         if (planet.Data.type == PlanetType.GAS)
         {
-            planetBodySprite.sprite = Planets.gasSprites[planet.Data.spriteNumber];
-            planetMiniMapSprite.sprite = Planets.gasSprites[planet.Data.spriteNumber];
+            planetBodySprite.sprite = Registry.INSTANCE.planetSprites.gasSprites[planet.Data.spriteNumber];
+            planetMiniMapSprite.sprite = Registry.INSTANCE.planetSprites.gasSprites[planet.Data.spriteNumber];
         }
         if (planet.Data.type == PlanetType.ICE)
         {
-            planetBodySprite.sprite = Planets.iceSprites[planet.Data.spriteNumber];
-            planetMiniMapSprite.sprite = Planets.iceSprites[planet.Data.spriteNumber];
+            planetBodySprite.sprite = Registry.INSTANCE.planetSprites.iceSprites[planet.Data.spriteNumber];
+            planetMiniMapSprite.sprite = Registry.INSTANCE.planetSprites.iceSprites[planet.Data.spriteNumber];
         }
         planetMain.name = planet.Data.name;
         name = planet.Data.name + "-Body";
@@ -93,29 +80,31 @@ public class Planets : MonoBehaviour
         {
             athmospheres[i].GetComponent<SpriteRenderer>().color = new Color32(planet.Data.color[0], planet.Data.color[1], planet.Data.color[2], 255);
         }
-        GetComponent<Orbit>().speed = planet.Data.speed;
 
         for (int i = 0; i < planet.Data.moons.Count; i++)
         {
-            Moon moon = planet.Data.moons.ElementAt(i).Value;
-            GameObject moonObject = Instantiate(moonDummy, gameObject.transform, false);
-            moonObject.GetComponent<Moons>().moon = moon;
+             Moon moon = planet.Data.moons.ElementAt(i).Value;
+             GameObject moonObject = Instantiate(moonDummy, gameObject.transform, false);
+             moonObject.GetComponent<Moons>().moon = moon;
         }
 
         for (int i = 0; i < planet.Data.spaceStations.Count; i++)
         {
             SpaceStation spaceStation = planet.Data.spaceStations.ElementAt(i).Value;
-            GameObject spaceStationObject = Instantiate(moonDummy, gameObject.transform, false);
+            GameObject spaceStationObject = Instantiate(spaceStationDummy, gameObject.transform, false);
             spaceStationObject.GetComponent<SpaceStations>().spaceStation = spaceStation;
         }
+        GetComponent<Orbit>().speed = planet.Data.speed;
+
     }
-/*
-    public static IEnumerator updateSpeed(int i)
-    {
-        yield return new WaitForSeconds(0.3f);
-        GetPlanet(i).planetMain.GetComponent<Orbit>().speed = GetPlanet(i).Data.speed;
-    }
-*/
+
+    /*
+        public static IEnumerator updateSpeed(int i)
+        {
+            yield return new WaitForSeconds(0.3f);
+            GetPlanet(i).planetMain.GetComponent<Orbit>().speed = GetPlanet(i).Data.speed;
+        }
+    */
     public void Click()
     {
         Registry.profile.Data.current_planet = gameObject.name.Replace("-Body", "");
