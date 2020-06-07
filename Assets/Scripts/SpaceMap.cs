@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,7 +9,6 @@ public class SpaceMap : MonoBehaviour
 {
     public GameObject galaxyText;
     public GameObject solarSystemText;
-
     public TextMeshProUGUI aluminiumText;
     public TextMeshProUGUI bronzeText;
     public TextMeshProUGUI carbonText;
@@ -28,10 +28,9 @@ public class SpaceMap : MonoBehaviour
     public TextMeshProUGUI orbit;
     public static int moonAmount = 0;
     public AsteroidSpawner asteroidSpawner;
-    public PlanetSpawner planetSpawner;
-    public ShipWreckSpawner ShipWreckSpawner;
     public TextMeshProUGUI currencyAmount;
     public TextMeshProUGUI currencyName;
+    public TextMeshProUGUI autoSaveText;
     public GameObject UI;
     public Image fuelCircle;
     public Image energyCircle;
@@ -45,11 +44,6 @@ public class SpaceMap : MonoBehaviour
     public Star star;
     void Start()
     {
-        References.planets.Clear();
-        References.moons.Clear();
-        References.shipwrecks.Clear();
-
-
         INSTANCE = this;
         Registry.profile.Load();
         star = RiretrimUtility.GetStar(Registry.profile.Data.current_solarsystem);
@@ -75,43 +69,32 @@ public class SpaceMap : MonoBehaviour
         currencyAmount.text = Registry.profile.Data.currency + "";
         currencyName.text = Registry.profile.Data.currency_name;
         asteroidCountText.text = star.Data.asteroid_count + "";
-        planetCountText.text = (star.Data.planets.Count + 1) + "";
+        planetCountText.text = (star.Data.planets.Count) + "";
         enemyCountText.text = star.Data.enemy_count + "";
+        moonCountText.text = RiretrimUtility.GetMoonAmountInStar(star) + "";
         //CanvasScaler.scaleFactor = Options.Data.HUDScale;
         CanvasScaler.referenceResolution = new Vector2(Options.Data.HUDScale, 1080);
-        //StartCoroutine(LateStart());
-    }
-
-   /* IEnumerator LateStart()
-    {
-        yield return new WaitForSeconds(0.8f);
-        //Planets.LoadPlanets();
-        if (MapOptions.Data.ShipWrecks)
+        if (Options.Data.AutoSave)
         {
-            ShipWrecks.LoadShipWrecks();
-            for (int i = 0; i < References.shipwrecks.Count; i++)
-            {
-                GameObject shipWreck = Instantiate(GameObject.Find(ShipWrecks.GetShipWreck(i).Data.type), ShipWrecks.GetShipWreck(i).main.transform, false);
-                Debug.Log("Instantiated ShipWreck: " + shipWreck.name);
-            }
+            StartCoroutine(autoSave());
         }
-
-        moonCountText.text = moonAmount + "";
-        //yield return new WaitForSeconds(0.2f);
-        //Moons.LoadMoons();
     }
-    */
+
+    IEnumerator autoSave()
+    {
+        yield return new WaitForSeconds(600f);
+        autoSaveText.gameObject.SetActive(true);
+        Registry.profile.Save();
+        yield return new WaitForSeconds(2f);
+        autoSaveText.gameObject.SetActive(false);
+        StartCoroutine(autoSave());
+    }
+
     void OnApplicationQuit()
     {
         Registry.profile.Save();
-       /* for (int i = 0; i < References.planets.Count; i++)
-        {
-            Planets.GetPlanet(i).Data.position_x = Planets.GetPlanet(i).planetBody.transform.position.x;
-            Planets.GetPlanet(i).Data.position_y = Planets.GetPlanet(i).planetBody.transform.position.y;
-            Planets.GetPlanet(i).Data.Save();
-        }
-        */
     }
+
     public void updateMaterialText()
     {
         aluminiumText.text = Registry.profile.Data.aluminium_amount + "";
@@ -154,8 +137,7 @@ public class SpaceMap : MonoBehaviour
         fuelCircle.fillAmount = Registry.profile.Ship.Data.fuel / Registry.profile.Ship.Data.fuelMax;
         energyCircle.fillAmount = Registry.profile.Ship.Data.energy / Registry.profile.Ship.Data.energyMax;
         minimapBar.fillAmount = (((player.GetComponent<PlayerMapMovement>().getDistanceToSun() - 8) / 125) - 1) / -1;
-        orbit.text = "Orbiting: " + player.GetComponent<Orbit>().target.name;
-
+        orbit.text = Registry.Language.orbiting.Replace("%S", player.GetComponent<Orbit>().target.name);
         if (random.Next(1500) == 1)
         {
             star.Data.enemy_count++;

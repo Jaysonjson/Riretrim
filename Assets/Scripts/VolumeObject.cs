@@ -6,6 +6,6 @@ public class VolumeObject : MonoBehaviour
 {
    void Start()
     {
-        gameObject.SetActive(Options.Data.postProcessing);
+        gameObject.SetActive(Options.Data.PostProcessing);
     }
 }

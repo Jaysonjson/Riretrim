@@ -2,7 +2,7 @@
 
 [Serializable]
 public class Language
-{ 
+{
     public string tin = "Tin";
     public string gold = "Gold";
     public string crystal = "Crystal";
@@ -21,7 +21,7 @@ public class Language
     public string asteroids = "Asteroids";
     public string planets = "Planets";
 
-    public string sun_distance = "Sun Distance: ";
+    public string sun_distance = "Sun Distance: %S";
 
     public string titlescreen = "Titlescreen";
     public string save_game = "Save Game";
@@ -34,4 +34,15 @@ public class Language
     public string engine_damage = "Engine Damage";
 
     public string drpc_inside_solarsystem = "Inside Solar System: %S";
+
+    public string auto_saving = "Auto Saving...";
+    public string enemies = "Enemies";
+    public string orbiting = "Orbiting: %S";
+
+    public string particle_systems = "Particle Systems";
+    public string object_shadows = "Object Shadows";
+    public string twod_lights = "2D Lights";
+    public string post_processing = "Post Processing";
+    public string auto_save = "Auto Save";
+    public string show_fps = "Show FPS";
 }

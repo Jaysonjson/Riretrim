@@ -124,7 +124,7 @@ public class PlayerMapMovement : MonoBehaviour
         coordinatesText.text = "X = " + rb.position.x + ", Y = " + rb.position.y;
         if (sunObject != null)
         {
-            sunDistanceText.text = Registry.Language.sun_distance + getDistanceToSun();
+            sunDistanceText.text = Registry.Language.sun_distance.Replace("%S", getDistanceToSun() + "");
         }
 
         if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))

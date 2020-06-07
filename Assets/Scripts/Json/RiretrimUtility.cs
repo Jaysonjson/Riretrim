@@ -1,3 +1,4 @@
+using System.Linq;
 public class RiretrimUtility
 {
     public static Galaxy GetGalaxy(string name)
@@ -21,7 +22,8 @@ public class RiretrimUtility
         return starObject;
     }
 
-    public static Star GetStar(string name) {
+    public static Star GetStar(string name)
+    {
         Star starObject = null;
         GetGalaxy(Registry.profile.Data.current_galaxy).Data.stars.TryGetValue(name, out starObject);
         return starObject;
@@ -34,10 +36,21 @@ public class RiretrimUtility
         return planet;
     }
 
-    public static Planet GetPlanet(string name) 
+    public static Planet GetPlanet(string name)
     {
         Planet planet = null;
         GetStar(Registry.profile.Data.current_galaxy, Registry.profile.Data.current_solarsystem).Data.planets.TryGetValue(name, out planet);
         return planet;
+    }
+
+    public static int GetMoonAmountInStar(Star star)
+    {
+        int amount = 0;
+        for (int i = 0; i < star.Data.planets.Count; i++)
+        {
+            Planet planet = star.Data.planets.ElementAt(i).Value;
+            amount += planet.Data.moons.Count;
+        }
+        return amount;
     }
 }

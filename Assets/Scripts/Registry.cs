@@ -12,10 +12,11 @@ public class Registry : MonoBehaviour
     public static Profile profile = new Profile();
     public ShipWreckTypes shipWreckTypes;
     public PlanetSprites planetSprites;
+    public Sprites sprites;
     public static Registry INSTANCE;
     private void Start()
     {
-        References.sprite = gameObject.GetComponent<Sprites>();
+        sprites = gameObject.GetComponent<Sprites>();
         Debug.Log("Loading Languages..");
         Options.Load();
         profile.SetUp("main");

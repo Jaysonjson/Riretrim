@@ -3,7 +3,7 @@ using UnityEngine.Experimental.Rendering.Universal;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using System.Collections;
 public class Planets : MonoBehaviour
 {
 
@@ -23,7 +23,6 @@ public class Planets : MonoBehaviour
     {
         SpriteRenderer planetBodySprite = GetComponent<SpriteRenderer>();
         SpriteRenderer planetMiniMapSprite = miniMapIcon.GetComponent<SpriteRenderer>();
-        GetComponent<Orbit>().speed = new System.Random().Next(120, 500);
         for (int i = 0; i < text.Length; i++)
         {
             text[i].GetComponent<TextMeshPro>().text = planet.Data.name + "\n" + planet.Data.type.ToString();
@@ -83,9 +82,9 @@ public class Planets : MonoBehaviour
 
         for (int i = 0; i < planet.Data.moons.Count; i++)
         {
-             Moon moon = planet.Data.moons.ElementAt(i).Value;
-             GameObject moonObject = Instantiate(moonDummy, gameObject.transform, false);
-             moonObject.GetComponent<Moons>().moon = moon;
+            Moon moon = planet.Data.moons.ElementAt(i).Value;
+            GameObject moonObject = Instantiate(moonDummy, gameObject.transform, false);
+            moonObject.GetComponent<Moons>().moon = moon;
         }
 
         for (int i = 0; i < planet.Data.spaceStations.Count; i++)
@@ -94,9 +93,25 @@ public class Planets : MonoBehaviour
             GameObject spaceStationObject = Instantiate(spaceStationDummy, gameObject.transform, false);
             spaceStationObject.GetComponent<SpaceStations>().spaceStation = spaceStation;
         }
-        GetComponent<Orbit>().speed = planet.Data.speed;
+        if (!planet.Data.orbit.speededOrbit)
+        {
+            GetComponent<Orbit>().speed = planet.Data.orbit.speed;
+        }
+        else
+        {
+            GetComponent<Orbit>().speed = new System.Random().Next(200, 500);
+            StartCoroutine(stopSpeededOrbit(planet));
+        }
 
     }
+
+    IEnumerator stopSpeededOrbit(Planet planet)
+    {
+        yield return new WaitForSeconds(0.5f);
+        planet.Data.orbit.speededOrbit = false;
+        GetComponent<Orbit>().speed = planet.Data.orbit.speed;
+    }
+
 
     /*
         public static IEnumerator updateSpeed(int i)

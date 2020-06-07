@@ -62,12 +62,12 @@ public class Profile
             else
             {
                 Data.save_version = Application.version;
-                if (!Data.gameStart)
+                if (!Data.gameStartNew)
                 {
                     System.Random random = new System.Random();
                     //Data.current_galaxy = Registry.Names.GALAXY[random.Next(Registry.Names.GALAXY.Count)] + "-" + Registry.Names.SUFFIX[random.Next(Registry.Names.SUFFIX.Count)];
                     //Data.current_solarsystem = Registry.Names.SOLARSYSTEM[random.Next(Registry.Names.SOLARSYSTEM.Count)] + "-" + random.Next(9999);
-                    Data.gameStart = true;
+                    Data.gameStartNew = true;
                     SceneManager.LoadScene("NewGameScreen");
                 }
                 else
@@ -100,7 +100,7 @@ public class ProfileData
     public string latest_solarSystem = "";
     public string latest_galaxy = "";
     public string save_version = "";
-    public bool gameStart = false;
+    public bool gameStartNew = false;
     public int tin_amount = 4;
     public int gold_amount = 0;
     public int crystal_amount = 0;

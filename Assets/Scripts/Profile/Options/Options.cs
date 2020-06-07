@@ -22,9 +22,10 @@ public class OptionData
     public bool AsteroidShadows = false;
     public bool ParticleSystems = true;
     public bool ObjectShadows = true;
+    public bool AutoSave = true;
     public bool Lights = true;
     public bool ShowFPS = false;
-    public bool postProcessing = true;
+    public bool PostProcessing = true;
     public string Language = "English";
     public string Texturepack = "Default";
     public int HUDScale = 1920;

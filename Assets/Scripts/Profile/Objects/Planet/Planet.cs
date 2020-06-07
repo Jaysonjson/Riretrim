@@ -31,6 +31,7 @@ public class Planet
         map.text = "Generating Planet: " + Data.name + "...";
         Data.id = random.Next(99999999);
         int moonAmount = 0;
+        Data.orbit.speededOrbit = true;
         if (random.Next(3) == 1)
         {
             moonAmount = random.Next(3);
@@ -170,7 +171,7 @@ public class Planet
                 Data.materials.Add(Materials.TIN);
             }
         }
-        Data.speed = (float)(random.NextDouble()) / 5;
+        Data.orbit.speed = (float)(random.NextDouble()) / 5;
 
         for (int i = 0; i < spaceStationAmount; i++)
         {
@@ -223,7 +224,7 @@ public class PlanetData
     public byte[] color = { 255, 255, 255 };
     public PlanetType type = PlanetType.LAVA;
     public float scale = 1;
-    public float speed = 0.5f;
+    public OrbitData orbit = new OrbitData();
     public int spriteNumber = 0;
     public Dictionary<string, Moon> moons = new Dictionary<string, Moon>();
     public Dictionary<string, SpaceStation> spaceStations = new Dictionary<string, SpaceStation>();

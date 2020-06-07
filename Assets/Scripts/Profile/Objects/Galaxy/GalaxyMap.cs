@@ -11,7 +11,6 @@ public class GalaxyMap : MonoBehaviour
     
     void Start()
     {
-        References.stars.Clear();
         galaxyText.GetComponent<TextMeshProUGUI>().text = Registry.profile.Data.current_galaxy;
         //Registry.profile.Data.galaxies.Add("test", new Galaxy());
         //Debug.Log(Registry.profile.Data.galaxies["test"].Data.name);

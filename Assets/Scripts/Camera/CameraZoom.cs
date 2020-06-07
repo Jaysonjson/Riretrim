@@ -82,7 +82,7 @@ public class CameraZoom : MonoBehaviour
     }
 
     void UpdateOtherText(Camera cameraComp)
-    {
+    {/*
         for (int i = 0; i < References.planets.Count; i++)
         {
             //for (int j = 0; j < Planets.GetPlanet(i).text.Length; j++)
@@ -90,6 +90,7 @@ public class CameraZoom : MonoBehaviour
             //    Planets.GetPlanet(i).text[j].GetComponent<TextMeshPro>().fontSize = cameraComp.orthographicSize / 7;
             //}
         }
+        */
     }
 
     IEnumerator waiter(Camera cameraComp)

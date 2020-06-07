@@ -17,7 +17,7 @@
   "asteroids": "Asteroids",
   "planets": "Planets",
   
-  "sun_distance": "Sun Distance: ",
+  "sun_distance": "Sun Distance: %S",
 
   "titlescreen": "Titlescreen",
   "save_game": "Save Game",
@@ -29,5 +29,15 @@
   "thruster_damage": "Thruster Damage",
   "engine_damage": "Engine Damage",
   
-  "drpc_inside_solarsystem": "Inside Solar System: %S"
+  "drpc_inside_solarsystem": "Inside Solar System: %S",
+  
+  "auto_saving": "Auto Saving...",
+  "enemies": "Enemies",
+  "orbiting": "Orbiting: %S",
+  "particle_systems": "Particle Systems",
+  "object_shadows": "Object Shadows",
+  "twod_lights": "2D Lights",
+  "post_processing": "Post Processing",
+  "auto_save": "Auto Save",
+  "show_fps": "Show FPS"
 }

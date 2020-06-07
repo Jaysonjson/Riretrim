@@ -18,6 +18,7 @@ public class OptionsScript : MonoBehaviour
     public Toggle objectShadowToggle;
     public Toggle lightToggle;
     public Toggle showFPSToggle;
+    public Toggle autoSaveToggle;
     public Toggle postProcessingToggle;
     public TMP_Dropdown languageDropdown;
     public TMP_Dropdown minimapHUD;
@@ -35,8 +36,9 @@ public class OptionsScript : MonoBehaviour
         lightToggle.isOn = Options.Data.Lights;
         showFPSToggle.isOn = Options.Data.ShowFPS;
         hudScaleSlider.value = Options.Data.HUDScale;
-        postProcessingToggle.isOn = Options.Data.postProcessing;
+        postProcessingToggle.isOn = Options.Data.PostProcessing;
         hudScaleValue.text = Options.Data.HUDScale + "";
+        autoSaveToggle.isOn = Options.Data.AutoSave;
         CanvasScaler.referenceResolution = new Vector2(Options.Data.HUDScale, 1080);
         for (var i = 0; i < languageDropdown.options.Count; i++)
         {
@@ -46,7 +48,7 @@ public class OptionsScript : MonoBehaviour
                 break;
             }
         }
-        
+
         for (var i = 0; i < minimapHUD.options.Count; i++)
         {
             if (minimapHUD.options[i].text.ToUpper().Equals(Options.Data.MiniMapHud.ToString()))
@@ -82,7 +84,7 @@ public class OptionsScript : MonoBehaviour
         CanvasScaler.referenceResolution = new Vector2(__old_res, 1080);
         Options.Data.HUDScale = __old_res;
     }
-    
+
     public void UpdateAsteroidsShadowToggle()
     {
         Options.Data.AsteroidShadows = asteroidShadowToggle.isOn;
@@ -90,14 +92,19 @@ public class OptionsScript : MonoBehaviour
 
     public void UpdatePostProcessingToggle()
     {
-        Options.Data.postProcessing = postProcessingToggle.isOn;
+        Options.Data.PostProcessing = postProcessingToggle.isOn;
+    }
+
+    public void UpdateAutoSaveToggle()
+    {
+        Options.Data.AutoSave = autoSaveToggle.isOn;
     }
 
     public void UpdateParticleSystemToggle()
     {
         Options.Data.ParticleSystems = particleSystemToggle.isOn;
     }
-    
+
     public void UpdateObjectShadowToggle()
     {
         Options.Data.ObjectShadows = objectShadowToggle.isOn;
@@ -115,9 +122,9 @@ public class OptionsScript : MonoBehaviour
 
     public void UpdateMiniMapHUDDropdown()
     {
-        Options.Data.MiniMapHud = (MiniMapHUD) Enum.Parse(typeof(MiniMapHUD), minimapHUD.options[minimapHUD.value].text.ToUpper());
+        Options.Data.MiniMapHud = (MiniMapHUD)Enum.Parse(typeof(MiniMapHUD), minimapHUD.options[minimapHUD.value].text.ToUpper());
     }
-    
+
     public void UpdateLightsToggle()
     {
         Options.Data.Lights = lightToggle.isOn;
