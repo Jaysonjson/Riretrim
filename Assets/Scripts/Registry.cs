@@ -17,18 +17,9 @@ public class Registry : MonoBehaviour
     private void Start()
     {
         sprites = gameObject.GetComponent<Sprites>();
-        Debug.Log("Loading Languages..");
         Options.Load();
         profile.SetUp("main");
-        if (Options.Data.Language != "English")
-        {
-            defaultLangFile = Resources.Load("lang/" + Options.Data.Language) as TextAsset;
-        }
-
-        if (defaultLangFile != null)
-        {
-            JsonUtility.FromJsonOverwrite(defaultLangFile.text, Language);
-        }
+        LoadLanguage();
 
         if (defaultNames != null)
         {
@@ -45,6 +36,22 @@ public class Registry : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void LoadLanguage()
+    {
+        if (Options.Data.Language != "English")
+        {
+            defaultLangFile = Resources.Load("lang/" + Options.Data.Language) as TextAsset;
+        }
+        else
+        {
+            Language = new Language();
+        }
+        if (defaultLangFile != null)
+        {
+            JsonUtility.FromJsonOverwrite(defaultLangFile.text, Language);
+        }
     }
 
 }

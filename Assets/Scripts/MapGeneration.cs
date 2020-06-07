@@ -10,12 +10,25 @@ using TMPro;
 public class MapGeneration : MonoBehaviour
 {
     public string text = "Doing Something!";
+    public string starText = "";
+    public string galaxyText = "";
     public TextMeshProUGUI textMesh;
-
+    public TextMeshProUGUI starTextMesh;
+    public TextMeshProUGUI galaxyTextMesh;
     public UnityEngine.UI.Image image;
+    public UnityEngine.UI.Image galaxyBar;
+    public UnityEngine.UI.Image starBar;
 
-    public int currentTask = 0;
-    public int maxTasks = 500;
+    public float currentTask = 0;
+    public float maxTasks = 500;
+
+    public float galaxyProgress = 0;
+    public float maxGalaxyProgress = 0;
+
+
+    public float starProgress = 0;
+    public float maxStarProgress = 0;
+
     public Thread thread;
     public bool done;
     public bool generateRest;
@@ -36,12 +49,14 @@ public class MapGeneration : MonoBehaviour
     private void Generation()
     {
         //yield return new WaitForSeconds(1f);
-        int galaxyAmount = new System.Random().Next(1, 15);
+        int galaxyAmount = new System.Random().Next(3, 15);
         maxTasks = galaxyAmount;
+        maxGalaxyProgress = galaxyAmount;
         for (int i = 0; i < galaxyAmount; i++)
         {
             Galaxy galaxy = new Galaxy();
             currentTask++;
+            galaxyProgress++;
             galaxy.Generate(this);
         }
         End();
@@ -91,7 +106,11 @@ public class MapGeneration : MonoBehaviour
     private void Update()
     {
         textMesh.text = text + " / Task: " + currentTask + " | Out of: " + maxTasks;
-        image.fillAmount = (float)((float)currentTask / (float)maxTasks);
+        starTextMesh.text = starText;
+        galaxyTextMesh.text = "Generating Galaxy " + galaxyProgress + " out of " + maxGalaxyProgress;
+        image.fillAmount = currentTask / maxTasks;
+        galaxyBar.fillAmount = galaxyProgress / maxGalaxyProgress;
+        starBar.fillAmount = starProgress / maxStarProgress;
         if (done)
         {
             StartCoroutine(switchScene());

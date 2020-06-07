@@ -21,10 +21,14 @@ public class Galaxy
         Data.name = generateName(random);
         map.text = "Generating Galaxy: " + Data.name;
         int starAmount = random.Next(50, 125);
+        map.maxStarProgress = starAmount;
+        map.starProgress = 0;
         for (int i = 0; i < starAmount; i++)
         {
             Star star = new Star(this);
             star.Generate(map);
+            map.starProgress++;
+            map.starText = "Generating Star: " + star.Data.name + " (" + map.starProgress + " from " + map.maxStarProgress + " ) in Galaxy " + Data.name;
             if (!Data.stars.ContainsKey(star.Data.name))
             {
                 Data.stars.Add(star.Data.name, star);

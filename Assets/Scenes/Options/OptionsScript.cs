@@ -132,6 +132,7 @@ public class OptionsScript : MonoBehaviour
     public void saveButton()
     {
         Options.Save();
+        Registry.INSTANCE.LoadLanguage();
         SceneManager.LoadScene("Titlescreen");
     }
 
