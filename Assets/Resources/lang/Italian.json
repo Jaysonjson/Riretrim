@@ -31,13 +31,13 @@
   
   "drpc_inside_solarsystem": "Dentro il Sistema Solare: %S",
 
-  "auto_saving": "Auto Saving...",
-  "enemies": "Enemies",
-  "orbiting": "Orbiting: %S",
-  "particle_systems": "Particle Systems",
-  "object_shadows": "Object Shadows",
-  "twod_lights": "2D Lights",
-  "post_processing": "Post Processing",
-  "auto_save": "Auto Save",
-  "show_fps": "Show FPS"
+  "auto_saving": "Auto Salvataggio...",
+  "enemies": "Nemici",
+  "orbiting": "In Orbita: %S",
+  "particle_systems": "Sistema Particellare",
+  "object_shadows": "Ombre oggetti",
+  "twod_lights": "Luci 2D",
+  "post_processing": "Post-Processo",
+  "auto_save": "Salvataggio Automatico",
+  "show_fps": "Mostra FPS"
 }
