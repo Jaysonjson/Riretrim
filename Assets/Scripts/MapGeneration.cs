@@ -12,20 +12,22 @@ public class MapGeneration : MonoBehaviour
     public string text = "Doing Something!";
     public string starText = "";
     public string galaxyText = "";
+    public string planetText = "";
     public TextMeshProUGUI textMesh;
     public TextMeshProUGUI starTextMesh;
     public TextMeshProUGUI galaxyTextMesh;
+    public TextMeshProUGUI planetTextMesh;
     public UnityEngine.UI.Image image;
     public UnityEngine.UI.Image galaxyBar;
     public UnityEngine.UI.Image starBar;
-
+    public UnityEngine.UI.Image planetBar;
     public float currentTask = 0;
     public float maxTasks = 500;
 
     public float galaxyProgress = 0;
     public float maxGalaxyProgress = 0;
-
-
+    public float planetProgress = 0;
+    public float maxPlanetProgress = 0;
     public float starProgress = 0;
     public float maxStarProgress = 0;
 
@@ -103,14 +105,17 @@ public class MapGeneration : MonoBehaviour
         done = true;
     }
 
+    //DEPRECATED
     private void Update()
     {
-        textMesh.text = text + " / Task: " + currentTask + " | Out of: " + maxTasks;
+        textMesh.text = text;
         starTextMesh.text = starText;
         galaxyTextMesh.text = "Generating Galaxy " + galaxyProgress + " out of " + maxGalaxyProgress;
+        planetTextMesh.text = planetText;
         image.fillAmount = currentTask / maxTasks;
         galaxyBar.fillAmount = galaxyProgress / maxGalaxyProgress;
         starBar.fillAmount = starProgress / maxStarProgress;
+        planetBar.fillAmount = planetProgress / maxPlanetProgress;
         if (done)
         {
             StartCoroutine(switchScene());

@@ -56,10 +56,14 @@ public class Star
         }
         map.currentTask++;
         //Debug.Log(Data.name);
+        map.maxPlanetProgress = planet_count;
+        map.planetProgress = 0;
         for (int i = 0; i < planet_count; i++)
         {
             Planet planet = new Planet(this);
             planet.Generate(map);
+            map.planetProgress++;
+            map.planetText = "Generating Planet: " + planet.Data.name + " (" + map.planetProgress + " from " + map.maxPlanetProgress + " ) in Star " + Data.name;
             if (!Data.planets.ContainsKey(planet.Data.name))
             {
                 Data.planets.Add(planet.Data.name, planet);
