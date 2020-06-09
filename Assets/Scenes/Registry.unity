@@ -172,6 +172,7 @@ MonoBehaviour:
   defaultNames: {fileID: 4900000, guid: d1435b36ae1923644a1a3c878e5189db, type: 3}
   shipWreckTypes: {fileID: 1720434649}
   planetSprites: {fileID: 2126719190}
+  sprites: {fileID: 702001956}
 --- !u!114 &702001956
 MonoBehaviour:
   m_ObjectHideFlags: 0

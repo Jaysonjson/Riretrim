@@ -228,4 +228,5 @@ public class PlanetData
     public int spriteNumber = 0;
     public Dictionary<string, Moon> moons = new Dictionary<string, Moon>();
     public Dictionary<string, SpaceStation> spaceStations = new Dictionary<string, SpaceStation>();
+    public Dictionary<string, MiningDrill> miningDrills = new Dictionary<string, MiningDrill>();
 }
