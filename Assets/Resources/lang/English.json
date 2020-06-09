@@ -39,5 +39,9 @@
   "twod_lights": "2D Lights",
   "post_processing": "Post Processing",
   "auto_save": "Auto Save",
-  "show_fps": "Show FPS"
+  "show_fps": "Show FPS",
+
+  "save": "Save",
+  "cancel": "Cancel",
+  "show": "Show"
 }

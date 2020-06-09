@@ -1,5 +1,42 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4737679639784129114
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e1dc532bcb41949b58bc4f2abfbb7e, type: 3}
+  m_Name: LensDistortion
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  intensity:
+    m_OverrideState: 1
+    m_Value: -0.275
+    min: -1
+    max: 1
+  xMultiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 1
+  yMultiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 1
+  center:
+    m_OverrideState: 0
+    m_Value: {x: 0.5, y: 0.5}
+  scale:
+    m_OverrideState: 0
+    m_Value: 0.99
+    min: 0.01
+    max: 5
 --- !u!114 &-2755789405377044072
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -16,10 +53,10 @@ MonoBehaviour:
   m_AdvancedMode: 0
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: -0.50648546}
+    m_Value: {x: 1, y: 1, z: 1, w: 0.055599686}
   midtones:
     m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 1, w: -0.21618292}
+    m_Value: {x: 1, y: 1, z: 1, w: -0.7704528}
   highlights:
     m_OverrideState: 0
     m_Value: {x: 1, y: 1, z: 1, w: 1}
@@ -55,7 +92,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.056
+    m_Value: 0.088
     min: 0
     max: 1
 --- !u!114 &11400000
@@ -79,6 +116,7 @@ MonoBehaviour:
   - {fileID: -1152304759959945106}
   - {fileID: -2755789405377044072}
   - {fileID: 4863553677608840558}
+  - {fileID: -4737679639784129114}
 --- !u!114 &1182194839785034232
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -121,7 +159,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.07
+    m_Value: 0.227
     min: 0
     max: 1
   smoothness:
@@ -148,7 +186,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   threshold:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.84
     min: 0
   intensity:
     m_OverrideState: 1
@@ -201,7 +239,7 @@ MonoBehaviour:
     m_Value: 2
   intensity:
     m_OverrideState: 1
-    m_Value: 0.317
+    m_Value: 1
     min: 0
     max: 1
   clamp:
@@ -225,10 +263,10 @@ MonoBehaviour:
   m_AdvancedMode: 0
   type:
     m_OverrideState: 1
-    m_Value: 4
+    m_Value: 9
   intensity:
     m_OverrideState: 1
-    m_Value: 0.11
+    m_Value: 0.308
     min: 0
     max: 1
   response:
@@ -255,7 +293,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.47
+    m_Value: 0.96
   contrast:
     m_OverrideState: 1
     m_Value: 17.3

@@ -45,4 +45,8 @@ public class Language
     public string post_processing = "Post Processing";
     public string auto_save = "Auto Save";
     public string show_fps = "Show FPS";
+
+    public string save = "Save";
+    public string cancel = "Cancel";
+    public string show = "Show";
 }
