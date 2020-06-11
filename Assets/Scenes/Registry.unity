@@ -133,8 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 702001954}
   - component: {fileID: 702001957}
-  - component: {fileID: 702001955}
   - component: {fileID: 702001956}
+  - component: {fileID: 702001955}
   m_Layer: 0
   m_Name: Registry
   m_TagString: Untagged

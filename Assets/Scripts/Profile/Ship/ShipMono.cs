@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Linq;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -118,6 +119,25 @@ public class ShipMono : MonoBehaviour
                     redBlinkText.SetActive(false);
                 }
             }
+        }
+
+        if(Registry.profile.Ship.Data.energy <= 0) {
+            Registry.profile.Ship.Data.on = false;
+        }
+
+        if (!Registry.profile.Ship.Data.on)
+        {
+            SetLights(false);
+        } else {
+            SetLights(true);
+        }
+    }
+
+    public void SetLights(bool b)
+    {
+        for (int i = 0; i < Sprites.lights.Length; i++)
+        {
+            Sprites.lights[i].enabled = b;
         }
     }
 }

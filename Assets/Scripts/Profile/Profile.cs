@@ -38,6 +38,7 @@ public class Profile
 
     public void Save()
     {
+        Data.lastSaveDate = Data.lastSaveDate.convertToJsonDateTime(DateTime.Now);
         Ship.Save();
         Data.Save();
     }
@@ -101,6 +102,8 @@ public class ProfileData
     public string latest_galaxy = "";
     public string save_version = "";
     public bool gameStartNew = false;
+    public JsonDateTime creationDate = new JsonDateTime();
+    public JsonDateTime lastSaveDate = new JsonDateTime();
     public int tin_amount = 4;
     public int gold_amount = 0;
     public int crystal_amount = 0;
