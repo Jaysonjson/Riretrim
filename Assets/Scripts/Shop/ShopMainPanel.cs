@@ -82,6 +82,9 @@ public class ShopMainPanel : MonoBehaviour
         if (shipData.bought)
         {
             Registry.profile.Ship.Data.body = Object.name;
+            Registry.profile.Ship.Data.damage = shipData.damage;
+            Registry.profile.Ship.Data.armor = shipData.armor;
+            Registry.profile.Ship.Data.shootSpeed = shipData.shootSpeed;
             BuyOrSelectText.text = "Selected";
         }
         else

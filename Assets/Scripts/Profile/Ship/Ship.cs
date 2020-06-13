@@ -37,6 +37,8 @@ public class ShipData
     public float energyMax = 125f;
 
     public float damage = 0.55f;
+    public float armor = 0.55f;
+    public float shootSpeed = 0.55f;
 
     public Color wingColor = new Color(new System.Random().Next(125), new System.Random().Next(237), new System.Random().Next(184));
 
