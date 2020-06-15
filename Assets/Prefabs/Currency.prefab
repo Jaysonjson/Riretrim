@@ -540,8 +540,8 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 1
   m_Color: {r: 0.48713955, g: 0.8396226, b: 0.83303416, a: 1}
-  m_Intensity: 0.75
-  m_LightVolumeOpacity: 0.01
+  m_Intensity: 1.24
+  m_LightVolumeOpacity: 0.188
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
@@ -625,8 +625,8 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 1
   m_Color: {r: 0.5801887, g: 1, b: 0.99225354, a: 1}
-  m_Intensity: 0.75
-  m_LightVolumeOpacity: 0.03
+  m_Intensity: 0.84
+  m_LightVolumeOpacity: 0.127
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
