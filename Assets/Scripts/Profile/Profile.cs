@@ -10,7 +10,6 @@ public class Profile
     public Ship Ship = new Ship();
     public string map_path;
     public string profile_path;
-
     public string mod_path;
 
     public Profile(string name)

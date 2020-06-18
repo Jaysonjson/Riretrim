@@ -40,10 +40,10 @@ public class ShipData
     public float armor = 0.55f;
     public float shootSpeed = 0.55f;
 
-    public Color wingColor = new Color(new System.Random().Next(125), new System.Random().Next(237), new System.Random().Next(184));
+    public Color wingColor = new Color(new System.Random().Next(50, 125), new System.Random().Next(50, 237), new System.Random().Next(50, 184));
 
     public bool on = true;
-    
+
     public void Load()
     {
         string json = "{}";
@@ -55,9 +55,9 @@ public class ShipData
         {
             Save();
         }
-        JsonUtility.FromJsonOverwrite(json, this);   
+        JsonUtility.FromJsonOverwrite(json, this);
     }
-        
+
     public void Save()
     {
         if (!Directory.Exists(Registry.profile.profile_path + "/"))

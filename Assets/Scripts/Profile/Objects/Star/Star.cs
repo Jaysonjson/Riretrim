@@ -47,7 +47,7 @@ public class Star
         }
         Data.position.x = (float)(random.Next(-5, 5) + random.NextDouble());
         Data.position.y = (float)(random.Next(-4, 4) + random.NextDouble());
-        Data.speed = (float)random.Next(1, 6) / 10 + (float)random.Next(1, 9) / 100;
+        Data.orbit.speed = (float)random.Next(1, 6) / 10 + (float)random.Next(1, 9) / 100;
         if (random.Next(3) == 1)
         {
             Data.color[0] = (byte)(random.Next(250));
@@ -102,7 +102,7 @@ public class StarData
     public string name = "";
     public int asteroid_count = 0;
     public Position position = new Position();
-    public float speed = 0;
+    public OrbitData orbit = new OrbitData();
     public int enemy_count = 75;
     public bool secondSun = false;
     public bool visited = false;
