@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 public class RiretrimUtility
 {
@@ -52,5 +53,12 @@ public class RiretrimUtility
             amount += planet.Data.moons.Count;
         }
         return amount;
+    }
+
+    public static bool Contains(Object[] array, Object obj) {
+        if(array.Contains(obj)) {
+            return true;
+        }
+        return false;
     }
 }

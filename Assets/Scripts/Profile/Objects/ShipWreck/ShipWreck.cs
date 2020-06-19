@@ -22,7 +22,6 @@ public class ShipWreck
         //map.currentTask++;
         Data.name = generateName(random);
         map.text = "Generating Shipwreck: " + Data.name + " from Star: " + star.Data.name;
-        //Thread.Sleep(5);
         Data.type = map.shipWreckNames[random.Next(map.shipWreckNames.Count)];
         star.Data.shipWrecks.Add(Data.name, this);
     }

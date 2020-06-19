@@ -6,13 +6,13 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class Stars : MonoBehaviour
 {
-   public Star star;
-   public TextMeshPro text;
+    public Star star;
+    public TextMeshPro text;
 
-   public Light2D[] lights;
-   private void Start()
-   {
-       TextMeshPro textMesh = text.GetComponent<TextMeshPro>();
+    public Light2D[] lights;
+    private void Start()
+    {
+        TextMeshPro textMesh = text.GetComponent<TextMeshPro>();
         textMesh.text = star.Data.name + "\nLast Visited on: " + star.Data.visitTime.convertToDateTime().ToString("dd/M/yyyy hh:mm:ss");
         if (star.Data.visited)
         {
@@ -20,7 +20,7 @@ public class Stars : MonoBehaviour
         }
         else
         {
-        textMesh.color = new Color32(163, 0, 0, 255);
+            textMesh.color = new Color32(163, 0, 0, 255);
         }
         name = star.Data.name;
         GetComponent<Orbit>().speed = star.Data.orbit.speed;
@@ -28,9 +28,9 @@ public class Stars : MonoBehaviour
         transform.position = new Vector2(star.Data.position.x, star.Data.position.y);
         for (var i = 0; i < lights.Length; i++)
         {
-         lights[i].color = new Color32(star.Data.color[0], star.Data.color[1], star.Data.color[2], 255);
+            lights[i].color = new Color32(star.Data.color[0], star.Data.color[1], star.Data.color[2], 255);
         }
-   }
+    }
 
     public void Click()
     {

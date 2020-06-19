@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Warp : MonoBehaviour
 {
-    public GameObject camera;
+    public GameObject cameraMain;
     public GameObject[] particles;
     private void Start()
     {
@@ -28,6 +28,6 @@ public class Warp : MonoBehaviour
     
     void Update()
     {
-        gameObject.transform.position = new Vector3(camera.transform.position.x, camera.transform.position.y, -26.33833f);
+        gameObject.transform.position = new Vector3(cameraMain.transform.position.x, cameraMain.transform.position.y, -26.33833f);
     }
 }
