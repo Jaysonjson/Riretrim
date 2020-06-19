@@ -10,18 +10,17 @@ public class SunCycle : MonoBehaviour
     public float sunStart = 6;
     public float sunEnd = 18;
     public int hourTime = 6;
-    public UnityEngine.UI.Image sunHUD;
+    //public UnityEngine.UI.Image sunHUD;
     public TextMeshProUGUI timeText;
     private float minutes;
     private float currentMinute;
     private float fakeTime;
     private void Start()
     {
-        //Time.timeScale = 10;
+        Time.timeScale = 10;
         minutes = hourTime * 60;
         fakeTime = hourTime + 1;
-        StartCoroutine(countMill());
-        StartCoroutine(countTime());
+        StartCoroutine(CycleCour());
     }
     private bool isDay()
     {
@@ -39,90 +38,82 @@ public class SunCycle : MonoBehaviour
         }
         return false;
     }
-    private void Update()
+
+    IEnumerator CycleCour()
     {
-        //sunLight.intensity = (float)hourTime / hours;
-        timeText.text = hourTime + ":" + currentMinute;
+        yield return new WaitForSecondsRealtime(1f);
+        if ((int)currentMinute >= 59)
+        {
+            if (hourTime < hours)
+            {
+                hourTime++;
+            }
+            if (hourTime >= hours)
+            {
+                hourTime = 0;
+            }
+        }
+        if (currentMinute < 60)
+        {
+            currentMinute++;
+        }
+        if (currentMinute >= 60)
+        {
+            currentMinute = 0;
+        }
+        if (hourTime == 0)
+        {
+            minutes = 0;
+        }
+        fakeTime = hourTime + (currentMinute / 100);
+        if (currentMinute.ToString().Length > 1)
+        {
+            timeText.text = hourTime + ":" + (int)currentMinute;
+        }
+        else
+        {
+            timeText.text = hourTime + ":0" + (int)currentMinute;
+        }
         if (isDay() && !isNight())
         {
-            sunHUD.fillAmount = ((float)fakeTime - sunStart) / sunEnd;
+            //sunHUD.fillAmount = (fakeTime - sunStart) / sunEnd - hours;
+            //Debug.Log((fakeTime) / sunEnd);
+            Debug.Log((fakeTime - sunStart) / sunEnd - hours);
         }
         else
         {
-            sunHUD.fillAmount = ((float)hourTime - 2) / (hours - 2);
+            //sunHUD.fillAmount = (fakeTime - 2) / (hours - 2);
         }
-        // Debug.Log(DayLightPrecise());
-        // Debug.Log(CurrentMinute());
-        //Debug.Log(minutes + "_" + maxMinutes);
-        Debug.Log(fakeTime);
+        StartCoroutine(CycleCour());
     }
 
-    public void Test()
+    public void Cycle()
     {
-        string hourString;
-        if (hourTime > 9)
+        minutes += (Time.deltaTime);
+        //if (minutes % 60 == 1)
+        Debug.Log((int)currentMinute >= 59);
+        if ((int)currentMinute >= 59)
         {
-            hourString = hourTime.ToString() + currentMinute.ToString();
+            if (hourTime < hours)
+            {
+                hourTime++;
+            }
+            if (hourTime >= hours)
+            {
+                hourTime = 0;
+            }
         }
-        else
+        if (currentMinute < 60)
         {
-            hourString = "0" + hourTime + currentMinute;
+            currentMinute += (Time.deltaTime);
         }
-        Debug.Log(hourString);
-        Debug.Log((Convert.ToInt32(hourString) - (600) / (1800)));
-    }
-    public float DayLight()
-    {
-        return ((float)hourTime - sunStart) / sunEnd;
-    }
-    public float DayLightPrecise()
-    {
-        return (minutes - sunStart) * 60 / sunEnd * 60;
-    }
-    public float CurrentMinute()
-    {
-        return (minutes / hourTime);
-    }
-
-    IEnumerator countTime()
-    {
-        yield return new WaitForSeconds(60f);
-        StartCoroutine(countTime());
-    }
-
-    IEnumerator countMill()
-    {
-        while (true)
+        if (currentMinute >= 60)
         {
-            yield return new WaitForSeconds(1f);
-            fakeTime += 0.01f;
-            if (minutes % 60 == 1)
-            {
-                if (hourTime < hours)
-                {
-                    hourTime++;
-                }
-                if (hourTime >= hours)
-                {
-                    hourTime = 0;
-                }
-            }
-            if (currentMinute < 60)
-            {
-                currentMinute++;
-            }
-            if (currentMinute >= 60)
-            {
-                currentMinute = 0;
-            }
-            if (hourTime > 0)
-            {
-                minutes++;
-            }
-            if (hourTime == 0)
-            {
-                minutes = 0;
-            }
+            currentMinute = 0;
+        }
+        if (hourTime == 0)
+        {
+            minutes = 0;
         }
     }
 }
