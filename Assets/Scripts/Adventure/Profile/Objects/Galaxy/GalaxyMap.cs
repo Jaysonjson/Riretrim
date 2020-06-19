@@ -8,7 +8,7 @@ public class GalaxyMap : MonoBehaviour
 {
 
     public GameObject galaxyText;
-    
+
     void Start()
     {
         galaxyText.GetComponent<TextMeshProUGUI>().text = Registry.profile.Data.current_galaxy;
@@ -27,11 +27,11 @@ public class GalaxyMap : MonoBehaviour
     void OnApplicationQuit()
     {
         Registry.profile.Save();
-       // for (int i = 0; i < References.planets.Count; i++)
-       // {
-           //Stars.GetPlanet(i).position_x = Planets.GetPlanet(i).planet.transform.position.x;
-            //Planets.GetPlanet(i).position_y = Planets.GetPlanet(i).planet.transform.position.y;
-           // Planets.GetPlanet(i).save(i);
-      //  }
+        // for (int i = 0; i < References.planets.Count; i++)
+        // {
+        //Stars.GetPlanet(i).position_x = Planets.GetPlanet(i).planet.transform.position.x;
+        //Planets.GetPlanet(i).position_y = Planets.GetPlanet(i).planet.transform.position.y;
+        // Planets.GetPlanet(i).save(i);
+        //  }
     }
 }
