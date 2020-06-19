@@ -49,7 +49,7 @@ public class MapGeneration : MonoBehaviour
     //Generation of the Objects
     private void Generation()
     {
-        int galaxyAmount = new System.Random().Next(1, 5);
+        int galaxyAmount = new System.Random().Next(3, 15);
         maxTasks = galaxyAmount;
         maxGalaxyProgress = galaxyAmount;
         for (int i = 0; i < galaxyAmount; i++)
