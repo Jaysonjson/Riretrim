@@ -25,13 +25,13 @@ public class Star
     {
         System.Random random = new System.Random();
         Data.name = generateName(random);
-        map.text = "Generating Star: " + Data.name;
+        if(map != null) { map.text = "Generating Star: " + Data.name; }
         Data.solarSystem = Data.name;
         Data.asteroid_count = random.Next(MapOptions.Data.AsteroidMinSpawnAmount, MapOptions.Data.AsteroidMaxSpawnAmount);
         int planet_count = random.Next(MapOptions.Data.PlanetMaxAmount / 4);
         Data.enemy_count = random.Next(10, 35);
         int shipwreck_count = random.Next(10);
-        map.maxTasks += planet_count + shipwreck_count;
+        if(map != null) { map.maxTasks += planet_count + shipwreck_count; }
         Data.sunScale = (float)(random.Next(15, 35) + random.NextDouble());
         if (random.Next(1) == 1)
         {
@@ -62,16 +62,20 @@ public class Star
             Thread.Sleep(12);
             Data.color[2] = (byte)(random.Next(250));
         }
+        if(map != null) {
         map.currentTask++;
         //Debug.Log(Data.name);
         map.maxPlanetProgress = planet_count;
         map.planetProgress = 0;
+        }
         for (int i = 0; i < planet_count; i++)
         {
             Planet planet = new Planet(this);
             planet.Generate(map);
+            if(map != null) {
             map.planetProgress++;
             map.planetText = "Generating Planet: " + planet.Data.name + " (" + map.planetProgress + " from " + map.maxPlanetProgress + " ) in Star " + Data.name;
+            }
             if (!Data.planets.ContainsKey(planet.Data.name))
             {
                 Data.planets.Add(planet.Data.name, planet);

@@ -15,4 +15,12 @@ public interface IQuest
         get;
         set;
     }
+    JsonDateTime timeFinished
+    {
+        get;
+        set;
+    }
+
+    void StartQuest();
+    void EndQuest();
 }

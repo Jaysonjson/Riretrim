@@ -4,7 +4,17 @@ public class Quest : IQuest
     public bool done { get; set; }
     public bool unlocked { get; set; }
     public bool inProgress { get; set; }
-    public JsonDateTime timeFinished = new JsonDateTime();
+    public JsonDateTime timeFinished { get; set; }
+
+    public void EndQuest()
+    {
+
+    }
+
+    public void StartQuest()
+    {
+
+    }
 
     [JsonIgnore]
     public float currency_reward = 0;

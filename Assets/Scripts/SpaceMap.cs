@@ -97,19 +97,19 @@ public class SpaceMap : MonoBehaviour
 
     public void updateMaterialText()
     {
-        aluminiumText.text = Registry.profile.Data.aluminium_amount + "";
-        bronzeText.text = Registry.profile.Data.bronze_amount + "";
-        carbonText.text = Registry.profile.Data.carbon_amount + "";
-        coalText.text = Registry.profile.Data.coal_amount + "";
-        crystalText.text = Registry.profile.Data.crystal_amount + "";
-        goldText.text = Registry.profile.Data.gold_amount + "";
-        tinText.text = Registry.profile.Data.tin_amount + "";
-        titanText.text = Registry.profile.Data.titan_amount + "";
-        nickelText.text = Registry.profile.Data.nickel_amount + "";
-        tungstenText.text = Registry.profile.Data.tungsten_amount + "";
-        copperText.text = Registry.profile.Data.copper_amount + "";
-        ironText.text = Registry.profile.Data.iron_amount + "";
-        currencyAmount.text = Registry.profile.Data.currency + "";
+        aluminiumText.text = Registry.profile.Data.aluminium_amount.ToString();
+        bronzeText.text = Registry.profile.Data.bronze_amount.ToString();
+        carbonText.text = Registry.profile.Data.carbon_amount.ToString();
+        coalText.text = Registry.profile.Data.coal_amount.ToString();
+        crystalText.text = Registry.profile.Data.crystal_amount.ToString();
+        goldText.text = Registry.profile.Data.gold_amount.ToString();
+        tinText.text = Registry.profile.Data.tin_amount.ToString();
+        titanText.text = Registry.profile.Data.titan_amount.ToString();
+        nickelText.text = Registry.profile.Data.nickel_amount.ToString();
+        tungstenText.text = Registry.profile.Data.tungsten_amount.ToString();
+        copperText.text = Registry.profile.Data.copper_amount.ToString();
+        ironText.text = Registry.profile.Data.iron_amount.ToString();
+        currencyAmount.text = Registry.profile.Data.currency.ToString();
     }
 
     private void Update()

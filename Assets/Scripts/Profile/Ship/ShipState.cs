@@ -1,4 +1,4 @@
 ﻿public enum ShipState
 {
-        FLIGHT, IDLE, SPECIAL
+    FLIGHT, IDLE, SPECIAL
 }

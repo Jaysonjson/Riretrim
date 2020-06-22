@@ -3,9 +3,9 @@ public class Quests
     public Quest placeHolder = new Quest(true, 5);
 
 
-    public void Load(IQuest guest)
+    public void Load()
     {
-        guest.unlocked = true;
+        
     }
 
     public void Save()
