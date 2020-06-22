@@ -54,6 +54,14 @@ public class Star
             Data.color[1] = (byte)(random.Next(250));
             Data.color[2] = (byte)(random.Next(250));
         }
+        if (random.Next(4) == 1)
+        {
+            Data.color[0] = (byte)(random.Next(250));
+            Thread.Sleep(12);
+            Data.color[1] = (byte)(random.Next(250));
+            Thread.Sleep(12);
+            Data.color[2] = (byte)(random.Next(250));
+        }
         map.currentTask++;
         //Debug.Log(Data.name);
         map.maxPlanetProgress = planet_count;

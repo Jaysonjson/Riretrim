@@ -1,9 +1,9 @@
 using Newtonsoft.Json;
-public class Quest
+public class Quest : IQuest
 {
-    public bool done = false;
-    public bool unlocked = false;
-    public bool inProgress = false;
+    public bool done { get; set; }
+    public bool unlocked { get; set; }
+    public bool inProgress { get; set; }
     public JsonDateTime timeFinished = new JsonDateTime();
 
     [JsonIgnore]
