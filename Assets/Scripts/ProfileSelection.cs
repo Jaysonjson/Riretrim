@@ -6,6 +6,8 @@ using UnityEngine;
 public class ProfileSelection : MonoBehaviour
 {
     public GameObject ProfileObject;
+    public GameObject[] spawnPoints;
+    public GameObject currentSpawn;
     void Start()
     {
         string[] directories = Directory.GetDirectories(Application.persistentDataPath + "/profiles/");
@@ -13,7 +15,7 @@ public class ProfileSelection : MonoBehaviour
         {
             Profile profile = new Profile();
             profile.Data.Load(directories[i]);
-            GameObject profileObject = Instantiate(ProfileObject, gameObject.transform);
+            GameObject profileObject = profile.Data.current ? Instantiate(ProfileObject, currentSpawn.transform) : Instantiate(ProfileObject, spawnPoints[i].transform);
             profileObject.GetComponent<ProfileObject>().profile = profile;
             profileObject.SetActive(true);
         }

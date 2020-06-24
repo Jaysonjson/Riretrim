@@ -104,6 +104,7 @@ public class ProfileData
     public string latest_galaxy = "";
     public string save_version = "";
     public bool gameStartOFE = false;
+    public bool current = false;
     public JsonDateTime creationDate = new JsonDateTime();
     public JsonDateTime lastSaveDate = new JsonDateTime();
     public int tin_amount = 4;
