@@ -5,7 +5,7 @@ public class RiretrimUtility
     public static Galaxy GetGalaxy(string name)
     {
         Galaxy galaxy = null;
-        Registry.profile.Data.galaxies.TryGetValue(name, out galaxy);
+        Registry.adventureMap.galaxies.TryGetValue(name, out galaxy);
         return galaxy;
     }
 

@@ -68,11 +68,12 @@ public class MapGeneration : MonoBehaviour
         text = "Finishing...";
         currentTask = (maxTasks - 10);
         text = "Saving...";
-        Registry.profile.Data.current_galaxy = Registry.profile.Data.galaxies.ElementAt(0).Value.Data.name;
-        Star startStar = Registry.profile.Data.galaxies.ElementAt(0).Value.Data.stars.ElementAt(0).Value;
+        Registry.profile.Data.current_galaxy = Registry.adventureMap.galaxies.ElementAt(0).Value.Data.name;
+        Star startStar = Registry.adventureMap.galaxies.ElementAt(0).Value.Data.stars.ElementAt(0).Value;
         startStar.Data.visited = true;
         Registry.profile.Data.current_solarsystem = startStar.Data.name;
         Registry.profile.Save();
+        Registry.adventureMap.Save();
         currentTask = maxTasks;
         text = "Loading SpaceMap...";
         done = true;

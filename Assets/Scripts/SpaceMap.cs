@@ -85,6 +85,7 @@ public class SpaceMap : MonoBehaviour
         yield return new WaitForSeconds(600f);
         autoSaveText.gameObject.SetActive(true);
         Registry.profile.Save();
+        Registry.adventureMap.Save();
         yield return new WaitForSeconds(2f);
         autoSaveText.gameObject.SetActive(false);
         StartCoroutine(autoSave());
@@ -93,6 +94,7 @@ public class SpaceMap : MonoBehaviour
     void OnApplicationQuit()
     {
         Registry.profile.Save();
+        Registry.adventureMap.Save();
     }
 
     public void updateMaterialText()

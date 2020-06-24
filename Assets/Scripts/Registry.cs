@@ -14,13 +14,13 @@ public class Registry : MonoBehaviour
     public PlanetSprites planetSprites;
     public Sprites sprites;
     public static Registry INSTANCE;
+    public static AdventureMap adventureMap = new AdventureMap();
     private void Start()
     {
         sprites = gameObject.GetComponent<Sprites>();
-        Options.Load();
         profile.SetUp("main");
+        Options.Load();
         LoadLanguage();
-
         if (defaultNames != null)
         {
             JsonUtility.FromJsonOverwrite(defaultNames.text, Names);

@@ -40,6 +40,7 @@ public class EscapeMenu : MonoBehaviour
    public void Save()
    {
       Registry.profile.Save();
+      Registry.adventureMap.Save();
    }
 
    public void TitleScreen()

@@ -36,7 +36,7 @@ public class Galaxy
         }
         map.maxTasks += starAmount;
         map.currentTask++;
-        Registry.profile.Data.galaxies.Add(Data.name, this);
+        Registry.adventureMap.galaxies.Add(Data.name, this);
     }
 
     private string generateName(System.Random random)
@@ -46,7 +46,7 @@ public class Galaxy
         string genName = Registry.Names.GALAXY[random.Next(Registry.Names.GALAXY.Count)] + "-" + Registry.Names.SUFFIX[random.Next(Registry.Names.SUFFIX.Count)];
         if (nameTries < 1500)
         {
-            if (Registry.profile.Data.galaxies.ContainsKey(genName))
+            if (Registry.adventureMap.galaxies.ContainsKey(genName))
             {
                 return generateName(random);
             }

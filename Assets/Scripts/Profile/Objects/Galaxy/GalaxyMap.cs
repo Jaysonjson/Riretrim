@@ -27,6 +27,7 @@ public class GalaxyMap : MonoBehaviour
     void OnApplicationQuit()
     {
         Registry.profile.Save();
+        Registry.adventureMap.Save();
        // for (int i = 0; i < References.planets.Count; i++)
        // {
            //Stars.GetPlanet(i).position_x = Planets.GetPlanet(i).planet.transform.position.x;

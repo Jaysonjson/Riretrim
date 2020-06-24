@@ -9,7 +9,7 @@ public class Profile
     public ProfileData Data = new ProfileData();
     public Ship Ship = new Ship();
     public string map_path;
-    public string profile_path;
+    public string profile_path = "";
     public string mod_path;
 
     public Profile(string name)
@@ -24,7 +24,8 @@ public class Profile
 
     public void SetUp(string name)
     {
-        profile_path = Application.persistentDataPath + "/profiles/" + name + "/";
+        Data.profileName = name;
+        profile_path = Application.persistentDataPath + "/profiles/" + Data.profileName + "/";
     }
 
     public void Load()
@@ -47,6 +48,7 @@ public class Profile
         Options.Load();
         Load();
         Ship.Load();
+        Registry.adventureMap.Load();
         if (!Directory.Exists(mod_path))
         {
             Directory.CreateDirectory(mod_path);
@@ -62,12 +64,13 @@ public class Profile
             else
             {
                 Data.save_version = Application.version;
-                if (!Data.gameStartNew)
+                if (!Data.gameStartOFE)
                 {
                     System.Random random = new System.Random();
                     //Data.current_galaxy = Registry.Names.GALAXY[random.Next(Registry.Names.GALAXY.Count)] + "-" + Registry.Names.SUFFIX[random.Next(Registry.Names.SUFFIX.Count)];
                     //Data.current_solarsystem = Registry.Names.SOLARSYSTEM[random.Next(Registry.Names.SOLARSYSTEM.Count)] + "-" + random.Next(9999);
-                    Data.gameStartNew = true;
+                    Data.gameStartOFE = true;
+                    Save();
                     SceneManager.LoadScene("NewGameScreen");
                 }
                 else
@@ -100,7 +103,7 @@ public class ProfileData
     public string latest_solarSystem = "";
     public string latest_galaxy = "";
     public string save_version = "";
-    public bool gameStartNew = false;
+    public bool gameStartOFE = false;
     public JsonDateTime creationDate = new JsonDateTime();
     public JsonDateTime lastSaveDate = new JsonDateTime();
     public int tin_amount = 4;
@@ -118,15 +121,12 @@ public class ProfileData
 
     public float ship_xp;
 
-    public Dictionary<string, Galaxy> galaxies = new Dictionary<string, Galaxy>();
-
-
-    public void Load()
+    public void Load(string path)
     {
         string json = "{}";
-        if (File.Exists(Registry.profile.profile_path + "/data.json"))
+        if (File.Exists(path + "/data.json"))
         {
-            json = File.ReadAllText(Registry.profile.profile_path + "/data.json");
+            json = File.ReadAllText(path + "/data.json");
         }
         else
         {
@@ -134,6 +134,11 @@ public class ProfileData
         }
         //JsonUtility.FromJsonOverwrite(json, this);
         Registry.profile.Data = JsonConvert.DeserializeObject<ProfileData>(json);
+    }
+
+    public void Load()
+    {
+        Load(Registry.profile.profile_path);
     }
 
     public void Save()
