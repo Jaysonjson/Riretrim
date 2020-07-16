@@ -18,8 +18,8 @@ public class Registry : MonoBehaviour
     private void Start()
     {
         sprites = gameObject.GetComponent<Sprites>();
-        profile.SetUp("main2");
         Options.Load();
+        profile.SetUp(Options.Data.CurrentProfile);
         LoadLanguage();
         if (defaultNames != null)
         {

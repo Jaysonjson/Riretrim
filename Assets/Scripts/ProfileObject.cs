@@ -2,6 +2,7 @@ using System.IO;
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ProfileObject : MonoBehaviour
 {
@@ -45,5 +46,10 @@ public class ProfileObject : MonoBehaviour
             size += DirSize(di);
         }
         return size;
+    }
+
+    public void onClick() {
+        Options.Data.CurrentProfile = profile.Data.profileName;
+        SceneManager.LoadScene("Registry");
     }
 }

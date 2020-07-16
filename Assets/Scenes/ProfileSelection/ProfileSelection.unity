@@ -321,6 +321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 143689820}
   - component: {fileID: 143689821}
+  - component: {fileID: 143689822}
   m_Layer: 5
   m_Name: ProfileObject
   m_TagString: Untagged
@@ -366,6 +367,35 @@ MonoBehaviour:
   sizeText: {fileID: 1988204090}
   greenColor: {r: 0.33207488, g: 1, b: 0, a: 0}
   redColor: {r: 1, g: 0, b: 0, a: 0}
+--- !u!114 &143689822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143689819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 143689821}
+          m_TargetAssemblyTypeName: ProfileObject, Assembly-CSharp
+          m_MethodName: onClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &191384766
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,7 +535,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -12, y: 170}
+  m_AnchoredPosition: {x: 50, y: 76}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &321766489
@@ -790,6 +820,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &670352493
 Canvas:
   m_ObjectHideFlags: 0
@@ -1020,6 +1051,7 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 1457847260}
   - {fileID: 301417384}
+  currentSpawn: {fileID: 0}
 --- !u!1 &1004506788
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,7 +1535,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -360, y: 163}
+  m_AnchoredPosition: {x: -298.00003, y: 75.99997}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1559576091

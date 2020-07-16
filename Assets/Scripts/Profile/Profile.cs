@@ -122,19 +122,29 @@ public class ProfileData
 
     public float ship_xp;
 
-    public void Load(string path)
+    public bool Load(string path, Profile profile)
     {
         string json = "{}";
+        Debug.Log("Loading Profile");
         if (File.Exists(path + "/data.json"))
         {
             json = File.ReadAllText(path + "/data.json");
         }
         else
         {
+            Debug.Log("Couldn't load Profile, saving...");
             Save();
+            return false;
         }
         //JsonUtility.FromJsonOverwrite(json, this);
-        Registry.profile.Data = JsonConvert.DeserializeObject<ProfileData>(json);
+        profile.Data = JsonConvert.DeserializeObject<ProfileData>(json);
+        Debug.Log("Loaded Profile: " + profile.Data.profileName);
+        return true;
+    }
+
+    public void Load(string path)
+    {
+        Load(path, Registry.profile);
     }
 
     public void Load()

@@ -30,6 +30,7 @@ public class OptionData
     public string Texturepack = "Default";
     public int HUDScale = 1920;
     public MiniMapHUD MiniMapHud = MiniMapHUD.SQUARE;
+    public string CurrentProfile = "main";
     public void Load()
     {
         string json = "{}";
