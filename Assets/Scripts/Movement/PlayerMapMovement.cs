@@ -93,15 +93,13 @@ public class PlayerMapMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             speed = 7f;
-            //particleSystem.Play();
-            particleSystem.maxParticles = 20000;
+            particleSystem.Play();
             //particleSystem.enableEmission = true;
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             speed = 1.75F;
-            //particleSystem.Stop();
-            particleSystem.maxParticles = 0;
+            particleSystem.Stop();
             //StartCoroutine(ParticleDespawn());
         }
 

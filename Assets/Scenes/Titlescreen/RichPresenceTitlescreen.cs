@@ -6,22 +6,30 @@ using UnityEngine;
 
 public class RichPresenceTitlescreen : MonoBehaviour
 {
-    void Start () {
-        var activity = new Discord.Activity
+    void Start()
+    {
+        if (DiscordRPC.discord != null)
         {
-            Details = "Inside Titlescreen",
-            Assets = DiscordRPC.riretrimDefault,
-            Timestamps =
+            var activity = new Discord.Activity
+            {
+                Details = "Inside Titlescreen",
+                Assets = DiscordRPC.riretrimDefault,
+                Timestamps =
             {
                 Start = 5
             },
-        };
-        DiscordRPC.activityManager.UpdateActivity(activity, (res) =>
-        {
-        });
+            };
+            DiscordRPC.activityManager.UpdateActivity(activity, (res) =>
+            {
+            });
+        }
     }
-    private void Update () {
-        DiscordRPC.discord.RunCallbacks();
+    private void Update()
+    {
+        if (DiscordRPC.discord != null)
+        {
+            DiscordRPC.discord.RunCallbacks();
+        }
     }
 
     private void OnApplicationQuit()
