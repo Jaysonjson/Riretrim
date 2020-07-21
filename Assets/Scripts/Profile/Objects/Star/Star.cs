@@ -25,13 +25,14 @@ public class Star
     {
         System.Random random = new System.Random();
         Data.name = generateName(random);
-        if(map != null) { map.text = "Generating Star: " + Data.name; }
+        if (map != null) { map.text = "Generating Star: " + Data.name; }
         Data.solarSystem = Data.name;
         Data.asteroid_count = random.Next(MapOptions.Data.AsteroidMinSpawnAmount, MapOptions.Data.AsteroidMaxSpawnAmount);
         int planet_count = random.Next(MapOptions.Data.PlanetMaxAmount / 4);
         Data.enemy_count = random.Next(10, 35);
         int shipwreck_count = random.Next(10);
-        if(map != null) { map.maxTasks += planet_count + shipwreck_count; }
+        Data.spriteNumber = random.Next(Registry.INSTANCE.starSprites.defaultSprites.Length);
+        if (map != null) { map.maxTasks += planet_count + shipwreck_count; map.starImageID = Data.spriteNumber; map.starImageUpdate = true; }
         Data.sunScale = (float)(random.Next(15, 35) + random.NextDouble());
         if (random.Next(1) == 1)
         {
@@ -62,19 +63,21 @@ public class Star
             Thread.Sleep(12);
             Data.color[2] = (byte)(random.Next(250));
         }
-        if(map != null) {
-        map.currentTask++;
-        //Debug.Log(Data.name);
-        map.maxPlanetProgress = planet_count;
-        map.planetProgress = 0;
+        if (map != null)
+        {
+            map.currentTask++;
+            //Debug.Log(Data.name);
+            map.maxPlanetProgress = planet_count;
+            map.planetProgress = 0;
         }
         for (int i = 0; i < planet_count; i++)
         {
             Planet planet = new Planet(this);
             planet.Generate(map);
-            if(map != null) {
-            map.planetProgress++;
-            map.planetText = "Generating Planet: " + planet.Data.name + " (" + map.planetProgress + " from " + map.maxPlanetProgress + " ) in Star " + Data.name;
+            if (map != null)
+            {
+                map.planetProgress++;
+                map.planetText = "Generating Planet: " + planet.Data.name + " (" + map.planetProgress + " from " + map.maxPlanetProgress + " ) in Star " + Data.name;
             }
             if (!Data.planets.ContainsKey(planet.Data.name))
             {
@@ -113,6 +116,7 @@ public class StarData
     public string solarSystem = "";
     public string name = "";
     public int asteroid_count = 0;
+    public int spriteNumber = 0;
     public Position position = new Position();
     public OrbitData orbit = new OrbitData();
     public int enemy_count = 75;

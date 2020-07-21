@@ -22,6 +22,9 @@ public class MapGeneration : MonoBehaviour
     public Image starBar;
     public Image planetBar;
     public RawImage planetImage;
+    public RawImage starImage;
+    public int starImageID;
+    public bool starImageUpdate;
     public int planetImageID;
     public PlanetType planetImageType;
     public bool planetImageUpdate = false;
@@ -53,7 +56,7 @@ public class MapGeneration : MonoBehaviour
     //Generation of the Objects
     private void Generation()
     {
-        int galaxyAmount = new System.Random().Next(3, 15);
+        int galaxyAmount = new System.Random().Next(3, 5);
         maxTasks = galaxyAmount;
         maxGalaxyProgress = galaxyAmount;
         for (int i = 0; i < galaxyAmount; i++)
@@ -97,6 +100,7 @@ public class MapGeneration : MonoBehaviour
         planetBar.fillAmount = planetProgress / maxPlanetProgress;
         if (planetImageUpdate)
         {
+            Debug.Log("Image Update");
             switch (planetImageType)
             {
                 case PlanetType.EARTHLIKE:
@@ -112,6 +116,11 @@ public class MapGeneration : MonoBehaviour
                 case PlanetType.ICE:
                     planetImage.texture = Registry.INSTANCE.planetSprites.iceSprites[planetImageID].texture; break;
             }
+            planetImageUpdate = false;
+        }
+        if(starImageUpdate) {
+            starImage.texture = Registry.INSTANCE.starSprites.defaultSprites[starImageID].texture;
+            starImageUpdate = false;
         }
         if (done)
         {

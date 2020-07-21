@@ -23,6 +23,7 @@ public class Stars : MonoBehaviour
             textMesh.color = new Color32(163, 0, 0, 255);
         }
         name = star.Data.name;
+        GetComponent<SpriteRenderer>().sprite = Registry.INSTANCE.starSprites.defaultSprites[star.Data.spriteNumber];
         GetComponent<Orbit>().speed = star.Data.orbit.speed;
         GetComponent<SpriteRenderer>().color = new Color32(star.Data.color[0], star.Data.color[1], star.Data.color[2], 255);
         transform.position = new Vector2(star.Data.position.x, star.Data.position.y);

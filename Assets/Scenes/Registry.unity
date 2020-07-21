@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 702001957}
   - component: {fileID: 702001956}
   - component: {fileID: 702001955}
+  - component: {fileID: 702001958}
   m_Layer: 0
   m_Name: Registry
   m_TagString: Untagged
@@ -172,6 +173,7 @@ MonoBehaviour:
   defaultNames: {fileID: 4900000, guid: d1435b36ae1923644a1a3c878e5189db, type: 3}
   shipWreckTypes: {fileID: 1720434649}
   planetSprites: {fileID: 2126719190}
+  starSprites: {fileID: 702001958}
   sprites: {fileID: 702001956}
 --- !u!114 &702001956
 MonoBehaviour:
@@ -206,6 +208,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c86f834b87d9a494e9a688fb1c9dec61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &702001958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702001953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1a133530a1741218c4636225df9bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSprites:
+  - {fileID: 21300000, guid: 1579db5a2668a4b74874ce293a844790, type: 3}
+  - {fileID: 21300000, guid: 3ceb26770c75648028682e2bb92062a7, type: 3}
+  - {fileID: 21300000, guid: 1d47be1afb5ca4d419fb8ab5e9bb3f1b, type: 3}
 --- !u!1 &1230865745
 GameObject:
   m_ObjectHideFlags: 0

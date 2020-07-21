@@ -12,6 +12,7 @@ public class Registry : MonoBehaviour
     public static Profile profile = new Profile();
     public ShipWreckTypes shipWreckTypes;
     public PlanetSprites planetSprites;
+    public StarSprites starSprites;
     public Sprites sprites;
     public static Registry INSTANCE;
     public static AdventureMap adventureMap = new AdventureMap();
