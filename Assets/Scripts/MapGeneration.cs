@@ -21,6 +21,10 @@ public class MapGeneration : MonoBehaviour
     public Image galaxyBar;
     public Image starBar;
     public Image planetBar;
+    public RawImage planetImage;
+    public int planetImageID;
+    public PlanetType planetImageType;
+    public bool planetImageUpdate = false;
     public float currentTask = 0;
     public float maxTasks = 0;
     public float galaxyProgress = 0;
@@ -45,7 +49,7 @@ public class MapGeneration : MonoBehaviour
         thread.IsBackground = true;
         thread.Start();
     }
-    
+
     //Generation of the Objects
     private void Generation()
     {
@@ -91,6 +95,24 @@ public class MapGeneration : MonoBehaviour
         galaxyBar.fillAmount = galaxyProgress / maxGalaxyProgress;
         starBar.fillAmount = starProgress / maxStarProgress;
         planetBar.fillAmount = planetProgress / maxPlanetProgress;
+        if (planetImageUpdate)
+        {
+            switch (planetImageType)
+            {
+                case PlanetType.EARTHLIKE:
+                    planetImage.texture = Registry.INSTANCE.planetSprites.earthLikeSprites[planetImageID].texture; break;
+                case PlanetType.ROCKY:
+                    planetImage.texture = Registry.INSTANCE.planetSprites.rockySprites[planetImageID].texture; break;
+                case PlanetType.LAVA:
+                    planetImage.texture = Registry.INSTANCE.planetSprites.lavaSprites[planetImageID].texture; break;
+                case PlanetType.GAS:
+                    planetImage.texture = Registry.INSTANCE.planetSprites.gasSprites[planetImageID].texture; break;
+                case PlanetType.EXOTIC:
+                    planetImage.texture = Registry.INSTANCE.planetSprites.exoticSprites[planetImageID].texture; break;
+                case PlanetType.ICE:
+                    planetImage.texture = Registry.INSTANCE.planetSprites.iceSprites[planetImageID].texture; break;
+            }
+        }
         if (done)
         {
             StartCoroutine(switchScene());

@@ -132,7 +132,7 @@ public class ProfileData
         }
         else
         {
-            Debug.Log("Couldn't load Profile, saving...");
+            Debug.Log("Couldn't load Profile, saving... (" + path + ")");
             Save();
             return false;
         }

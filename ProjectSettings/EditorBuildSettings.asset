@@ -53,6 +53,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MapGeneration/MapGeneration.unity
     guid: 778c49cdad8b9f744abd06d62a9c87e7
+  - enabled: 1
+    path: Assets/Scenes/ProfileSelection/ProfileSelection.unity
+    guid: 9a478c64c4ab64ae393ffbb6aef42048
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: e77aa1cca801c49a092a2a867d20285c,
       type: 2}

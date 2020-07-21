@@ -9,6 +9,7 @@ public class TitlescreenButton : MonoBehaviour
     {
         SceneManager.LoadScene("Gamescreen");
     }
+
     public void MapButton()
     {
         //Registry.profile.Load();
@@ -20,22 +21,27 @@ public class TitlescreenButton : MonoBehaviour
         //   SceneManager.LoadScene("Galaxyscreen");
         //}
     }
+
     public void ASButton()
     {
         SceneManager.LoadScene("AdditionalSoftware");
     }
+
     public void KBButton()
     {
         SceneManager.LoadScene("Keybindsscreen");
     }
+
     public void DiscordButton()
     {
         Application.OpenURL("https://discord.gg/jhK6Ab3");
     }
+
     public void OptionsButton()
     {
         SceneManager.LoadScene("Options");
     }
+
     public void CreditsButton()
     {
         SceneManager.LoadScene("Creditsscreen");
@@ -44,5 +50,13 @@ public class TitlescreenButton : MonoBehaviour
     public void MPTEST() {
         Registry.profile.Load();
         SceneManager.LoadScene("MapGeneration");
+    }
+
+    public void ProfileSelectionButton() {
+        SceneManager.LoadScene("ProfileSelection");
+    }
+
+    public void ExitButton() {
+        Application.Quit();
     }
 }

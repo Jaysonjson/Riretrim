@@ -80,6 +80,13 @@ public class Planet
             {
                 Data.materials.Add(Materials.CRYSTAL);
             }
+            if (map != null)
+            {
+                map.planetImageUpdate = true;
+                map.planetImageType = PlanetType.EXOTIC;
+                map.planetImageID = Data.spriteNumber;
+                map.planetImageUpdate = false;
+            }
         }
         if (Data.type == PlanetType.EARTHLIKE)
         {
@@ -97,6 +104,13 @@ public class Planet
             if (random.Next(5) == 1)
             {
                 Data.materials.Add(Materials.GOLD);
+            }
+            if (map != null)
+            {
+                map.planetImageUpdate = true;
+                map.planetImageType = PlanetType.EARTHLIKE;
+                map.planetImageID = Data.spriteNumber;
+                map.planetImageUpdate = false;
             }
         }
         if (Data.type == PlanetType.LAVA)
@@ -116,6 +130,13 @@ public class Planet
             {
                 Data.materials.Add(Materials.TITAN);
             }
+            if (map != null)
+            {
+                map.planetImageUpdate = true;
+                map.planetImageType = PlanetType.LAVA;
+                map.planetImageID = Data.spriteNumber;
+                map.planetImageUpdate = false;
+            }
         }
         if (Data.type == PlanetType.ROCKY)
         {
@@ -133,6 +154,13 @@ public class Planet
             if (random.Next(5) == 1)
             {
                 Data.materials.Add(Materials.TIN);
+            }
+            if (map != null)
+            {
+                map.planetImageUpdate = true;
+                map.planetImageType = PlanetType.ROCKY;
+                map.planetImageID = Data.spriteNumber;
+                map.planetImageUpdate = false;
             }
         }
         if (Data.type == PlanetType.GAS)
@@ -152,6 +180,13 @@ public class Planet
             {
                 Data.materials.Add(Materials.TIN);
             }
+            if (map != null)
+            {
+                map.planetImageUpdate = true;
+                map.planetImageType = PlanetType.GAS;
+                map.planetImageID = Data.spriteNumber;
+                map.planetImageUpdate = false;
+            }
         }
         if (Data.type == PlanetType.ICE)
         {
@@ -169,6 +204,13 @@ public class Planet
             if (random.Next(5) == 1)
             {
                 Data.materials.Add(Materials.TIN);
+            }
+            if (map != null)
+            {
+                map.planetImageUpdate = true;
+                map.planetImageType = PlanetType.ICE;
+                map.planetImageID = Data.spriteNumber;
+                map.planetImageUpdate = false;
             }
         }
         Data.orbit.speed = (float)(random.NextDouble()) / 5;
