@@ -12,6 +12,7 @@ public class Health : MonoBehaviour
     public Sprite emptyHeart;
     public ShipMono ShipMono;
     public float defaultAlpha = 0.3f;
+    public static Health INSTANCE;
     private void Start()
     {
         if (GameObject.Find(Registry.profile.Ship.Data.body) != null)
@@ -32,9 +33,10 @@ public class Health : MonoBehaviour
             emptyHeart = ShipSprites.Damaged;
             emptyHeartObject.GetComponent<Image>().sprite = ShipSprites.Damaged;
         }
+        INSTANCE = this;
     }
 
-    private void Update()
+    private void UpdateHealth()
     {
         staticHeart = hearts;
         if (Registry.profile.Data.health > Registry.profile.Data.hearts)
@@ -103,5 +105,6 @@ public class Health : MonoBehaviour
         {
             staticHeart[i].fillAmount = 1F;
         }
+        INSTANCE.UpdateHealth();
     }
 }

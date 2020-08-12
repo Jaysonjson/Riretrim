@@ -28,36 +28,42 @@ public class Planets : MonoBehaviour
             text[i].GetComponent<TextMeshPro>().text = planet.Data.name + "\n" + planet.Data.type.ToString();
             text[0].GetComponent<TextMeshPro>().fontSize /= 4;
         }
-        if (planet.Data.type == PlanetType.EXOTIC)
+        Sprite bodySprite = null;
+        Sprite mmSprite = null;
+        switch (planet.Data.type)
         {
-            planetBodySprite.sprite = Registry.INSTANCE.planetSprites.exoticSprites[planet.Data.spriteNumber];
-            planetMiniMapSprite.sprite = Registry.INSTANCE.planetSprites.exoticSprites[planet.Data.spriteNumber];
+            case PlanetType.EXOTIC:
+                bodySprite = Registry.INSTANCE.planetSprites.exoticSprites[planet.Data.spriteNumber];
+                mmSprite = Registry.INSTANCE.planetSprites.exoticSprites[planet.Data.spriteNumber];
+                break;
+
+            case PlanetType.LAVA:
+                bodySprite = Registry.INSTANCE.planetSprites.lavaSprites[planet.Data.spriteNumber];
+                mmSprite = Registry.INSTANCE.planetSprites.lavaSprites[planet.Data.spriteNumber];
+                break;
+
+            case PlanetType.ROCKY:
+                bodySprite = Registry.INSTANCE.planetSprites.rockySprites[planet.Data.spriteNumber];
+                mmSprite = Registry.INSTANCE.planetSprites.rockySprites[planet.Data.spriteNumber];
+                break;
+
+            case PlanetType.GAS:
+                bodySprite = Registry.INSTANCE.planetSprites.gasSprites[planet.Data.spriteNumber];
+                mmSprite = Registry.INSTANCE.planetSprites.gasSprites[planet.Data.spriteNumber];
+                break;
+
+            case PlanetType.ICE:
+                bodySprite = Registry.INSTANCE.planetSprites.iceSprites[planet.Data.spriteNumber];
+                mmSprite = Registry.INSTANCE.planetSprites.iceSprites[planet.Data.spriteNumber];
+                break;
+
+            default:
+                bodySprite = Registry.INSTANCE.planetSprites.earthLikeSprites[planet.Data.spriteNumber];
+                mmSprite = Registry.INSTANCE.planetSprites.earthLikeSprites[planet.Data.spriteNumber];
+                break;
         }
-        if (planet.Data.type == PlanetType.EARTHLIKE)
-        {
-            planetBodySprite.sprite = Registry.INSTANCE.planetSprites.earthLikeSprites[planet.Data.spriteNumber];
-            planetMiniMapSprite.sprite = Registry.INSTANCE.planetSprites.earthLikeSprites[planet.Data.spriteNumber];
-        }
-        if (planet.Data.type == PlanetType.LAVA)
-        {
-            planetBodySprite.sprite = Registry.INSTANCE.planetSprites.lavaSprites[planet.Data.spriteNumber];
-            planetMiniMapSprite.sprite = Registry.INSTANCE.planetSprites.lavaSprites[planet.Data.spriteNumber];
-        }
-        if (planet.Data.type == PlanetType.ROCKY)
-        {
-            planetBodySprite.sprite = Registry.INSTANCE.planetSprites.rockySprites[planet.Data.spriteNumber];
-            planetMiniMapSprite.sprite = Registry.INSTANCE.planetSprites.rockySprites[planet.Data.spriteNumber];
-        }
-        if (planet.Data.type == PlanetType.GAS)
-        {
-            planetBodySprite.sprite = Registry.INSTANCE.planetSprites.gasSprites[planet.Data.spriteNumber];
-            planetMiniMapSprite.sprite = Registry.INSTANCE.planetSprites.gasSprites[planet.Data.spriteNumber];
-        }
-        if (planet.Data.type == PlanetType.ICE)
-        {
-            planetBodySprite.sprite = Registry.INSTANCE.planetSprites.iceSprites[planet.Data.spriteNumber];
-            planetMiniMapSprite.sprite = Registry.INSTANCE.planetSprites.iceSprites[planet.Data.spriteNumber];
-        }
+        planetBodySprite.sprite = bodySprite;
+        planetMiniMapSprite.sprite = mmSprite;
         planetMain.name = planet.Data.name;
         name = planet.Data.name + "-Body";
         planetMain.transform.position = new Vector3(planet.Data.position.x, planet.Data.position.y, -780f);

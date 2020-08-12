@@ -63,150 +63,156 @@ public class Planet
         if (dist > 135) { Data.type = PlanetType.EXOTIC; }
         if (dist > 165) { Data.type = PlanetType.ICE; }
         */
-        if (Data.type == PlanetType.EXOTIC)
+
+
+
+        switch (Data.type)
         {
-            Data.position.x = (float)(random.Next(115, 175) + random.NextDouble());
-            Data.color[0] = 255;
-            Data.color[1] = (byte)(random.Next(135));
-            Data.color[2] = 255;
-            Data.scale = (float)(random.Next(5, 10) + random.NextDouble());
-            Data.spriteNumber = random.Next(Registry.INSTANCE.planetSprites.exoticSprites.Length);
-            Data.materials.Add(Materials.ALUMINIUM);
-            if (random.Next(3) == 1)
-            {
-                Data.materials.Add(Materials.TUNGSTEN);
-            }
-            if (random.Next(10) == 1)
-            {
-                Data.materials.Add(Materials.CRYSTAL);
-            }
-            if (map != null)
-            {
-                map.planetImageUpdate = true;
-                map.planetImageType = PlanetType.EXOTIC;
-                map.planetImageID = Data.spriteNumber;
-            }
-        }
-        if (Data.type == PlanetType.EARTHLIKE)
-        {
-            Data.position.x = (float)(random.Next(75, 100) + random.NextDouble());
-            Data.color[0] = 0;
-            Data.color[1] = (byte)(random.Next(135));
-            Data.color[2] = 255;
-            Data.scale = (float)(random.Next(3, 7) + random.NextDouble());
-            Data.spriteNumber = random.Next(Registry.INSTANCE.planetSprites.earthLikeSprites.Length);
-            Data.materials.Add(Materials.IRON);
-            if (random.Next(3) == 1)
-            {
-                Data.materials.Add(Materials.TUNGSTEN);
-            }
-            if (random.Next(5) == 1)
-            {
-                Data.materials.Add(Materials.GOLD);
-            }
-            if (map != null)
-            {
-                map.planetImageUpdate = true;
-                map.planetImageType = PlanetType.EARTHLIKE;
-                map.planetImageID = Data.spriteNumber;
-            }
-        }
-        if (Data.type == PlanetType.LAVA)
-        {
-            Data.position.x = (float)(random.Next(20, 50) + random.NextDouble());
-            Data.color[0] = (byte)(random.Next(150, 255));
-            Data.color[1] = (byte)(random.Next(0, 50));
-            Data.color[2] = (byte)(random.Next(0, 50));
-            Data.scale = (float)(random.Next(2, 5) + random.NextDouble());
-            Data.spriteNumber = random.Next(Registry.INSTANCE.planetSprites.lavaSprites.Length);
-            Data.materials.Add(Materials.COAL);
-            if (random.Next(3) == 1)
-            {
-                Data.materials.Add(Materials.GOLD);
-            }
-            if (random.Next(5) == 1)
-            {
-                Data.materials.Add(Materials.TITAN);
-            }
-            if (map != null)
-            {
-                map.planetImageUpdate = true;
-                map.planetImageType = PlanetType.LAVA;
-                map.planetImageID = Data.spriteNumber;
-            }
-        }
-        if (Data.type == PlanetType.ROCKY)
-        {
-            Data.position.x = (float)(random.Next(55, 70) + random.NextDouble());
-            Data.color[0] = (byte)(random.Next(0, 255));
-            Data.color[1] = (byte)(random.Next(0, 106));
-            Data.color[2] = 0;
-            Data.scale = (float)(random.Next(2, 7) + random.NextDouble());
-            Data.spriteNumber = random.Next(Registry.INSTANCE.planetSprites.rockySprites.Length);
-            Data.materials.Add(Materials.IRON);
-            if (random.Next(3) == 1)
-            {
+            case PlanetType.EXOTIC:
+                Data.position.x = (float)(random.Next(115, 175) + random.NextDouble());
+                Data.color[0] = 255;
+                Data.color[1] = (byte)(random.Next(135));
+                Data.color[2] = 255;
+                Data.scale = (float)(random.Next(5, 10) + random.NextDouble());
+                Data.spriteNumber = random.Next(Registry.INSTANCE.planetSprites.exoticSprites.Length);
+                Data.materials.Add(Materials.ALUMINIUM);
+                if (random.Next(3) == 1)
+                {
+                    Data.materials.Add(Materials.TUNGSTEN);
+                }
+                if (random.Next(10) == 1)
+                {
+                    Data.materials.Add(Materials.CRYSTAL);
+                }
+                if (map != null)
+                {
+                    map.planetImageUpdate = true;
+                    map.planetImageType = PlanetType.EXOTIC;
+                    map.planetImageID = Data.spriteNumber;
+                }
+                break;
+
+            case PlanetType.LAVA:
+                Data.position.x = (float)(random.Next(20, 50) + random.NextDouble());
+                Data.color[0] = (byte)(random.Next(150, 255));
+                Data.color[1] = (byte)(random.Next(0, 50));
+                Data.color[2] = (byte)(random.Next(0, 50));
+                Data.scale = (float)(random.Next(2, 5) + random.NextDouble());
+                Data.spriteNumber = random.Next(Registry.INSTANCE.planetSprites.lavaSprites.Length);
+                Data.materials.Add(Materials.COAL);
+                if (random.Next(3) == 1)
+                {
+                    Data.materials.Add(Materials.GOLD);
+                }
+                if (random.Next(5) == 1)
+                {
+                    Data.materials.Add(Materials.TITAN);
+                }
+                if (map != null)
+                {
+                    map.planetImageUpdate = true;
+                    map.planetImageType = PlanetType.LAVA;
+                    map.planetImageID = Data.spriteNumber;
+                }
+                break;
+
+            case PlanetType.ROCKY:
+                Data.position.x = (float)(random.Next(55, 70) + random.NextDouble());
+                Data.color[0] = (byte)(random.Next(0, 255));
+                Data.color[1] = (byte)(random.Next(0, 106));
+                Data.color[2] = 0;
+                Data.scale = (float)(random.Next(2, 7) + random.NextDouble());
+                Data.spriteNumber = random.Next(Registry.INSTANCE.planetSprites.rockySprites.Length);
+                Data.materials.Add(Materials.IRON);
+                if (random.Next(3) == 1)
+                {
+                    Data.materials.Add(Materials.COPPER);
+                }
+                if (random.Next(5) == 1)
+                {
+                    Data.materials.Add(Materials.TIN);
+                }
+                if (map != null)
+                {
+                    map.planetImageUpdate = true;
+                    map.planetImageType = PlanetType.ROCKY;
+                    map.planetImageID = Data.spriteNumber;
+                }
+                break;
+
+            case PlanetType.GAS:
+                Data.position.x = (float)(random.Next(110, 150) + random.NextDouble());
+                Data.color[0] = (byte)(random.Next(255));
+                Data.color[1] = (byte)(random.Next(255));
+                Data.color[2] = (byte)(random.Next(255));
+                Data.scale = (float)(random.Next(7, 15) + random.NextDouble());
+                Data.spriteNumber = random.Next(Registry.INSTANCE.planetSprites.gasSprites.Length);
                 Data.materials.Add(Materials.COPPER);
-            }
-            if (random.Next(5) == 1)
-            {
-                Data.materials.Add(Materials.TIN);
-            }
-            if (map != null)
-            {
-                map.planetImageUpdate = true;
-                map.planetImageType = PlanetType.ROCKY;
-                map.planetImageID = Data.spriteNumber;
-            }
-        }
-        if (Data.type == PlanetType.GAS)
-        {
-            Data.position.x = (float)(random.Next(110, 150) + random.NextDouble());
-            Data.color[0] = (byte)(random.Next(255));
-            Data.color[1] = (byte)(random.Next(255));
-            Data.color[2] = (byte)(random.Next(255));
-            Data.scale = (float)(random.Next(7, 15) + random.NextDouble());
-            Data.spriteNumber = random.Next(Registry.INSTANCE.planetSprites.gasSprites.Length);
-            Data.materials.Add(Materials.COPPER);
-            if (random.Next(3) == 1)
-            {
+                if (random.Next(3) == 1)
+                {
+                    Data.materials.Add(Materials.NICKEL);
+                }
+                if (random.Next(5) == 1)
+                {
+                    Data.materials.Add(Materials.TIN);
+                }
+                if (map != null)
+                {
+                    map.planetImageUpdate = true;
+                    map.planetImageType = PlanetType.GAS;
+                    map.planetImageID = Data.spriteNumber;
+                }
+                break;
+
+            case PlanetType.ICE:
+                Data.position.x = (float)(random.Next(200, 250) + random.NextDouble());
+                Data.color[0] = (byte)(random.Next(200, 255));
+                Data.color[1] = (byte)(random.Next(135, 255));
+                Data.color[2] = (byte)(random.Next(200, 255));
+                Data.scale = (float)(random.Next(4, 14) + random.NextDouble());
+                Data.spriteNumber = random.Next(Registry.INSTANCE.planetSprites.iceSprites.Length);
                 Data.materials.Add(Materials.NICKEL);
-            }
-            if (random.Next(5) == 1)
-            {
-                Data.materials.Add(Materials.TIN);
-            }
-            if (map != null)
-            {
-                map.planetImageUpdate = true;
-                map.planetImageType = PlanetType.GAS;
-                map.planetImageID = Data.spriteNumber;
-            }
+                if (random.Next(3) == 1)
+                {
+                    Data.materials.Add(Materials.COPPER);
+                }
+                if (random.Next(5) == 1)
+                {
+                    Data.materials.Add(Materials.TIN);
+                }
+                if (map != null)
+                {
+                    map.planetImageUpdate = true;
+                    map.planetImageType = PlanetType.ICE;
+                    map.planetImageID = Data.spriteNumber;
+                }
+                break;
+
+            default:
+                Data.position.x = (float)(random.Next(75, 100) + random.NextDouble());
+                Data.color[0] = 0;
+                Data.color[1] = (byte)(random.Next(135));
+                Data.color[2] = 255;
+                Data.scale = (float)(random.Next(3, 7) + random.NextDouble());
+                Data.spriteNumber = random.Next(Registry.INSTANCE.planetSprites.earthLikeSprites.Length);
+                Data.materials.Add(Materials.IRON);
+                if (random.Next(3) == 1)
+                {
+                    Data.materials.Add(Materials.TUNGSTEN);
+                }
+                if (random.Next(5) == 1)
+                {
+                    Data.materials.Add(Materials.GOLD);
+                }
+                if (map != null)
+                {
+                    map.planetImageUpdate = true;
+                    map.planetImageType = PlanetType.EARTHLIKE;
+                    map.planetImageID = Data.spriteNumber;
+                }
+                break;
         }
-        if (Data.type == PlanetType.ICE)
-        {
-            Data.position.x = (float)(random.Next(200, 250) + random.NextDouble());
-            Data.color[0] = (byte)(random.Next(200, 255));
-            Data.color[1] = (byte)(random.Next(135, 255));
-            Data.color[2] = (byte)(random.Next(200, 255));
-            Data.scale = (float)(random.Next(4, 14) + random.NextDouble());
-            Data.spriteNumber = random.Next(Registry.INSTANCE.planetSprites.iceSprites.Length);
-            Data.materials.Add(Materials.NICKEL);
-            if (random.Next(3) == 1)
-            {
-                Data.materials.Add(Materials.COPPER);
-            }
-            if (random.Next(5) == 1)
-            {
-                Data.materials.Add(Materials.TIN);
-            }
-            if (map != null)
-            {
-                map.planetImageUpdate = true;
-                map.planetImageType = PlanetType.ICE;
-                map.planetImageID = Data.spriteNumber;
-            }
-        }
+
         Data.orbit.speed = (float)(random.NextDouble()) / 5;
 
         for (int i = 0; i < spaceStationAmount; i++)
