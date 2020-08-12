@@ -23,5 +23,7 @@ public class Quest : IQuest
     {
         this.unlocked = unlocked;
         this.currency_reward = currency_reward;
+        this.inProgress = false;
+        this.done = false;
     }
 }
