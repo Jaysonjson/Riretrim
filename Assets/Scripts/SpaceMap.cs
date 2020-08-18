@@ -135,7 +135,6 @@ public class SpaceMap : MonoBehaviour
                 UI.SetActive(true);
             }
         }
-
         fuelCircle.fillAmount = Registry.profile.Ship.Data.fuel / Registry.profile.Ship.Data.fuelMax;
         energyCircle.fillAmount = Registry.profile.Ship.Data.energy / Registry.profile.Ship.Data.energyMax;
         minimapBar.fillAmount = (((player.GetComponent<PlayerMapMovement>().getDistanceToSun() - 8) / 125) - 1) / -1;
