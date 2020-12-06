@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -33,6 +31,26 @@ public class SMEnemy : MonoBehaviour
         }
     }
 
+    private void OnBecameVisible()
+    {
+        foreach (var monoBehaviour in gameObject.GetComponents<MonoBehaviour>())
+        {
+            monoBehaviour.enabled = true;
+            gameObject.GetComponent<BoxCollider2D>().enabled = true;
+            gameObject.GetComponent<CircleCollider2D>().enabled = true;
+        }
+    }
+
+    private void OnBecameInvisible()
+    {
+        foreach (var monoBehaviour in gameObject.GetComponents<MonoBehaviour>())
+        {
+            monoBehaviour.enabled = false;
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            gameObject.GetComponent<CircleCollider2D>().enabled = false;
+        }
+    }
+    
     private void Update()
     {
         if (triggered)

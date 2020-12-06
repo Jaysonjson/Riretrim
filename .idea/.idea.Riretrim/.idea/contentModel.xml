@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$PROJECT_DIR$/../Library/Caches/JetBrains/Rider2020.1/extResources" t="IncludeRecursive" />
-    <e p="$PROJECT_DIR$/../Library/Caches/JetBrains/Rider2020.1/resharper-host/local/Transient/ReSharperHost/v201/SolutionCaches/_Riretrim.567712506.00" t="ExcludeRecursive" />
-    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+    <e p="C:\Users\Jayson\AppData\local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Jayson\AppData\local\JetBrains\Rider2020.3\resharper-host\local\Transient\Rider\v203\SolutionCaches\_Riretrim.-690993140.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Jayson\Documents\UnityProjects\Riretrim" t="IncludeRecursive">
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -11,6 +11,183 @@
         <e p="Materials" t="Include">
           <e p="BlurShader.shader" t="Include" />
           <e p="ShaderAdd.shader" t="Include" />
+        </e>
+        <e p="Mirror" t="Include">
+          <e p="Authenticators" t="Include">
+            <e p="BasicAuthenticator.cs" t="Include" />
+            <e p="TimeoutAuthenticator.cs" t="Include" />
+          </e>
+          <e p="CompilerSymbols" t="Include">
+            <e p="PreprocessorDefine.cs" t="Include" />
+          </e>
+          <e p="Components" t="Include">
+            <e p="Discovery" t="Include">
+              <e p="NetworkDiscovery.cs" t="Include" />
+              <e p="NetworkDiscoveryBase.cs" t="Include" />
+              <e p="NetworkDiscoveryHUD.cs" t="Include" />
+              <e p="ServerRequest.cs" t="Include" />
+              <e p="ServerResponse.cs" t="Include" />
+            </e>
+            <e p="NetworkAnimator.cs" t="Include" />
+            <e p="NetworkLobbyManager.cs" t="Include" />
+            <e p="NetworkLobbyPlayer.cs" t="Include" />
+            <e p="NetworkMatchChecker.cs" t="Include" />
+            <e p="NetworkProximityChecker.cs" t="Include" />
+            <e p="NetworkRoomManager.cs" t="Include" />
+            <e p="NetworkRoomPlayer.cs" t="Include" />
+            <e p="NetworkSceneChecker.cs" t="Include" />
+            <e p="NetworkTransform.cs" t="Include" />
+            <e p="NetworkTransformBase.cs" t="Include" />
+            <e p="NetworkTransformChild.cs" t="Include" />
+          </e>
+          <e p="Editor" t="Include">
+            <e p="EnterPlayModeSettingsCheck.cs" t="Include" />
+            <e p="InspectorHelper.cs" t="Include" />
+            <e p="LogLevelWindow.cs" t="Include" />
+            <e p="NetworkBehaviourInspector.cs" t="Include" />
+            <e p="NetworkInformationPreview.cs" t="Include" />
+            <e p="NetworkManagerEditor.cs" t="Include" />
+            <e p="NetworkScenePostProcess.cs" t="Include" />
+            <e p="SceneDrawer.cs" t="Include" />
+            <e p="SyncVarAttributeDrawer.cs" t="Include" />
+            <e p="Weaver" t="Include">
+              <e p="AssemblyInfo.cs" t="Include" />
+              <e p="CompilationFinishedHook.cs" t="Include" />
+              <e p="Extensions.cs" t="Include" />
+              <e p="Helpers.cs" t="Include" />
+              <e p="Processors" t="Include">
+                <e p="CommandProcessor.cs" t="Include" />
+                <e p="GenericArgumentResolver.cs" t="Include" />
+                <e p="MessageClassProcessor.cs" t="Include" />
+                <e p="MethodProcessor.cs" t="Include" />
+                <e p="MonoBehaviourProcessor.cs" t="Include" />
+                <e p="NetworkBehaviourProcessor.cs" t="Include" />
+                <e p="PropertySiteProcessor.cs" t="Include" />
+                <e p="ReaderWriterProcessor.cs" t="Include" />
+                <e p="RpcProcessor.cs" t="Include" />
+                <e p="ServerClientAttributeProcessor.cs" t="Include" />
+                <e p="SyncDictionaryProcessor.cs" t="Include" />
+                <e p="SyncEventProcessor.cs" t="Include" />
+                <e p="SyncListInitializer.cs" t="Include" />
+                <e p="SyncListProcessor.cs" t="Include" />
+                <e p="SyncListStructProcessor.cs" t="Include" />
+                <e p="SyncObjectInitializer.cs" t="Include" />
+                <e p="SyncObjectProcessor.cs" t="Include" />
+                <e p="SyncVarProcessor.cs" t="Include" />
+                <e p="TargetRpcProcessor.cs" t="Include" />
+              </e>
+              <e p="Program.cs" t="Include" />
+              <e p="Readers.cs" t="Include" />
+              <e p="Resolvers.cs" t="Include" />
+              <e p="Weaver.cs" t="Include" />
+              <e p="Writers.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Plugins" t="Include">
+            <e p="Mono.Cecil" t="Include">
+              <e p="License.txt" t="Include" />
+            </e>
+          </e>
+          <e p="Readme.txt" t="Include" />
+          <e p="Runtime" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+            <e p="ClientScene.cs" t="Include" />
+            <e p="CustomAttributes.cs" t="Include" />
+            <e p="DotNetCompatibility.cs" t="Include" />
+            <e p="ExponentialMovingAverage.cs" t="Include" />
+            <e p="FloatBytePacker.cs" t="Include" />
+            <e p="LocalConnections.cs" t="Include" />
+            <e p="LogFactory.cs" t="Include" />
+            <e p="LogFilter.cs" t="Include" />
+            <e p="MessagePacker.cs" t="Include" />
+            <e p="Messages.cs" t="Include" />
+            <e p="NetworkAuthenticator.cs" t="Include" />
+            <e p="NetworkBehaviour.cs" t="Include" />
+            <e p="NetworkClient.cs" t="Include" />
+            <e p="NetworkConnection.cs" t="Include" />
+            <e p="NetworkConnectionToClient.cs" t="Include" />
+            <e p="NetworkConnectionToServer.cs" t="Include" />
+            <e p="NetworkDiagnostics.cs" t="Include" />
+            <e p="NetworkIdentity.cs" t="Include" />
+            <e p="NetworkManager.cs" t="Include" />
+            <e p="NetworkManagerHUD.cs" t="Include" />
+            <e p="NetworkMessage.cs" t="Include" />
+            <e p="NetworkReader.cs" t="Include" />
+            <e p="NetworkReaderPool.cs" t="Include" />
+            <e p="NetworkServer.cs" t="Include" />
+            <e p="NetworkStartPosition.cs" t="Include" />
+            <e p="NetworkTime.cs" t="Include" />
+            <e p="NetworkVisibility.cs" t="Include" />
+            <e p="NetworkWriter.cs" t="Include" />
+            <e p="NetworkWriterPool.cs" t="Include" />
+            <e p="StringHash.cs" t="Include" />
+            <e p="SyncDictionary.cs" t="Include" />
+            <e p="SyncList.cs" t="Include" />
+            <e p="SyncObject.cs" t="Include" />
+            <e p="SyncSet.cs" t="Include" />
+            <e p="Transport" t="Include">
+              <e p="FallbackTransport.cs" t="Include" />
+              <e p="LLAPITransport.cs" t="Include" />
+              <e p="MultiplexTransport.cs" t="Include" />
+              <e p="Telepathy" t="Include">
+                <e p="Client.cs" t="Include" />
+                <e p="Common.cs" t="Include" />
+                <e p="EventType.cs" t="Include" />
+                <e p="Logger.cs" t="Include" />
+                <e p="Message.cs" t="Include" />
+                <e p="NetworkStreamExtensions.cs" t="Include" />
+                <e p="SafeQueue.cs" t="Include" />
+                <e p="Server.cs" t="Include" />
+                <e p="ThreadExtensions.cs" t="Include" />
+                <e p="Utils.cs" t="Include" />
+              </e>
+              <e p="TelepathyTransport.cs" t="Include" />
+              <e p="Transport.cs" t="Include" />
+              <e p="Websocket" t="Include">
+                <e p="Client.cs" t="Include" />
+                <e p="ClientJs.cs" t="Include" />
+                <e p="Ninja.WebSockets" t="Include">
+                  <e p="BufferPool.cs" t="Include" />
+                  <e p="Exceptions" t="Include">
+                    <e p="EntityTooLargeException.cs" t="Include" />
+                    <e p="InvalidHttpResponseCodeException.cs" t="Include" />
+                    <e p="Readme.txt" t="Include" />
+                    <e p="SecWebSocketKeyMissingException.cs" t="Include" />
+                    <e p="ServerListenerSocketException.cs" t="Include" />
+                    <e p="WebSocketBufferOverflowException.cs" t="Include" />
+                    <e p="WebSocketHandshakeFailedException.cs" t="Include" />
+                    <e p="WebSocketVersionNotSupportedException.cs" t="Include" />
+                  </e>
+                  <e p="HttpHelper.cs" t="Include" />
+                  <e p="IBufferPool.cs" t="Include" />
+                  <e p="Internal" t="Include">
+                    <e p="BinaryReaderWriter.cs" t="Include" />
+                    <e p="Events.cs" t="Include" />
+                    <e p="WebSocketFrame.cs" t="Include" />
+                    <e p="WebSocketFrameCommon.cs" t="Include" />
+                    <e p="WebSocketFrameReader.cs" t="Include" />
+                    <e p="WebSocketFrameWriter.cs" t="Include" />
+                    <e p="WebSocketImplementation.cs" t="Include" />
+                    <e p="WebSocketOpCode.cs" t="Include" />
+                  </e>
+                  <e p="IPingPongManager.cs" t="Include" />
+                  <e p="IWebSocketClientFactory.cs" t="Include" />
+                  <e p="IWebSocketServerFactory.cs" t="Include" />
+                  <e p="PingPongManager.cs" t="Include" />
+                  <e p="PongEventArgs.cs" t="Include" />
+                  <e p="WebSocketClientFactory.cs" t="Include" />
+                  <e p="WebSocketClientOptions.cs" t="Include" />
+                  <e p="WebSocketHttpContext.cs" t="Include" />
+                  <e p="WebSocketServerFactory.cs" t="Include" />
+                  <e p="WebSocketServerOptions.cs" t="Include" />
+                </e>
+                <e p="Server.cs" t="Include" />
+                <e p="WebsocketTransport.cs" t="Include" />
+              </e>
+            </e>
+            <e p="UNetwork.cs" t="Include" />
+          </e>
+          <e p="version.txt" t="Include" />
         </e>
         <e p="Plugins" t="Include">
           <e p="DiscordGameSDK" t="Include">
@@ -23,6 +200,7 @@
             <e p="StoreManager.cs" t="Include" />
           </e>
         </e>
+        <e p="SaveGame.cs" t="Include" />
         <e p="Scenes" t="Include">
           <e p="DamagedShip" t="Include">
             <e p="RoomsDS.cs" t="Include" />
@@ -31,8 +209,12 @@
           <e p="Gamescreen" t="Include">
             <e p="RichPresenceGamescreen.cs" t="Include" />
           </e>
+          <e p="Mods" t="Include">
+            <e p="CreateModShip.cs" t="Include" />
+          </e>
           <e p="NewGame" t="Include">
             <e p="MapOptionsScript.cs" t="Include" />
+            <e p="MapSizes.cs" t="Include" />
           </e>
           <e p="Options" t="Include">
             <e p="OptionsScript.cs" t="Include" />
@@ -49,6 +231,7 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Blackhole.cs" t="Include" />
           <e p="Bullet" t="Include">
             <e p="BulletSpaceMap.cs" t="Include" />
             <e p="RiretrimGameObject.cs" t="Include" />
@@ -68,6 +251,7 @@
           <e p="Escape.cs" t="Include" />
           <e p="FixedLifeTime.cs" t="Include" />
           <e p="Gamescreen" t="Include">
+            <e p="DamagedShip.cs" t="Include" />
             <e p="EnemyBullets" t="Include">
               <e p="EnemyBullet.cs" t="Include" />
               <e p="EnemyBulletZenin.cs" t="Include" />
@@ -107,6 +291,7 @@
           </e>
           <e p="Json" t="Include">
             <e p="JsonDateTime.cs" t="Include" />
+            <e p="RiretrimUtility.cs" t="Include" />
           </e>
           <e p="Language" t="Include">
             <e p="Language.cs" t="Include" />
@@ -114,6 +299,7 @@
           </e>
           <e p="Lifetime.cs" t="Include" />
           <e p="LightObject.cs" t="Include" />
+          <e p="MapGeneration.cs" t="Include" />
           <e p="Material" t="Include">
             <e p="Currency.cs" t="Include" />
             <e p="CurrencyLight.cs" t="Include" />
@@ -125,6 +311,16 @@
             <e p="BuyMaterial.cs" t="Include" />
             <e p="MaterialShop.cs" t="Include" />
           </e>
+          <e p="Mod" t="Include">
+            <e p="Shop" t="Include">
+              <e p="ModdedShip.cs" t="Include" />
+              <e p="ModdedShipData.cs" t="Include" />
+              <e p="ModdedShipShopEntry.cs" t="Include" />
+              <e p="ModdedShipSprite.cs" t="Include" />
+              <e p="ModdedShipUtility.cs" t="Include" />
+              <e p="Mods.cs" t="Include" />
+            </e>
+          </e>
           <e p="Movement" t="Include">
             <e p="GravityCollider.cs" t="Include" />
             <e p="Orbit.cs" t="Include" />
@@ -132,14 +328,20 @@
             <e p="PlayerMapMovement.cs" t="Include" />
             <e p="SelfRotation.cs" t="Include" />
             <e p="SingleMovement.cs" t="Include" />
+            <e p="UnfixedOrbit.cs" t="Include" />
           </e>
+          <e p="OrbitData.cs" t="Include" />
           <e p="ParticleSystemObject.cs" t="Include" />
+          <e p="PlanetSprites.cs" t="Include" />
           <e p="PlayerFuelCircle.cs" t="Include" />
+          <e p="Position.cs" t="Include" />
           <e p="Profile" t="Include">
+            <e p="AdventureMap.cs" t="Include" />
             <e p="MapOptions" t="Include">
               <e p="MapOptions.cs" t="Include" />
             </e>
             <e p="MaterialData.cs" t="Include" />
+            <e p="Names.cs" t="Include" />
             <e p="Objects" t="Include">
               <e p="Asteroid" t="Include">
                 <e p="Asteroid.cs" t="Include" />
@@ -152,21 +354,19 @@
                 <e p="MiningDrillSave.cs" t="Include" />
               </e>
               <e p="Galaxy" t="Include">
+                <e p="Galaxies.cs" t="Include" />
                 <e p="Galaxy.cs" t="Include" />
-              </e>
-              <e p="Map" t="Include">
-                <e p="Map.cs" t="Include" />
+                <e p="GalaxyMap.cs" t="Include" />
               </e>
               <e p="Moon" t="Include">
                 <e p="Moon.cs" t="Include" />
-                <e p="MoonData.cs" t="Include" />
                 <e p="Moons.cs" t="Include" />
-                <e p="MoonSave.cs" t="Include" />
               </e>
               <e p="ObjectDestroyer.cs" t="Include" />
               <e p="Planet" t="Include">
                 <e p="Planet.cs" t="Include" />
                 <e p="PlanetMapPlanet.cs" t="Include" />
+                <e p="PlanetMono.cs" t="Include" />
                 <e p="Planets.cs" t="Include" />
                 <e p="PlanetSpawner.cs" t="Include" />
                 <e p="PlanetType.cs" t="Include" />
@@ -183,12 +383,9 @@
               </e>
               <e p="SpaceStation" t="Include">
                 <e p="SpaceStation.cs" t="Include" />
-                <e p="SpaceStationData.cs" t="Include" />
                 <e p="SpaceStations.cs" t="Include" />
-                <e p="SpaceStationSave.cs" t="Include" />
               </e>
               <e p="Star" t="Include">
-                <e p="GalaxyMap.cs" t="Include" />
                 <e p="Star.cs" t="Include" />
                 <e p="Stars.cs" t="Include" />
                 <e p="StarSpawner.cs" t="Include" />
@@ -206,8 +403,8 @@
             <e p="Profile.cs" t="Include" />
             <e p="ProfileData.cs" t="Include" />
             <e p="ProfileSave.cs" t="Include" />
-            <e p="References.cs" t="Include" />
             <e p="Ship" t="Include">
+              <e p="ModdedShipMono.cs" t="Include" />
               <e p="Ship.cs" t="Include" />
               <e p="ShipMono.cs" t="Include" />
               <e p="ShipState.cs" t="Include" />
@@ -215,9 +412,13 @@
                 <e p="ShipSprites.cs" t="Include" />
               </e>
             </e>
+            <e p="SMPlayer.cs" t="Include" />
           </e>
+          <e p="ProfileObject.cs" t="Include" />
+          <e p="ProfileSelection.cs" t="Include" />
           <e p="Registry.cs" t="Include" />
           <e p="ShadowCasterObject.cs" t="Include" />
+          <e p="ShipWreckTypes.cs" t="Include" />
           <e p="Shop" t="Include">
             <e p="Shop.cs" t="Include" />
             <e p="ShopLeftPanel.cs" t="Include" />
@@ -226,10 +427,33 @@
             <e p="ShopShip.cs" t="Include" />
           </e>
           <e p="SMEnemy.cs" t="Include" />
+          <e p="SMEnemySpawner.cs" t="Include" />
           <e p="SpaceMap.cs" t="Include" />
           <e p="Sprites.cs" t="Include" />
+          <e p="StarSprites.cs" t="Include" />
+          <e p="Story" t="Include">
+            <e p="HUDControls.cs" t="Include" />
+            <e p="HUDControlTutorial.cs" t="Include" />
+            <e p="IQuest.cs" t="Include" />
+            <e p="Planet" t="Include">
+              <e p="SunCycle.cs" t="Include" />
+            </e>
+            <e p="Quests" t="Include">
+              <e p="Quest.cs" t="Include" />
+            </e>
+            <e p="Quests.cs" t="Include" />
+          </e>
           <e p="VolumeObject.cs" t="Include" />
           <e p="Warp.cs" t="Include" />
+        </e>
+        <e p="ScriptTemplates" t="Include">
+          <e p="50-Mirror__Network Manager-NewNetworkManager.cs.txt" t="Include" />
+          <e p="51-Mirror__Network Authenticator-NewNetworkAuthenticator.cs.txt" t="Include" />
+          <e p="52-Mirror__Network Behaviour-NewNetworkBehaviour.cs.txt" t="Include" />
+          <e p="53-Mirror__Network Observer-NewNetworkObserver.cs.txt" t="Include" />
+          <e p="54-Mirror__Network Room Manager-NewNetworkRoomManager.cs.txt" t="Include" />
+          <e p="55-Mirror__Network Room Player-NewNetworkRoomPlayer.cs.txt" t="Include" />
+          <e p="56-Mirror__Network Discovery-NewNetworkDiscovery.cs.txt" t="Include" />
         </e>
         <e p="Sprites" t="Include">
           <e p="Ships" t="Include">
@@ -270,10 +494,17 @@
           </e>
         </e>
       </e>
+      <e p="Mirror.Authenticators.csproj" t="IncludeRecursive" />
+      <e p="Mirror.CompilerSymbols.csproj" t="IncludeRecursive" />
+      <e p="Mirror.Components.csproj" t="IncludeRecursive" />
+      <e p="Mirror.csproj" t="IncludeRecursive" />
+      <e p="Mirror.Editor.csproj" t="IncludeRecursive" />
+      <e p="Mirror.Weaver.csproj" t="IncludeRecursive" />
+      <e p="Ninja.WebSockets.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Riretrim.sln" t="IncludeFlat" />
-      <e p="Temp/Bin" t="ExcludeRecursive" />
+      <e p="Temp\Bin" t="ExcludeRecursive" />
     </e>
   </component>
 </project>

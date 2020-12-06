@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,14 +8,14 @@ public class Registry : MonoBehaviour
     public static Names Names = new Names();
     public TextAsset defaultLangFile;
     public TextAsset defaultNames;
-    public static Profile profile = new Profile();
+    public static readonly Profile profile = new Profile();
     public ShipWreckTypes shipWreckTypes;
     public PlanetSprites planetSprites;
     public StarSprites starSprites;
     public Sprites sprites;
     public static Registry INSTANCE;
     public static AdventureMap adventureMap = new AdventureMap();
-    private void Start()
+    void Start()
     {
         sprites = gameObject.GetComponent<Sprites>();
         Options.Load();
@@ -27,10 +26,10 @@ public class Registry : MonoBehaviour
             JsonUtility.FromJsonOverwrite(defaultNames.text, Names);
         }
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        // StartCoroutine(End());
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Mods.ships = ModdedShipUtility.GetShips();
         INSTANCE = this;
+        StartCoroutine(End());
     }
 
     IEnumerator End()

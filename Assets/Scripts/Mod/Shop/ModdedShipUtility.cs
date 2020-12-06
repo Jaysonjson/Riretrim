@@ -38,6 +38,10 @@ public class ModdedShipUtility
     public static List<ModdedShip> GetShips()
     {
         List<ModdedShip> ships = new List<ModdedShip>();
+        if (!Directory.Exists(Application.persistentDataPath + "/mods/" + "ships"))
+        {
+            Directory.CreateDirectory(Application.persistentDataPath + "/mods/" + "ships");
+        }
         string[] files = Directory.GetFiles(Application.persistentDataPath + "/mods/" + "ships");
         for (int i = 0; i < files.Length; i++)
         {

@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Discord;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BuyMaterial : MonoBehaviour
 {

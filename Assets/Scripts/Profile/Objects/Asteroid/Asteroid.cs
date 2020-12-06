@@ -27,6 +27,12 @@ public class Asteroid : MonoBehaviour
         {
             DropMaterials();
         }
+
+        /*if (collision.gameObject.tag == "EnemyCollider")
+        {
+            Debug.Log("Collision!");
+            gameObject.SetActive(true);
+        }*/
     }
 
     private void OnBecameVisible()
