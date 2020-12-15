@@ -335,6 +335,7 @@
           <e p="PlanetSprites.cs" t="Include" />
           <e p="PlayerFuelCircle.cs" t="Include" />
           <e p="Position.cs" t="Include" />
+          <e p="PositionStructure.cs" t="Include" />
           <e p="Profile" t="Include">
             <e p="AdventureMap.cs" t="Include" />
             <e p="MapOptions" t="Include">
@@ -417,6 +418,7 @@
           <e p="ProfileObject.cs" t="Include" />
           <e p="ProfileSelection.cs" t="Include" />
           <e p="Registry.cs" t="Include" />
+          <e p="Scene.cs" t="Include" />
           <e p="ShadowCasterObject.cs" t="Include" />
           <e p="ShipWreckTypes.cs" t="Include" />
           <e p="Shop" t="Include">
@@ -443,6 +445,7 @@
             </e>
             <e p="Quests.cs" t="Include" />
           </e>
+          <e p="Tag.cs" t="Include" />
           <e p="VolumeObject.cs" t="Include" />
           <e p="Warp.cs" t="Include" />
         </e>

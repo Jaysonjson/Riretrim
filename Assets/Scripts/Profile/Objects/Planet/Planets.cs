@@ -1,9 +1,12 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using UnityEngine.Experimental.Rendering.Universal;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Threading;
+
 public class Planets : MonoBehaviour
 {
 
@@ -105,6 +108,7 @@ public class Planets : MonoBehaviour
         }
         else
         {
+            Thread.Sleep(10);
             GetComponent<Orbit>().speed = new System.Random().Next(200, 500);
             StartCoroutine(stopSpeededOrbit(planet));
         }
@@ -130,6 +134,12 @@ public class Planets : MonoBehaviour
     {
         Registry.profile.Data.current_planet = gameObject.name.Replace("-Body", "");
         SceneManager.LoadScene("PlanetMap");
+    }
+    //MARKED : CRITICAL
+    private void FixedUpdate()
+    {
+        planet.Data.position.x = gameObject.transform.position.x;
+        planet.Data.position.y = gameObject.transform.position.y;
     }
 }
 

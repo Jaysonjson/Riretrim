@@ -261,7 +261,7 @@ public class PlanetData
 {
     public string name = "Unknown";
     public int id = 0;
-    public Position position = new Position();
+    public PositionStructure position;
     public List<Materials> materials = new List<Materials>();
     public byte[] color = { 255, 255, 255 };
     public PlanetType type = PlanetType.LAVA;

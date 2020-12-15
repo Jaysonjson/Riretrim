@@ -23,7 +23,7 @@ public class RedBlink : MonoBehaviour
          alpha -= 1;
       }
 
-      if (alpha < 85)
+      if (alpha < 155)
       {
          decrease = false;
       }

@@ -19,9 +19,9 @@ public class Sprites : MonoBehaviour
     {
         if (Options.Data.Texturepack != "Default")
         {
-            setSprite(MATERIALS_METAL, "material_metal");
-            setSprite(ASTEROID, "asteroid");
-            setSprite(FALLBACK, "fallback");
+           MATERIALS_METAL = setSprite(MATERIALS_METAL, "material_metal");
+           ASTEROID = setSprite(ASTEROID, "asteroid");
+           FALLBACK = setSprite(FALLBACK, "fallback");
         }
 
         /* for (var i = 0; i < this.GetType().GetFields().Length; i++)
@@ -31,11 +31,13 @@ public class Sprites : MonoBehaviour
         */
     }
     
-    private void setSprite(Sprite sprite, string id)
+    private Sprite setSprite(Sprite sprite, string id)
     {
         if (Resources.Load<Sprite>(Options.Data.Texturepack + "/sprites/" + id + ".png") != null)
         {
             sprite = Resources.Load<Sprite>(Options.Data.Texturepack + "/sprites/" + id + ".png");
         }
+
+        return sprite;
     }
 }

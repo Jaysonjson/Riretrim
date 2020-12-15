@@ -117,7 +117,7 @@ public class StarData
     public string name = "";
     public int asteroid_count = 0;
     public int spriteNumber = 0;
-    public Position position = new Position();
+    public PositionStructure position;
     public OrbitData orbit = new OrbitData();
     public int enemy_count = 75;
     public bool secondSun = false;

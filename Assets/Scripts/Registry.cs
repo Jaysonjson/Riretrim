@@ -25,7 +25,6 @@ public class Registry : MonoBehaviour
         {
             JsonUtility.FromJsonOverwrite(defaultNames.text, Names);
         }
-
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Mods.ships = ModdedShipUtility.GetShips();
         INSTANCE = this;
